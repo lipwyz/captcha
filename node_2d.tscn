@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://crwwoa16ktcql"]
 
 [ext_resource type="Texture2D" uid="uid://dn6fmp6f8401k" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://dhq7s7j276aqr" path="res://1_JiSQVnR_nibjRC1azRl6Fw.jpg" id="2_0e48y"]
 
 [node name="Node2D" type="Node2D" unique_id=1023678016]
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=362745125]
 position = Vector2(714, 331)
 texture = ExtResource("1_wtcfe")
+
+[node name="1JiSqVnRNibjRc1AzRl6Fw" type="Sprite2D" parent="." unique_id=604518342]
+position = Vector2(278, 345.00006)
+scale = Vector2(0.77522933, 0.74108243)
+texture = ExtResource("2_0e48y")
