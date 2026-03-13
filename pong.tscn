@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://bfkwieyxjeajg"]
+
+[ext_resource type="Texture2D" uid="uid://qd3dsdx0a34t" path="res://Assets/Bg.png" id="1_4opyw"]
+[ext_resource type="FontFile" uid="uid://0b74kuykh6c" path="res://Assets/pixel_font.ttf" id="2_pkvn5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5tya"]
+size = Vector2(20, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eipaa"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ludyb"]
+size = Vector2(1152, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trlu6"]
+size = Vector2(1152, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6iag"]
+size = Vector2(64, 649)
+
+[node name="Sprite2D" type="Sprite2D" unique_id=584714576]
+texture_filter = 1
+texture = ExtResource("1_4opyw")
+centered = false
+
+[node name="Player" type="StaticBody2D" parent="." unique_id=1990709179]
+position = Vector2(50, 324)
+
+[node name="ColorRect" type="ColorRect" parent="Player" unique_id=534802177]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 20.0
+offset_bottom = 60.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1014785005]
+position = Vector2(10, 0)
+shape = SubResource("RectangleShape2D_m5tya")
+
+[node name="Enemy" type="StaticBody2D" parent="." unique_id=1507626508]
+position = Vector2(1082, 324)
+
+[node name="ColorRect" type="ColorRect" parent="Enemy" unique_id=1640211640]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 20.0
+offset_bottom = 60.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=1393056097]
+position = Vector2(10, 0)
+shape = SubResource("RectangleShape2D_m5tya")
+
+[node name="ball" type="CharacterBody2D" parent="." unique_id=1843636076]
+position = Vector2(576, 324)
+collision_mask = 3
+
+[node name="ColorRect" type="ColorRect" parent="ball" unique_id=237901392]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ball" unique_id=38730312]
+shape = SubResource("RectangleShape2D_eipaa")
+
+[node name="borders" type="StaticBody2D" parent="." unique_id=1357405693]
+collision_layer = 2
+
+[node name="Top" type="CollisionShape2D" parent="borders" unique_id=1906468503]
+position = Vector2(576, -32)
+shape = SubResource("RectangleShape2D_ludyb")
+
+[node name="Bottom" type="CollisionShape2D" parent="borders" unique_id=1569195082]
+position = Vector2(576, 676)
+shape = SubResource("RectangleShape2D_trlu6")
+
+[node name="ScoreLeft" type="Area2D" parent="." unique_id=941731469]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreLeft" unique_id=1636348667]
+position = Vector2(-32, 323.5)
+shape = SubResource("RectangleShape2D_a6iag")
+
+[node name="ScoreRight" type="Area2D" parent="." unique_id=1350360243]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreRight" unique_id=359014701]
+position = Vector2(1184, 324)
+shape = SubResource("RectangleShape2D_a6iag")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=971953909]
+
+[node name="PlayerScore" type="Label" parent="CanvasLayer" unique_id=1041876347]
+offset_left = 456.0
+offset_top = 5.0
+offset_right = 516.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("2_pkvn5")
+theme_override_font_sizes/font_size = 60
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CPUscore" type="Label" parent="CanvasLayer" unique_id=654245669]
+offset_left = 648.0
+offset_top = 5.0
+offset_right = 708.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("2_pkvn5")
+theme_override_font_sizes/font_size = 60
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=923390676]
