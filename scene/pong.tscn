@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bfkwieyxjeajg"]
 
-[ext_resource type="Texture2D" uid="uid://qd3dsdx0a34t" path="res://Assets/Bg.png" id="1_4opyw"]
-[ext_resource type="FontFile" uid="uid://0b74kuykh6c" path="res://Assets/pixel_font.ttf" id="2_pkvn5"]
+[ext_resource type="Texture2D" uid="uid://qd3dsdx0a34t" path="res://Assets/Bg.png" id="1_qejm1"]
+[ext_resource type="FontFile" uid="uid://0b74kuykh6c" path="res://Assets/pixel_font.ttf" id="2_s3b2c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5tya"]
 size = Vector2(20, 120)
@@ -20,7 +20,7 @@ size = Vector2(64, 649)
 
 [node name="Sprite2D" type="Sprite2D" unique_id=584714576]
 texture_filter = 1
-texture = ExtResource("1_4opyw")
+texture = ExtResource("1_qejm1")
 centered = false
 
 [node name="Player" type="StaticBody2D" parent="." unique_id=1990709179]
@@ -108,7 +108,7 @@ offset_left = 456.0
 offset_top = 5.0
 offset_right = 516.0
 offset_bottom = 65.0
-theme_override_fonts/font = ExtResource("2_pkvn5")
+theme_override_fonts/font = ExtResource("2_s3b2c")
 theme_override_font_sizes/font_size = 60
 text = "0"
 horizontal_alignment = 1
@@ -119,10 +119,12 @@ offset_left = 648.0
 offset_top = 5.0
 offset_right = 708.0
 offset_bottom = 65.0
-theme_override_fonts/font = ExtResource("2_pkvn5")
+theme_override_fonts/font = ExtResource("2_s3b2c")
 theme_override_font_sizes/font_size = 60
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer" type="Timer" parent="." unique_id=923390676]
+[node name="BallTimer" type="Timer" parent="." unique_id=923390676]
+one_shot = true
+autostart = true
