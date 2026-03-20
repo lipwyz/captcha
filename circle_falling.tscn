@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c3qg8jnjpv6yh"]
+
+[ext_resource type="Texture2D" uid="uid://c77qx70jli0d3" path="res://Assets/placeholders/sun-circle-line-art-vector-removebg-preview.png" id="1_mhu25"]
+[ext_resource type="Script" uid="uid://cxvvv5olooe7s" path="res://falling_circle.gd" id="2_2ccxr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ptrw"]
+radius = 63.89053
+
+[node name="World" type="Node2D" unique_id=1139489235]
+
+[node name="CollisionShape2D" type="Area2D" parent="." unique_id=2117185082]
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=345656035]
+position = Vector2(494, 288)
+texture = ExtResource("1_mhu25")
+script = ExtResource("2_2ccxr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D" unique_id=1482238874]
+position = Vector2(492, 288)
+shape = SubResource("CircleShape2D_4ptrw")

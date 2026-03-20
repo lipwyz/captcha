@@ -1,0 +1,50 @@
+[gd_scene format=4 uid="uid://lpodi2oivp3t"]
+
+[ext_resource type="Texture2D" uid="uid://3uvfjrfj0tjo" path="res://Assets/placeholders/Maze.png" id="2_33gcv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rr2p5"]
+texture = ExtResource("2_33gcv")
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_pm3sp"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_rr2p5")
+
+[node name="Node2D" type="Node2D" unique_id=1630801196]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1112217256]
+tile_map_data = PackedByteArray("AAAAAAAAAQADAAEAAAAAAAEAAQADAAEAAAAAAAIAAQADAAEAAAAAAAMAAQADAAEAAAABAAIAAQADAAEAAAACAAIAAQADAAEAAAADAAMAAQADAAEAAAAEAAMAAQADAAEAAAAFAAMAAQADAAEAAAABAAMAAQADAAEAAAACAAMAAQADAAEAAAAFAAIAAQADAAEAAAAEAAIAAQADAAEAAAAEAAEAAQADAAEAAAADAAEAAQADAAEAAAADAAIAAQADAAEAAAABAAEAAQADAAEAAAABAAAAAQADAAEAAAACAAAAAQADAAEAAAADAAAAAQADAAEAAAAFAAEAAQADAAEAAAAGAAEAAQADAAEAAAAGAAAAAQADAAEAAAAFAAAAAQADAAEAAAAEAAAAAQADAAEAAAACAAEAAQADAAEAAAA=")
+tile_set = SubResource("TileSet_pm3sp")
+
+[node name="Timer" type="Timer" parent="." unique_id=582292245]

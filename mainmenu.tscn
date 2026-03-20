@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://crwwoa16ktcql"]
 
-[ext_resource type="Texture2D" uid="uid://dhq7s7j276aqr" path="res://Assets/1_JiSQVnR_nibjRC1azRl6Fw.jpg" id="1_cmhrf"]
+[ext_resource type="Texture2D" uid="uid://dhq7s7j276aqr" path="res://Assets/placeholders/1_JiSQVnR_nibjRC1azRl6Fw.jpg" id="1_cmhrf"]
+[ext_resource type="Script" uid="uid://0g06mg1qec0u" path="res://window.gd" id="2_d2nv2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtcfe"]
 texture = ExtResource("1_cmhrf")
@@ -81,3 +82,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wtcfe")
 text = "exit
 "
+
+[node name="Window" type="Window" parent="." unique_id=538483060]
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+script = ExtResource("2_d2nv2")

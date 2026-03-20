@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://co0arguj1sf8c"]
+
+[ext_resource type="Script" uid="uid://cxvvv5olooe7s" path="res://falling_circle.gd" id="1_d1qbs"]
+[ext_resource type="Texture2D" uid="uid://c77qx70jli0d3" path="res://Assets/placeholders/sun-circle-line-art-vector-removebg-preview.png" id="1_v0emv"]
+
+[node name="Node2D" type="Control" unique_id=1825125085]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2050056476]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=762011189]
+texture = ExtResource("1_v0emv")
+script = ExtResource("1_d1qbs")

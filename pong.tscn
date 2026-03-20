@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bfkwieyxjeajg"]
 
-[ext_resource type="Texture2D" uid="uid://qd3dsdx0a34t" path="res://Assets/Bg.png" id="1_4opyw"]
+[ext_resource type="Texture2D" uid="uid://qd3dsdx0a34t" path="res://Assets/placeholders/Bg.png" id="1_4opyw"]
 [ext_resource type="FontFile" uid="uid://0b74kuykh6c" path="res://Assets/pixel_font.ttf" id="2_pkvn5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5tya"]
