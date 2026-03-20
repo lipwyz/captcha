@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://brx4r8gqv1e4i"]
+
+[ext_resource type="Texture2D" uid="uid://b8olml6q1pjsr" path="res://Assets/placeholders/cata_vento0.png" id="1_5su7q"]
+[ext_resource type="Script" uid="uid://bm075nr0f0rd5" path="res://cata_vento_scr.gd" id="1_qqgwi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqgwi"]
+size = Vector2(3, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7548"]
+size = Vector2(128, 3)
+
+[node name="Cata_Vento" type="Area2D" unique_id=944994665]
+script = ExtResource("1_qqgwi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=842016326]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_qqgwi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1467207831]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_y7548")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=310314972]
+texture = ExtResource("1_5su7q")
