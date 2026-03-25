@@ -12,18 +12,17 @@ func _ready() -> void:
 
 func test_abas() -> void:
 	# aba 1
-	var aba_abode := Aba.criar_aba("Abode", false, Aba.Estados.Idle, "https://Abode.com/inscricao/cancelar/com-certeza-vai-dar-bom.com")
+	var mini_game_abode : MiniGameRes = load("res://scene/Navegador/conteudoTeste/miniGame1.tres")
+	var aba_abode := mini_game_abode.criar_aba()
 	navegador.add_aba(aba_abode)
-	navegador.set_conteudo_aba(aba_abode, load("res://scene/Navegador/conteudoTeste/Conteudo1.tscn"))
+	navegador.set_conteudo_aba(aba_abode, mini_game_abode.conteudo)
 	## coloca essa aba como a padrao
 	navegador.aba_padrao = aba_abode
 	navegador.atual_aba = aba_abode
 	
 	# aba 2
-	var aba_2 := Aba.criar_aba("Aba 2", false, Aba.Estados.Idle, "https://site-muito-maneiro.com.br")
-	navegador.add_aba(aba_2)
-	navegador.set_conteudo_aba(aba_2, load("res://scene/Navegador/conteudoTeste/Conteudo2.tscn"))
+	var mini_game_2 : MiniGameRes = load("res://scene/Navegador/conteudoTeste/miniGame2.tres")
+	mini_game_2.navegador_add_mini_game(navegador)
 	# aba 3
-	var aba_3 := Aba.criar_aba("Aba 3", false, Aba.Estados.Idle, "https://gamelab-so-tem-goat.com")
-	navegador.add_aba(aba_3)
-	navegador.set_conteudo_aba(aba_3, load("res://scene/Navegador/conteudoTeste/Conteudo3.tscn"))
+	var mini_game_3 : MiniGameRes = load("res://scene/Navegador/conteudoTeste/miniGame3.tres")
+	mini_game_3.navegador_add_mini_game(navegador)

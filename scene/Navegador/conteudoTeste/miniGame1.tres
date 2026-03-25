@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MiniGameRes" format=3 uid="uid://xid604ljsui1"]
+
+[ext_resource type="PackedScene" uid="uid://cb32ypajp5ipx" path="res://scene/Navegador/conteudoTeste/Conteudo1.tscn" id="1_0kj8y"]
+[ext_resource type="Script" uid="uid://cp2dri3177uqs" path="res://scene/Navegador/conteudoTeste/MiniGameRes.gd" id="2_dhrsu"]
+
+[resource]
+script = ExtResource("2_dhrsu")
+aba_titulo = "Abode"
+aba_url = "https://Abode.com/inscricao/cancelar/com-certeza-vai-dar-bom.com"
+conteudo = ExtResource("1_0kj8y")
