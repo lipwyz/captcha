@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://crwwoa16ktcql"]
 
-[ext_resource type="Texture2D" uid="uid://dhq7s7j276aqr" path="res://Assets/placeholders/1_JiSQVnR_nibjRC1azRl6Fw.jpg" id="1_cmhrf"]
-[ext_resource type="Script" uid="uid://0g06mg1qec0u" path="res://window.gd" id="2_d2nv2"]
+[ext_resource type="Texture2D" uid="uid://dhq7s7j276aqr" path="res://Assets/placeholders/1_JiSQVnR_nibjRC1azRl6Fw.jpg" id="1_xklov"]
+[ext_resource type="Script" uid="uid://b8b6ega63mk0n" path="res://button_start.gd" id="2_bxvdx"]
+[ext_resource type="PackedScene" uid="uid://lpodi2oivp3t" path="res://Assets/Scenes/scary_maze.tscn" id="3_bxvdx"]
+[ext_resource type="Script" uid="uid://0g06mg1qec0u" path="res://window.gd" id="3_o7t0x"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtcfe"]
-texture = ExtResource("1_cmhrf")
+texture = ExtResource("1_xklov")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e48y"]
 bg_color = Color(0.86467505, 0.86467516, 0.864675, 1)
@@ -60,7 +62,10 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wtcfe")
+action_mode = 0
 text = "Start game"
+script = ExtResource("2_bxvdx")
+scary_maze = ExtResource("3_bxvdx")
 
 [node name="Button3" type="Button" parent="VBoxContainer" unique_id=1959079553]
 layout_mode = 2
@@ -86,4 +91,4 @@ text = "exit
 [node name="Window" type="Window" parent="." unique_id=538483060]
 oversampling_override = 1.0
 position = Vector2i(0, 36)
-script = ExtResource("2_d2nv2")
+script = ExtResource("3_o7t0x")
