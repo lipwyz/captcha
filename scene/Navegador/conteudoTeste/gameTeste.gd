@@ -3,6 +3,8 @@ extends Node
 @onready var navegador: Navegador = $Navegador
 
 func _ready() -> void:
+	GameGerenciador.set_navegador(navegador)
+	
 	# comeca com o navegador escondido
 	navegador.fechar()
 	# cria as abas de teste

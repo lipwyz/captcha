@@ -12,10 +12,3 @@ func mostrar_conteudo(conteudo_ref: PackedScene) -> void:
 	# coloca o novo conteudo
 	var conteudo = conteudo_ref.instantiate()
 	panel_conteudo.add_child(conteudo)
-	
-	# TODO: trocar esse codigo temporario
-	if conteudo is Conteudo1:
-		conteudo.navegador = navegador
-
-# TODO: codigo temporario
-@export var navegador : Navegador
