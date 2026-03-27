@@ -1,4 +1,4 @@
-class_name Controler
+class_name Tile_map_colider
 extends TileMapLayer
 @onready var _timer: Timer = $Time_until_detect
 var current_hovered_tile: Vector2i = Vector2i(-1, -1)

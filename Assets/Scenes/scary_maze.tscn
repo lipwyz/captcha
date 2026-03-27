@@ -51,7 +51,7 @@ sources/1 = SubResource("TileSetAtlasSource_rr2p5")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iw04b"]
 texture = ExtResource("6_qmr15")
 
-[node name="Node2D" type="Control" unique_id=1302752186]
+[node name="Controller" type="Control" unique_id=1302752186]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -71,6 +71,11 @@ wait_time = 1.5
 one_shot = true
 autostart = true
 
+[node name="mousePos" type="Node2D" parent="." unique_id=172207351 node_paths=PackedStringArray("mouse_warp")]
+position = Vector2(103, 532)
+script = ExtResource("3_p7u32")
+mouse_warp = NodePath(".")
+
 [node name="Cata_Vento" parent="." unique_id=195424608 instance=ExtResource("2_t328u")]
 position = Vector2(368, 512)
 velocity = 0.02
@@ -83,11 +88,6 @@ velocity = -0.02
 position = Vector2(624, 512)
 velocity = 0.02
 
-[node name="mousePos" type="Node2D" parent="." unique_id=172207351 node_paths=PackedStringArray("mouse_warp")]
-position = Vector2(103, 532)
-script = ExtResource("3_p7u32")
-mouse_warp = NodePath(".")
-
 [node name="Panel" type="Panel" parent="." unique_id=465140420]
 visible = false
 layout_mode = 0
@@ -96,4 +96,8 @@ offset_bottom = 651.0
 theme = SubResource("Theme_7ncv7")
 theme_override_styles/panel = SubResource("StyleBoxTexture_iw04b")
 
+[connection signal="focus_entered" from="." to="Cata_Vento" method="_on_mouse_entered"]
 [connection signal="timeout" from="TileMapLayer/Time_until_detect" to="TileMapLayer" method="_on_timer_timeout"]
+[connection signal="colided" from="Cata_Vento" to="." method="_on_cata_vento_colided"]
+[connection signal="colided" from="Cata_Vento" to="." method="_on_colided"]
+[connection signal="colided" from="Cata_Vento" to="." method="_ready"]
