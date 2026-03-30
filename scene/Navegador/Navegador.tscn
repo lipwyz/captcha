@@ -50,9 +50,8 @@ split_offset = 102
 [node name="NavegadorControles" parent="Panel/VSplit" unique_id=1883575481 instance=ExtResource("2_1uexu")]
 layout_mode = 2
 
-[node name="NavegadorConteudo" parent="Panel/VSplit" unique_id=811463956 node_paths=PackedStringArray("navegador") instance=ExtResource("3_e3m55")]
+[node name="NavegadorConteudo" parent="Panel/VSplit" unique_id=811463956 instance=ExtResource("3_e3m55")]
 layout_mode = 2
-navegador = NodePath("../../..")
 
 [editable path="Panel/VSplit/NavegadorControles"]
 [editable path="Panel/VSplit/NavegadorConteudo"]

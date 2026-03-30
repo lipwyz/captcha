@@ -27,6 +27,3 @@ theme_override_constants/margin_bottom = 10
 
 [node name="PanelConteudo" type="PanelContainer" parent="Margin" unique_id=1499278014]
 layout_mode = 2
-
-[node name="Conteudo" type="Control" parent="Margin/PanelConteudo" unique_id=343160356]
-layout_mode = 2

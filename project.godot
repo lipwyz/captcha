@@ -17,8 +17,12 @@ config/icon="res://Assets/icon.svg"
 
 [autoload]
 
-window/size/mode=3
 GameGerenciador="*uid://xwyb8thgm4jf"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [physics]
 
