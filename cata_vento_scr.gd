@@ -1,6 +1,13 @@
+class_name Cata_vento
 extends Area2D
 
 @export var velocity: float = 0.04
+<<<<<<< Updated upstream
+=======
+## @onready var controller: Control = $".."
+
+signal colided
+>>>>>>> Stashed changes
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

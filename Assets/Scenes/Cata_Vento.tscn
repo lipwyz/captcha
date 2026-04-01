@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://brx4r8gqv1e4i"]
+[gd_scene format=3 uid="uid://bbuti6cohvj25"]
 
 [ext_resource type="Texture2D" uid="uid://b8olml6q1pjsr" path="res://Assets/placeholders/cata_vento0.png" id="1_5su7q"]
 [ext_resource type="Script" uid="uid://bm075nr0f0rd5" path="res://cata_vento_scr.gd" id="1_qqgwi"]
@@ -22,3 +22,5 @@ shape = SubResource("RectangleShape2D_y7548")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=310314972]
 texture = ExtResource("1_5su7q")
+
+[connection signal="mouse_entered" from="." to="." method="mouse_entered"]

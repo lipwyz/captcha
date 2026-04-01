@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dmduhn6tnxvid" path="res://Assets/Scenes/scary_maze_controll.gd" id="1_hlo06"]
 [ext_resource type="Texture2D" uid="uid://3uvfjrfj0tjo" path="res://Assets/placeholders/Maze.png" id="2_33gcv"]
-[ext_resource type="PackedScene" uid="uid://brx4r8gqv1e4i" path="res://Assets/Scenes/Cata_Vento.tscn" id="2_t328u"]
+[ext_resource type="PackedScene" uid="uid://bbuti6cohvj25" path="res://Assets/Scenes/Cata_Vento.tscn" id="2_t328u"]
 [ext_resource type="Script" uid="uid://bn7sr3gxarbor" path="res://Assets/Scenes/tile_map_colider.gd" id="3_hlo06"]
 [ext_resource type="Script" uid="uid://ghkgi233ocb6" path="res://Assets/Scenes/mouse_pos.gd" id="3_p7u32"]
 [ext_resource type="Texture2D" uid="uid://vmlmiegrkd4p" path="res://Assets/placeholders/image.png" id="6_qmr15"]
@@ -58,6 +58,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_hlo06")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1112217256]
@@ -71,6 +72,7 @@ wait_time = 1.5
 one_shot = true
 autostart = true
 
+<<<<<<< Updated upstream
 [node name="Cata_Vento" parent="." unique_id=195424608 instance=ExtResource("2_t328u")]
 position = Vector2(368, 512)
 velocity = 0.02
@@ -83,6 +85,8 @@ velocity = -0.02
 position = Vector2(624, 512)
 velocity = 0.02
 
+=======
+>>>>>>> Stashed changes
 [node name="mousePos" type="Node2D" parent="." unique_id=172207351 node_paths=PackedStringArray("mouse_warp")]
 position = Vector2(103, 532)
 script = ExtResource("3_p7u32")
@@ -96,4 +100,19 @@ offset_bottom = 651.0
 theme = SubResource("Theme_7ncv7")
 theme_override_styles/panel = SubResource("StyleBoxTexture_iw04b")
 
+<<<<<<< Updated upstream
+=======
+[node name="Cata_Vento" parent="." unique_id=944994665 instance=ExtResource("2_t328u")]
+position = Vector2(392, 512)
+velocity = 0.02
+
+[node name="Cata_Vento2" parent="." unique_id=408315593 instance=ExtResource("2_t328u")]
+position = Vector2(520, 512)
+velocity = -0.02
+
+[node name="Cata_Vento3" parent="." unique_id=876403308 instance=ExtResource("2_t328u")]
+position = Vector2(648, 512)
+velocity = 0.02
+
+>>>>>>> Stashed changes
 [connection signal="timeout" from="TileMapLayer/Time_until_detect" to="TileMapLayer" method="_on_timer_timeout"]

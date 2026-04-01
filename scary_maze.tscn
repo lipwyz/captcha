@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bd1ewlpgabmu5"]
 
 [ext_resource type="Texture2D" uid="uid://3uvfjrfj0tjo" path="res://Assets/placeholders/Maze.png" id="2_33gcv"]
-[ext_resource type="PackedScene" uid="uid://c2kswvh8gyemr" path="res://Cata_Vento.tscn" id="2_t328u"]
+[ext_resource type="PackedScene" uid="uid://c2kswvh8gyemr" path="res://Assets/Cata_Vento.tscn" id="2_t328u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rr2p5"]
 texture = ExtResource("2_33gcv")
