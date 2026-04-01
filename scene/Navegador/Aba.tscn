@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dxiaud0xsx1he"]
+
+[ext_resource type="Script" uid="uid://c0io4m2qepy5i" path="res://scene/Navegador/aba.gd" id="1_7n5ku"]
+
+[node name="Aba" type="PanelContainer" unique_id=462069909]
+clip_contents = true
+custom_minimum_size = Vector2(120, 32)
+script = ExtResource("1_7n5ku")
+cores_aba = Dictionary[int, Color]({
+0: Color(0, 0, 0, 0),
+1: Color(1, 1, 1, 0.09803922),
+2: Color(1, 1, 1, 0.19607843),
+3: Color(1, 0, 0, 0.09803922)
+})
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1355920935]
+layout_mode = 2
+color = Color(1, 1, 1, 0.09803922)
+
+[node name="HBox" type="HBoxContainer" parent="." unique_id=1723749304]
+layout_mode = 2
+
+[node name="LabelNomeSite" type="Label" parent="HBox" unique_id=600044924]
+layout_mode = 2
+mouse_filter = 1
+text = " Abode"
+
+[node name="Separador" type="Control" parent="HBox" unique_id=419149675]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="ButtonFechar" type="Button" parent="HBox" unique_id=96849118]
+layout_mode = 2
+text = "X"
+flat = true
+
+[connection signal="pressed" from="HBox/ButtonFechar" to="." method="_on_button_fechar_pressed"]

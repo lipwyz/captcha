@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://d2re4gf7te0b3"]
+
+[ext_resource type="Script" uid="uid://c133twpbg8u3j" path="res://scene/Navegador/conteudoTeste/character_body_2d.gd" id="1_8sodc"]
+[ext_resource type="Script" uid="uid://buj51x3wn5mi0" path="res://scene/Navegador/conteudoTeste/conteudo_3.gd" id="1_c3d8w"]
+[ext_resource type="Texture2D" uid="uid://dn6fmp6f8401k" path="res://Assets/icon.svg" id="1_ltc5j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bjvjo"]
+radius = 15.033297
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8sodc"]
+radius = 23.0
+
+[node name="Control3" type="Control" unique_id=118735360]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c3d8w")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=203352543]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.49978924, 0.3742833, 0.19270363, 1)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1393818344]
+
+[node name="Area2D" type="Area2D" parent="Node2D" unique_id=540265499]
+position = Vector2(199, 316)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D" unique_id=538305472]
+shape = SubResource("CircleShape2D_bjvjo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/Area2D" unique_id=1243588925]
+modulate = Color(0, 0.5406265, 0.010479605, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_ltc5j")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D" unique_id=969796028]
+position = Vector2(514, 322)
+motion_mode = 1
+script = ExtResource("1_8sodc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CharacterBody2D" unique_id=1489213230]
+shape = SubResource("CircleShape2D_8sodc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterBody2D" unique_id=415401864]
+scale = Vector2(0.359375, 0.359375)
+texture = ExtResource("1_ltc5j")
+
+[connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_area_2d_body_entered"]

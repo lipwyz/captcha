@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bt12d62er2cam"]
+
+[ext_resource type="Script" uid="uid://un0udj0xabx6" path="res://Assets/AreaTrabalho/area_trabalho.gd" id="1_1v7s4"]
+[ext_resource type="Texture2D" uid="uid://b0rqlf2j205p8" path="res://Assets/AreaTrabalho/Windows_XP_Desktop.png" id="2_r8b2h"]
+[ext_resource type="Texture2D" uid="uid://1kewgvo36uig" path="res://Assets/AreaTrabalho/internetExplorer512x512.png" id="3_acnbx"]
+
+[node name="AreaTrabalho" type="Control" unique_id=24769322]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1v7s4")
+
+[node name="SpriteBackground" type="Sprite2D" parent="." unique_id=1797327825]
+scale = Vector2(1.5, 1.125)
+texture = ExtResource("2_r8b2h")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="ButtonExplorer" type="Button" parent="." unique_id=1757206728]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 550.0
+offset_top = -212.0
+offset_right = 1070.0
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+icon = ExtResource("3_acnbx")
+flat = true
+
+[connection signal="pressed" from="ButtonExplorer" to="." method="_on_button_explorer_pressed"]
