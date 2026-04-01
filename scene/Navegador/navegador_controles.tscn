@@ -120,4 +120,6 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 3
 
+[connection signal="pressed" from="VBox/PainelTopBar/HBox/HBoxControles/ButtonMinimizar" to="." method="_on_button_minimizar_pressed"]
+[connection signal="pressed" from="VBox/PainelTopBar/HBox/HBoxControles/ButtonMaximizar" to="." method="_on_button_maximizar_pressed"]
 [connection signal="pressed" from="VBox/PainelTopBar/HBox/HBoxControles/ButtonFechar" to="." method="_on_button_fechar_navegador_pressed"]

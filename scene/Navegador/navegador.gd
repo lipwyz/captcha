@@ -7,9 +7,12 @@ extends Control
 @export var aba_padrao : Aba
 var atual_aba : Aba = null
 
+# abrir navegador pelo app do desktop
 func abrir() -> void:
 	show()
 
+# fechar o navegador e voltar pro desktop
+#	(nao precisamos fechar realmente, so esconder)
 func fechar() -> void:
 	hide()
 
@@ -34,15 +37,19 @@ func mudar_aba(nova_aba : Aba) -> void:
 	# load conteudo da nova aba
 	navegador_conteudo.mostrar_conteudo(nova_aba.conteudo)
 
+# adiciona uma aba no navegador
 func add_aba(aba : Aba) -> void:
+	# conecta os sinais da aba
 	aba.clicada.connect(mudar_aba.bind(aba))
 	aba.fechada.connect(deletar_aba.bind(aba))
 	# adiciona na tree e visualmente no jogo
 	navegador_controles.add_aba(aba)
 
+# coloca o conteudo que vai ser mostrado em uma aba
 func set_conteudo_aba(aba : Aba, conteudo : PackedScene) -> void:
 	aba.conteudo = conteudo
 
+# fecha a aba, removendo o conteudo dela
 func deletar_aba(aba : Aba) -> void:
 	mudar_aba(aba_padrao)
 	aba.queue_free()
