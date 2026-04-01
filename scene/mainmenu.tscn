@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://crwwoa16ktcql"]
 
 [ext_resource type="Texture2D" uid="uid://dhq7s7j276aqr" path="res://Assets/1_JiSQVnR_nibjRC1azRl6Fw.jpg" id="1_cmhrf"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtcfe"]
-texture = ExtResource("1_cmhrf")
+[ext_resource type="Material" uid="uid://dr1n8yosdjw2b" path="res://Shaders/Pixelado.tres" id="1_h8uk4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e48y"]
 bg_color = Color(0.86467505, 0.86467516, 0.864675, 1)
@@ -19,6 +17,9 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtcfe"]
+texture = ExtResource("1_cmhrf")
+
 [node name="Control" type="Control" unique_id=430253804]
 layout_mode = 3
 anchors_preset = 15
@@ -26,15 +27,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="." unique_id=1224765332]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_wtcfe")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1437756082]
 layout_mode = 1
@@ -81,3 +73,13 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wtcfe")
 text = "exit
 "
+
+[node name="Panel" type="Panel" parent="." unique_id=1224765332]
+material = ExtResource("1_h8uk4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wtcfe")
