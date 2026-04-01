@@ -1,3 +1,7 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://dr1n8yosdjw2b"]
 
+[ext_resource type="Shader" path="res://Shaders/Pixelado.gdshader" id="1_alpb6"]
+
 [resource]
+shader = ExtResource("1_alpb6")
+shader_parameter/pixel_size = 2.0
