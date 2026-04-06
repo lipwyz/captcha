@@ -14,11 +14,13 @@ enum Estados {
 	Desativada, 	# ja foi completada
 }
 
+@export_group("Dados da Aba")
 @export var titulo : String = "Titulo"
 @export var fechavel : bool = false
 @export var estado_inicial : Estados = Estados.Idle
 @export var texto_url : String = "https://texto.com"
 
+@export_group("Configuracoes")
 @export var cores_aba : Dictionary[Estados, Color]
 
 @onready var label_nome_site: Label = $HBox/LabelNomeSite

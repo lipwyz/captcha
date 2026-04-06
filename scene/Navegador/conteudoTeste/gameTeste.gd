@@ -15,7 +15,7 @@ func test_abas() -> void:
 	var mini_game_abode : MiniGameRes = load("res://scene/Navegador/conteudoTeste/miniGame1.tres")
 	var aba_abode := mini_game_abode.criar_aba()
 	navegador.add_aba(aba_abode)
-	navegador.set_conteudo_aba(aba_abode, mini_game_abode.conteudo)
+	navegador.criar_conteudo_aba(aba_abode, mini_game_abode.conteudo)
 	## coloca essa aba como a padrao
 	navegador.aba_padrao = aba_abode
 	navegador.atual_aba = aba_abode

@@ -52,7 +52,7 @@ func add_aba(aba : Aba) -> void:
 	navegador_controles.add_aba(aba)
 
 ## coloca o conteudo que vai ser mostrado em uma aba
-func set_conteudo_aba(aba : Aba, conteudo_ref : PackedScene) -> void:
+func criar_conteudo_aba(aba : Aba, conteudo_ref : PackedScene) -> void:
 	navegador_conteudo.criar_conteudo(aba, conteudo_ref)
 
 ## fecha a aba, removendo o conteudo dela

@@ -14,7 +14,7 @@ func mostrar_conteudo(aba : Aba) -> void:
 	# pega o conteudo minimizado da aba para ser mostrado
 	_display_conteudo_minimizado(aba)
 
-##
+## instancia o conteudo, minimizando, e criando a conexao com uma aba
 func criar_conteudo(aba : Aba, conteudo_ref : PackedScene) -> void:
 	# cria o novo conteudo para colocar na aba
 	#var conteudo_ref := aba.conteudo
@@ -22,7 +22,7 @@ func criar_conteudo(aba : Aba, conteudo_ref : PackedScene) -> void:
 	# 
 	conteudo_por_aba[aba] = conteudo
 	#
-	conteudos_abas_minimizadas.add_child(conteudo)
+	_minimizar_conteudo(conteudo)
 	
 	# TODO: teste, colocar solucao melhor depois
 	if conteudo is Conteudo3:
@@ -44,15 +44,29 @@ func remover() -> void:
 func _minimizar_conteudo_atual() -> void:
 	for node in panel_conteudo.get_children():
 		panel_conteudo.remove_child(node)
-		conteudos_abas_minimizadas.add_child(node)
+		_minimizar_conteudo(node)
 
+## minimiza um nodo, parando seu processamento
+func _minimizar_conteudo(node : Node) -> void:
+	conteudos_abas_minimizadas.add_child(node)
+	node.set_process(false)
+	node.set_physics_process(false)
+
+## desfaz a minimizacao, voltando o processamento do nodo
+func _desminimizar_conteudo(node : Node) -> void:
+	conteudos_abas_minimizadas.remove_child(node)
+	node.set_process(true)
+	node.set_physics_process(true)
+
+## mostra um conteudo que foi minimizado
 func _display_conteudo_minimizado(aba: Aba) -> void:
 	# pega o conteudo que ja existe e esta minimizado
 	var conteudo := conteudo_por_aba[aba]
-	conteudos_abas_minimizadas.remove_child(conteudo)
+	_desminimizar_conteudo(conteudo)
 	# display o conteudo da aba
 	_display_conteudo(conteudo)
 
+## mostra conteudo
 func _display_conteudo(conteudo : Node) -> void:
 	panel_conteudo.add_child(conteudo)
 
