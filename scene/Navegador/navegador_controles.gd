@@ -46,16 +46,26 @@ func _verificar_clipar_abas_mostradas() -> void:
 func clipar_abas_mostradas() -> void:
 	# escondo todas as abas
 	abas_list.map(func(aba : Aba): aba.hide())
-	# mostro so as max_abas_mostradas partindo da aba de indice abas_mostradas_index
-	for i in range(abas_mostradas_index, abas_mostradas_index+max_abas_mostradas): 
+	# mostra so as max_abas_mostradas partindo da aba de indice abas_mostradas_index
+	# ate o index da ultima aba a ser mostrada, ou a quantidade de abas
+	var ate_index : int = abas_mostradas_index + max_abas_mostradas
+	print("ate_index ", ate_index)
+	ate_index = min(ate_index, abas_list.size())
+	print("ate_index min ", ate_index)
+	# mostra as abas selecionadas
+	for i in range(abas_mostradas_index, ate_index): 
 		abas_list[i].show()
 	#
 
 func _clipar_move_esquerda() -> void:
+	if abas_list.size() <= max_abas_mostradas: return
+	# diminui 1 o index, ate zero
 	abas_mostradas_index = max(0, abas_mostradas_index-1)
 	clipar_abas_mostradas()
 
 func _clipar_move_direita() -> void:
+	if abas_list.size() <= max_abas_mostradas: return
+	# aumenta 1 o index, ate limite de index a direita
 	var lim_index_dir : int = abas_list.size() - max_abas_mostradas
 	abas_mostradas_index = min(lim_index_dir, abas_mostradas_index+1)
 	clipar_abas_mostradas()
@@ -69,3 +79,12 @@ func _on_button_maximizar_pressed() -> void:
 
 func _on_button_minimizar_pressed() -> void:
 	emit_signal("minimizar")
+
+
+# detectar o click na aba, para clicar e entrar em uma aba
+func _gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.is_pressed():
+			_clipar_move_direita()
+		elif event.button_index == MOUSE_BUTTON_WHEEL_UP and event.is_pressed():
+			_clipar_move_esquerda()
