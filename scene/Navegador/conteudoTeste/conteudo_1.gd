@@ -1,5 +1,5 @@
 class_name Conteudo1
-extends Control
+extends ConteudoAba
 
 func _on_button_pressed() -> void:
 	var aba := Aba.criar_aba("Nova Aba", true, Aba.Estados.Idle, "https://teste/teste.com")
