@@ -59,5 +59,5 @@ func criar_conteudo_aba(aba : Aba, conteudo_ref : PackedScene) -> void:
 func deletar_aba(aba : Aba) -> void:
 	mudar_aba(aba_padrao)
 	navegador_conteudo.liberar_conteudo_aba(aba)
-	aba.queue_free()
+	navegador_controles.remove_aba(aba)
 	
