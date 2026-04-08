@@ -1,7 +1,7 @@
-extends Node
+extends Control
 class_name ConteudoAba
 
 signal terminado
 
-func terminar(arg : String = "") -> void:
-	emit_signal("terminado", arg)
+func terminar() -> void:
+	emit_signal("terminado")

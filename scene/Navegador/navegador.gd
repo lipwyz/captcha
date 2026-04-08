@@ -8,14 +8,19 @@ extends Control
 @export var aba_padrao : Aba
 var atual_aba : Aba = null
 
+signal aberto
+signal fechado
+
 # abrir navegador pelo app do desktop
 func abrir() -> void:
 	show()
+	emit_signal("aberto")
 
 # fechar o navegador e voltar pro desktop
 #	(nao precisamos fechar realmente, so esconder)
 func fechar() -> void:
 	hide()
+	emit_signal("fechado")
 
 func _ready() -> void:
 	# garante que abas minimizadas nao sao visiveis

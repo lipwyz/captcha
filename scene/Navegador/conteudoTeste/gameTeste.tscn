@@ -18,6 +18,7 @@ offset_right = -137.0
 offset_bottom = -50.0
 
 [node name="ImagemTamRef" parent="Navegador/Panel/VSplit/NavegadorConteudo/Margin/PanelConteudo" parent_id_path=PackedInt32Array(1862273277, 811463956, 1499278014) index="0" unique_id=1342923152 instance=ExtResource("4_4dg7q")]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
