@@ -1,12 +1,14 @@
 extends Area2D
 
 @export var velocity: float = 0.04
-# Called when the node enters the scene tree for the first time.
+signal colided
+
 func _ready() -> void:
-	pass # Replace with function body.
+	mouse_entered.connect(_on_mouse_entered)
 
+func _on_mouse_entered():
+	colided.emit() 
+	print("colococec")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	rotate(velocity)
-	pass

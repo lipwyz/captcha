@@ -56,8 +56,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = 2.0
+offset_right = -11.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_hlo06")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1112217256]
@@ -71,18 +76,6 @@ wait_time = 1.5
 one_shot = true
 autostart = true
 
-[node name="Cata_Vento" parent="." unique_id=195424608 instance=ExtResource("2_t328u")]
-position = Vector2(368, 512)
-velocity = 0.02
-
-[node name="Cata_Vento2" parent="." unique_id=944994665 instance=ExtResource("2_t328u")]
-position = Vector2(496, 512)
-velocity = -0.02
-
-[node name="Cata_Vento3" parent="." unique_id=1648369419 instance=ExtResource("2_t328u")]
-position = Vector2(624, 512)
-velocity = 0.02
-
 [node name="mousePos" type="Node2D" parent="." unique_id=172207351 node_paths=PackedStringArray("mouse_warp")]
 position = Vector2(103, 532)
 script = ExtResource("3_p7u32")
@@ -90,10 +83,21 @@ mouse_warp = NodePath(".")
 
 [node name="Panel" type="Panel" parent="." unique_id=465140420]
 visible = false
+z_index = 1
 layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 651.0
 theme = SubResource("Theme_7ncv7")
 theme_override_styles/panel = SubResource("StyleBoxTexture_iw04b")
 
+[node name="Cata_Vento" parent="." unique_id=944994665 instance=ExtResource("2_t328u")]
+position = Vector2(370, 512)
+
+[node name="Cata_Vento2" parent="." unique_id=236887110 instance=ExtResource("2_t328u")]
+position = Vector2(498, 512)
+
+[node name="Cata_Vento3" parent="." unique_id=1697578856 instance=ExtResource("2_t328u")]
+position = Vector2(626, 512)
+
 [connection signal="timeout" from="TileMapLayer/Time_until_detect" to="TileMapLayer" method="_on_timer_timeout"]
+[connection signal="colided" from="Cata_Vento" to="." method="_ready"]
