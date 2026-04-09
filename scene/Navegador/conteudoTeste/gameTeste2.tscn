@@ -5,8 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cxdrd8o2eceyg" path="res://scene/Navegador/Navegador.tscn" id="3_lxuwx"]
 [ext_resource type="Theme" uid="uid://c6p17ql6w81b1" path="res://themes/themeTest.tres" id="4_0qcyc"]
 [ext_resource type="PackedScene" uid="uid://sv6hm87ln5ip" path="res://scene/Navegador/conteudoTeste/imagem_tam_ref.tscn" id="4_exhum"]
-
-[sub_resource type="Theme" id="Theme_lxuwx"]
+[ext_resource type="Theme" uid="uid://b6i2a1wd1pm45" path="res://themes/addressbar.tres" id="5_lxuwx"]
 
 [node name="GameTeste" type="Node" unique_id=778971112]
 script = ExtResource("1_uux6s")
@@ -21,8 +20,8 @@ offset_right = -137.0
 offset_bottom = -50.0
 theme = ExtResource("4_0qcyc")
 
-[node name="Panel" parent="Navegador" index="0" unique_id=1862289145]
-theme = SubResource("Theme_lxuwx")
+[node name="PanelAddress" parent="Navegador/Panel/VSplit/NavegadorControles/VBox/MarginHotBar/PanelHotBar/HBox" parent_id_path=PackedInt32Array(1862273277, 1883575481, 2141403913) index="0" unique_id=634013428]
+theme = ExtResource("5_lxuwx")
 
 [node name="ImagemTamRef" parent="Navegador/Panel/VSplit/NavegadorConteudo/Margin/PanelConteudo" parent_id_path=PackedInt32Array(1862273277, 811463956, 1499278014) index="0" unique_id=1342923152 instance=ExtResource("4_exhum")]
 layout_mode = 2
