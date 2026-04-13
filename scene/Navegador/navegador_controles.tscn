@@ -64,8 +64,22 @@ layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_right = 25
 
-[node name="HBoxAbas" type="HBoxContainer" parent="VBox/MarginAbasBar" unique_id=802627846]
+[node name="HBox" type="HBoxContainer" parent="VBox/MarginAbasBar" unique_id=105023278]
 layout_mode = 2
+
+[node name="HBoxAbas" type="HBoxContainer" parent="VBox/MarginAbasBar/HBox" unique_id=802627846]
+layout_mode = 2
+
+[node name="HBoxSetas" type="HBoxContainer" parent="VBox/MarginAbasBar/HBox" unique_id=464330227]
+layout_mode = 2
+
+[node name="ButtonSetaEsq" type="Button" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=154491246]
+layout_mode = 2
+text = "<"
+
+[node name="ButtonSetaDir" type="Button" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=341463226]
+layout_mode = 2
+text = ">"
 
 [node name="MarginHotBar" type="MarginContainer" parent="VBox" unique_id=205874004]
 layout_mode = 2
@@ -123,3 +137,5 @@ size_flags_horizontal = 3
 [connection signal="pressed" from="VBox/PainelTopBar/HBox/HBoxControles/ButtonMinimizar" to="." method="_on_button_minimizar_pressed"]
 [connection signal="pressed" from="VBox/PainelTopBar/HBox/HBoxControles/ButtonMaximizar" to="." method="_on_button_maximizar_pressed"]
 [connection signal="pressed" from="VBox/PainelTopBar/HBox/HBoxControles/ButtonFechar" to="." method="_on_button_fechar_navegador_pressed"]
+[connection signal="pressed" from="VBox/MarginAbasBar/HBox/HBoxSetas/ButtonSetaEsq" to="." method="_clipar_move_esquerda"]
+[connection signal="pressed" from="VBox/MarginAbasBar/HBox/HBoxSetas/ButtonSetaDir" to="." method="_clipar_move_direita"]
