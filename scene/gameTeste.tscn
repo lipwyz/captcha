@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dka1omdqylv6o"]
 
-[ext_resource type="Script" uid="uid://ba5csyeytnbli" path="res://scene/Navegador/conteudoTeste/gameTeste.gd" id="1_7q5p8"]
+[ext_resource type="Script" uid="uid://ba5csyeytnbli" path="res://scene/gameTeste.gd" id="1_7q5p8"]
 [ext_resource type="PackedScene" uid="uid://bt12d62er2cam" path="res://scene/AreaTrabalho/area_trabalho.tscn" id="2_4dg7q"]
 [ext_resource type="PackedScene" uid="uid://cxdrd8o2eceyg" path="res://scene/Navegador/Navegador.tscn" id="3_uappg"]
-[ext_resource type="PackedScene" uid="uid://sv6hm87ln5ip" path="res://scene/Navegador/conteudoTeste/imagem_tam_ref.tscn" id="4_4dg7q"]
+[ext_resource type="PackedScene" uid="uid://sv6hm87ln5ip" path="res://_Debug/Testes/imagem_tam_ref.tscn" id="4_4dg7q"]
 
 [node name="GameTeste" type="Node" unique_id=778971112]
 script = ExtResource("1_7q5p8")

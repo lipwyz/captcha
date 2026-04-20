@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4xj3niamqyaj"
-path="res://.godot/imported/Confirmacaov2-Sheet.png-31e827ec5e6970c77322decfe086d8bc.ctex"
+uid="uid://bgrspnx60cqns"
+path="res://.godot/imported/cherry.png-db5c476d7427c6ae2efc0b4b141d8a34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/sheets/Confirmacaov2-Sheet.png"
-dest_files=["res://.godot/imported/Confirmacaov2-Sheet.png-31e827ec5e6970c77322decfe086d8bc.ctex"]
+source_file="res://_Debug/Temporarios/Mario/cherry.png"
+dest_files=["res://.godot/imported/cherry.png-db5c476d7427c6ae2efc0b4b141d8a34.ctex"]
 
 [params]
 

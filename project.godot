@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Captcha"
-run/main_scene="uid://crwwoa16ktcql"
+run/main_scene="uid://dka1omdqylv6o"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
@@ -26,6 +26,19 @@ window/size/viewport_height=1080
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Shaders/": "pink",
+"res://_Debug/": "gray",
+"res://scene/": "orange",
+"res://scene/AreaTrabalho/": "blue",
+"res://scene/MiniGames/": "purple",
+"res://scene/Navegador/": "green",
+"res://themes/": "yellow"
+}
 
 [physics]
 
