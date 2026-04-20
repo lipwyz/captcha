@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4xj3niamqyaj"
-path="res://.godot/imported/Confirmacaov2-Sheet.png-f8c683475999850cfb0492c57a0069f6.ctex"
+uid="uid://2ab7sovphfs7"
+path="res://.godot/imported/negativoconfirmação.png-3dca193c274f0982eb958e407694589d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/sheets/Confirmacaov2-Sheet.png"
-dest_files=["res://.godot/imported/Confirmacaov2-Sheet.png-f8c683475999850cfb0492c57a0069f6.ctex"]
+source_file="res://Assets/sprites/negativoconfirmação.png"
+dest_files=["res://.godot/imported/negativoconfirmação.png-3dca193c274f0982eb958e407694589d.ctex"]
 
 [params]
 

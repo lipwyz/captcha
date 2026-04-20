@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4xj3niamqyaj"
-path="res://.godot/imported/Confirmacaov2-Sheet.png-f8c683475999850cfb0492c57a0069f6.ctex"
+uid="uid://dlpoyy50lurgs"
+path="res://.godot/imported/propaganda hamburger-Sheet.png-384ed14c18af257ee0d4b38f1c8a9f56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/sheets/Confirmacaov2-Sheet.png"
-dest_files=["res://.godot/imported/Confirmacaov2-Sheet.png-f8c683475999850cfb0492c57a0069f6.ctex"]
+source_file="res://Assets/sprites/sheets/propaganda hamburger-Sheet.png"
+dest_files=["res://.godot/imported/propaganda hamburger-Sheet.png-384ed14c18af257ee0d4b38f1c8a9f56.ctex"]
 
 [params]
 

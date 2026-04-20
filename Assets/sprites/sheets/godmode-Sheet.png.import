@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4xj3niamqyaj"
-path="res://.godot/imported/Confirmacaov2-Sheet.png-f8c683475999850cfb0492c57a0069f6.ctex"
+uid="uid://bfr46e6wli8d8"
+path="res://.godot/imported/godmode-Sheet.png-c3de692579651862f6695e2e9329b3ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/sheets/Confirmacaov2-Sheet.png"
-dest_files=["res://.godot/imported/Confirmacaov2-Sheet.png-f8c683475999850cfb0492c57a0069f6.ctex"]
+source_file="res://Assets/sprites/sheets/godmode-Sheet.png"
+dest_files=["res://.godot/imported/godmode-Sheet.png-c3de692579651862f6695e2e9329b3ac.ctex"]
 
 [params]
 
