@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MiniGameRes" format=3 uid="uid://c8lyg2jjrh1j2"]
+
+[ext_resource type="Script" uid="uid://cp2dri3177uqs" path="res://scene/MiniGames/MiniGameRes.gd" id="1_0ptuj"]
+[ext_resource type="PackedScene" uid="uid://b2g5iwj0278dn" path="res://scene/MiniGames/SelectQuadrados/mini_game_select_quadrados.tscn" id="1_11msn"]
+
+[resource]
+script = ExtResource("1_0ptuj")
+aba_titulo = "O Mais funny"
+aba_url = "https://site-maneiro.descolado.com"
+conteudo = ExtResource("1_11msn")
+metadata/_custom_type_script = "uid://cp2dri3177uqs"
