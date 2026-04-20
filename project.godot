@@ -32,6 +32,7 @@ window/stretch/mode="viewport"
 folder_colors={
 "res://Assets/": "red",
 "res://Shaders/": "pink",
+"res://_Debug/": "gray",
 "res://scene/": "orange",
 "res://scene/AreaTrabalho/": "blue",
 "res://scene/MiniGames/": "purple",

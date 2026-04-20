@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="MiniGameRes" format=3 uid="uid://b4cu5kbxiwxwn"]
+[gd_resource type="Resource" script_class="MiniGameRes" format=3 uid="uid://c4jo8i3ff08nm"]
 
-[ext_resource type="PackedScene" uid="uid://fudmpjc682jm" path="res://scene/MiniGames/Mario/mini_game_mario.tscn" id="1_6m6yo"]
+[ext_resource type="PackedScene" uid="uid://d2re4gf7te0b3" path="res://scene/MiniGames/conteudoTeste/Conteudo3.tscn" id="1_yy0wd"]
 [ext_resource type="Script" uid="uid://cp2dri3177uqs" path="res://scene/MiniGames/MiniGameRes.gd" id="2_sns43"]
 
 [resource]
 script = ExtResource("2_sns43")
-aba_titulo = "Bario World"
-aba_url = "https://LabDosMelhores.goat.br"
-conteudo = ExtResource("1_6m6yo")
+aba_titulo = "Aba 3"
+aba_url = "https://gamelab-so-tem-goat.com.br"
+conteudo = ExtResource("1_yy0wd")

@@ -1,29 +1,29 @@
 [gd_scene format=3 uid="uid://cq4skhji0sopw"]
 
-[ext_resource type="Script" uid="uid://ba5csyeytnbli" path="res://scene/gameTeste.gd" id="1_uux6s"]
-[ext_resource type="PackedScene" uid="uid://bt12d62er2cam" path="res://scene/AreaTrabalho/area_trabalho.tscn" id="2_0qcyc"]
-[ext_resource type="PackedScene" uid="uid://cxdrd8o2eceyg" path="res://scene/Navegador/Navegador.tscn" id="3_lxuwx"]
-[ext_resource type="Theme" uid="uid://c6p17ql6w81b1" path="res://themes/themeTest.tres" id="4_0qcyc"]
-[ext_resource type="PackedScene" uid="uid://sv6hm87ln5ip" path="res://scene/MiniGames/conteudoTeste/imagem_tam_ref.tscn" id="4_exhum"]
-[ext_resource type="Theme" uid="uid://b6i2a1wd1pm45" path="res://themes/addressbar.tres" id="5_lxuwx"]
+[ext_resource type="Script" uid="uid://ba5csyeytnbli" path="res://scene/gameTeste.gd" id="1_l4r51"]
+[ext_resource type="PackedScene" uid="uid://bt12d62er2cam" path="res://scene/AreaTrabalho/area_trabalho.tscn" id="2_gxjx3"]
+[ext_resource type="PackedScene" uid="uid://cxdrd8o2eceyg" path="res://scene/Navegador/Navegador.tscn" id="3_fnrri"]
+[ext_resource type="Theme" uid="uid://c6p17ql6w81b1" path="res://themes/themeTest.tres" id="4_fcsg2"]
+[ext_resource type="Theme" uid="uid://b6i2a1wd1pm45" path="res://themes/addressbar.tres" id="5_ji07h"]
+[ext_resource type="PackedScene" uid="uid://sv6hm87ln5ip" path="res://_Debug/Testes/imagem_tam_ref.tscn" id="6_pjhh3"]
 
 [node name="GameTeste" type="Node" unique_id=778971112]
-script = ExtResource("1_uux6s")
+script = ExtResource("1_l4r51")
 
-[node name="AreaTrabalho" parent="." unique_id=24769322 node_paths=PackedStringArray("navegador") instance=ExtResource("2_0qcyc")]
+[node name="AreaTrabalho" parent="." unique_id=24769322 node_paths=PackedStringArray("navegador") instance=ExtResource("2_gxjx3")]
 navegador = NodePath("../Navegador")
 
-[node name="Navegador" parent="." unique_id=1862273277 instance=ExtResource("3_lxuwx")]
+[node name="Navegador" parent="." unique_id=1862273277 instance=ExtResource("3_fnrri")]
 offset_left = 201.0
 offset_top = 47.0
 offset_right = -137.0
 offset_bottom = -50.0
-theme = ExtResource("4_0qcyc")
+theme = ExtResource("4_fcsg2")
 
 [node name="PanelAddress" parent="Navegador/Panel/VSplit/NavegadorControles/VBox/MarginHotBar/PanelHotBar/HBox" parent_id_path=PackedInt32Array(1862273277, 1883575481, 2141403913) index="0" unique_id=634013428]
-theme = ExtResource("5_lxuwx")
+theme = ExtResource("5_ji07h")
 
-[node name="ImagemTamRef" parent="Navegador/Panel/VSplit/NavegadorConteudo/Margin/PanelConteudo" parent_id_path=PackedInt32Array(1862273277, 811463956, 1499278014) index="0" unique_id=1342923152 instance=ExtResource("4_exhum")]
+[node name="ImagemTamRef" parent="Navegador/Panel/VSplit/NavegadorConteudo/Margin/PanelConteudo" parent_id_path=PackedInt32Array(1862273277, 811463956, 1499278014) index="0" unique_id=1342923152 instance=ExtResource("6_pjhh3")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1

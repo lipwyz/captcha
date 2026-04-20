@@ -36,8 +36,8 @@ func test_abas() -> void:
 	var mini_game_2 : MiniGameRes = load("uid://c7tjim70hbg0b")
 	mini_game_2.navegador_add_mini_game(navegador)
 	# aba 3
-	var mini_game_3 : MiniGameRes = load("uid://b4cu5kbxiwxwn")
+	var mini_game_3 : MiniGameRes = load("uid://c4jo8i3ff08nm")
 	mini_game_3.navegador_add_mini_game(navegador)
-	# aba 4
-	var mini_game_4 : MiniGameRes = load("uid://c4jo8i3ff08nm")
+	# aba 4 - Bario World
+	var mini_game_4 : MiniGameRes = load("uid://b4cu5kbxiwxwn")
 	mini_game_4.navegador_add_mini_game(navegador)
