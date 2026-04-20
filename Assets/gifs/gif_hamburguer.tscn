@@ -46,6 +46,7 @@ _data = {
 [node name="Gif" type="Sprite2D" parent="." unique_id=677030562]
 
 [node name="Sprite2D" type="Sprite2D" parent="Gif" unique_id=82832910]
+position = Vector2(540, 540)
 texture = ExtResource("1_tsl64")
 hframes = 3
 vframes = 3

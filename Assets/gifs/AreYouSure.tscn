@@ -97,7 +97,7 @@ animations = [{
 [node name="AreYouSure" type="Node2D" unique_id=924679204]
 
 [node name="Confirmacaov2Sheet" type="AnimatedSprite2D" parent="." unique_id=1107818004]
-position = Vector2(608, 120)
+position = Vector2(152, 39)
 sprite_frames = SubResource("SpriteFrames_4jacx")
 frame_progress = 0.46281725
 

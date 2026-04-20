@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bobycchnemk6p"
-path="res://.godot/imported/MOUSE.png-7b8ebb51723cb8096aa5d592a45ff8f3.ctex"
+path="res://.godot/imported/MOUSE.png-ea0f15e2a3156a06b2f7e6fbf6f73360.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/MOUSE.png"
-dest_files=["res://.godot/imported/MOUSE.png-7b8ebb51723cb8096aa5d592a45ff8f3.ctex"]
+source_file="res://Assets/sprites/MOUSE.png"
+dest_files=["res://.godot/imported/MOUSE.png-ea0f15e2a3156a06b2f7e6fbf6f73360.ctex"]
 
 [params]
 

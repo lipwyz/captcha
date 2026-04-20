@@ -46,6 +46,7 @@ _data = {
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=632998095]
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=1739996434]
+position = Vector2(400, 160)
 texture = ExtResource("1_weu1a")
 hframes = 4
 vframes = 3
