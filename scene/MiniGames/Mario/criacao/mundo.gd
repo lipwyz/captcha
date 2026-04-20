@@ -1,5 +1,5 @@
-extends Node2D
 class_name MundoMario
+extends Node2D
 
 signal perdeu
 signal ganhou

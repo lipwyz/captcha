@@ -1,5 +1,5 @@
-extends Control
 class_name ConteudoAba
+extends Control
 
 signal terminado
 
