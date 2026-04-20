@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d06u8u6et06bo"
-path="res://.godot/imported/tileset.png-4609042540878285f8eaa0bed5b1e1b3.ctex"
+path="res://.godot/imported/tileset.png-baa43548d4f5d7149ec08ff29d3b10d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MiniGames/TempMario/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-4609042540878285f8eaa0bed5b1e1b3.ctex"]
+source_file="res://_Debug/Temporarios/Mario/tileset.png"
+dest_files=["res://.godot/imported/tileset.png-baa43548d4f5d7149ec08ff29d3b10d5.ctex"]
 
 [params]
 

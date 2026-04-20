@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgrspnx60cqns"
-path="res://.godot/imported/cherry.png-7ad46e814019158c6ea911184c2bd1f0.ctex"
+path="res://.godot/imported/cherry.png-db5c476d7427c6ae2efc0b4b141d8a34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MiniGames/TempMario/cherry.png"
-dest_files=["res://.godot/imported/cherry.png-7ad46e814019158c6ea911184c2bd1f0.ctex"]
+source_file="res://_Debug/Temporarios/Mario/cherry.png"
+dest_files=["res://.godot/imported/cherry.png-db5c476d7427c6ae2efc0b4b141d8a34.ctex"]
 
 [params]
 
