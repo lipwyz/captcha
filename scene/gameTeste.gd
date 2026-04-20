@@ -13,7 +13,7 @@ func _ready() -> void:
 	navegador.aberto.connect(test_abas)
 
 func criar_aba_inicial() -> void:
-	var mini_game_abode : MiniGameRes = load("res://scene/Navegador/conteudoTeste/miniGame1.tres")
+	var mini_game_abode : MiniGameRes = load("uid://xid604ljsui1")
 	var aba_abode := mini_game_abode.criar_aba()
 	navegador.add_aba(aba_abode)
 	navegador.criar_conteudo_aba(aba_abode, mini_game_abode.conteudo)
@@ -33,11 +33,11 @@ func test_abas() -> void:
 	
 	
 	# aba 2
-	var mini_game_2 : MiniGameRes = load("res://scene/Navegador/conteudoTeste/miniGame2.tres")
+	var mini_game_2 : MiniGameRes = load("uid://c7tjim70hbg0b")
 	mini_game_2.navegador_add_mini_game(navegador)
 	# aba 3
-	var mini_game_3 : MiniGameRes = load("res://scene/Navegador/conteudoTeste/miniGame3.tres")
+	var mini_game_3 : MiniGameRes = load("uid://b4cu5kbxiwxwn")
 	mini_game_3.navegador_add_mini_game(navegador)
 	# aba 4
-	var mini_game_4 : MiniGameRes = load("res://scene/Navegador/conteudoTeste/miniGameMario.tres")
+	var mini_game_4 : MiniGameRes = load("uid://c4jo8i3ff08nm")
 	mini_game_4.navegador_add_mini_game(navegador)

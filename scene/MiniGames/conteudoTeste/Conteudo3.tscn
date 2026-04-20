@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2re4gf7te0b3"]
 
-[ext_resource type="Script" uid="uid://c133twpbg8u3j" path="res://scene/Navegador/conteudoTeste/character_body_2d.gd" id="1_8sodc"]
-[ext_resource type="Script" uid="uid://buj51x3wn5mi0" path="res://scene/Navegador/conteudoTeste/conteudo_3.gd" id="1_c3d8w"]
+[ext_resource type="Script" uid="uid://c133twpbg8u3j" path="res://scene/MiniGames/conteudoTeste/character_body_2d.gd" id="1_8sodc"]
+[ext_resource type="Script" uid="uid://buj51x3wn5mi0" path="res://scene/MiniGames/conteudoTeste/conteudo_3.gd" id="1_c3d8w"]
 [ext_resource type="Texture2D" uid="uid://dn6fmp6f8401k" path="res://Assets/icon.svg" id="1_ltc5j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjvjo"]

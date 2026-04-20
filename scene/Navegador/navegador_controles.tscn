@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://roejgry65bjv"]
 
-[ext_resource type="Script" uid="uid://cnbh364hlf6ow" path="res://scene/Navegador/navegador_controles.gd" id="1_ouk7q"]
+[ext_resource type="Script" uid="uid://cnbh364hlf6ow" path="res://scene/Navegador/Scripts/navegador_controles.gd" id="1_ouk7q"]
 [ext_resource type="Texture2D" uid="uid://dn6fmp6f8401k" path="res://Assets/icon.svg" id="5_cgj0l"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7k1e"]

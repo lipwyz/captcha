@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cq4skhji0sopw"]
 
-[ext_resource type="Script" uid="uid://ba5csyeytnbli" path="res://scene/Navegador/conteudoTeste/gameTeste.gd" id="1_uux6s"]
+[ext_resource type="Script" uid="uid://ba5csyeytnbli" path="res://scene/gameTeste.gd" id="1_uux6s"]
 [ext_resource type="PackedScene" uid="uid://bt12d62er2cam" path="res://scene/AreaTrabalho/area_trabalho.tscn" id="2_0qcyc"]
 [ext_resource type="PackedScene" uid="uid://cxdrd8o2eceyg" path="res://scene/Navegador/Navegador.tscn" id="3_lxuwx"]
 [ext_resource type="Theme" uid="uid://c6p17ql6w81b1" path="res://themes/themeTest.tres" id="4_0qcyc"]
-[ext_resource type="PackedScene" uid="uid://sv6hm87ln5ip" path="res://scene/Navegador/conteudoTeste/imagem_tam_ref.tscn" id="4_exhum"]
+[ext_resource type="PackedScene" uid="uid://sv6hm87ln5ip" path="res://scene/MiniGames/conteudoTeste/imagem_tam_ref.tscn" id="4_exhum"]
 [ext_resource type="Theme" uid="uid://b6i2a1wd1pm45" path="res://themes/addressbar.tres" id="5_lxuwx"]
 
 [node name="GameTeste" type="Node" unique_id=778971112]

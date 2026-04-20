@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxiaud0xsx1he"]
 
-[ext_resource type="Script" uid="uid://c0io4m2qepy5i" path="res://scene/Navegador/aba.gd" id="1_7n5ku"]
+[ext_resource type="Script" uid="uid://c0io4m2qepy5i" path="res://scene/Navegador/Scripts/aba.gd" id="1_7n5ku"]
 
 [node name="Aba" type="PanelContainer" unique_id=462069909]
 clip_contents = true
