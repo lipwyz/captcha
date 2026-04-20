@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://c6p17ql6w81b1"]
 
-[ext_resource type="Texture2D" uid="uid://b0hm0a2uykt57" path="res://Assets/sprites/fundoBrowser.png" id="1_cnfyx"]
+[ext_resource type="Texture2D" uid="uid://b0hm0a2uykt57" path="res://Assets/Sprites/fundoBrowser.png" id="1_cnfyx"]
 [ext_resource type="FontFile" uid="uid://0b74kuykh6c" path="res://Assets/pixel_font.ttf" id="2_dohka"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnfyx"]
