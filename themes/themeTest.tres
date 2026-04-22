@@ -4,10 +4,10 @@
 [ext_resource type="FontFile" uid="uid://0b74kuykh6c" path="res://Assets/pixel_font.ttf" id="2_dohka"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnfyx"]
-bg_color = Color(1, 0.7266905, 0.6917943, 1)
+bg_color = Color(0.69394577, 0.8505755, 0.73651385, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dohka"]
-bg_color = Color(1, 0.007843138, 0.11372549, 1)
+bg_color = Color(0.17641911, 0.17641908, 0.17641908, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n2i3y"]
 texture = ExtResource("1_cnfyx")

@@ -42,6 +42,9 @@ split_offset = 102
 [node name="NavegadorControles" parent="Panel/VSplit" unique_id=1883575481 instance=ExtResource("2_1uexu")]
 layout_mode = 2
 
+[node name="Separador" parent="Panel/VSplit/NavegadorControles/VBox/PainelTopBar/HBox" parent_id_path=PackedInt32Array(1883575481, 1972581277) index="2" unique_id=1832676821]
+custom_minimum_size = Vector2(1680, 0)
+
 [node name="NavegadorConteudo" parent="Panel/VSplit" unique_id=811463956 node_paths=PackedStringArray("conteudos_abas_minimizadas") instance=ExtResource("3_e3m55")]
 layout_mode = 2
 conteudos_abas_minimizadas = NodePath("../../../ConteudosAbasMinimizadas")
