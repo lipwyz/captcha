@@ -73,7 +73,7 @@ func click(pos: Vector2) -> void:
 	if not valor: valor = 1
 	# printa o valor e insere +1 dps
 	print("Valor no quad: %d" % valor)
-	quad_tree.inserir(valor+1, pos_quad)
+	quad_tree.inserir_dados(valor+1, pos_quad)
 
 func _processar_click(pos: Vector2) -> void:
 	# ignora se estiver fora da imagem

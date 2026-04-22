@@ -13,8 +13,8 @@ func get_dados(posicao: Vector2) -> Variant:
 	return root.get_dados(posicao)
 
 ## Insere dados em um nodo folha na dada posicao
-func inserir(dados, posicao: Vector2) -> void:
-	root.inserir(dados, posicao)
+func inserir_dados(dados, posicao: Vector2) -> void:
+	root.inserir_dados(dados, posicao)
 
 ## Retorna uma lista de elementos [comeco, fim] : Array[Vector2]
 ## 		para a nodo folha da arvore
@@ -78,7 +78,7 @@ class QuadTreeNode:
 									_profundidade)
 	
 	## Insere _dados no nodo folha, com base na sua posicao
-	func inserir(_dados, posicao: Vector2) -> void:
+	func inserir_dados(_dados, posicao: Vector2) -> void:
 		if _is_nodo_folha():
 			# coloca os dados
 			dados = _dados
@@ -88,7 +88,7 @@ class QuadTreeNode:
 		# nodo nao eh folha, passar para os filhos
 		# insere no nodo filho correto
 		var nodo_filho := _get_nodo_filho(posicao)
-		nodo_filho.inserir(_dados, posicao)
+		nodo_filho.inserir_dados(_dados, posicao)
 	
 	## Retorna a variavel dados do nodo
 	func get_dados(posicao: Vector2) -> Variant:
@@ -114,6 +114,13 @@ class QuadTreeNode:
 			+ bot_esq.get_all_dimensoes(Vector2(comeco.x, pos_metade.y), Vector2(pos_metade.x, fim.y))
 			+ bot_dir.get_all_dimensoes(pos_metade, fim)
 		)
+	
+	## Retorna o nodo folha na dada posicao
+	func get_nodo_folha(posicao: Vector2) -> QuadTreeNode:
+		if _is_nodo_folha():
+			return self
+		# se for pai -> chama get_nodo_folha no nodo filho da posicao correspondente
+		return _get_nodo_filho(posicao).get_nodo_folha(posicao)
 	
 	## Retorna verdadeiro se o nodo eh folha (nao tem filhos)
 	func _is_nodo_folha() -> bool:
