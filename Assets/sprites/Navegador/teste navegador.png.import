@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb5ugjy5m17bw"
-path="res://.godot/imported/TopbarBrowser-export.png-8bf2e271601485e6852020248d38175e.ctex"
+uid="uid://cs6uvxm5c3hja"
+path="res://.godot/imported/teste navegador.png-9bb5bba82c784b26b96e9e6022f52833.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/TopbarBrowser-export.png"
-dest_files=["res://.godot/imported/TopbarBrowser-export.png-8bf2e271601485e6852020248d38175e.ctex"]
+source_file="res://Assets/sprites/Navegador/teste navegador.png"
+dest_files=["res://.godot/imported/teste navegador.png-9bb5bba82c784b26b96e9e6022f52833.ctex"]
 
 [params]
 
