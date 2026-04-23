@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dhq7s7j276aqr" path="res://Assets/1_JiSQVnR_nibjRC1azRl6Fw.jpg" id="2_aub4a"]
 [ext_resource type="Texture2D" uid="uid://dlpoyy50lurgs" path="res://Assets/Sprites/sheets/propaganda hamburger-Sheet.png" id="3_l6c1y"]
 [ext_resource type="Script" uid="uid://bidhxpw4kprep" path="res://scene/MiniGames/SelectQuadrados/criacao/linhas.gd" id="4_d1qgx"]
+[ext_resource type="Script" uid="uid://bk4b6h23vr48" path="res://scene/MiniGames/SelectQuadrados/criacao/tool_select_quadrados.gd" id="5_iytix"]
+[ext_resource type="Resource" uid="uid://11v5pviy23ex" path="res://scene/MiniGames/SelectQuadrados/quadTree_1.tres" id="6_iytix"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1qgx"]
 size = Vector2(1077.8657, 1075.7144)
@@ -17,6 +19,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tsssp")
 metadata/_edit_lock_ = true
+
+[node name="GerenciadorQuadTree" type="Node" parent="." unique_id=1081839330]
+script = ExtResource("5_iytix")
+quadTree_res = ExtResource("6_iytix")
 
 [node name="Mundo" type="Node2D" parent="." unique_id=120381652]
 
@@ -64,10 +70,12 @@ position = Vector2(538.93286, 537.8572)
 shape = SubResource("RectangleShape2D_d1qgx")
 debug_color = Color(1.0348111e-06, 0.6506658, 0.09750032, 0.41960785)
 
-[node name="Linhas" type="Node2D" parent="Mundo" unique_id=675218699 node_paths=PackedStringArray("imagem_verificador")]
+[node name="Linhas" type="Node2D" parent="Mundo/Verificador/SpriteImagem" unique_id=675218699 node_paths=PackedStringArray("gerenciador_quadTree", "imagem_verificador")]
 script = ExtResource("4_d1qgx")
-imagem_verificador = NodePath("../Verificador/SpriteImagem")
+gerenciador_quadTree = NodePath("../../../../GerenciadorQuadTree")
+imagem_verificador = NodePath("..")
 
-[node name="Line2D" type="Line2D" parent="Mundo/Linhas" unique_id=412757518]
+[node name="ReferenciaLine2D" type="Line2D" parent="Mundo/Verificador/SpriteImagem/Linhas" unique_id=1935297342]
+points = PackedVector2Array(400, 400, 400, 600, 600, 600, 600, 400)
 closed = true
-default_color = Color(0.7880387, 0.25337586, 1, 1)
+width = 5.0
