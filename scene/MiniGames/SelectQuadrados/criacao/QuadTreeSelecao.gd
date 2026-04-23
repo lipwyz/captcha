@@ -16,6 +16,9 @@ func _init(_profundidade: int) -> void:
 	for filho : QuadTreeNode in [root.top_esq, root.top_dir, root.bot_esq, root.bot_dir]:
 		filho.dados = FLAG_SHOW
 
+func print_id(posicao: Vector2) -> void:
+	root.print_id(posicao)
+
 func mostrar_quadrados() -> Array[Array]:
 	return root.get_dimensoes_filhos_nodos_com_dados(FLAG_SHOW)
 

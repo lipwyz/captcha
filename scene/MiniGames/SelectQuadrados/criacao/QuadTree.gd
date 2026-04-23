@@ -6,7 +6,7 @@ var root: QuadTreeNode
 
 ## Cria a arvore com dada profundidade de camadas (profundidade = 1 para somente o root e 4 filhos)
 func _init(profundidade: int) -> void:
-	root = QuadTreeNode.new(Vector2.ZERO, Vector2.ONE, profundidade)
+	root = QuadTreeNode.new(Vector2.ZERO, Vector2.ONE, profundidade, "0")
 
 ## Retorna os dados guardados em um nodo folha na dada posicao
 func get_dados(posicao: Vector2) -> Variant:
@@ -61,11 +61,20 @@ class QuadTreeNode:
 	## Dados que o nodo folha guarda (null nos pais)
 	var dados: Variant
 	
+	#
+	var id: String = ""
+	
+	func print_id(posicao: Vector2) -> void:
+		print(id)
+		if is_nodo_folha(): return
+		_get_nodo_filho(posicao).print_id(posicao)
+	
 	## Cria o nodo e seus filhos recursivamente
-	func _init(comeco : Vector2, fim : Vector2, _profundidade : int) -> void:
+	func _init(comeco : Vector2, fim : Vector2, _profundidade : int, _id:String) -> void:
 		profundidade = _profundidade
 		pos_comeco = comeco
 		pos_fim    = fim
+		id = _id
 		
 		# se for nodo folha (sem filhos), pare aqui
 		if _profundidade == 0:
@@ -79,16 +88,17 @@ class QuadTreeNode:
 		# cria os 4 filhos
 		top_esq = QuadTreeNode.new(comeco,
 									pos_metade,
-									_profundidade)
+									_profundidade, id + "7")
 		top_dir = QuadTreeNode.new(Vector2(pos_metade.x, comeco.y), 
 									Vector2(fim.x, pos_metade.y),
-									_profundidade)
+									_profundidade, id + "9")
 		bot_esq = QuadTreeNode.new(Vector2(comeco.x, pos_metade.y), 
 									Vector2(pos_metade.x, fim.y),
-									_profundidade)
+									_profundidade, id + "1")
 		bot_dir = QuadTreeNode.new(pos_metade, 
 									fim,
-									_profundidade)
+									_profundidade, id + "3")
+	
 	
 	## Insere _dados no nodo folha, com base na sua posicao
 	func inserir_dados(_dados: Variant, posicao: Vector2) -> void:

@@ -3,7 +3,8 @@ extends Node2D
 
 @export  var gerenciador_quadTree: GerenciadorQuadTree
 ## Imagem que o jogador vai clicar
-@export var imagem_verificador: Sprite2D
+#@export var imagem_verificador: Sprite2D
+@export var colisor_imagem : CollisionShape2D
 ## Line2D de referencia para criar as outras linhas
 @onready var referencia_line_2d: Line2D = $ReferenciaLine2D
 
@@ -11,6 +12,7 @@ extends Node2D
 var pos_start : Vector2
 var pos_end   : Vector2
 var size_img  : Vector2
+var div_size_img  : Vector2
 
 func _ready() -> void:
 	referencia_line_2d.hide()
@@ -19,12 +21,14 @@ func _ready() -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
 	
-	var tamanho = imagem_verificador.region_rect.size
-	var pos_base := imagem_verificador.global_position - global_position
+	var rect : Rect2 = colisor_imagem.shape.get_rect()
+	var tamanho = rect.size
+	var pos_base := Vector2.ZERO
 	pos_start = pos_base
 	pos_end   = pos_base + tamanho
 	# tamanho da imagem, para usar na conversao de [0, 1] -> [0, tamanho da imagem]
 	size_img = pos_end - pos_start
+	div_size_img = Vector2.ONE / size_img
 	
 	desenhar_quadrados()
 
@@ -53,16 +57,21 @@ func click(pos: Vector2) -> void:
 	# pega o quadrado
 	var quad_tree : QuadTree = gerenciador_quadTree.quadTree
 	# converte a global_pos do mouse para o [0.0, 1.0] do quad tree
-	var pos_quad : Vector2 = (pos - pos_start) / size_img
-	# pega o valor do tamanho do quadrado
-	var valor = quad_tree.get_dados(pos_quad)
-	# se nao tiver valor, coloque 1
-	if not valor: valor = 1
-	# printa o valor e insere +1 dps
-	print("Valor no quad: %d" % valor)
-	quad_tree.inserir_dados(valor+1, pos_quad)
+	var pos_quad : Vector2 = (pos - pos_start) * div_size_img
+	
+	## pega o valor do tamanho do quadrado
+	#var valor = quad_tree.get_dados(pos_quad)
+	## se nao tiver valor, coloque 1
+	#if not valor: valor = 1
+	## printa o valor e insere +1 dps
+	#print("Valor no quad: %d" % valor)
+	#quad_tree.inserir_dados(valor+1, pos_quad)
+	
+	quad_tree.print_id(pos_quad)
 
 func _processar_click(pos: Vector2) -> void:
+	# converte da poiscao global -> posicao local
+	pos = to_local(pos)
 	# ignora se estiver fora da imagem
 	if pos.y < pos_start.y: return 
 	if pos.y > pos_end.y: return 

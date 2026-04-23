@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://11v5pviy23ex" path="res://scene/MiniGames/SelectQuadrados/quadTree_1.tres" id="6_iytix"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1qgx"]
-size = Vector2(1077.8657, 1075.7144)
+size = Vector2(506, 504)
 
 [node name="MiniGameSelectQuadrados" type="Control" unique_id=1699504470]
 layout_mode = 3
@@ -55,7 +55,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_aub4a")
 
-[node name="SpriteImagem" type="Sprite2D" parent="Mundo/Verificador" unique_id=1458555600]
+[node name="ImagemClicavel" type="Node2D" parent="Mundo/Verificador" unique_id=1729116684]
+
+[node name="SpriteImagem" type="Sprite2D" parent="Mundo/Verificador/ImagemClicavel" unique_id=1458555600]
 position = Vector2(-235, -189)
 scale = Vector2(0.46851844, 0.46666664)
 texture = ExtResource("3_l6c1y")
@@ -63,19 +65,21 @@ centered = false
 region_enabled = true
 region_rect = Rect2(1080, 2160, 1080, 1080)
 
-[node name="Area2D" type="Area2D" parent="Mundo/Verificador/SpriteImagem" unique_id=723195257]
+[node name="Area2D" type="Area2D" parent="Mundo/Verificador/ImagemClicavel" unique_id=723195257]
+position = Vector2(-235, -189)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mundo/Verificador/SpriteImagem/Area2D" unique_id=1820348446]
-position = Vector2(538.93286, 537.8572)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mundo/Verificador/ImagemClicavel/Area2D" unique_id=1820348446]
+position = Vector2(253, 252)
 shape = SubResource("RectangleShape2D_d1qgx")
 debug_color = Color(1.0348111e-06, 0.6506658, 0.09750032, 0.41960785)
 
-[node name="Linhas" type="Node2D" parent="Mundo/Verificador/SpriteImagem" unique_id=675218699 node_paths=PackedStringArray("gerenciador_quadTree", "imagem_verificador")]
+[node name="Linhas" type="Node2D" parent="Mundo/Verificador/ImagemClicavel" unique_id=675218699 node_paths=PackedStringArray("gerenciador_quadTree", "colisor_imagem")]
+position = Vector2(-235, -189)
 script = ExtResource("4_d1qgx")
 gerenciador_quadTree = NodePath("../../../../GerenciadorQuadTree")
-imagem_verificador = NodePath("..")
+colisor_imagem = NodePath("../Area2D/CollisionShape2D")
 
-[node name="ReferenciaLine2D" type="Line2D" parent="Mundo/Verificador/SpriteImagem/Linhas" unique_id=1935297342]
+[node name="ReferenciaLine2D" type="Line2D" parent="Mundo/Verificador/ImagemClicavel/Linhas" unique_id=1935297342]
 points = PackedVector2Array(400, 400, 400, 600, 600, 600, 600, 400)
 closed = true
 width = 5.0
