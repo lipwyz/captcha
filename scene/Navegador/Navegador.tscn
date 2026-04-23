@@ -7,6 +7,7 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qffjp"]
 texture = ExtResource("2_e3m55")
+region_rect = Rect2(0, -19.04248, 1920, 1099.0425)
 
 [node name="Navegador" type="Control" unique_id=1862273277]
 layout_mode = 3

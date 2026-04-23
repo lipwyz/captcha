@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cqtngdiv0608g"]
 
 [ext_resource type="Texture2D" uid="uid://dlpoyy50lurgs" path="res://Assets/sprites/sheets/propaganda hamburger-Sheet.png" id="1_tsl64"]
+[ext_resource type="Material" uid="uid://dr1n8yosdjw2b" path="res://Shaders/Pixelado.tres" id="2_qjct8"]
 
 [sub_resource type="Animation" id="Animation_qjct8"]
 resource_name = "Gifhamburguer"
@@ -53,3 +54,11 @@ vframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Gif" unique_id=1483172570]
 libraries/ = SubResource("AnimationLibrary_mxvaa")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Gif" unique_id=659497978]
+
+[node name="ColorRect" type="ColorRect" parent="Gif/CanvasLayer" unique_id=104313974]
+material = ExtResource("2_qjct8")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(152.35286, 20.55565)

@@ -3,12 +3,22 @@
 [ext_resource type="Script" uid="uid://cnbh364hlf6ow" path="res://scene/Navegador/Scripts/navegador_controles.gd" id="1_ouk7q"]
 [ext_resource type="Theme" uid="uid://c6p17ql6w81b1" path="res://themes/themeTest.tres" id="2_bb8lr"]
 [ext_resource type="Texture2D" uid="uid://cybfjswqlkolw" path="res://Assets/sprites/Navegador/label teste2.png" id="3_ns4ii"]
+[ext_resource type="Texture2D" uid="uid://cqyo86ggv3vj" path="res://Assets/sprites/Navegador/cetaE1.png" id="3_ouk7q"]
 [ext_resource type="Texture2D" uid="uid://dn6fmp6f8401k" path="res://Assets/icon.svg" id="5_cgj0l"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7k1e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7xe7"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8q6ef"]
+texture = ExtResource("3_ouk7q")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ns4ii"]
+load_path = "res://.godot/imported/cetaE1.png-f747a65173aa1937e15ce923f53d6cfb.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ouk7q"]
+load_path = "res://.godot/imported/cetaD1.png-07cabd06ec85b89e1a5264f81104193f.ctex"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bkdxx"]
 
@@ -32,7 +42,7 @@ script = ExtResource("1_ouk7q")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 94.0
+offset_bottom = 120.0
 grow_horizontal = 2
 
 [node name="PainelTopBar" type="PanelContainer" parent="VBox" unique_id=323352585]
@@ -53,8 +63,9 @@ text = " Internet Explorer"
 
 [node name="Separador" type="Control" parent="VBox/PainelTopBar/HBox" unique_id=1832676821]
 clip_contents = true
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 10
 
 [node name="HBoxControles" type="HBoxContainer" parent="VBox/PainelTopBar/HBox" unique_id=907867695]
 layout_mode = 2
@@ -94,11 +105,14 @@ layout_mode = 2
 
 [node name="ButtonSetaEsq" type="Button" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=154491246]
 layout_mode = 2
-text = "<"
+theme_override_styles/normal = SubResource("StyleBoxTexture_8q6ef")
+icon = SubResource("CompressedTexture2D_ns4ii")
+flat = true
 
 [node name="ButtonSetaDir" type="Button" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=341463226]
 layout_mode = 2
-text = ">"
+icon = SubResource("CompressedTexture2D_ouk7q")
+flat = true
 
 [node name="MarginHotBar" type="MarginContainer" parent="VBox" unique_id=205874004]
 layout_mode = 2
