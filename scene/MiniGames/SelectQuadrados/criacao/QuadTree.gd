@@ -13,7 +13,7 @@ func get_dados(posicao: Vector2) -> Variant:
 	return root.get_dados(posicao)
 
 ## Insere dados em um nodo folha na dada posicao
-func inserir_dados(dados, posicao: Vector2) -> void:
+func inserir_dados(dados: Variant, posicao: Vector2) -> void:
 	root.inserir_dados(dados, posicao)
 
 func get_all_dimensoes() -> Array:
@@ -91,7 +91,7 @@ class QuadTreeNode:
 									_profundidade)
 	
 	## Insere _dados no nodo folha, com base na sua posicao
-	func inserir_dados(_dados, posicao: Vector2) -> void:
+	func inserir_dados(_dados: Variant, posicao: Vector2) -> void:
 		if is_nodo_folha():
 			# coloca os dados
 			dados = _dados
