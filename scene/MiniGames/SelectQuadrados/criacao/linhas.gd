@@ -1,71 +1,83 @@
 class_name LinhasSelectQuadrado
 extends Node2D
 
+
+@export  var gerenciador_quadTree: GerenciadorQuadTree
 ## Imagem que o jogador vai clicar
 @export var imagem_verificador: Sprite2D
-## Profundidade da quantidade de camadas
-@export var profundidade : int = 3
-
-@onready var line_2d: Line2D = $Line2D
+## Line2D de referencia para criar as outras linhas
+@onready var referencia_line_2d: Line2D = $ReferenciaLine2D
 
 var pos_start : Vector2
 var pos_end   : Vector2
 
 func _ready() -> void:
-	criar_linhas()
-
-## Cria o quadrado roxo em volta da imagem
-func criar_linhas() -> void:
-	#var tamanho = Vector2(
-		#imagem_verificador.texture.get_width(), 
-		#imagem_verificador.texture.get_height()
-	#) * imagem_verificador.scale
+	referencia_line_2d.hide()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	await get_tree().process_frame
+	await get_tree().process_frame
+	
+	
 	var tamanho = imagem_verificador.region_rect.size
-	tamanho *= imagem_verificador.scale
+	#tamanho *= imagem_verificador.scale
 	
-	var pos_base := imagem_verificador.global_position - line_2d.global_position
-	
+	var pos_base := imagem_verificador.global_position - global_position
 	pos_start = pos_base
 	pos_end   = pos_base + tamanho
 	
-	line_2d.add_point(pos_start)
-	line_2d.add_point(pos_end)
+	desenhar_quadrados()
 
-func desenhar_posicoes(lista: Array) -> void:
+func desenhar_quadrados() -> void:
+	var lista_comeco_fim := gerenciador_quadTree.quadTree.mostrar_quadrados()
+	for comeco_fim : Array[Vector2] in lista_comeco_fim:
+		var comeco	:= comeco_fim[0]
+		var fim 	:= comeco_fim[1]
+		var cantos = gerenciador_quadTree.quadTree.get_cantos_quadrado(comeco, fim)
+		## repete o primeiro para fechar o quadrado
+		#cantos.append(cantos[0])
+		# desenha o quadrado
+		desenhar_posicoes(cantos) 
+	
+	#var dimensoes := gerenciador_quadTree.quadTree.get_dimensoes_nodos_com_dados(FL)
+	
+	
+	
+	
+	## [comeco, fim, [filhos]]
+	#var dimensoes := gerenciador_quadTree.quadTree.get_all_dimensoes()
+	## ignora o root (que tem comeco 0.0 e fim 1.0)
+	#dimensoes.remove_at(0)
+	#dimensoes.remove_at(0)
+	## para cada filho
+	#for dimensao_filhos : Array in dimensoes:
+		#print(dimensao_filhos)
+
+func desenhar_posicoes(pontos: Array) -> void:
 	# tamanho da imagem (para converter de [0, 1] para o tam da imagem
 	var size_img := pos_end - pos_start
-	# para cada quadrado na lista
-	for quad: Array in lista:
-		# cria uma line2D para esse quadrado
-		var line := Line2D.new()
-		add_child(line)
-		line.width = 3
-		line.default_color = Color.from_hsv(randf(), 1.0, 1.0)
-		# pega os pontos de comeco e fim, e cria os 4 cantos
-		var pontos = _get_pontos_quadrado(quad[0], quad[1])
-		for p in pontos:
-			p = pos_start + (p * size_img)
-			line.add_point(p)
-
-# retorna os 4 cantos do quadrado, dado comeco (esq cima) e fim (direita baixo)
-func _get_pontos_quadrado(comeco : Vector2, fim : Vector2) -> Array:
-	return [
-		Vector2(comeco.x, comeco.y),	# top esq
-		Vector2(fim.x, comeco.y), 		# top dir
-		Vector2(fim.x, fim.y), 			# bot dir
-		Vector2(comeco.x, fim.y),		# bot esq
-		# repetido do primeiro, para fechar o quadrado
-		Vector2(comeco.x, comeco.y), 	# top esq
-	]
+	
+	var line : Line2D = referencia_line_2d.duplicate()
+	line.clear_points()
+	
+	# cria uma line2D para esse quadrado
+	#var line := Line2D.new()
+	add_child(line)
+	line.show()
+	#line.width = 3
+	#line.default_color = Color.from_hsv(randf(), 1.0, 1.0)
+	
+	for p in pontos:
+		p = pos_start + (p * size_img)
+		line.add_point(p)
 
 # Clicar aumenta em 1 o valor que tem no quadrado
-@onready var mini_game_select_quadrados: Control = $"../.."
 func click(pos: Vector2) -> void:
 	
 	#line_2d.add_point(pos)
 	
 	# pega o quadrado
-	var quad_tree : QuadTree = mini_game_select_quadrados.quad_tree
+	var quad_tree : QuadTree = gerenciador_quadTree.quadTree
 	# converte a global_pos do mouse para o [0.0, 1.0] do quad tree
 	var pos_quad : Vector2 = (pos - pos_start) / (pos_end - pos_start)
 	# pega o valor, se nao tiver, valor = 1
