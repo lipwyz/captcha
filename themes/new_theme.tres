@@ -1,0 +1,19 @@
+[gd_resource type="Theme" format=3 uid="uid://cj0agp435nvsu"]
+
+[ext_resource type="Texture2D" uid="uid://bwbwqfwqt4qgt" path="res://Assets/sprites/Navegador/Navegador versao roxa.png" id="1_s1hyc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1hyc"]
+texture = ExtResource("1_s1hyc")
+region_rect = Rect2(520.00793, 3, 33.992065, 50)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uw25j"]
+bg_color = Color(0.44705883, 0.3882353, 0.84313726, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_765p2"]
+texture = ExtResource("1_s1hyc")
+region_rect = Rect2(18, 99, 1891, 52)
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxTexture_s1hyc")
+Panel/styles/panel = SubResource("StyleBoxFlat_uw25j")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_765p2")

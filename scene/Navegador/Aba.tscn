@@ -1,15 +1,20 @@
 [gd_scene format=3 uid="uid://dxiaud0xsx1he"]
 
 [ext_resource type="Script" uid="uid://c0io4m2qepy5i" path="res://scene/Navegador/Scripts/aba.gd" id="1_7n5ku"]
-[ext_resource type="Texture2D" uid="uid://tnk58ihfolyk" path="res://Assets/sprites/Navegador/teste botao 1920x1080.png" id="1_d7kbe"]
+[ext_resource type="Texture2D" uid="uid://bwbwqfwqt4qgt" path="res://Assets/sprites/Navegador/Navegador versao roxa.png" id="1_d7kbe"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_21231"]
 texture = ExtResource("1_d7kbe")
+region_rect = Rect2(7, 3, 116, 50)
+
+[sub_resource type="Theme" id="Theme_4qwa5"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_21231")
 
 [node name="Aba" type="PanelContainer" unique_id=462069909]
 clip_contents = true
 custom_minimum_size = Vector2(120, 32)
-theme_override_styles/panel = SubResource("StyleBoxTexture_21231")
+theme = SubResource("Theme_4qwa5")
+theme_type_variation = &"abas"
 script = ExtResource("1_7n5ku")
 cores_aba = Dictionary[int, Color]({
 0: Color(0, 0, 0, 0),

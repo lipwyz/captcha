@@ -1,29 +1,13 @@
 [gd_scene format=3 uid="uid://roejgry65bjv"]
 
+[ext_resource type="Theme" uid="uid://cj0agp435nvsu" path="res://themes/new_theme.tres" id="1_i7xe7"]
 [ext_resource type="Script" uid="uid://cnbh364hlf6ow" path="res://scene/Navegador/Scripts/navegador_controles.gd" id="1_ouk7q"]
-[ext_resource type="Theme" uid="uid://c6p17ql6w81b1" path="res://themes/themeTest.tres" id="2_bb8lr"]
-[ext_resource type="Texture2D" uid="uid://cybfjswqlkolw" path="res://Assets/sprites/Navegador/label teste2.png" id="3_ns4ii"]
-[ext_resource type="Texture2D" uid="uid://cqyo86ggv3vj" path="res://Assets/sprites/Navegador/cetaE1.png" id="3_ouk7q"]
 [ext_resource type="Texture2D" uid="uid://dn6fmp6f8401k" path="res://Assets/icon.svg" id="5_cgj0l"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7k1e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7xe7"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8q6ef"]
-texture = ExtResource("3_ouk7q")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ns4ii"]
-load_path = "res://.godot/imported/cetaE1.png-f747a65173aa1937e15ce923f53d6cfb.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ouk7q"]
-load_path = "res://.godot/imported/cetaD1.png-07cabd06ec85b89e1a5264f81104193f.ctex"
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bkdxx"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mf5jd"]
-texture = ExtResource("3_ns4ii")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4iee"]
 
@@ -35,7 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_e7k1e")
+theme = ExtResource("1_i7xe7")
 script = ExtResource("1_ouk7q")
 
 [node name="VBox" type="VBoxContainer" parent="." unique_id=1808751003]
@@ -58,6 +42,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="LabelNomeApp" type="Label" parent="VBox/PainelTopBar/HBox" unique_id=1375099673]
+visible = false
 layout_mode = 2
 text = " Internet Explorer"
 
@@ -73,17 +58,14 @@ size_flags_horizontal = 8
 
 [node name="ButtonMinimizar" type="Button" parent="VBox/PainelTopBar/HBox/HBoxControles" unique_id=231685938]
 layout_mode = 2
-theme = ExtResource("2_bb8lr")
 text = "-"
 
 [node name="ButtonMaximizar" type="Button" parent="VBox/PainelTopBar/HBox/HBoxControles" unique_id=1264854560]
 layout_mode = 2
-theme = ExtResource("2_bb8lr")
 text = "[]"
 
 [node name="ButtonFechar" type="Button" parent="VBox/PainelTopBar/HBox/HBoxControles" unique_id=1879285661]
 layout_mode = 2
-theme = ExtResource("2_bb8lr")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_color = Color(1, 0.57254905, 0.50980395, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.9137255, 0, 0, 1)
@@ -105,14 +87,12 @@ layout_mode = 2
 
 [node name="ButtonSetaEsq" type="Button" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=154491246]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_8q6ef")
-icon = SubResource("CompressedTexture2D_ns4ii")
-flat = true
+text = "<"
 
 [node name="ButtonSetaDir" type="Button" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=341463226]
 layout_mode = 2
-icon = SubResource("CompressedTexture2D_ouk7q")
-flat = true
+theme = ExtResource("1_i7xe7")
+text = ">"
 
 [node name="MarginHotBar" type="MarginContainer" parent="VBox" unique_id=205874004]
 layout_mode = 2
@@ -129,7 +109,7 @@ layout_mode = 2
 [node name="PanelAddress" type="PanelContainer" parent="VBox/MarginHotBar/PanelHotBar/HBox" unique_id=634013428]
 custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_mf5jd")
+theme = ExtResource("1_i7xe7")
 
 [node name="Margin" type="MarginContainer" parent="VBox/MarginHotBar/PanelHotBar/HBox/PanelAddress" unique_id=795615203]
 layout_mode = 2
@@ -138,6 +118,7 @@ theme_override_constants/margin_right = 5
 
 [node name="LabelUrl" type="Label" parent="VBox/MarginHotBar/PanelHotBar/HBox/PanelAddress/Margin" unique_id=35708277]
 layout_mode = 2
+theme = ExtResource("1_i7xe7")
 text = "https://Abode.com/inscricao/cancelar/com-certeza-vai-dar-bom.com "
 
 [node name="Separador" type="Control" parent="VBox/MarginHotBar/PanelHotBar/HBox" unique_id=591540641]
