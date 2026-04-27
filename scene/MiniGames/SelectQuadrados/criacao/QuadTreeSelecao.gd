@@ -181,14 +181,12 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 	
 	
 	func _set_node_flag(flag: int, flag_value: bool) -> void:
-		print("_set_node_flag ", dados, " flag ", flag, " v: ", flag_value)
 		if flag_value:
 			# se flag true -> coloca como true
 			dados = dados | flag
 		else:
 			# se flag false -> apagar valor
 			dados = dados & (~flag)
-		print("_set_node_flag pos ", dados)
 	
 	func _get_node_flag(flag: int) -> bool:
 		# se valor da flag nao eh zero
@@ -202,11 +200,8 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 		if not is_filhos_visiveis:
 			# filhos nao sao visiveis, coloque que esse node tem filho visivel
 			_set_node_flag(FLAG_SHOW_FILHOS, true)
-			print("Set filho visivel")
-			print("id ", _get_nodo_filho(posicao).id)
 		else:
 			# se os filhos forem visiveis, continue
-			print("id ", id, "  tem filho visivel")
 			_get_nodo_filho(posicao).deixar_filho_visivel(posicao)
 
 #	--------------------------------------------------------------------------------------------------
