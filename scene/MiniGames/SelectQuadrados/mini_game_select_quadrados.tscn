@@ -23,6 +23,7 @@ metadata/_edit_lock_ = true
 [node name="GerenciadorQuadTree" type="Node" parent="." unique_id=1081839330]
 script = ExtResource("5_iytix")
 quadTree_res = ExtResource("6_iytix")
+profundidade = 4
 
 [node name="Mundo" type="Node2D" parent="." unique_id=120381652]
 

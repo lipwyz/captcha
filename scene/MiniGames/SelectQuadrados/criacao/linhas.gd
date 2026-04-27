@@ -32,7 +32,13 @@ func _ready() -> void:
 	
 	desenhar_quadrados()
 
+var linhas_lista : Array[Line2D] = []
 func desenhar_quadrados() -> void:
+	# limpa as linhas
+	for linha in linhas_lista:
+		linha.queue_free()
+	linhas_lista.clear()
+	
 	var lista_comeco_fim := gerenciador_quadTree.quadTree.get_dimensoes_visiveis()
 	for comeco_fim : Array[Vector2] in lista_comeco_fim:
 		var comeco	:= comeco_fim[0]
@@ -48,6 +54,7 @@ func desenhar_posicoes(cantos_quadrado: Array) -> void:
 	line.show()
 	# adiciona na cena
 	add_child(line)
+	linhas_lista.append(line) # coloca line
 	# coloca os pontos do quadrado
 	for ponto : Vector2 in cantos_quadrado:
 		ponto = pos_start + (ponto * size_img)
@@ -68,6 +75,8 @@ func click(pos: Vector2) -> void:
 	#quad_tree.inserir_dados(valor+1, pos_quad)
 	
 	quad_tree.print_id(pos_quad)
+	quad_tree.deixar_filho_visivel(pos_quad)
+	desenhar_quadrados()
 
 func _processar_click(pos: Vector2) -> void:
 	# converte da poiscao global -> posicao local

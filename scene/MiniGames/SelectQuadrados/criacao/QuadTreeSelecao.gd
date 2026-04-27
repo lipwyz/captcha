@@ -2,8 +2,8 @@
 class_name QuadTreeSelecao
 extends QuadTree
 
-const FLAG_CLICK 		:= 1
-const FLAG_CORRETO 		:= 2
+const FLAG_CORRETO 		:= 1
+const FLAG_SELECIONADO	:= 2
 const FLAG_SHOW_FILHOS 	:= 4
 
 func _init(_profundidade: int) -> void:
@@ -20,9 +20,26 @@ func _init(_profundidade: int) -> void:
 func print_id(posicao: Vector2) -> void:
 	root.print_id(posicao)
 
+## Mostra as dimensoes dos somente dos filhos dos nodos que tem FLAG_SHOW_FILHOS
 func get_dimensoes_visiveis() -> Array[Array]:
 	return root.get_dimensoes_visiveis()
 
+func deixar_filho_visivel(posicao: Vector2) -> void:
+	root.deixar_filho_visivel(posicao)
+
+#func marcar_selecionado(posicao: Vector2) -> void:
+	#var nodo : QuadTreeSelecaoNode = root.get_nodo_folha(posicao)
+	#var flags :int = nodo.get_dados(posicao)
+	#flags = flags | FLAG_SELECIONADO
+	#nodo.inserir_dados(flags, posicao)
+#
+#func marcar_correto(posicao: Vector2) -> void:
+	#var nodo : QuadTreeSelecaoNode = root.get_nodo_folha(posicao)
+	#var flags :int = nodo.get_dados(posicao)
+	#flags = flags | FLAG_CORRETO
+	#nodo.inserir_dados(flags, posicao)
+
+# ---------------------------------------------------------------------------------------------------
 func mostrar_quadrados() -> Array[Array]:
 	#return root.get_dimensoes_filhos_nodos_com_dados(FLAG_SHOW)
 	return root.get_folhas_dimensoes()
@@ -39,13 +56,7 @@ func get_folhas_dimensoes() -> Array[Vector2]:
 ## 		para cada nodo folha da arvore
 func get_dimensoes_nodos_com_dados(dados_comparar: Variant) -> Array[Vector2]:
 	return root.get_dimensoes_nodos_com_dados(dados_comparar)
-
-
-func marcar_clicado(posicao: Vector2) -> void:
-	var nodo : QuadTreeSelecaoNode = root.get_nodo_folha(posicao)
-	var flags :int = nodo.get_dados(posicao)
-	flags = flags | FLAG_CLICK
-	nodo.inserir_dados(flags, posicao)
+# ---------------------------------------------------------------------------------------------------
 
 func set_valido(posicao: Vector2) -> void:
 	root.inserir_dados(FLAG_CORRETO, posicao)
@@ -126,8 +137,16 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 											_profundidade, 
 											id + "3")
 	
+	## Retorna a dimensao dos filhos visiveis desse nodo.
+	## 	Se o nodo tem a FLAG_SHOW_FILHOS: chame essa funcao nos filhos
+	## 	Se um nodo teve essa funcao chamada quer dizer que ele eh um filho visivel
+	## 		Entao se foi chamado, e nenhum filho eh visivel, retorne sobre esse nodo
 	func get_dimensoes_visiveis() -> Array[Array]:
-		var is_filhos_visiveis : bool = (dados & FLAG_SHOW_FILHOS) != 0
+		# se for nodo folha, nao tem como ter filhos visiveis, retorne a dimensao
+		if is_nodo_folha():
+			return get_dimensoes_nodo()
+		
+		var is_filhos_visiveis : bool = _get_node_flag(FLAG_SHOW_FILHOS)
 		# filhos nao sao visiveis, retorne as dimensoes desse nodo e pare a funcao
 		if not is_filhos_visiveis:
 			return get_dimensoes_nodo()
@@ -141,6 +160,59 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 		)
 		return dimensoes_filhos
 	
+	## Retorne a lista com as posicoes [inicio, fim] desse nodo
+	func get_dimensoes_nodo() -> Array[Array]:
+		return [[pos_comeco, pos_fim]]
+	
+	## Set a flag com valor (flag_value) no nodo filho
+	func set_flag(flag: int, flag_value: bool, posicao: Vector2) -> void:
+		if is_nodo_folha():
+			_set_node_flag(flag, flag_value)
+			return
+		# se nao for folha, chame no filho
+		_get_nodo_filho(posicao).set_flag(flag, flag_value, posicao)
+	
+	## Retorna se Flag no nodo filho eh (true ou false)
+	func get_flag(flag: int, posicao: Vector2) -> bool:
+		if is_nodo_folha():
+			return _get_node_flag(flag)
+		# se nao for folha, chame no filho
+		return _get_nodo_filho(posicao).get_flag(flag, posicao)
+	
+	
+	func _set_node_flag(flag: int, flag_value: bool) -> void:
+		print("_set_node_flag ", dados, " flag ", flag, " v: ", flag_value)
+		if flag_value:
+			# se flag true -> coloca como true
+			dados = dados | flag
+		else:
+			# se flag false -> apagar valor
+			dados = dados & (~flag)
+		print("_set_node_flag pos ", dados)
+	
+	func _get_node_flag(flag: int) -> bool:
+		# se valor da flag nao eh zero
+		return (dados & flag) != 0
+	
+	func deixar_filho_visivel(posicao: Vector2) -> void:
+		# se for nodo folha, nao tem como ter filhos visiveis, pare
+		if is_nodo_folha(): return 
+		
+		var is_filhos_visiveis : bool = _get_node_flag(FLAG_SHOW_FILHOS)
+		if not is_filhos_visiveis:
+			# filhos nao sao visiveis, coloque que esse node tem filho visivel
+			_set_node_flag(FLAG_SHOW_FILHOS, true)
+			print("Set filho visivel")
+			print("id ", _get_nodo_filho(posicao).id)
+		else:
+			# se os filhos forem visiveis, continue
+			print("id ", id, "  tem filho visivel")
+			_get_nodo_filho(posicao).deixar_filho_visivel(posicao)
+
+#	--------------------------------------------------------------------------------------------------
+#	--------------------------------------------------------------------------------------------------
+#	--------------------------------------------------------------------------------------------------
+#	--------------------------------------------------------------------------------------------------
 	## Retona uma lista com a dimensão de cada quadrado
 	## Dimensao sendo comeco (topo esquerda) e fim (bottom direita) 
 	func get_all_dimensoes() -> Array:
@@ -172,9 +244,6 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 			+ bot_dir.get_folhas_dimensoes()
 		)
 	
-	# retorne a lista com as posicoes [inicio, fim]
-	func get_dimensoes_nodo() -> Array[Array]:
-		return [[pos_comeco, pos_fim]]
 	
 	func get_dimensoes_filhos_nodos_com_dados(dados_comparar: Variant) -> Array:
 		# se o valor nao for igual, retorne o tamanho dos filhos
