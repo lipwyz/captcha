@@ -1,13 +1,13 @@
 class_name NavegadorControles
-extends Panel
+extends Control
 
 signal fechar
 signal minimizar
 signal maximizar
 
-@onready var label_url: Label = $VBox/MarginHotBar/PanelHotBar/HBox/PanelAddress/Margin/LabelUrl
-@onready var h_box_abas: HBoxContainer = $VBox/MarginAbasBar/HBox/HBoxAbas
-@onready var h_box_setas: HBoxContainer = $VBox/MarginAbasBar/HBox/HBoxSetas
+@export var label_url: Label
+@export var h_box_abas: Control
+@export var h_box_setas: Control
 
 @export_range(1,32,1, "Maximo de abas mostradas na tela até as setinhas aparecerem")
 var max_abas_mostradas : int = 7

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0rqlf2j205p8"
-path="res://.godot/imported/Windows_XP_Desktop.png-40f2b4861f135dbe78a83d530ec1be2f.ctex"
+uid="uid://1kewgvo36uig"
+path="res://.godot/imported/internetExplorer512x512.png-ed40403963cd9ce8fd8e7b67324608ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/AreaTrabalho/Windows_XP_Desktop.png"
-dest_files=["res://.godot/imported/Windows_XP_Desktop.png-40f2b4861f135dbe78a83d530ec1be2f.ctex"]
+source_file="res://_Debug/Temporarios/AreaTrabalho/internetExplorer512x512.png"
+dest_files=["res://.godot/imported/internetExplorer512x512.png-ed40403963cd9ce8fd8e7b67324608ff.ctex"]
 
 [params]
 

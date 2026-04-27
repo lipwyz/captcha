@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://sv6hm87ln5ip"]
 
-[ext_resource type="Texture2D" uid="uid://buqlvsxfkffke" path="res://Assets/AreaTrabalho/img1920_1080.jpg" id="1_lp8vd"]
+[ext_resource type="Texture2D" uid="uid://buqlvsxfkffke" path="res://_Debug/Temporarios/AreaTrabalho/img1920_1080.jpg" id="1_lp8vd"]
 
 [node name="ImagemTamRef" type="Control" unique_id=1342923152]
 layout_mode = 3

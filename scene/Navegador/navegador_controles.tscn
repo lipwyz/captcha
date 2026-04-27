@@ -2,16 +2,14 @@
 
 [ext_resource type="Theme" uid="uid://cj0agp435nvsu" path="res://themes/new_theme.tres" id="1_i7xe7"]
 [ext_resource type="Script" uid="uid://cnbh364hlf6ow" path="res://scene/Navegador/Scripts/navegador_controles.gd" id="1_ouk7q"]
-[ext_resource type="Texture2D" uid="uid://dn6fmp6f8401k" path="res://Assets/icon.svg" id="5_cgj0l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7xe7"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bkdxx"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4iee"]
-
-[node name="NavegadorControles" type="Panel" unique_id=1883575481]
+[node name="NavegadorControles" type="Panel" unique_id=1818094128 node_paths=PackedStringArray("label_url", "h_box_abas", "h_box_setas")]
+custom_minimum_size = Vector2(0, 100)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -21,50 +19,59 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 theme = ExtResource("1_i7xe7")
 script = ExtResource("1_ouk7q")
+label_url = NodePath("VBox/HotBar/PanelAddress/Margin/LabelUrl")
+h_box_abas = NodePath("VBox/MarginAbasBar/HBox/HBoxAbas")
+h_box_setas = NodePath("VBox/MarginAbasBar/HBox/HBoxSetas")
 
 [node name="VBox" type="VBoxContainer" parent="." unique_id=1808751003]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 120.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 
-[node name="PainelTopBar" type="PanelContainer" parent="VBox" unique_id=323352585]
+[node name="TopBar" type="Control" parent="VBox" unique_id=1322775579]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
+size_flags_vertical = 0
+
+[node name="PainelTopBar" type="PanelContainer" parent="VBox/TopBar" unique_id=323352585]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 27.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_i7xe7")
 
-[node name="HBox" type="HBoxContainer" parent="VBox/PainelTopBar" unique_id=1972581277]
+[node name="MarginTopBar" type="MarginContainer" parent="VBox/TopBar/PainelTopBar" unique_id=39395992]
 layout_mode = 2
-size_flags_horizontal = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 2
 
-[node name="Separador2" type="Control" parent="VBox/PainelTopBar/HBox" unique_id=228535119]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="LabelNomeApp" type="Label" parent="VBox/PainelTopBar/HBox" unique_id=1375099673]
-visible = false
+[node name="LabelNomeNavegador" type="Label" parent="VBox/TopBar/PainelTopBar/MarginTopBar" unique_id=1375099673]
 layout_mode = 2
 text = " Internet Explorer"
 
-[node name="Separador" type="Control" parent="VBox/PainelTopBar/HBox" unique_id=1832676821]
-clip_contents = true
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-size_flags_horizontal = 10
-
-[node name="HBoxControles" type="HBoxContainer" parent="VBox/PainelTopBar/HBox" unique_id=907867695]
-layout_mode = 2
+[node name="Controles" type="HBoxContainer" parent="VBox/TopBar" unique_id=825964034]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -35.0
+offset_bottom = 23.0
+grow_horizontal = 0
 size_flags_horizontal = 8
 
-[node name="ButtonMinimizar" type="Button" parent="VBox/PainelTopBar/HBox/HBoxControles" unique_id=231685938]
+[node name="ButtonMinimizar" type="Button" parent="VBox/TopBar/Controles" unique_id=231685938]
 layout_mode = 2
 text = "-"
 
-[node name="ButtonMaximizar" type="Button" parent="VBox/PainelTopBar/HBox/HBoxControles" unique_id=1264854560]
+[node name="ButtonMaximizar" type="Button" parent="VBox/TopBar/Controles" unique_id=1264854560]
 layout_mode = 2
 text = "[]"
 
-[node name="ButtonFechar" type="Button" parent="VBox/PainelTopBar/HBox/HBoxControles" unique_id=1879285661]
+[node name="ButtonFechar" type="Button" parent="VBox/TopBar/Controles" unique_id=1879285661]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_color = Color(1, 0.57254905, 0.50980395, 1)
@@ -84,73 +91,51 @@ layout_mode = 2
 
 [node name="HBoxSetas" type="HBoxContainer" parent="VBox/MarginAbasBar/HBox" unique_id=464330227]
 layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Separador" type="Control" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=168953983]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
 
 [node name="ButtonSetaEsq" type="Button" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=154491246]
 layout_mode = 2
 text = "<"
+
+[node name="Separador2" type="Control" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=1791061419]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
 
 [node name="ButtonSetaDir" type="Button" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=341463226]
 layout_mode = 2
 theme = ExtResource("1_i7xe7")
 text = ">"
 
-[node name="MarginHotBar" type="MarginContainer" parent="VBox" unique_id=205874004]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_right = 10
-
-[node name="PanelHotBar" type="PanelContainer" parent="VBox/MarginHotBar" unique_id=994892432]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_bkdxx")
-
-[node name="HBox" type="HBoxContainer" parent="VBox/MarginHotBar/PanelHotBar" unique_id=2141403913]
+[node name="HotBar" type="Control" parent="VBox" unique_id=274340694]
 layout_mode = 2
 
-[node name="PanelAddress" type="PanelContainer" parent="VBox/MarginHotBar/PanelHotBar/HBox" unique_id=634013428]
+[node name="PanelAddress" type="PanelContainer" parent="VBox/HotBar" unique_id=634013428]
 custom_minimum_size = Vector2(700, 0)
-layout_mode = 2
+layout_mode = 0
+offset_left = 11.0
+offset_top = 4.0
+offset_right = 711.0
+offset_bottom = 27.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
 theme = ExtResource("1_i7xe7")
 
-[node name="Margin" type="MarginContainer" parent="VBox/MarginHotBar/PanelHotBar/HBox/PanelAddress" unique_id=795615203]
+[node name="Margin" type="MarginContainer" parent="VBox/HotBar/PanelAddress" unique_id=795615203]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 5
 
-[node name="LabelUrl" type="Label" parent="VBox/MarginHotBar/PanelHotBar/HBox/PanelAddress/Margin" unique_id=35708277]
+[node name="LabelUrl" type="Label" parent="VBox/HotBar/PanelAddress/Margin" unique_id=35708277]
 layout_mode = 2
 theme = ExtResource("1_i7xe7")
 text = "https://Abode.com/inscricao/cancelar/com-certeza-vai-dar-bom.com "
 
-[node name="Separador" type="Control" parent="VBox/MarginHotBar/PanelHotBar/HBox" unique_id=591540641]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Favoritos" type="Control" parent="VBox/MarginHotBar/PanelHotBar/HBox" unique_id=113785926]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="PanelFavoritos" type="PanelContainer" parent="VBox/MarginHotBar/PanelHotBar/HBox/Favoritos" unique_id=1267583611]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_f4iee")
-
-[node name="Button" type="Button" parent="VBox/MarginHotBar/PanelHotBar/HBox/Favoritos/PanelFavoritos" unique_id=1172244822]
-layout_mode = 2
-icon = ExtResource("5_cgj0l")
-flat = true
-expand_icon = true
-
-[node name="Offset" type="Control" parent="VBox/MarginHotBar/PanelHotBar/HBox" unique_id=295128233]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[connection signal="pressed" from="VBox/PainelTopBar/HBox/HBoxControles/ButtonMinimizar" to="." method="_on_button_minimizar_pressed"]
-[connection signal="pressed" from="VBox/PainelTopBar/HBox/HBoxControles/ButtonMaximizar" to="." method="_on_button_maximizar_pressed"]
-[connection signal="pressed" from="VBox/PainelTopBar/HBox/HBoxControles/ButtonFechar" to="." method="_on_button_fechar_navegador_pressed"]
+[connection signal="pressed" from="VBox/TopBar/Controles/ButtonMinimizar" to="." method="_on_button_minimizar_pressed"]
+[connection signal="pressed" from="VBox/TopBar/Controles/ButtonMaximizar" to="." method="_on_button_maximizar_pressed"]
+[connection signal="pressed" from="VBox/TopBar/Controles/ButtonFechar" to="." method="_on_button_fechar_navegador_pressed"]
 [connection signal="pressed" from="VBox/MarginAbasBar/HBox/HBoxSetas/ButtonSetaEsq" to="." method="_clipar_move_esquerda"]
 [connection signal="pressed" from="VBox/MarginAbasBar/HBox/HBoxSetas/ButtonSetaDir" to="." method="_clipar_move_direita"]
