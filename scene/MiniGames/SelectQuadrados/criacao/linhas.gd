@@ -33,7 +33,7 @@ func _ready() -> void:
 	desenhar_quadrados()
 
 func desenhar_quadrados() -> void:
-	var lista_comeco_fim := gerenciador_quadTree.quadTree.mostrar_quadrados()
+	var lista_comeco_fim := gerenciador_quadTree.quadTree.get_dimensoes_visiveis()
 	for comeco_fim : Array[Vector2] in lista_comeco_fim:
 		var comeco	:= comeco_fim[0]
 		var fim 	:= comeco_fim[1]

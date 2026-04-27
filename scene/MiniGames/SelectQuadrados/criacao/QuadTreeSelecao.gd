@@ -2,9 +2,30 @@
 class_name QuadTreeSelecao
 extends QuadTree
 
-const FLAG_CLICK 	:= 1
-const FLAG_CORRETO 	:= 2
-const FLAG_SHOW 	:= 4
+const FLAG_CLICK 		:= 1
+const FLAG_CORRETO 		:= 2
+const FLAG_SHOW_FILHOS 	:= 4
+
+func _init(_profundidade: int) -> void:
+	root = QuadTreeSelecaoNode.new(Vector2.ZERO, Vector2.ONE, _profundidade, "0")
+	
+	# zera as flags em todos os nodos
+	const flags_inicial : int = 0
+	_set_valor_inicial_todos_nodos(flags_inicial)
+	# mostra somente a primeira camada de quadrados (filhos diretos do root)
+	root.dados = FLAG_SHOW_FILHOS
+	#for filho : QuadTreeNode in [root.top_esq, root.top_dir, root.bot_esq, root.bot_dir]:
+		#filho.dados = FLAG_SHOW_FILHOS
+
+func print_id(posicao: Vector2) -> void:
+	root.print_id(posicao)
+
+func get_dimensoes_visiveis() -> Array[Array]:
+	return root.get_dimensoes_visiveis()
+
+func mostrar_quadrados() -> Array[Array]:
+	#return root.get_dimensoes_filhos_nodos_com_dados(FLAG_SHOW)
+	return root.get_folhas_dimensoes()
 
 func get_all_dimensoes() -> Array:
 	return root.get_all_dimensoes()
@@ -20,26 +41,8 @@ func get_dimensoes_nodos_com_dados(dados_comparar: Variant) -> Array[Vector2]:
 	return root.get_dimensoes_nodos_com_dados(dados_comparar)
 
 
-func _init(_profundidade: int) -> void:
-	root = QuadTreeSelecaoNode.new(Vector2.ZERO, Vector2.ONE, _profundidade, "0")
-	
-	# zera as flags em todos os nodos
-	const flags_inicial : int = 0
-	_set_valor_inicial_todos_nodos(flags_inicial)
-	# mostra somente a primeira camada de quadrados (filhos diretos do root)
-	#root.dados = FLAG_SHOW
-	#for filho : QuadTreeNode in [root.top_esq, root.top_dir, root.bot_esq, root.bot_dir]:
-		#filho.dados = FLAG_SHOW
-
-func print_id(posicao: Vector2) -> void:
-	root.print_id(posicao)
-
-func mostrar_quadrados() -> Array[Array]:
-	#return root.get_dimensoes_filhos_nodos_com_dados(FLAG_SHOW)
-	return root.get_folhas_dimensoes()
-
-func clicar(posicao: Vector2) -> void:
-	var nodo : QuadTreeNode = root.get_nodo_folha(posicao)
+func marcar_clicado(posicao: Vector2) -> void:
+	var nodo : QuadTreeSelecaoNode = root.get_nodo_folha(posicao)
 	var flags :int = nodo.get_dados(posicao)
 	flags = flags | FLAG_CLICK
 	nodo.inserir_dados(flags, posicao)
@@ -93,6 +96,8 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 		pos_fim    = fim
 		id = _id + "_"
 		
+		dados = 0
+		
 		# se for nodo folha (sem filhos), pare aqui
 		if _profundidade == 0:
 			return
@@ -121,6 +126,20 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 											_profundidade, 
 											id + "3")
 	
+	func get_dimensoes_visiveis() -> Array[Array]:
+		var is_filhos_visiveis : bool = (dados & FLAG_SHOW_FILHOS) != 0
+		# filhos nao sao visiveis, retorne as dimensoes desse nodo e pare a funcao
+		if not is_filhos_visiveis:
+			return get_dimensoes_nodo()
+		
+		# se os filhos forem visiveis, junte as dimensoes deles num unico array
+		var dimensoes_filhos : Array = (
+			top_esq.get_dimensoes_visiveis()
+			+ top_dir.get_dimensoes_visiveis()
+			+ bot_esq.get_dimensoes_visiveis()
+			+ bot_dir.get_dimensoes_visiveis()
+		)
+		return dimensoes_filhos
 	
 	## Retona uma lista com a dimensão de cada quadrado
 	## Dimensao sendo comeco (topo esquerda) e fim (bottom direita) 
@@ -155,7 +174,6 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 	
 	# retorne a lista com as posicoes [inicio, fim]
 	func get_dimensoes_nodo() -> Array[Array]:
-		print("get_dimensoes_nodo id ", id)
 		return [[pos_comeco, pos_fim]]
 	
 	func get_dimensoes_filhos_nodos_com_dados(dados_comparar: Variant) -> Array:
