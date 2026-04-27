@@ -3,11 +3,6 @@
 [ext_resource type="Theme" uid="uid://cj0agp435nvsu" path="res://themes/new_theme.tres" id="1_i7xe7"]
 [ext_resource type="Script" uid="uid://cnbh364hlf6ow" path="res://scene/Navegador/Scripts/navegador_controles.gd" id="1_ouk7q"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7xe7"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bkdxx"]
-
 [node name="NavegadorControles" type="Panel" unique_id=1818094128 node_paths=PackedStringArray("label_url", "h_box_abas", "h_box_setas")]
 custom_minimum_size = Vector2(0, 100)
 anchors_preset = 15
@@ -23,60 +18,46 @@ label_url = NodePath("VBox/HotBar/PanelAddress/Margin/LabelUrl")
 h_box_abas = NodePath("VBox/MarginAbasBar/HBox/HBoxAbas")
 h_box_setas = NodePath("VBox/MarginAbasBar/HBox/HBoxSetas")
 
-[node name="VBox" type="VBoxContainer" parent="." unique_id=1808751003]
+[node name="PosControles" type="Control" parent="." unique_id=1169384076]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Controles" type="HBoxContainer" parent="PosControles" unique_id=825964034]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -38.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = 26.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+
+[node name="ButtonMinimizar" type="Button" parent="PosControles/Controles" unique_id=231685938]
+layout_mode = 2
+text = "-"
+
+[node name="ButtonMaximizar" type="Button" parent="PosControles/Controles" unique_id=1264854560]
+layout_mode = 2
+text = "[]"
+
+[node name="ButtonFechar" type="Button" parent="PosControles/Controles" unique_id=1879285661]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.57254905, 0.50980395, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.9137255, 0, 0, 1)
+text = "X"
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=981328887]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TopBar" type="Control" parent="VBox" unique_id=1322775579]
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="PainelTopBar" type="PanelContainer" parent="VBox/TopBar" unique_id=323352585]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 27.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_i7xe7")
-
-[node name="MarginTopBar" type="MarginContainer" parent="VBox/TopBar/PainelTopBar" unique_id=39395992]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 2
-
-[node name="LabelNomeNavegador" type="Label" parent="VBox/TopBar/PainelTopBar/MarginTopBar" unique_id=1375099673]
-layout_mode = 2
-text = " Internet Explorer"
-
-[node name="Controles" type="HBoxContainer" parent="VBox/TopBar" unique_id=825964034]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -35.0
-offset_bottom = 23.0
-grow_horizontal = 0
-size_flags_horizontal = 8
-
-[node name="ButtonMinimizar" type="Button" parent="VBox/TopBar/Controles" unique_id=231685938]
-layout_mode = 2
-text = "-"
-
-[node name="ButtonMaximizar" type="Button" parent="VBox/TopBar/Controles" unique_id=1264854560]
-layout_mode = 2
-text = "[]"
-
-[node name="ButtonFechar" type="Button" parent="VBox/TopBar/Controles" unique_id=1879285661]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(1, 0.57254905, 0.50980395, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0.9137255, 0, 0, 1)
-text = "X"
 
 [node name="MarginAbasBar" type="MarginContainer" parent="VBox" unique_id=1920836775]
 layout_mode = 2
@@ -134,8 +115,8 @@ layout_mode = 2
 theme = ExtResource("1_i7xe7")
 text = "https://Abode.com/inscricao/cancelar/com-certeza-vai-dar-bom.com "
 
-[connection signal="pressed" from="VBox/TopBar/Controles/ButtonMinimizar" to="." method="_on_button_minimizar_pressed"]
-[connection signal="pressed" from="VBox/TopBar/Controles/ButtonMaximizar" to="." method="_on_button_maximizar_pressed"]
-[connection signal="pressed" from="VBox/TopBar/Controles/ButtonFechar" to="." method="_on_button_fechar_navegador_pressed"]
+[connection signal="pressed" from="PosControles/Controles/ButtonMinimizar" to="." method="_on_button_minimizar_pressed"]
+[connection signal="pressed" from="PosControles/Controles/ButtonMaximizar" to="." method="_on_button_maximizar_pressed"]
+[connection signal="pressed" from="PosControles/Controles/ButtonFechar" to="." method="_on_button_fechar_navegador_pressed"]
 [connection signal="pressed" from="VBox/MarginAbasBar/HBox/HBoxSetas/ButtonSetaEsq" to="." method="_clipar_move_esquerda"]
 [connection signal="pressed" from="VBox/MarginAbasBar/HBox/HBoxSetas/ButtonSetaDir" to="." method="_clipar_move_direita"]
