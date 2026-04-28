@@ -39,7 +39,7 @@ class QuadTreeNode:
 	
 	## Profundidade do nodo atual, quantidade de camadas de filhos (se for folha = 0)
 	var profundidade : int
-	## Posicao da metade do nodo, para calcular esq, dir, top e bot (null nos nodos folhas)
+	## Posicao da metade do nodo, para calcular esq, dir, top e bot (presente nos nodos folhas tb)
 	var pos_metade : Vector2
 	
 	## Dados que o nodo folha guarda (null nos pais)
@@ -48,14 +48,14 @@ class QuadTreeNode:
 	## Cria o nodo e seus filhos recursivamente
 	func _init(comeco : Vector2, fim : Vector2, _profundidade : int) -> void:
 		profundidade = _profundidade
+		# calcula a posicao na metade
+		pos_metade = comeco + ( (fim - comeco) * 0.5 )
 		
 		# se for nodo folha (sem filhos), pare aqui
 		if _profundidade == 0:
 			return
 		# se nodo tiver filhos, continue
 		
-		# calcula a posicao na metade
-		pos_metade = comeco + ( (fim - comeco) * 0.5 )
 		# diminui a profundidade para criar os nodos filhos
 		_profundidade -= 1
 		# cria os 4 filhos

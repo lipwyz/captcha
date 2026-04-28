@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://clrp372fotl3b" path="res://scene/MiniGames/SelectQuadrados/criacao/mini_game_select_quadrados.gd" id="1_tsssp"]
 [ext_resource type="Texture2D" uid="uid://dhq7s7j276aqr" path="res://Assets/1_JiSQVnR_nibjRC1azRl6Fw.jpg" id="2_aub4a"]
+[ext_resource type="Script" uid="uid://bk4b6h23vr48" path="res://scene/MiniGames/SelectQuadrados/tool/tool_gerenciador_quadTree.gd" id="2_v4f0m"]
 [ext_resource type="Texture2D" uid="uid://dlpoyy50lurgs" path="res://Assets/Sprites/sheets/propaganda hamburger-Sheet.png" id="3_l6c1y"]
 [ext_resource type="Script" uid="uid://bidhxpw4kprep" path="res://scene/MiniGames/SelectQuadrados/criacao/linhas.gd" id="4_d1qgx"]
-[ext_resource type="Script" uid="uid://bk4b6h23vr48" path="res://scene/MiniGames/SelectQuadrados/criacao/tool_select_quadrados.gd" id="5_iytix"]
 [ext_resource type="Resource" uid="uid://11v5pviy23ex" path="res://scene/MiniGames/SelectQuadrados/quadTree_1.tres" id="6_iytix"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1qgx"]
@@ -20,10 +20,10 @@ grow_vertical = 2
 script = ExtResource("1_tsssp")
 metadata/_edit_lock_ = true
 
-[node name="GerenciadorQuadTree" type="Node" parent="." unique_id=1081839330]
-script = ExtResource("5_iytix")
-quadTree_res = ExtResource("6_iytix")
-profundidade = 4
+[node name="GerenciadorQuadTree" type="Node" parent="." unique_id=1081839330 node_paths=PackedStringArray("gerenciador_linhas")]
+script = ExtResource("2_v4f0m")
+quadTree_resource = ExtResource("6_iytix")
+gerenciador_linhas = NodePath("../Mundo/Verificador/ImagemClicavel/Linhas")
 
 [node name="Mundo" type="Node2D" parent="." unique_id=120381652]
 
@@ -87,9 +87,8 @@ points = PackedVector2Array(400, 400, 400, 600, 600, 600, 600, 400)
 closed = true
 width = 5.0
 
-[node name="Linhas" type="Node2D" parent="Mundo/Verificador/ImagemClicavel" unique_id=675218699 node_paths=PackedStringArray("gerenciador_quadTree", "colisor_imagem", "referencia_line_2d", "referencia_polygon_2d")]
+[node name="Linhas" type="Node2D" parent="Mundo/Verificador/ImagemClicavel" unique_id=675218699 node_paths=PackedStringArray("colisor_imagem", "referencia_line_2d", "referencia_polygon_2d")]
 script = ExtResource("4_d1qgx")
-gerenciador_quadTree = NodePath("../../../../GerenciadorQuadTree")
 colisor_imagem = NodePath("../Area2D/CollisionShape2D")
 referencia_line_2d = NodePath("../LinhasRef/ReferenciaLine2D")
 referencia_polygon_2d = NodePath("../LinhasRef/ReferenciaPolygon2D")

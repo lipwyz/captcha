@@ -1,7 +1,8 @@
 [gd_resource type="Resource" script_class="QuadTreeSelecaoRes" format=3 uid="uid://11v5pviy23ex"]
 
-[ext_resource type="Script" uid="uid://bqtfpc0v7evi3" path="res://scene/MiniGames/SelectQuadrados/criacao/QuadTreeSelecaoRes.gd" id="1_dwdsl"]
+[ext_resource type="Script" uid="uid://bqtfpc0v7evi3" path="res://scene/MiniGames/SelectQuadrados/QuadTreeSelecaoRes.gd" id="1_dwdsl"]
 
 [resource]
 script = ExtResource("1_dwdsl")
+profundidade = 1
 metadata/_custom_type_script = "uid://bqtfpc0v7evi3"

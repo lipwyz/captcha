@@ -21,6 +21,11 @@ func print_id(posicao: Vector2) -> void:
 func get_dimensoes_visiveis() -> Array[Array]:
 	return root.get_dimensoes_visiveis()
 
+## Mostra as dimensoes de todos os nodos folha
+## Retorna lista com itens [comeco, fim, selecionado]
+func get_dimensoes_all_folhas() -> Array[Array]:
+	return root.get_dimensoes_all_folhas()
+
 ## Percorre os filhos visiveis ate o primeiro filho que nao eh visivel
 ## 		entao marca seus filhos como visivel
 func deixar_filho_visivel(posicao: Vector2) -> void:
@@ -49,17 +54,24 @@ func get_dados(posicao: Vector2) -> Variant:
 func inserir(dados, posicao: Vector2) -> void:
 	root.inserir(dados, posicao)
 
+func _set_valor_inicial_todos_nodos(valor: int) -> void:
+	root.inserir_dados_nodo_e_filhos(valor)
+
+func get_posicao_all_nodos_folha_corretos() -> Array[Vector2]:
+	return root.get_posicao_all_nodos_folha_corretos()
+
+func set_all_nodos_folha_corretos(posicoes: Array[Vector2]) -> void:
+	for pos : Vector2 in posicoes:
+		root.inserir_dados(FLAG_CORRETO, pos)
+
 ## Retorna os 4 cantos do quadrado, dado comeco (esq cima) e fim (direita baixo)
-func get_cantos_quadrado(comeco : Vector2, fim : Vector2) -> Array[Vector2]:
+static func get_cantos_quadrado(comeco : Vector2, fim : Vector2) -> Array[Vector2]:
 	return [
 		Vector2(comeco.x, comeco.y),	# top esq
 		Vector2(fim.x, comeco.y), 		# top dir
 		Vector2(fim.x, fim.y), 			# bot dir
 		Vector2(comeco.x, fim.y),		# bot esq
 	]
-
-func _set_valor_inicial_todos_nodos(valor: int) -> void:
-	root.inserir_dados_nodo_e_filhos(valor)
 
 # -----------------------------------------------------------------------------
 # class QuadTreeSelecaoNode
@@ -141,6 +153,20 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 		)
 		return dimensoes_filhos
 	
+	func get_dimensoes_all_folhas() -> Array[Array]:
+		# se for nodo folha, nao tem como ter filhos visiveis, retorne a dimensao
+		if is_nodo_folha():
+			return get_dimensoes_nodo()
+		
+		# se tem filhos, junte as dimensoes deles num unico array
+		var dimensoes_filhos : Array = (
+			  top_esq.get_dimensoes_all_folhas()
+			+ top_dir.get_dimensoes_all_folhas()
+			+ bot_esq.get_dimensoes_all_folhas()
+			+ bot_dir.get_dimensoes_all_folhas()
+		)
+		return dimensoes_filhos
+	
 	## Retorne a lista com as posicoes [inicio, fim] desse nodo
 	func get_dimensoes_nodo() -> Array[Array]:
 		var selecionado = _get_node_flag(FLAG_SELECIONADO)
@@ -203,3 +229,19 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 		else:
 			# filhos nao sao visiveis, pare
 			return
+	
+	func get_posicao_all_nodos_folha_corretos() -> Array[Vector2]:
+		# se eh folha, acabe aqui
+		if is_nodo_folha():
+			# se for FLAG_CORRETO, retorne a posicao metade
+			if _get_node_flag(FLAG_CORRETO):
+				return [pos_metade]
+			return []
+		# se tem filhos, retorne a juncao das posicao que eles retornarem
+		var return_dos_filhos : Array = (
+			  top_esq.get_posicao_all_nodos_folha_corretos()
+			+ top_dir.get_posicao_all_nodos_folha_corretos()
+			+ bot_esq.get_posicao_all_nodos_folha_corretos()
+			+ bot_dir.get_posicao_all_nodos_folha_corretos()
+		)
+		return return_dos_filhos
