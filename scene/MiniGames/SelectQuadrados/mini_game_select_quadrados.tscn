@@ -57,9 +57,9 @@ grow_vertical = 2
 texture = ExtResource("2_aub4a")
 
 [node name="ImagemClicavel" type="Node2D" parent="Mundo/Verificador" unique_id=1729116684]
+position = Vector2(-235, -189)
 
 [node name="SpriteImagem" type="Sprite2D" parent="Mundo/Verificador/ImagemClicavel" unique_id=1458555600]
-position = Vector2(-235, -189)
 scale = Vector2(0.46851844, 0.46666664)
 texture = ExtResource("3_l6c1y")
 centered = false
@@ -67,20 +67,29 @@ region_enabled = true
 region_rect = Rect2(1080, 2160, 1080, 1080)
 
 [node name="Area2D" type="Area2D" parent="Mundo/Verificador/ImagemClicavel" unique_id=723195257]
-position = Vector2(-235, -189)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mundo/Verificador/ImagemClicavel/Area2D" unique_id=1820348446]
 position = Vector2(253, 252)
 shape = SubResource("RectangleShape2D_d1qgx")
 debug_color = Color(1.0348111e-06, 0.6506658, 0.09750032, 0.41960785)
 
-[node name="Linhas" type="Node2D" parent="Mundo/Verificador/ImagemClicavel" unique_id=675218699 node_paths=PackedStringArray("gerenciador_quadTree", "colisor_imagem")]
-position = Vector2(-235, -189)
+[node name="Linhas" type="Node2D" parent="Mundo/Verificador/ImagemClicavel" unique_id=675218699 node_paths=PackedStringArray("gerenciador_quadTree", "colisor_imagem", "referencia_line_2d", "referencia_polygon_2d")]
 script = ExtResource("4_d1qgx")
 gerenciador_quadTree = NodePath("../../../../GerenciadorQuadTree")
 colisor_imagem = NodePath("../Area2D/CollisionShape2D")
+referencia_line_2d = NodePath("../LinhasRef/ReferenciaLine2D")
+referencia_polygon_2d = NodePath("../LinhasRef/ReferenciaPolygon2D")
 
-[node name="ReferenciaLine2D" type="Line2D" parent="Mundo/Verificador/ImagemClicavel/Linhas" unique_id=1935297342]
+[node name="LinhasRef" type="Node2D" parent="Mundo/Verificador/ImagemClicavel" unique_id=1260022715]
+visible = false
+
+[node name="ReferenciaPolygon2D" type="Polygon2D" parent="Mundo/Verificador/ImagemClicavel/LinhasRef" unique_id=1091640703]
+z_index = 10
+color = Color(1, 1, 1, 0.61960787)
+polygon = PackedVector2Array(100, 400, 100, 600, 300, 600, 300, 400)
+
+[node name="ReferenciaLine2D" type="Line2D" parent="Mundo/Verificador/ImagemClicavel/LinhasRef" unique_id=1935297342]
+z_index = 20
 points = PackedVector2Array(400, 400, 400, 600, 600, 600, 600, 400)
 closed = true
 width = 5.0

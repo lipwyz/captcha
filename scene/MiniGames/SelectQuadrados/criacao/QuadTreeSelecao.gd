@@ -21,23 +21,18 @@ func print_id(posicao: Vector2) -> void:
 	root.print_id(posicao)
 
 ## Mostra as dimensoes dos somente dos filhos dos nodos que tem FLAG_SHOW_FILHOS
+## Retorna lista com itens [comeco, fim, selecionado]
 func get_dimensoes_visiveis() -> Array[Array]:
 	return root.get_dimensoes_visiveis()
 
 func deixar_filho_visivel(posicao: Vector2) -> void:
 	root.deixar_filho_visivel(posicao)
 
-#func marcar_selecionado(posicao: Vector2) -> void:
-	#var nodo : QuadTreeSelecaoNode = root.get_nodo_folha(posicao)
-	#var flags :int = nodo.get_dados(posicao)
-	#flags = flags | FLAG_SELECIONADO
-	#nodo.inserir_dados(flags, posicao)
+func marcar_selecionado(posicao: Vector2) -> void:
+	root.set_folha_flag(FLAG_SELECIONADO, true, posicao)
 #
-#func marcar_correto(posicao: Vector2) -> void:
-	#var nodo : QuadTreeSelecaoNode = root.get_nodo_folha(posicao)
-	#var flags :int = nodo.get_dados(posicao)
-	#flags = flags | FLAG_CORRETO
-	#nodo.inserir_dados(flags, posicao)
+func marcar_correto(posicao: Vector2) -> void:
+	root.set_folha_flag(FLAG_CORRETO, true, posicao)
 
 # ---------------------------------------------------------------------------------------------------
 func mostrar_quadrados() -> Array[Array]:
@@ -162,22 +157,23 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 	
 	## Retorne a lista com as posicoes [inicio, fim] desse nodo
 	func get_dimensoes_nodo() -> Array[Array]:
-		return [[pos_comeco, pos_fim]]
+		var selecionado = _get_node_flag(FLAG_SELECIONADO)
+		return [[pos_comeco, pos_fim, selecionado]]
 	
 	## Set a flag com valor (flag_value) no nodo filho
-	func set_flag(flag: int, flag_value: bool, posicao: Vector2) -> void:
+	func set_folha_flag(flag: int, flag_value: bool, posicao: Vector2) -> void:
 		if is_nodo_folha():
 			_set_node_flag(flag, flag_value)
 			return
 		# se nao for folha, chame no filho
-		_get_nodo_filho(posicao).set_flag(flag, flag_value, posicao)
+		_get_nodo_filho(posicao).set_folha_flag(flag, flag_value, posicao)
 	
 	## Retorna se Flag no nodo filho eh (true ou false)
-	func get_flag(flag: int, posicao: Vector2) -> bool:
+	func get_folha_flag(flag: int, posicao: Vector2) -> bool:
 		if is_nodo_folha():
 			return _get_node_flag(flag)
 		# se nao for folha, chame no filho
-		return _get_nodo_filho(posicao).get_flag(flag, posicao)
+		return _get_nodo_filho(posicao).get_folha_flag(flag, posicao)
 	
 	
 	func _set_node_flag(flag: int, flag_value: bool) -> void:

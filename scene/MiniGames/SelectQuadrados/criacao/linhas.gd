@@ -5,8 +5,12 @@ extends Node2D
 ## Imagem que o jogador vai clicar
 #@export var imagem_verificador: Sprite2D
 @export var colisor_imagem : CollisionShape2D
+
+@export_category("Referencias")
 ## Line2D de referencia para criar as outras linhas
-@onready var referencia_line_2d: Line2D = $ReferenciaLine2D
+@export var referencia_line_2d: Line2D
+## Line2D de referencia para criar as caixas de selecionado
+@export var referencia_polygon_2d: Polygon2D
 
 # Posicoes de comeco e fim da imagem
 var pos_start : Vector2
@@ -21,6 +25,10 @@ func _ready() -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
 	
+	ajustar_tamanho_imagem()
+	desenhar_quadrados()
+
+func ajustar_tamanho_imagem() -> void:
 	var rect : Rect2 = colisor_imagem.shape.get_rect()
 	var tamanho = rect.size
 	var pos_base := Vector2.ZERO
@@ -29,36 +37,55 @@ func _ready() -> void:
 	# tamanho da imagem, para usar na conversao de [0, 1] -> [0, tamanho da imagem]
 	size_img = pos_end - pos_start
 	div_size_img = Vector2.ONE / size_img
-	
-	desenhar_quadrados()
 
-var linhas_lista : Array[Line2D] = []
 func desenhar_quadrados() -> void:
-	# limpa as linhas
-	for linha in linhas_lista:
-		linha.queue_free()
-	linhas_lista.clear()
+	# limpa qualquer filho que tenha
+	for c in get_children():
+		c.queue_free()
 	
+	# percorre a lista de quadrados e desenha eles
 	var lista_comeco_fim := gerenciador_quadTree.quadTree.get_dimensoes_visiveis()
-	for comeco_fim : Array[Vector2] in lista_comeco_fim:
-		var comeco	:= comeco_fim[0]
-		var fim 	:= comeco_fim[1]
+	for comeco_fim_selecionado : Array in lista_comeco_fim:
+		var comeco	:Vector2   = comeco_fim_selecionado[0]
+		var fim 	:Vector2   = comeco_fim_selecionado[1]
+		var selecionado : bool = comeco_fim_selecionado[2]
 		var cantos = gerenciador_quadTree.quadTree.get_cantos_quadrado(comeco, fim)
 		# desenha o quadrado
-		desenhar_posicoes(cantos) 
+		desenhar_linhas_quadrado(cantos) 
+		# se esetiver selecionado marcao o quadrado
+		if selecionado:
+			desenhar_interior_quadrado(cantos)
 
-func desenhar_posicoes(cantos_quadrado: Array) -> void:
+func desenhar_interior_quadrado(cantos_quadrado: Array) ->void:
+	# faz uma copia do polygono de referencia
+	var polygon : Polygon2D = referencia_polygon_2d.duplicate()
+	# adiciona na cena
+	add_child(polygon)
+	# adiciona os pontos
+	var cantos : Array[Vector2] = []
+	for ponto in cantos_quadrado:
+		cantos.append(_converter_ponto_quadTree_para_imagem(ponto))
+	polygon.polygon = PackedVector2Array(cantos)
+	polygon.show()
+
+func desenhar_linhas_quadrado(cantos_quadrado: Array) -> void:
 	# faz uma copia da linha de referencia
 	var line : Line2D = referencia_line_2d.duplicate()
 	line.clear_points()
-	line.show()
 	# adiciona na cena
 	add_child(line)
-	linhas_lista.append(line) # coloca line
+	# coloca os pontos no quadrado
+	_adicionar_pontos_linha(line, cantos_quadrado)
+	line.show()
+
+func _adicionar_pontos_linha(line : Line2D, cantos_quadrado: Array[Vector2]) -> void:
+	line.clear_points()
 	# coloca os pontos do quadrado
 	for ponto : Vector2 in cantos_quadrado:
-		ponto = pos_start + (ponto * size_img)
-		line.add_point(ponto)
+		line.add_point(_converter_ponto_quadTree_para_imagem(ponto))
+
+func _converter_ponto_quadTree_para_imagem(ponto_quad: Vector2) -> Vector2:
+	return pos_start + (ponto_quad * size_img)
 
 func click(pos: Vector2) -> void:
 	# pega o quadrado
@@ -76,6 +103,8 @@ func click(pos: Vector2) -> void:
 	
 	quad_tree.print_id(pos_quad)
 	quad_tree.deixar_filho_visivel(pos_quad)
+	quad_tree.marcar_selecionado(pos_quad)
+	
 	desenhar_quadrados()
 
 func _processar_click(pos: Vector2) -> void:
