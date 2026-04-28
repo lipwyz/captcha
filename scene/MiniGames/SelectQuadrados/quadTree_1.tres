@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_dwdsl")
-profundidade = 1
+profundidade = 3
 metadata/_custom_type_script = "uid://bqtfpc0v7evi3"

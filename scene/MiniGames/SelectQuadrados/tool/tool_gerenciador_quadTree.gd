@@ -17,14 +17,11 @@ var quadTree : QuadTreeSelecao
 
 func _ready() -> void:
 	if Engine.is_editor_hint(): return
-	
-	print("criado")
-	quadTree = load_quadTree()
 
 
-func load_quadTree() -> QuadTreeSelecao:
+func load_quadTree() -> void:
 	# TODO: fazer o load
-	return QuadTreeSelecao.new(2)
+	quadTree = quadTree_resource.load_corretos_quadTree()
 
 # ------------------------------------------------------------------------------
 # Tool

@@ -34,11 +34,15 @@ func _ready() -> void:
 	for c: Node2D in get_parent().get_children():
 		assert(c.position == Vector2.ZERO, "Nodo %s nao esta na origem da Imagem (position != (0,0)), pode causar problemas" % c.name)
 	
+	
+		
 	# TODO: tirar isso
 	await get_tree().process_frame
 	await get_tree().process_frame
 	
 	ajustar_tamanho_imagem()
+	
+	gerenciador_quadTree.load_quadTree()
 	desenhar_quadrados_visiveis(gerenciador_quadTree.quadTree)
 
 func ajustar_tamanho_imagem() -> void:
@@ -118,6 +122,9 @@ func click(pos: Vector2) -> void:
 	quad_tree.print_id(pos_quad)
 	quad_tree.deixar_filho_visivel(pos_quad)
 	quad_tree.marcar_selecionado(pos_quad)
+	
+	# TODO: fazer possivel de des-selecionar quadrado
+	print("TODO: fazer possivel de des-selecionar quadrado")
 	
 	desenhar_quadrados_visiveis(gerenciador_quadTree.quadTree)
 

@@ -87,8 +87,9 @@ points = PackedVector2Array(400, 400, 400, 600, 600, 600, 600, 400)
 closed = true
 width = 5.0
 
-[node name="Linhas" type="Node2D" parent="Mundo/Verificador/ImagemClicavel" unique_id=675218699 node_paths=PackedStringArray("colisor_imagem", "referencia_line_2d", "referencia_polygon_2d")]
+[node name="Linhas" type="Node2D" parent="Mundo/Verificador/ImagemClicavel" unique_id=675218699 node_paths=PackedStringArray("gerenciador_quadTree", "colisor_imagem", "referencia_line_2d", "referencia_polygon_2d")]
 script = ExtResource("4_d1qgx")
+gerenciador_quadTree = NodePath("../../../../GerenciadorQuadTree")
 colisor_imagem = NodePath("../Area2D/CollisionShape2D")
 referencia_line_2d = NodePath("../LinhasRef/ReferenciaLine2D")
 referencia_polygon_2d = NodePath("../LinhasRef/ReferenciaPolygon2D")
