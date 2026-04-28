@@ -36,6 +36,11 @@ func deixar_filho_visivel(posicao: Vector2) -> void:
 func marcar_selecionado(posicao: Vector2) -> void:
 	root.selecionar_folha_visivel(posicao)
 
+## Marca com FLAG_SELECIONADO os nodo folha que sao filhos visiveis.
+## 		Para nodos que nao sao visiveis nao acontece nada
+func toggle_selecionado(posicao: Vector2) -> void:
+	root.toggle_selecionar_folha_visivel(posicao)
+
 ## Marca com FLAG_CORRETO os nodo folha na posicao
 func marcar_correto(posicao: Vector2) -> void:
 	root.set_folha_flag(FLAG_CORRETO, true, posicao)
@@ -229,6 +234,25 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 		else:
 			# filhos nao sao visiveis, pare
 			return
+	
+	## Toggle a FLAG_SELECIONADO os nodo folha que sao filhos visiveis.
+	## 		Inverte o valor de FLAG_SELECIONADO no nodo
+	## 		Para nodos que nao sao visiveis nao acontece nada
+	func toggle_selecionar_folha_visivel(posicao: Vector2) -> void:
+		# se for nodo folha, marque como selecionado e pare
+		if is_nodo_folha():
+			var valor_flag: bool = _get_node_flag(FLAG_SELECIONADO)
+			_set_node_flag(FLAG_SELECIONADO, not valor_flag)
+			return
+		# se nao for folha, veja se os filhos sao visiveis
+		var is_filhos_visiveis : bool = _get_node_flag(FLAG_SHOW_FILHOS)
+		if is_filhos_visiveis:
+			# se os filhos forem visiveis, continue
+			_get_nodo_filho(posicao).toggle_selecionar_folha_visivel(posicao)
+		else:
+			# filhos nao sao visiveis, pare
+			return
+	
 	
 	func get_posicao_all_nodos_folha_corretos() -> Array[Vector2]:
 		# se eh folha, acabe aqui

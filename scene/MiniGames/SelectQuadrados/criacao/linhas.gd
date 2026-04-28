@@ -121,10 +121,7 @@ func click(pos: Vector2) -> void:
 	
 	quad_tree.print_id(pos_quad)
 	quad_tree.deixar_filho_visivel(pos_quad)
-	quad_tree.marcar_selecionado(pos_quad)
-	
-	# TODO: fazer possivel de des-selecionar quadrado
-	print("TODO: fazer possivel de des-selecionar quadrado")
+	quad_tree.toggle_selecionado(pos_quad)
 	
 	desenhar_quadrados_visiveis(gerenciador_quadTree.quadTree)
 
