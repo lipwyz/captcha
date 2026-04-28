@@ -73,13 +73,6 @@ position = Vector2(253, 252)
 shape = SubResource("RectangleShape2D_d1qgx")
 debug_color = Color(1.0348111e-06, 0.6506658, 0.09750032, 0.41960785)
 
-[node name="Linhas" type="Node2D" parent="Mundo/Verificador/ImagemClicavel" unique_id=675218699 node_paths=PackedStringArray("gerenciador_quadTree", "colisor_imagem", "referencia_line_2d", "referencia_polygon_2d")]
-script = ExtResource("4_d1qgx")
-gerenciador_quadTree = NodePath("../../../../GerenciadorQuadTree")
-colisor_imagem = NodePath("../Area2D/CollisionShape2D")
-referencia_line_2d = NodePath("../LinhasRef/ReferenciaLine2D")
-referencia_polygon_2d = NodePath("../LinhasRef/ReferenciaPolygon2D")
-
 [node name="LinhasRef" type="Node2D" parent="Mundo/Verificador/ImagemClicavel" unique_id=1260022715]
 visible = false
 
@@ -93,3 +86,10 @@ z_index = 20
 points = PackedVector2Array(400, 400, 400, 600, 600, 600, 600, 400)
 closed = true
 width = 5.0
+
+[node name="Linhas" type="Node2D" parent="Mundo/Verificador/ImagemClicavel" unique_id=675218699 node_paths=PackedStringArray("gerenciador_quadTree", "colisor_imagem", "referencia_line_2d", "referencia_polygon_2d")]
+script = ExtResource("4_d1qgx")
+gerenciador_quadTree = NodePath("../../../../GerenciadorQuadTree")
+colisor_imagem = NodePath("../Area2D/CollisionShape2D")
+referencia_line_2d = NodePath("../LinhasRef/ReferenciaLine2D")
+referencia_polygon_2d = NodePath("../LinhasRef/ReferenciaPolygon2D")

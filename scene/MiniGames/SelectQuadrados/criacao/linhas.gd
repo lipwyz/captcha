@@ -23,7 +23,11 @@ func _input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			_processar_click(event.global_position)
 
-func _ready() -> void:	
+func _ready() -> void:
+	# certificar que estao na posicao correta
+	for c: Node2D in get_parent().get_children():
+		assert(c.position == Vector2.ZERO, "Nodo %s nao esta na origem da Imagem (position != (0,0)), pode causar problemas" % c.name)
+	
 	# TODO: tirar isso
 	await get_tree().process_frame
 	await get_tree().process_frame
