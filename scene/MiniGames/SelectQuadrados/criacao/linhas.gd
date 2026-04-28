@@ -18,9 +18,12 @@ var pos_end   : Vector2
 var size_img  : Vector2
 var div_size_img  : Vector2
 
-func _ready() -> void:
-	referencia_line_2d.hide()
-	
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			_processar_click(event.global_position)
+
+func _ready() -> void:	
 	# TODO: tirar isso
 	await get_tree().process_frame
 	await get_tree().process_frame
@@ -37,6 +40,9 @@ func ajustar_tamanho_imagem() -> void:
 	# tamanho da imagem, para usar na conversao de [0, 1] -> [0, tamanho da imagem]
 	size_img = pos_end - pos_start
 	div_size_img = Vector2.ONE / size_img
+
+#------------------------------------------------------------------------------
+# Desenha Quadrados
 
 func desenhar_quadrados() -> void:
 	# limpa qualquer filho que tenha
@@ -64,9 +70,8 @@ func desenhar_interior_quadrado(cantos_quadrado: Array) ->void:
 	# adiciona os pontos
 	var cantos : Array[Vector2] = []
 	for ponto in cantos_quadrado:
-		cantos.append(_converter_ponto_quadTree_para_imagem(ponto))
+		cantos.append(_converter_ponto_quadTree_para_tela(ponto))
 	polygon.polygon = PackedVector2Array(cantos)
-	polygon.show()
 
 func desenhar_linhas_quadrado(cantos_quadrado: Array) -> void:
 	# faz uma copia da linha de referencia
@@ -76,30 +81,21 @@ func desenhar_linhas_quadrado(cantos_quadrado: Array) -> void:
 	add_child(line)
 	# coloca os pontos no quadrado
 	_adicionar_pontos_linha(line, cantos_quadrado)
-	line.show()
 
 func _adicionar_pontos_linha(line : Line2D, cantos_quadrado: Array[Vector2]) -> void:
 	line.clear_points()
 	# coloca os pontos do quadrado
 	for ponto : Vector2 in cantos_quadrado:
-		line.add_point(_converter_ponto_quadTree_para_imagem(ponto))
+		line.add_point(_converter_ponto_quadTree_para_tela(ponto))
 
-func _converter_ponto_quadTree_para_imagem(ponto_quad: Vector2) -> Vector2:
-	return pos_start + (ponto_quad * size_img)
+#------------------------------------------------------------------------------
+# Lidar com Clicks
 
 func click(pos: Vector2) -> void:
 	# pega o quadrado
 	var quad_tree : QuadTree = gerenciador_quadTree.quadTree
-	# converte a global_pos do mouse para o [0.0, 1.0] do quad tree
-	var pos_quad : Vector2 = (pos - pos_start) * div_size_img
-	
-	## pega o valor do tamanho do quadrado
-	#var valor = quad_tree.get_dados(pos_quad)
-	## se nao tiver valor, coloque 1
-	#if not valor: valor = 1
-	## printa o valor e insere +1 dps
-	#print("Valor no quad: %d" % valor)
-	#quad_tree.inserir_dados(valor+1, pos_quad)
+	# converte para ponto da quadTree
+	var pos_quad : Vector2 = _converter_ponto_tela_para_quadTree(pos)
 	
 	quad_tree.print_id(pos_quad)
 	quad_tree.deixar_filho_visivel(pos_quad)
@@ -118,7 +114,13 @@ func _processar_click(pos: Vector2) -> void:
 	# se estiver dentro da imagem
 	click(pos)
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			_processar_click(event.global_position)
+#------------------------------------------------------------------------------
+# Conversores
+
+## Converte ponto [0.0, 1.0] da quadTree para a posicao global
+func _converter_ponto_quadTree_para_tela(ponto_quad: Vector2) -> Vector2:
+	return pos_start + (ponto_quad * size_img)
+
+## Converte a global_pos do mouse para o [0.0, 1.0] da quadTree
+func _converter_ponto_tela_para_quadTree(ponto_tela: Vector2) -> Vector2:
+	return (ponto_tela - pos_start) * div_size_img
