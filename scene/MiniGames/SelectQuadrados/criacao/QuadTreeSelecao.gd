@@ -6,16 +6,12 @@ const FLAG_CORRETO 		:= 1
 const FLAG_SELECIONADO	:= 2
 const FLAG_SHOW_FILHOS 	:= 4
 
+const VALOR_FLAGS_INICIAL := 0
+
 func _init(_profundidade: int) -> void:
 	root = QuadTreeSelecaoNode.new(Vector2.ZERO, Vector2.ONE, _profundidade, "0")
-	
-	# zera as flags em todos os nodos
-	const flags_inicial : int = 0
-	_set_valor_inicial_todos_nodos(flags_inicial)
 	# mostra somente a primeira camada de quadrados (filhos diretos do root)
 	root.dados = FLAG_SHOW_FILHOS
-	#for filho : QuadTreeNode in [root.top_esq, root.top_dir, root.bot_esq, root.bot_dir]:
-		#filho.dados = FLAG_SHOW_FILHOS
 
 func print_id(posicao: Vector2) -> void:
 	root.print_id(posicao)
@@ -25,34 +21,23 @@ func print_id(posicao: Vector2) -> void:
 func get_dimensoes_visiveis() -> Array[Array]:
 	return root.get_dimensoes_visiveis()
 
+## Percorre os filhos visiveis ate o primeiro filho que nao eh visivel
+## 		entao marca seus filhos como visivel
 func deixar_filho_visivel(posicao: Vector2) -> void:
 	root.deixar_filho_visivel(posicao)
 
+## Marca com FLAG_SELECIONADO os nodo folha que sao filhos visiveis.
+## 		Para nodos que nao sao visiveis nao acontece nada
 func marcar_selecionado(posicao: Vector2) -> void:
 	root.selecionar_folha_visivel(posicao)
-#
+
+## Marca com FLAG_CORRETO os nodo folha na posicao
 func marcar_correto(posicao: Vector2) -> void:
 	root.set_folha_flag(FLAG_CORRETO, true, posicao)
 
 # ---------------------------------------------------------------------------------------------------
-func mostrar_quadrados() -> Array[Array]:
-	#return root.get_dimensoes_filhos_nodos_com_dados(FLAG_SHOW)
-	return root.get_folhas_dimensoes()
 
-func get_all_dimensoes() -> Array:
-	return root.get_all_dimensoes()
-
-## Retorna uma lista de elementos [comeco, fim] : Array[Vector2]
-## 		para cada nodo folha da arvore
-func get_folhas_dimensoes() -> Array[Vector2]:
-	return root.get_folhas_dimensoes()
-
-## Retorna uma lista de elementos [comeco, fim] : Array[Vector2]
-## 		para cada nodo folha da arvore
-func get_dimensoes_nodos_com_dados(dados_comparar: Variant) -> Array[Vector2]:
-	return root.get_dimensoes_nodos_com_dados(dados_comparar)
-# ---------------------------------------------------------------------------------------------------
-
+## Set nodo folha na posicao, como FLAG_CORRETO
 func set_valido(posicao: Vector2) -> void:
 	root.inserir_dados(FLAG_CORRETO, posicao)
 
@@ -63,11 +48,6 @@ func get_dados(posicao: Vector2) -> Variant:
 ## Insere dados em um nodo folha na dada posicao
 func inserir(dados, posicao: Vector2) -> void:
 	root.inserir(dados, posicao)
-#
-### Retorna uma lista de elementos [comeco, fim] : Array[Vector2]
-### 		para a nodo folha da arvore
-#func get_all_dimensoes() -> Array:
-	#return root.get_all_dimensoes(Vector2.ZERO, Vector2.ONE)
 
 ## Retorna os 4 cantos do quadrado, dado comeco (esq cima) e fim (direita baixo)
 func get_cantos_quadrado(comeco : Vector2, fim : Vector2) -> Array[Vector2]:
@@ -85,12 +65,18 @@ func _set_valor_inicial_todos_nodos(valor: int) -> void:
 # class QuadTreeSelecaoNode
 # -----------------------------------------------------------------------------
 class QuadTreeSelecaoNode extends QuadTreeNode:
-	#
+	# Debug: texto com a posicao do nodo 
+	# top_esq	 7 | 9	 top_dir
+	# 			---+---
+	# bot_esq	 1 | 3	 bot_dir
 	var id: String = ""
 	
+	# Posicao [0.0, 1.0] do comeco (top_esq) e fim (bot_dir) do nodo
+	# 	para usar ao calcular dimensoes
 	var pos_comeco : Vector2
 	var pos_fim : Vector2
 	
+	## Debug: print (id) conforme vai descendo pelos filhos do nodo ate chegar no nodo folha
 	func print_id(posicao: Vector2) -> void:
 		print(id)
 		if is_nodo_folha(): return
@@ -102,7 +88,7 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 		pos_fim    = fim
 		id = _id + "_"
 		
-		dados = 0
+		dados = VALOR_FLAGS_INICIAL
 		
 		# se for nodo folha (sem filhos), pare aqui
 		if _profundidade == 0:
@@ -160,7 +146,7 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 		var selecionado = _get_node_flag(FLAG_SELECIONADO)
 		return [[pos_comeco, pos_fim, selecionado]]
 	
-	## Set a flag com valor (flag_value) no nodo filho
+	## Set a flag com valor (flag_value) no nodo folha
 	func set_folha_flag(flag: int, flag_value: bool, posicao: Vector2) -> void:
 		if is_nodo_folha():
 			_set_node_flag(flag, flag_value)
@@ -175,7 +161,7 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 		# se nao for folha, chame no filho
 		return _get_nodo_filho(posicao).get_folha_flag(flag, posicao)
 	
-	
+	## Set o valor de flag para flag_value, neste nodo 
 	func _set_node_flag(flag: int, flag_value: bool) -> void:
 		if flag_value:
 			# se flag true -> coloca como true
@@ -184,10 +170,12 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 			# se flag false -> apagar valor
 			dados = dados & (~flag)
 	
+	## Retorna o valor de flag para este nodo
 	func _get_node_flag(flag: int) -> bool:
 		# se valor da flag nao eh zero
 		return (dados & flag) != 0
 	
+	## Deixa o primeiro filho que encontra com os filhos visivel, com FLAG_SHOW_FILHOS
 	func deixar_filho_visivel(posicao: Vector2) -> void:
 		# se for nodo folha, nao tem como ter filhos visiveis, pare
 		if is_nodo_folha(): return 
@@ -200,6 +188,8 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 			# se os filhos forem visiveis, continue
 			_get_nodo_filho(posicao).deixar_filho_visivel(posicao)
 	
+	## Marca com FLAG_SELECIONADO os nodo folha que sao filhos visiveis.
+	## 		Para nodos que nao sao visiveis nao acontece nada
 	func selecionar_folha_visivel(posicao: Vector2) -> void:
 		# se for nodo folha, marque como selecionado e pare
 		if is_nodo_folha():
@@ -213,70 +203,3 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 		else:
 			# filhos nao sao visiveis, pare
 			return
-
-#	--------------------------------------------------------------------------------------------------
-#	--------------------------------------------------------------------------------------------------
-#	--------------------------------------------------------------------------------------------------
-#	--------------------------------------------------------------------------------------------------
-	## Retona uma lista com a dimensão de cada quadrado
-	## Dimensao sendo comeco (topo esquerda) e fim (bottom direita) 
-	func get_all_dimensoes() -> Array:
-		if is_nodo_folha():
-			# retorne as posicoes [inicio, fim]
-			return [pos_comeco, pos_fim, [] ]
-		
-		# se tem filhos
-		var dimensoes_filhos : Array = (
-			top_esq.get_all_dimensoes()
-			+ top_dir.get_all_dimensoes()
-			+ bot_esq.get_all_dimensoes()
-			+ bot_dir.get_all_dimensoes()
-		)
-		
-		return [pos_comeco, pos_fim, dimensoes_filhos]
-	
-	## Retona uma lista com a dimensão de cada quadrado, somente dos nodos filhos
-	## 	Dimensao sendo comeco (topo esquerda) e fim (bottom direita) 
-	func get_folhas_dimensoes() -> Array:
-		if is_nodo_folha():
-			return get_dimensoes_nodo()
-		
-		# se tem filhos, retorne a posicao de cada um dos 4
-		return (
-			top_esq.get_folhas_dimensoes()
-			+ top_dir.get_folhas_dimensoes()
-			+ bot_esq.get_folhas_dimensoes()
-			+ bot_dir.get_folhas_dimensoes()
-		)
-	
-	
-	func get_dimensoes_filhos_nodos_com_dados(dados_comparar: Variant) -> Array:
-		# se o valor nao for igual, retorne o tamanho dos filhos
-		if dados != dados_comparar:
-			return (
-				top_esq.get_dimensoes_nodo()
-				+ top_dir.get_dimensoes_nodo()
-				+ bot_esq.get_dimensoes_nodo()
-				+ bot_dir.get_dimensoes_nodo()
-			)
-		# se o valor for igual
-		
-		# se chegar nos nodos folha, retorne a posicao deles
-		if is_nodo_folha():
-			return get_dimensoes_nodo()
-		
-		# dimensoes dos filhos
-		var dimensoes_filhos : Array = (
-			top_esq.get_dimensoes_filhos_nodos_com_dados(dados_comparar)
-			+ top_dir.get_dimensoes_filhos_nodos_com_dados(dados_comparar)
-			+ bot_esq.get_dimensoes_filhos_nodos_com_dados(dados_comparar)
-			+ bot_dir.get_dimensoes_filhos_nodos_com_dados(dados_comparar)
-		)
-		
-		#se nenhnum filho retornou nada, bote o valor deste nodo
-		if dimensoes_filhos.is_empty():
-			return [[pos_comeco, pos_fim]]
-		# se os filhos retornaram algo, retorne os valores deles
-		else:
-			return dimensoes_filhos
-	
