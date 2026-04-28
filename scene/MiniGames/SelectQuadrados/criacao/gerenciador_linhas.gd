@@ -34,18 +34,16 @@ func _ready() -> void:
 	for c: Node2D in get_parent().get_children():
 		assert(c.position == Vector2.ZERO, "Nodo %s nao esta na origem da Imagem (position != (0,0)), pode causar problemas" % c.name)
 	
-	
-		
-	# TODO: tirar isso
-	await get_tree().process_frame
-	await get_tree().process_frame
-	
-	ajustar_tamanho_imagem()
-	
+	# ajusta os dados relacionados ao tamanho da imagem
+	ajustar_dados_tamanho_imagem()
+	# carrega a quadTree e mostra os quadrados
 	gerenciador_quadTree.load_quadTree()
 	desenhar_quadrados_visiveis(gerenciador_quadTree.quadTree)
 
-func ajustar_tamanho_imagem() -> void:
+
+## Ajusta os dados relacionados ao tamanho da imagem
+## 		Chamar antes de qualquer desenhar quadrados na imagem, pois precisa dos dados
+func ajustar_dados_tamanho_imagem() -> void:
 	var rect : Rect2 = colisor_imagem.shape.get_rect()
 	var tamanho = rect.size
 	var pos_base := Vector2.ZERO
@@ -58,10 +56,12 @@ func ajustar_tamanho_imagem() -> void:
 #------------------------------------------------------------------------------
 # Desenha Quadrados
 
+## Desenha somente os quadrados que sao visiveis
 func desenhar_quadrados_visiveis(quadTree: QuadTreeSelecao) -> void:
 	var lista_comeco_fim_selecionado := quadTree.get_dimensoes_visiveis()
 	desenhar_quadrados(lista_comeco_fim_selecionado)
 
+## Desenha todos os quadradinhos dos nodo folhas (independente de ser visiveis)
 func desenhar_quadrados_all(quadTree: QuadTreeSelecao) -> void:
 	var lista_comeco_fim_selecionado := quadTree.get_dimensoes_all_folhas()
 	desenhar_quadrados(lista_comeco_fim_selecionado)
