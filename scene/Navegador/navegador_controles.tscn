@@ -29,12 +29,11 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -38.0
-offset_top = 3.0
-offset_right = -3.0
-offset_bottom = 26.0
+offset_left = -35.0
+offset_bottom = 23.0
 grow_horizontal = 0
 size_flags_horizontal = 8
+localize_numeral_system = false
 
 [node name="ButtonMinimizar" type="Button" parent="PosControles/Controles" unique_id=231685938]
 layout_mode = 2
@@ -58,6 +57,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 0.99310535)
 
 [node name="MarginAbasBar" type="MarginContainer" parent="VBox" unique_id=1920836775]
 layout_mode = 2
@@ -100,7 +100,7 @@ layout_mode = 0
 offset_left = 11.0
 offset_top = 4.0
 offset_right = 711.0
-offset_bottom = 27.0
+offset_bottom = 29.0
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme = ExtResource("1_i7xe7")

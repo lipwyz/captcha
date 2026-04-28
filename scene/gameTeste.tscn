@@ -17,8 +17,11 @@ offset_top = 47.0
 offset_right = -137.0
 offset_bottom = -50.0
 
-[node name="Separador" parent="Navegador/Panel/VSplit/NavegadorControles/VBox/PainelTopBar/HBox" parent_id_path=PackedInt32Array(1862273277, 1883575481, 1972581277) index="2" unique_id=1832676821]
-custom_minimum_size = Vector2(0, 0)
+[node name="PanelAddress" parent="Navegador/Panel/VSplit/NavegadorControles/VBox/HotBar" parent_id_path=PackedInt32Array(1862273277, 1883575481, 274340694) index="0" unique_id=634013428]
+offset_left = 26.0
+offset_top = 38.451263
+offset_right = 726.0
+offset_bottom = 63.451263
 
 [node name="ImagemTamRef" parent="Navegador/Panel/VSplit/NavegadorConteudo/Margin/PanelConteudo" parent_id_path=PackedInt32Array(1862273277, 811463956, 1499278014) index="0" unique_id=1342923152 instance=ExtResource("4_4dg7q")]
 visible = false

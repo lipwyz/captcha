@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://dxiaud0xsx1he"]
 
 [ext_resource type="Script" uid="uid://c0io4m2qepy5i" path="res://scene/Navegador/Scripts/aba.gd" id="1_7n5ku"]
-[ext_resource type="Texture2D" uid="uid://bwbwqfwqt4qgt" path="res://Assets/sprites/Navegador/Navegador versao roxa.png" id="1_d7kbe"]
+[ext_resource type="Texture2D" uid="uid://3gimw5h1a1o3" path="res://Assets/sprites/Navegador/aba4.png" id="1_d7kbe"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_21231"]
 texture = ExtResource("1_d7kbe")
-region_rect = Rect2(7, 3, 116, 50)
 
 [sub_resource type="Theme" id="Theme_4qwa5"]
+Label/colors/font_color = Color(1, 1, 1, 1)
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_21231")
+
+[sub_resource type="LabelSettings" id="LabelSettings_d7kbe"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="Aba" type="PanelContainer" unique_id=462069909]
 clip_contents = true
@@ -36,6 +39,7 @@ size_flags_horizontal = 4
 layout_mode = 2
 mouse_filter = 1
 text = " Abode"
+label_settings = SubResource("LabelSettings_d7kbe")
 
 [node name="Separador" type="Control" parent="HBox" unique_id=419149675]
 layout_mode = 2
@@ -44,6 +48,7 @@ mouse_filter = 1
 
 [node name="ButtonFechar" type="Button" parent="HBox" unique_id=96849118]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "X"
 flat = true
 

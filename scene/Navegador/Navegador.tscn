@@ -1,15 +1,12 @@
 [gd_scene format=3 uid="uid://cxdrd8o2eceyg"]
 
 [ext_resource type="Script" uid="uid://c7n3mushquyi5" path="res://scene/Navegador/Scripts/navegador.gd" id="1_1uexu"]
-[ext_resource type="Texture2D" uid="uid://bwbwqfwqt4qgt" path="res://Assets/Sprites/Navegador/Navegador versao roxa.png" id="1_e3m55"]
 [ext_resource type="PackedScene" uid="uid://roejgry65bjv" path="res://scene/Navegador/navegador_controles.tscn" id="2_1uexu"]
+[ext_resource type="Texture2D" uid="uid://bmviw3n038y6t" path="res://Assets/sprites/Navegador/RoxoSemBotao2.png" id="2_e3m55"]
 [ext_resource type="PackedScene" uid="uid://bfqh3fojnue4h" path="res://scene/Navegador/navegador_conteudo.tscn" id="3_e3m55"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qffjp"]
-texture = ExtResource("1_e3m55")
-
-[sub_resource type="Theme" id="Theme_e7k1e"]
-Panel/styles/panel = SubResource("StyleBoxTexture_qffjp")
+texture = ExtResource("2_e3m55")
 
 [node name="Navegador" type="Control" unique_id=1862273277]
 custom_minimum_size = Vector2(1200, 200)
@@ -19,7 +16,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_e7k1e")
 script = ExtResource("1_1uexu")
 
 [node name="Panel" type="Panel" parent="." unique_id=1862289145]
@@ -29,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qffjp")
 
 [node name="VSplit" type="VSplitContainer" parent="Panel" unique_id=2135664842]
 layout_mode = 1
@@ -43,6 +40,12 @@ split_offset = 102
 
 [node name="NavegadorControles" parent="Panel/VSplit" unique_id=1883575481 instance=ExtResource("2_1uexu")]
 layout_mode = 2
+
+[node name="PanelAddress" parent="Panel/VSplit/NavegadorControles/VBox/HotBar" parent_id_path=PackedInt32Array(1883575481, 274340694) index="0" unique_id=634013428]
+offset_left = 21.0
+offset_top = 73.69425
+offset_right = 721.0
+offset_bottom = 98.69425
 
 [node name="NavegadorConteudo" parent="Panel/VSplit" unique_id=811463956 node_paths=PackedStringArray("conteudos_abas_minimizadas") instance=ExtResource("3_e3m55")]
 layout_mode = 2
