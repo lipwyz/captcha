@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bk4b6h23vr48" path="res://scene/MiniGames/SelectQuadrados/tool/tool_gerenciador_quadTree.gd" id="2_v4f0m"]
 [ext_resource type="Texture2D" uid="uid://dlpoyy50lurgs" path="res://Assets/Sprites/sheets/propaganda hamburger-Sheet.png" id="3_l6c1y"]
 [ext_resource type="Script" uid="uid://bidhxpw4kprep" path="res://scene/MiniGames/SelectQuadrados/criacao/gerenciador_linhas.gd" id="4_d1qgx"]
-[ext_resource type="Resource" uid="uid://11v5pviy23ex" path="res://scene/MiniGames/SelectQuadrados/quadTree_1.tres" id="6_iytix"]
+[ext_resource type="Resource" uid="uid://11v5pviy23ex" path="res://scene/MiniGames/SelectQuadrados/MG_SelecaoDef_1.tres" id="6_iytix"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1qgx"]
 size = Vector2(506, 504)

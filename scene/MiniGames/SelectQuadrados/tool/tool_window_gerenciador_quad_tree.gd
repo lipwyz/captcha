@@ -12,13 +12,13 @@ signal mostrar_quadrados
 @onready var criar_quad_tree: Control = $CriarQuadTree
 @onready var load_quad_tree: Control = $LoadQuadTree
 
-var quadTreeResource : QuadTreeSelecaoRes
+var quadTreeResource : MG_SelecaoDefinicoesRes
 
 func _ready() -> void:
 	criar_quad_tree.hide()
 	load_quad_tree.hide()
 
-func receber_resource(quadTreeRes: QuadTreeSelecaoRes) -> void:
+func receber_resource(quadTreeRes: MG_SelecaoDefinicoesRes) -> void:
 	if (not quadTreeRes) or quadTreeRes == null:
 		push_error("QuadTreeRes null")
 		closed.emit()

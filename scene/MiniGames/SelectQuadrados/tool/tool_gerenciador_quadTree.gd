@@ -3,7 +3,7 @@ class_name GerenciadorQuadTree
 extends Node
 
 @export_category("QuadTree")
-@export var quadTree_resource: QuadTreeSelecaoRes
+@export var quadTree_resource: MG_SelecaoDefinicoesRes
 
 @export_tool_button("Abrir Janela Configuracao", "ScriptCreateDialog") var button_janela = _tool_janela
 
