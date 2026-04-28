@@ -45,6 +45,14 @@ func toggle_selecionado(posicao: Vector2) -> void:
 func marcar_correto(posicao: Vector2) -> void:
 	root.set_folha_flag(FLAG_CORRETO, true, posicao)
 
+## Retorna a diferenca entre FLAG_SELECIONADO e FLAG_CORRETO em todos os nodos folha
+## Para cada nodo:
+##	-1 se correto, 		mas 	nao selecionado
+##	 0 se correto 		e 		selecionado
+##	 1 se nao correto, 	mas 	selecionado 
+##	 0 se nao correto, 	e 		nao selecionado
+func get_dif_selecoes_marcadas_corretas() -> int:
+	return root.get_dif_selecoes_marcadas_corretas()
 # ---------------------------------------------------------------------------------------------------
 
 ## Set nodo folha na posicao, como FLAG_CORRETO
@@ -269,3 +277,23 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 			+ bot_dir.get_posicao_all_nodos_folha_corretos()
 		)
 		return return_dos_filhos
+	
+	## Para cada nodo retorne os valores somados dos filhos
+	## 	Onde para cada filho:
+	##	-1 se correto, 		mas 	nao selecionado
+	##	 0 se correto 		e 		selecionado
+	##	 1 se nao correto, 	mas 	selecionado 
+	##	 0 se nao correto, 	e 		nao selecionado
+	func get_dif_selecoes_marcadas_corretas() -> int:
+		# se eh folha, retorne se esta correto
+		if is_nodo_folha():
+			var correto: int     = 1 if _get_node_flag(FLAG_CORRETO)     else 0
+			var selecionado: int = 1 if _get_node_flag(FLAG_SELECIONADO) else 0
+			return selecionado - correto
+		# se tiver filhos
+		var valor : int = 0
+		valor += top_esq.get_dif_selecoes_marcadas_corretas()
+		valor += top_dir.get_dif_selecoes_marcadas_corretas()
+		valor += bot_esq.get_dif_selecoes_marcadas_corretas()
+		valor += bot_dir.get_dif_selecoes_marcadas_corretas()
+		return valor

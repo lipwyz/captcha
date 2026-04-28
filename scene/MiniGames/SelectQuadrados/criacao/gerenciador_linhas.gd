@@ -19,6 +19,8 @@ var pos_end   : Vector2
 var size_img  : Vector2
 var div_size_img  : Vector2
 
+var quadTree : QuadTreeSelecao
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -38,7 +40,8 @@ func _ready() -> void:
 	ajustar_dados_tamanho_imagem()
 	# carrega a quadTree e mostra os quadrados
 	gerenciador_quadTree.load_quadTree()
-	desenhar_quadrados_visiveis(gerenciador_quadTree.quadTree)
+	quadTree = gerenciador_quadTree.quadTree
+	desenhar_quadrados_visiveis(quadTree)
 
 
 ## Ajusta os dados relacionados ao tamanho da imagem
@@ -114,16 +117,17 @@ func _adicionar_pontos_linha(line : Line2D, cantos_quadrado: Array[Vector2]) -> 
 # Lidar com Clicks
 
 func click(pos: Vector2) -> void:
-	# pega o quadrado
-	var quad_tree : QuadTree = gerenciador_quadTree.quadTree
 	# converte para ponto da quadTree
 	var pos_quad : Vector2 = _converter_ponto_tela_para_quadTree(pos)
 	
-	quad_tree.print_id(pos_quad)
-	quad_tree.deixar_filho_visivel(pos_quad)
-	quad_tree.toggle_selecionado(pos_quad)
+	# selecionar os quadrados
+	quadTree.deixar_filho_visivel(pos_quad)
+	quadTree.toggle_selecionado(pos_quad)
+	# desenha os quadrados visiveis
+	desenhar_quadrados_visiveis(quadTree)
 	
-	desenhar_quadrados_visiveis(gerenciador_quadTree.quadTree)
+	# verifica se concluiu clicando em todos
+	verificar_concluido()
 
 func _processar_click(pos: Vector2) -> void:
 	# converte da poiscao global -> posicao local
@@ -135,6 +139,14 @@ func _processar_click(pos: Vector2) -> void:
 	if pos.x > pos_end.x: return 
 	# se estiver dentro da imagem
 	click(pos)
+
+#------------------------------------------------------------------------------
+# Conclusao
+
+func verificar_concluido() -> void:
+	print(quadTree.get_dif_selecoes_marcadas_corretas())
+	pass
+
 
 #------------------------------------------------------------------------------
 # Conversores
