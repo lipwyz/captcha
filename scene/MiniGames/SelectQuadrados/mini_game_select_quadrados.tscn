@@ -16,10 +16,9 @@ grow_vertical = 2
 script = ExtResource("1_tsssp")
 metadata/_edit_lock_ = true
 
-[node name="GerenciadorQuadTree" type="Node" parent="." unique_id=1081839330 node_paths=PackedStringArray("gerenciador_linhas")]
+[node name="GerenciadorQuadTree" type="Node" parent="." unique_id=1081839330]
 script = ExtResource("2_v4f0m")
 quadTree_resource = ExtResource("6_iytix")
-gerenciador_linhas = NodePath("../Mundo/Verificador/ImagemClicavel/GerenciadorLinhas")
 
 [node name="Mundo" type="Node2D" parent="." unique_id=120381652]
 
@@ -52,10 +51,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_aub4a")
 
-[node name="ImagemClicavel" parent="Mundo/Verificador" unique_id=1502582107 instance=ExtResource("5_v4f0m")]
+[node name="GerenciadorImagemClicavel" parent="Mundo/Verificador" unique_id=1502582107 node_paths=PackedStringArray("gerenciador_quadTree") instance=ExtResource("5_v4f0m")]
 position = Vector2(-235, -189)
-
-[node name="GerenciadorLinhas" parent="Mundo/Verificador/ImagemClicavel" index="3" unique_id=525887982 node_paths=PackedStringArray("gerenciador_quadTree")]
-gerenciador_quadTree = NodePath("../../../../GerenciadorQuadTree")
-
-[editable path="Mundo/Verificador/ImagemClicavel"]
+gerenciador_quadTree = NodePath("../../../GerenciadorQuadTree")

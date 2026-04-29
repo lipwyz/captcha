@@ -7,11 +7,7 @@ extends Node
 
 @export_tool_button("Abrir Janela Configuracao", "ScriptCreateDialog") var button_janela = _tool_janela
 
-@export_category("Nodo")
-@export var gerenciador_linhas : GerenciadorLinhasSelect
-
 var _tool_gui := preload("uid://bj231cdcdqwep")
-
 
 var quadTree : QuadTreeSelecao
 
@@ -53,12 +49,14 @@ func _tool_janela():
 	janela.criar_quadTree.connect(_criar_quadTree)
 	# -- load --
 	janela.load_quadTree.connect(_load_quadTree)
-	janela.mostrar_quadrados.connect(_mostrar_quadrados)
+	janela.mostrar_quadrados.connect(_mostrar_quadrados.bind(janela))
 	
 	if quadTree_resource:
 		janela.receber_resource(quadTree_resource)
 	else:
 		janela.receber_resource(null)
+
+#var janela
 
 func _criar_quadTree(profundidade: int) -> void:
 	quadTree = QuadTreeSelecao.new(profundidade)
@@ -68,8 +66,14 @@ func _load_quadTree() -> void:
 	quadTree = quadTree_resource.load_corretos_quadTree()
 	print("Load quadTree")
 
-func _mostrar_quadrados() -> void:
+func _mostrar_quadrados(janela: ToolWindowGerenciadorQuadTree) -> void:
+	var imagem_clicavel :Node2D = CENA_IMAGEM_CLICAVEL.instantiate()
+	var _gerenciador_linhas : GerenciadorImagemClicavel = imagem_clicavel.get_child(-1)
+	_gerenciador_linhas.gerenciador_quadTree = self
+	janela.add_child(imagem_clicavel)
 	#
-	gerenciador_linhas.ajustar_dados_tamanho_imagem()
-	gerenciador_linhas.desenhar_quadrados_all(quadTree)
+	_gerenciador_linhas.ajustar_dados_tamanho_imagem()
+	_gerenciador_linhas.desenhar_quadrados_all(quadTree)
 	print("Quadrados mostrados")
+
+const CENA_IMAGEM_CLICAVEL = preload("uid://bwk2s0vp06pp8")

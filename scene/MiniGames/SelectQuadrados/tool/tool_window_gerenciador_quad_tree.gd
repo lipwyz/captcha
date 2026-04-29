@@ -34,6 +34,7 @@ func receber_resource(quadTreeRes: MG_SelecaoDefinicoesRes) -> void:
 
 # -----------------------------------------------------------------------------
 # Criar Quad Tree
+
 @onready var spin_box_profundidade: SpinBox = $CriarQuadTree/VBox/HBox/SpinBoxProfundidade
 func _on_button_criar_pressed() -> void:
 	var prof : int = int(spin_box_profundidade.value)
@@ -41,6 +42,7 @@ func _on_button_criar_pressed() -> void:
 
 # -----------------------------------------------------------------------------
 # Load Quad Tree
+
 @onready var label_inicial: Label = $LoadQuadTree/VBox/LabelInicial
 @onready var button_mostrar: Button = $LoadQuadTree/VBox/ButtonMostrar
 func _load_quadTree() -> void:
@@ -54,3 +56,6 @@ func _on_button_load_pressed() -> void:
 
 func _on_button_mostrar_pressed() -> void:
 	mostrar_quadrados.emit()
+
+# -----------------------------------------------------------------------------
+# Selecionar corretos

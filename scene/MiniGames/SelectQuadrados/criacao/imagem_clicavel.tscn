@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://bwk2s0vp06pp8"]
 
 [ext_resource type="Texture2D" uid="uid://dlpoyy50lurgs" path="res://Assets/Sprites/sheets/propaganda hamburger-Sheet.png" id="1_h5hnt"]
-[ext_resource type="Script" uid="uid://bidhxpw4kprep" path="res://scene/MiniGames/SelectQuadrados/criacao/gerenciador_linhas.gd" id="2_7wts2"]
+[ext_resource type="Script" uid="uid://bidhxpw4kprep" path="res://scene/MiniGames/SelectQuadrados/criacao/gerenciador_imagem_clicavel.gd" id="2_7wts2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1qgx"]
 size = Vector2(506, 504)
 
-[node name="ImagemClicavel" type="Node2D" unique_id=1502582107]
+[node name="GerenciadorImagemClicavel" type="Node2D" unique_id=1502582107 node_paths=PackedStringArray("colisor_imagem", "pai_linhas", "referencia_line_2d", "referencia_polygon_2d")]
+script = ExtResource("2_7wts2")
+colisor_imagem = NodePath("Area2D/CollisionShape2D")
+pai_linhas = NodePath("PaiLinhas")
+referencia_line_2d = NodePath("LinhasRef/ReferenciaLine2D")
+referencia_polygon_2d = NodePath("LinhasRef/ReferenciaPolygon2D")
 
 [node name="SpriteImagem" type="Sprite2D" parent="." unique_id=1847807575]
 scale = Vector2(0.46851844, 0.46666664)
@@ -36,9 +41,4 @@ points = PackedVector2Array(400, 400, 400, 600, 600, 600, 600, 400)
 closed = true
 width = 5.0
 
-[node name="GerenciadorLinhas" type="Node2D" parent="." unique_id=525887982 node_paths=PackedStringArray("gerenciador_quadTree", "colisor_imagem", "referencia_line_2d", "referencia_polygon_2d")]
-script = ExtResource("2_7wts2")
-gerenciador_quadTree = NodePath("")
-colisor_imagem = NodePath("../Area2D/CollisionShape2D")
-referencia_line_2d = NodePath("../LinhasRef/ReferenciaLine2D")
-referencia_polygon_2d = NodePath("../LinhasRef/ReferenciaPolygon2D")
+[node name="PaiLinhas" type="Node2D" parent="." unique_id=525887982]

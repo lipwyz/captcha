@@ -1,5 +1,5 @@
 @tool
-class_name GerenciadorLinhasSelect
+class_name GerenciadorImagemClicavel
 extends Node2D
 
 @export  var gerenciador_quadTree: GerenciadorQuadTree
@@ -7,11 +7,14 @@ extends Node2D
 #@export var imagem_verificador: Sprite2D
 @export var colisor_imagem : CollisionShape2D
 
+@export var pai_linhas: Node2D
+
 @export_category("Referencias")
 ## Line2D de referencia para criar as outras linhas
 @export var referencia_line_2d: Line2D
 ## Line2D de referencia para criar as caixas de selecionado
 @export var referencia_polygon_2d: Polygon2D
+
 
 # Posicoes de comeco e fim da imagem
 var pos_start : Vector2
@@ -36,7 +39,7 @@ func _ready() -> void:
 		return
 
 	# certificar que estao na posicao correta
-	for c: Node2D in get_parent().get_children():
+	for c: Node2D in get_children():
 		assert(c.position == Vector2.ZERO, "Nodo %s nao esta na origem da Imagem (position != (0,0)), pode causar problemas" % c.name)
 	
 	# ajusta os dados relacionados ao tamanho da imagem
@@ -84,7 +87,7 @@ func desenhar_quadrados_all(_quadTree: QuadTreeSelecao) -> void:
 # -----  ------------------------------------------------------------------
 func desenhar_quadrados(lista_comeco_fim_selecionado: Array[Array]) -> void:
 	# limpa qualquer filho que tenha
-	for c in get_children():
+	for c in pai_linhas.get_children():
 		c.queue_free()
 
 	# percorre a lista de quadrados e desenha eles
@@ -103,7 +106,7 @@ func desenhar_interior_quadrado(cantos_quadrado: Array) ->void:
 	# faz uma copia do polygono de referencia
 	var polygon : Polygon2D = referencia_polygon_2d.duplicate()
 	# adiciona na cena
-	add_child(polygon)
+	pai_linhas.add_child(polygon)
 	# adiciona os pontos
 	var cantos : Array[Vector2] = []
 	for ponto in cantos_quadrado:
@@ -115,7 +118,7 @@ func desenhar_linhas_quadrado(cantos_quadrado: Array) -> void:
 	var line : Line2D = referencia_line_2d.duplicate()
 	line.clear_points()
 	# adiciona na cena
-	add_child(line)
+	pai_linhas.add_child(line)
 	# coloca os pontos no quadrado
 	_adicionar_pontos_linha(line, cantos_quadrado)
 
