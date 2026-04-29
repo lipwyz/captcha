@@ -33,7 +33,6 @@ func deixar_filho_visivel(posicao: Vector2) -> void:
 
 ## 
 func deixar_all_visiveis() -> void:
-	print("all visiveis")
 	root.deixar_all_visiveis()
 
 ## Marca com FLAG_SELECIONADO os nodo folha que sao filhos visiveis.
@@ -123,16 +122,16 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 		
 		dados = VALOR_FLAGS_INICIAL
 		
+		# calcula a posicao na metade
+		pos_metade = comeco + ( (fim - comeco) * 0.5 )
+		
 		# se for nodo folha (sem filhos), pare aqui
 		if _profundidade == 0:
 			return
-		# se nodo tiver filhos, continue
+		# se nodo tiver filhos, crie os filhos
 		
-		# calcula a posicao na metade
-		pos_metade = comeco + ( (fim - comeco) * 0.5 )
 		# diminui a profundidade para criar os nodos filhos
 		_profundidade -= 1
-		
 		# cria os 4 filhos
 		top_esq = QuadTreeSelecaoNode.new(comeco,
 											pos_metade,
@@ -236,7 +235,6 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 			_get_nodo_filho(posicao).deixar_filho_visivel(posicao)
 	
 	func deixar_all_visiveis() -> void:
-		print('visivel ' + id)
 		_set_node_flag(FLAG_SHOW_FILHOS, true)
 		# nao tem filhos, pare
 		if is_nodo_folha(): return 

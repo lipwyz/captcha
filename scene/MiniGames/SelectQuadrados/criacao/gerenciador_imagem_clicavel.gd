@@ -33,10 +33,8 @@ func _input(event: InputEvent) -> void:
 			_processar_click(event.global_position)
 
 func _ready() -> void:
-	# Codigo que so eh rodado como tool do editor
-	if Engine.is_editor_hint(): 
-		_tool_ready()
-		return
+	# nao rodar ready no editor
+	if Engine.is_editor_hint():  return
 
 	# certificar que estao na posicao correta
 	for c: Node2D in get_children():
@@ -201,7 +199,7 @@ func _converter_ponto_tela_para_quadTree(ponto_tela: Vector2) -> Vector2:
 #------------------------------------------------------------------------------
 # TOOL
 
-func _tool_ready() -> void:
+func tool_ready() -> void:
 	# ajusta os dados relacionados ao tamanho da imagem
 	ajustar_dados_tamanho_imagem()
 	# carrega os dados
