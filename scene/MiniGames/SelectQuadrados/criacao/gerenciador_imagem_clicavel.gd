@@ -24,8 +24,8 @@ var div_size_img  : Vector2
 
 var quadTree : QuadTreeSelecao
 # dados de calculo de final de level
-var max_corretas_nao_clicadas: int
-var max_nao_corretas_clicadas: int
+var max_falta_selecionar_corretas: int
+var max_selecoes_nao_corretas: int
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -65,8 +65,8 @@ func _load_dados_level() -> void:
 	gerenciador_quadTree.load_quadTree()
 	quadTree = gerenciador_quadTree.quadTree
 	# load valores de concluir level
-	max_corretas_nao_clicadas = gerenciador_quadTree.get_max_corretas_nao_clicadas()
-	max_nao_corretas_clicadas = gerenciador_quadTree.get_max_nao_corretas_clicadas()
+	max_falta_selecionar_corretas = gerenciador_quadTree.get_max_falta_selecionar_corretas()
+	max_selecoes_nao_corretas = gerenciador_quadTree.get_max_selecoes_nao_corretas()
 	
 
 #------------------------------------------------------------------------------
@@ -161,28 +161,11 @@ func verificar_concluido() -> void:
 		print("concluido")
 
 func is_level_concluido() -> bool:
-	var diferenca: int = quadTree.get_dif_selecoes_marcadas_corretas()
-	# -1 se correto, 		mas 	nao selecionado
-	#  0 se correto 		e 		selecionado
-	#  1 se nao correto, 	mas 	selecionado 
-	
-	# todas as corretas foram clicadas (e nenhuma errada foi selecionada)
-	if diferenca == 0:
-		return true
-	
-	# corretas que nao foram selecionadas (diferenca negativa)
-	var corretas_ainda_serem_selecionadas: bool = diferenca < 0
-	# se corretas que nao foram selecionadas
-	if corretas_ainda_serem_selecionadas:
-		# e quantidade delas esta dentro do previsto, retorne true
-		if abs(diferenca) < max_corretas_nao_clicadas:
-			return true
-	# se mais quadrados foram selecionados alem das corretas
-	else:
-		# e quantidade delas esta dentro do previsto
-		if abs(diferenca) < max_nao_corretas_clicadas:
-			return true
-	return false
+	if quadTree.qtd_falta_selecionar_corretas() > max_falta_selecionar_corretas:
+		return false
+	if quadTree.qtd_selecoes_nao_corretas() > max_selecoes_nao_corretas:
+		return false
+	return true
 
 
 #------------------------------------------------------------------------------

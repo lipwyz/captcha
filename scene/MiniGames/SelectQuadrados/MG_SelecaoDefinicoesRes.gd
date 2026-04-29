@@ -5,9 +5,9 @@ extends Resource
 # --- Level ---
 @export_group("Design do Level")
 ## Quantidade de Corretos que nao foram Selecionadas
-@export var max_corretas_nao_clicadas 	: int = 1
+@export var max_falta_selecionar_corretas 	: int = 1
 ## Quantidade de Selecionados que nao eram Corretos
-@export var max_nao_corretas_clicadas : int = 3
+@export var max_selecoes_nao_corretas : int = 3
 
 # --- Criacao da QuadTree --- 
 @export_group("Dados QuadTree")

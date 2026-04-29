@@ -26,11 +26,11 @@ func load_quadTree() -> void:
 # Get configuracoes Level
 # ------------------------------------------------------------------------------
 
-func get_max_corretas_nao_clicadas() -> int:
-	return quadTree_resource.max_corretas_nao_clicadas
+func get_max_falta_selecionar_corretas() -> int:
+	return quadTree_resource.max_falta_selecionar_corretas
 
-func get_max_nao_corretas_clicadas() -> int:
-	return quadTree_resource.max_nao_corretas_clicadas
+func get_max_selecoes_nao_corretas() -> int:
+	return quadTree_resource.max_selecoes_nao_corretas
 
 # ------------------------------------------------------------------------------
 # Tool

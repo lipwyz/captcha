@@ -55,8 +55,12 @@ func marcar_correto(posicao: Vector2) -> void:
 ##	 0 se correto 		e 		selecionado
 ##	 1 se nao correto, 	mas 	selecionado 
 ##	 0 se nao correto, 	e 		nao selecionado
-func get_dif_selecoes_marcadas_corretas() -> int:
-	return root.get_dif_selecoes_marcadas_corretas()
+func qtd_falta_selecionar_corretas() -> int:
+	return root.qtd_falta_selecionar_corretas()
+
+func qtd_selecoes_nao_corretas() -> int:
+	return root.qtd_selecoes_nao_corretas()
+
 # ---------------------------------------------------------------------------------------------------
 
 ## Set nodo folha na posicao, como FLAG_CORRETO
@@ -301,16 +305,38 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 	##	 0 se correto 		e 		selecionado
 	##	 1 se nao correto, 	mas 	selecionado 
 	##	 0 se nao correto, 	e 		nao selecionado
-	func get_dif_selecoes_marcadas_corretas() -> int:
-		# se eh folha, retorne se esta correto
+	func qtd_falta_selecionar_corretas() -> int:
+		# se eh folha
 		if is_nodo_folha():
-			var correto: int     = 1 if _get_node_flag(FLAG_CORRETO)     else 0
-			var selecionado: int = 1 if _get_node_flag(FLAG_SELECIONADO) else 0
-			return selecionado - correto
+			# (eh correta) e (nao foi selecionada)
+			if (
+				_get_node_flag(FLAG_CORRETO) and
+				(not _get_node_flag(FLAG_SELECIONADO)) 
+			):
+				return 1
+			else: return 0
 		# se tiver filhos
 		var valor : int = 0
-		valor += top_esq.get_dif_selecoes_marcadas_corretas()
-		valor += top_dir.get_dif_selecoes_marcadas_corretas()
-		valor += bot_esq.get_dif_selecoes_marcadas_corretas()
-		valor += bot_dir.get_dif_selecoes_marcadas_corretas()
+		valor += top_esq.qtd_falta_selecionar_corretas()
+		valor += top_dir.qtd_falta_selecionar_corretas()
+		valor += bot_esq.qtd_falta_selecionar_corretas()
+		valor += bot_dir.qtd_falta_selecionar_corretas()
+		return valor
+	
+	func qtd_selecoes_nao_corretas() -> int:
+		# se eh folha
+		if is_nodo_folha():
+			# (nao eh correta) e (foi selecionada)
+			if (
+				(not _get_node_flag(FLAG_CORRETO)) and
+				_get_node_flag(FLAG_SELECIONADO)
+			):
+				return 1
+			else: return 0
+		# se tiver filhos
+		var valor : int = 0
+		valor += top_esq.qtd_selecoes_nao_corretas()
+		valor += top_dir.qtd_selecoes_nao_corretas()
+		valor += bot_esq.qtd_selecoes_nao_corretas()
+		valor += bot_dir.qtd_selecoes_nao_corretas()
 		return valor
