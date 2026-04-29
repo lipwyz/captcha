@@ -23,6 +23,17 @@ func load_quadTree() -> void:
 	# TODO: fazer o load
 	quadTree = quadTree_resource.load_corretos_quadTree()
 
+
+# ------------------------------------------------------------------------------
+# Get configuracoes Level
+# ------------------------------------------------------------------------------
+
+func get_max_corretas_nao_clicadas() -> int:
+	return quadTree_resource.max_corretas_nao_clicadas
+
+func get_max_nao_corretas_clicadas() -> int:
+	return quadTree_resource.max_nao_corretas_clicadas
+
 # ------------------------------------------------------------------------------
 # Tool
 # ------------------------------------------------------------------------------

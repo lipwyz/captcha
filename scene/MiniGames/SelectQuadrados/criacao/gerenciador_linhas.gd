@@ -20,7 +20,10 @@ var size_img  : Vector2
 var div_size_img  : Vector2
 
 var quadTree : QuadTreeSelecao
-
+# dados de calculo de final de level
+var max_corretas_nao_clicadas: int
+var max_nao_corretas_clicadas: int
+	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -38,9 +41,9 @@ func _ready() -> void:
 	
 	# ajusta os dados relacionados ao tamanho da imagem
 	ajustar_dados_tamanho_imagem()
-	# carrega a quadTree e mostra os quadrados
-	gerenciador_quadTree.load_quadTree()
-	quadTree = gerenciador_quadTree.quadTree
+	# carrega os dados
+	_load_dados_level()
+	# mostra os quadrados que sao visiveis
 	desenhar_quadrados_visiveis(quadTree)
 
 
@@ -56,17 +59,26 @@ func ajustar_dados_tamanho_imagem() -> void:
 	size_img = pos_end - pos_start
 	div_size_img = Vector2.ONE / size_img
 
+func _load_dados_level() -> void:
+	# load quadTree
+	gerenciador_quadTree.load_quadTree()
+	quadTree = gerenciador_quadTree.quadTree
+	# load valores de concluir level
+	max_corretas_nao_clicadas = gerenciador_quadTree.get_max_corretas_nao_clicadas()
+	max_nao_corretas_clicadas = gerenciador_quadTree.get_max_nao_corretas_clicadas()
+	
+
 #------------------------------------------------------------------------------
 # Desenha Quadrados
 
 ## Desenha somente os quadrados que sao visiveis
-func desenhar_quadrados_visiveis(quadTree: QuadTreeSelecao) -> void:
-	var lista_comeco_fim_selecionado := quadTree.get_dimensoes_visiveis()
+func desenhar_quadrados_visiveis(_quadTree: QuadTreeSelecao) -> void:
+	var lista_comeco_fim_selecionado := _quadTree.get_dimensoes_visiveis()
 	desenhar_quadrados(lista_comeco_fim_selecionado)
 
 ## Desenha todos os quadradinhos dos nodo folhas (independente de ser visiveis)
-func desenhar_quadrados_all(quadTree: QuadTreeSelecao) -> void:
-	var lista_comeco_fim_selecionado := quadTree.get_dimensoes_all_folhas()
+func desenhar_quadrados_all(_quadTree: QuadTreeSelecao) -> void:
+	var lista_comeco_fim_selecionado := _quadTree.get_dimensoes_all_folhas()
 	desenhar_quadrados(lista_comeco_fim_selecionado)
 
 # -----  ------------------------------------------------------------------
@@ -144,8 +156,32 @@ func _processar_click(pos: Vector2) -> void:
 # Conclusao
 
 func verificar_concluido() -> void:
-	print(quadTree.get_dif_selecoes_marcadas_corretas())
-	pass
+	if is_level_concluido():
+		print("concluido")
+
+func is_level_concluido() -> bool:
+	var diferenca: int = quadTree.get_dif_selecoes_marcadas_corretas()
+	# -1 se correto, 		mas 	nao selecionado
+	#  0 se correto 		e 		selecionado
+	#  1 se nao correto, 	mas 	selecionado 
+	
+	# todas as corretas foram clicadas (e nenhuma errada foi selecionada)
+	if diferenca == 0:
+		return true
+	
+	# corretas que nao foram selecionadas (diferenca negativa)
+	var corretas_ainda_serem_selecionadas: bool = diferenca < 0
+	# se corretas que nao foram selecionadas
+	if corretas_ainda_serem_selecionadas:
+		# e quantidade delas esta dentro do previsto, retorne true
+		if abs(diferenca) < max_corretas_nao_clicadas:
+			return true
+	# se mais quadrados foram selecionados alem das corretas
+	else:
+		# e quantidade delas esta dentro do previsto
+		if abs(diferenca) < max_nao_corretas_clicadas:
+			return true
+	return false
 
 
 #------------------------------------------------------------------------------

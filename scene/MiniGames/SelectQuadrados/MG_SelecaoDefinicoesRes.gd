@@ -10,14 +10,9 @@ extends Resource
 
 # --- Level ---
 ## Quantidade de Corretos que nao foram Selecionadas
-@export var max_selecao_nao_cliadas 	: int = 1
+@export var max_corretas_nao_clicadas 	: int = 1
 ## Quantidade de Selecionados que nao eram Corretos
-@export var max_selecao_erradas_cliadas : int = 3
-
-##	-1 se correto, 		mas 	nao selecionado
-##	 0 se correto 		e 		selecionado
-##	 1 se nao correto, 	mas 	selecionado 
-##	 0 se nao correto, 	e 		nao selecionado
+@export var max_nao_corretas_clicadas : int = 3
 
 # -----------------------------------------------------------------------------
 # QuadTree
