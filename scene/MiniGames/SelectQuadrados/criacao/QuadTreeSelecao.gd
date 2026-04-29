@@ -6,6 +6,7 @@ const FLAG_CORRETO 		:= 1
 const FLAG_SELECIONADO	:= 2
 const FLAG_SHOW_FILHOS 	:= 4
 
+## Valor inicial das flags em cada nodo (ao criar a arvore)
 const VALOR_FLAGS_INICIAL := 0
 
 func _init(_profundidade: int) -> void:
@@ -13,6 +14,7 @@ func _init(_profundidade: int) -> void:
 	# mostra somente a primeira camada de quadrados (filhos diretos do root)
 	root.dados = FLAG_SHOW_FILHOS
 
+## Debug: print o id do nodo folha na posicao
 func print_id(posicao: Vector2) -> void:
 	root.print_id(posicao)
 
@@ -31,7 +33,8 @@ func get_dimensoes_all_folhas() -> Array[Array]:
 func deixar_filho_visivel(posicao: Vector2) -> void:
 	root.deixar_filho_visivel(posicao)
 
-## 
+
+## Deixa todos os nodos visiveis
 func deixar_all_visiveis() -> void:
 	root.deixar_all_visiveis()
 
@@ -49,15 +52,13 @@ func toggle_selecionado(posicao: Vector2) -> void:
 func marcar_correto(posicao: Vector2) -> void:
 	root.set_folha_flag(FLAG_CORRETO, true, posicao)
 
-## Retorna a diferenca entre FLAG_SELECIONADO e FLAG_CORRETO em todos os nodos folha
-## Para cada nodo:
-##	-1 se correto, 		mas 	nao selecionado
-##	 0 se correto 		e 		selecionado
-##	 1 se nao correto, 	mas 	selecionado 
-##	 0 se nao correto, 	e 		nao selecionado
+## Retorna a quantidade de quadrados corretos que nao foram selecionados
+##	i.e. Nodos folha com FLAG_CORRETO que nao possuem FLAG_SELECIONADO
 func qtd_falta_selecionar_corretas() -> int:
 	return root.qtd_falta_selecionar_corretas()
 
+## Retorna a quantidade de quadrados que foram selecionados mas nao sao corretos
+##	i.e. Nodos folha com FLAG_SELECIONADO que nao possuem FLAG_CORRETO
 func qtd_selecoes_nao_corretas() -> int:
 	return root.qtd_selecoes_nao_corretas()
 
@@ -75,15 +76,15 @@ func get_dados(posicao: Vector2) -> Variant:
 func inserir(dados, posicao: Vector2) -> void:
 	root.inserir(dados, posicao)
 
-func _set_valor_inicial_todos_nodos(valor: int) -> void:
-	root.inserir_dados_nodo_e_filhos(valor)
-
+## Retona a lista com as posicoes de cada nodo folha com FLAG_SELECIONADO 
 func get_posicao_all_nodos_folha_selecionados() -> Array[Vector2]:
 	return root.get_posicao_all_nodos_folha_flag(FLAG_SELECIONADO)
 
+## Retona a lista com as posicoes de cada nodo folha com FLAG_CORRETO 
 func get_posicao_all_nodos_folha_corretos() -> Array[Vector2]:
 	return root.get_posicao_all_nodos_folha_flag(FLAG_CORRETO)
 
+## Percorre a lista de posicoes colocando os nodo folha de cada posicao com FLAG_CORRETO
 func set_all_nodos_folha_corretos(posicoes: Array[Vector2]) -> void:
 	for pos : Vector2 in posicoes:
 		root.inserir_dados(FLAG_CORRETO, pos)
@@ -238,6 +239,7 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 			# se os filhos forem visiveis, continue
 			_get_nodo_filho(posicao).deixar_filho_visivel(posicao)
 	
+	## Deixa todos os nodos visiveis
 	func deixar_all_visiveis() -> void:
 		_set_node_flag(FLAG_SHOW_FILHOS, true)
 		# nao tem filhos, pare
@@ -300,11 +302,7 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 		return return_dos_filhos
 	
 	## Para cada nodo retorne os valores somados dos filhos
-	## 	Onde para cada filho:
-	##	-1 se correto, 		mas 	nao selecionado
-	##	 0 se correto 		e 		selecionado
-	##	 1 se nao correto, 	mas 	selecionado 
-	##	 0 se nao correto, 	e 		nao selecionado
+	## 	que tenham FLAG_CORRETO e (nao FLAG_SELECIONADO)
 	func qtd_falta_selecionar_corretas() -> int:
 		# se eh folha
 		if is_nodo_folha():
@@ -323,6 +321,8 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 		valor += bot_dir.qtd_falta_selecionar_corretas()
 		return valor
 	
+	## Para cada nodo retorne os valores somados dos filhos
+	## 	que tenham (nao FLAG_CORRETO) e FLAG_SELECIONADO
 	func qtd_selecoes_nao_corretas() -> int:
 		# se eh folha
 		if is_nodo_folha():
