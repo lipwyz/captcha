@@ -49,6 +49,7 @@ size_flags_horizontal = 0
 text = "Criar QuadTree"
 
 [node name="LoadQuadTree" type="Control" parent="." unique_id=1723409857]
+visible = false
 layout_mode = 2
 
 [node name="VBox" type="VBoxContainer" parent="LoadQuadTree" unique_id=16903136]
@@ -68,6 +69,31 @@ text = "Carregar QuadTree"
 layout_mode = 2
 text = "Mostrar Quadrados Corretos"
 
+[node name="ShowQuadTree" type="Control" parent="." unique_id=41350223]
+visible = false
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="ShowQuadTree" unique_id=1296634717]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelInicial" type="Label" parent="ShowQuadTree/VBox" unique_id=156437448]
+layout_mode = 2
+text = ":p"
+
+[node name="ButtonSalvar" type="Button" parent="ShowQuadTree/VBox" unique_id=515903928]
+layout_mode = 2
+text = "Salvar Posições Corretas"
+
+[node name="ImgStartPivot" type="Control" parent="ShowQuadTree/VBox" unique_id=1582757436]
+z_index = -1
+layout_mode = 2
+
+[node name="ImgStartPos" type="Node2D" parent="ShowQuadTree/VBox/ImgStartPivot" unique_id=1123785564]
+position = Vector2(10, 10)
+
 [connection signal="pressed" from="CriarQuadTree/VBox/ButtonCriar" to="." method="_on_button_criar_pressed"]
 [connection signal="pressed" from="LoadQuadTree/VBox/ButtonLoad" to="." method="_on_button_load_pressed"]
 [connection signal="pressed" from="LoadQuadTree/VBox/ButtonMostrar" to="." method="_on_button_mostrar_pressed"]
+[connection signal="pressed" from="ShowQuadTree/VBox/ButtonSalvar" to="." method="_on_button_salvar_pressed"]

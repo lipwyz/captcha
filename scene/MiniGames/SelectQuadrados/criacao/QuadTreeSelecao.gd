@@ -31,6 +31,11 @@ func get_dimensoes_all_folhas() -> Array[Array]:
 func deixar_filho_visivel(posicao: Vector2) -> void:
 	root.deixar_filho_visivel(posicao)
 
+## 
+func deixar_all_visiveis() -> void:
+	print("all visiveis")
+	root.deixar_all_visiveis()
+
 ## Marca com FLAG_SELECIONADO os nodo folha que sao filhos visiveis.
 ## 		Para nodos que nao sao visiveis nao acontece nada
 func marcar_selecionado(posicao: Vector2) -> void:
@@ -70,8 +75,11 @@ func inserir(dados, posicao: Vector2) -> void:
 func _set_valor_inicial_todos_nodos(valor: int) -> void:
 	root.inserir_dados_nodo_e_filhos(valor)
 
+func get_posicao_all_nodos_folha_selecionados() -> Array[Vector2]:
+	return root.get_posicao_all_nodos_folha_flag(FLAG_SELECIONADO)
+
 func get_posicao_all_nodos_folha_corretos() -> Array[Vector2]:
-	return root.get_posicao_all_nodos_folha_corretos()
+	return root.get_posicao_all_nodos_folha_flag(FLAG_CORRETO)
 
 func set_all_nodos_folha_corretos(posicoes: Array[Vector2]) -> void:
 	for pos : Vector2 in posicoes:
@@ -227,6 +235,17 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 			# se os filhos forem visiveis, continue
 			_get_nodo_filho(posicao).deixar_filho_visivel(posicao)
 	
+	func deixar_all_visiveis() -> void:
+		print('visivel ' + id)
+		_set_node_flag(FLAG_SHOW_FILHOS, true)
+		# nao tem filhos, pare
+		if is_nodo_folha(): return 
+		# deixa todos os filhos visveis
+		top_esq.deixar_all_visiveis()
+		top_dir.deixar_all_visiveis()
+		bot_esq.deixar_all_visiveis()
+		bot_dir.deixar_all_visiveis()
+	
 	## Marca com FLAG_SELECIONADO os nodo folha que sao filhos visiveis.
 	## 		Para nodos que nao sao visiveis nao acontece nada
 	func selecionar_folha_visivel(posicao: Vector2) -> void:
@@ -261,20 +280,20 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 			# filhos nao sao visiveis, pare
 			return
 	
-	
-	func get_posicao_all_nodos_folha_corretos() -> Array[Vector2]:
+	## Retorna a posicao metade de todos os nodos folha que possuem a 'flag' como true
+	func get_posicao_all_nodos_folha_flag(flag: int) -> Array[Vector2]:
 		# se eh folha, acabe aqui
 		if is_nodo_folha():
-			# se for FLAG_CORRETO, retorne a posicao metade
-			if _get_node_flag(FLAG_CORRETO):
+			# se tiver a flag, retorne a posicao metade
+			if _get_node_flag(flag):
 				return [pos_metade]
 			return []
 		# se tem filhos, retorne a juncao das posicao que eles retornarem
 		var return_dos_filhos : Array = (
-			  top_esq.get_posicao_all_nodos_folha_corretos()
-			+ top_dir.get_posicao_all_nodos_folha_corretos()
-			+ bot_esq.get_posicao_all_nodos_folha_corretos()
-			+ bot_dir.get_posicao_all_nodos_folha_corretos()
+			  top_esq.get_posicao_all_nodos_folha_flag(flag)
+			+ top_dir.get_posicao_all_nodos_folha_flag(flag)
+			+ bot_esq.get_posicao_all_nodos_folha_flag(flag)
+			+ bot_dir.get_posicao_all_nodos_folha_flag(flag)
 		)
 		return return_dos_filhos
 	

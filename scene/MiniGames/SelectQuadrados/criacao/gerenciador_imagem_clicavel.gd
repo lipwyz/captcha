@@ -2,7 +2,7 @@
 class_name GerenciadorImagemClicavel
 extends Node2D
 
-@export  var gerenciador_quadTree: GerenciadorQuadTree
+@export var gerenciador_quadTree: GerenciadorQuadTree
 ## Imagem que o jogador vai clicar
 #@export var imagem_verificador: Sprite2D
 @export var colisor_imagem : CollisionShape2D
@@ -202,4 +202,17 @@ func _converter_ponto_tela_para_quadTree(ponto_tela: Vector2) -> Vector2:
 # TOOL
 
 func _tool_ready() -> void:
-	pass
+	# ajusta os dados relacionados ao tamanho da imagem
+	ajustar_dados_tamanho_imagem()
+	# carrega os dados
+	_load_dados_level()
+	
+	# altera a quadTree para ser toda visivel
+	quadTree.deixar_all_visiveis()
+	
+	# mostra os corretos - na forma -> selecionados
+	for p : Vector2 in quadTree.get_posicao_all_nodos_folha_corretos():
+		quadTree.marcar_selecionado(p)
+	
+	# desenha todos os quadrados
+	desenhar_quadrados_all(quadTree)

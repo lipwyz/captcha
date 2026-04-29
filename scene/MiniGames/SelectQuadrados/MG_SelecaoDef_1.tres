@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="QuadTreeSelecaoRes" format=3 uid="uid://11v5pviy23ex"]
+[gd_resource type="Resource" script_class="MG_SelecaoDefinicoesRes" format=3 uid="uid://11v5pviy23ex"]
 
 [ext_resource type="Script" uid="uid://bqtfpc0v7evi3" path="res://scene/MiniGames/SelectQuadrados/MG_SelecaoDefinicoesRes.gd" id="1_dwdsl"]
 
 [resource]
 script = ExtResource("1_dwdsl")
 profundidade = 3
+posicoes_folhas_corretas = Array[Vector2]([Vector2(0, 0)])
 metadata/_custom_type_script = "uid://bqtfpc0v7evi3"

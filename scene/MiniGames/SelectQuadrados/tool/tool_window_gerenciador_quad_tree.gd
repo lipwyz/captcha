@@ -7,16 +7,22 @@ signal closed
 signal criar_quadTree(profundidade: int)
 signal load_quadTree
 signal mostrar_quadrados
+signal salvar_quadrados
 
 
 @onready var criar_quad_tree: Control = $CriarQuadTree
 @onready var load_quad_tree: Control = $LoadQuadTree
+@onready var show_quad_tree: Control = $ShowQuadTree
 
 var quadTreeResource : MG_SelecaoDefinicoesRes
 
 func _ready() -> void:
+	_esconder_menus()
+
+func _esconder_menus() -> void:
 	criar_quad_tree.hide()
 	load_quad_tree.hide()
+	show_quad_tree.hide()
 
 func receber_resource(quadTreeRes: MG_SelecaoDefinicoesRes) -> void:
 	if (not quadTreeRes) or quadTreeRes == null:
@@ -56,6 +62,12 @@ func _on_button_load_pressed() -> void:
 
 func _on_button_mostrar_pressed() -> void:
 	mostrar_quadrados.emit()
+	_esconder_menus()
+	show_quad_tree.show()
 
 # -----------------------------------------------------------------------------
 # Selecionar corretos
+
+func _on_button_salvar_pressed() -> void:
+	print("_on_button_salvar_pressed")
+	salvar_quadrados.emit()
