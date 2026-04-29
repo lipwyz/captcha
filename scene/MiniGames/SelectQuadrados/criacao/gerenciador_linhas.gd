@@ -1,5 +1,5 @@
 @tool
-class_name LinhasSelectQuadrado
+class_name GerenciadorLinhasSelect
 extends Node2D
 
 @export  var gerenciador_quadTree: GerenciadorQuadTree

@@ -45,7 +45,7 @@ func _on_button_criar_pressed() -> void:
 @onready var button_mostrar: Button = $LoadQuadTree/VBox/ButtonMostrar
 func _load_quadTree() -> void:
 	label_inicial.text += "\n profundidade: " + str(quadTreeResource.profundidade)
-	label_inicial.text += "\n quadrados marcados: " + str(quadTreeResource.positions.size())
+	label_inicial.text += "\n quadrados marcados: " + str(quadTreeResource.posicoes_folhas_corretas.size())
 	button_mostrar.disabled = true
 
 func _on_button_load_pressed() -> void:

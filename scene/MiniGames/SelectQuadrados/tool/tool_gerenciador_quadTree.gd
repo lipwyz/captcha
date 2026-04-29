@@ -8,7 +8,7 @@ extends Node
 @export_tool_button("Abrir Janela Configuracao", "ScriptCreateDialog") var button_janela = _tool_janela
 
 @export_category("Nodo")
-@export var gerenciador_linhas : LinhasSelectQuadrado
+@export var gerenciador_linhas : GerenciadorLinhasSelect
 
 var _tool_gui := preload("uid://bj231cdcdqwep")
 
@@ -70,6 +70,6 @@ func _load_quadTree() -> void:
 
 func _mostrar_quadrados() -> void:
 	#
-	gerenciador_linhas.ajustar_tamanho_imagem()
+	gerenciador_linhas.ajustar_dados_tamanho_imagem()
 	gerenciador_linhas.desenhar_quadrados_all(quadTree)
 	print("Quadrados mostrados")
