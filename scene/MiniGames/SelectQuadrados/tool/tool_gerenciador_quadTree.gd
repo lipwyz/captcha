@@ -2,9 +2,11 @@
 class_name GerenciadorQuadTree
 extends Node
 
-@export_category("QuadTree")
+@export_category("Resource Level")
 @export var quadTree_resource: MG_SelecaoDefinicoesRes
 
+@export_category("Janela Edição")
+@export var size_janela_edicao := Vector2i(600, 700)
 @export_tool_button("Abrir Janela Configuracao", "ScriptCreateDialog") var button_janela = _tool_janela
 
 var _tool_gui := preload("uid://bj231cdcdqwep")
@@ -38,7 +40,7 @@ func _tool_janela():
 	if not Engine.is_editor_hint(): return
 	
 	var window := Window.new()
-	EditorInterface.popup_dialog_centered(window, Vector2i(400, 300))
+	EditorInterface.popup_dialog_centered(window, size_janela_edicao)
 	window.close_requested.connect(func(): window.queue_free() )
 	
 	var janela : ToolWindowGerenciadorQuadTree = _tool_gui.instantiate()
@@ -53,18 +55,18 @@ func _tool_janela():
 	# -- save --
 	janela.salvar_quadrados.connect(_salvar_quadrados)
 	
-	
 	if quadTree_resource:
 		janela.receber_resource(quadTree_resource)
 	else:
 		janela.receber_resource(null)
 
-#var janela
-
 func _criar_quadTree(profundidade: int) -> void:
 	quadTree = QuadTreeSelecao.new(profundidade)
 	print("Criada quadTree, profundidade: ", profundidade)
-	
+	# salva o resource no disco
+	quadTree_resource.profundidade = profundidade
+	_salvar_disco_resource(quadTree_resource)
+
 func _load_quadTree() -> void:
 	quadTree = quadTree_resource.load_corretos_quadTree()
 	print("Load quadTree")
@@ -75,10 +77,9 @@ var gerenciador_img_clicavel : GerenciadorImagemClicavel
 func _mostrar_quadrados(janela: ToolWindowGerenciadorQuadTree) -> void:
 	gerenciador_img_clicavel = CENA_IMAGEM_CLICAVEL.instantiate()
 	# coloca na cena
-	janela.add_child(gerenciador_img_clicavel)
+	janela.img_start_pos_node.add_child(gerenciador_img_clicavel)
 	# passa self como referencia para pegar a quadTree
 	gerenciador_img_clicavel.gerenciador_quadTree = self
-	gerenciador_img_clicavel.global_position = Vector2(100, 100)
 	# chama o ready
 	gerenciador_img_clicavel.tool_ready()
 	print("Quadrados mostrados")
@@ -93,22 +94,19 @@ func _salvar_quadrados() -> void:
 	for pos : Vector2 in posicoes_corretas:
 		quadTree.marcar_correto(pos)
 	
-	# salva a quad tree no resource
-	_salvar_disco_resource(posicoes_corretas.size())
-	
-
-func _salvar_disco_resource(qtd_posicoes: int) -> void:
-	
+	# atualiza a posicao no resource
 	var posicoes:  = quadTree.get_posicao_all_nodos_folha_selecionados()
 	quadTree_resource.save_corretos_quadTree(posicoes)
-	
-	var res_path := quadTree_resource.resource_path
-	
-	var error = ResourceSaver.save(quadTree_resource, res_path)
-	quadTree_resource.take_over_path(quadTree_resource.resource_path)
+	print("%d Quadrados Corretos da QuadTree" % posicoes_corretas.size())
+	# salva o resource no disco
+	_salvar_disco_resource(quadTree_resource)
+
+func _salvar_disco_resource(_resource: Resource) -> void:
+	var res_path := _resource.resource_path
+	var error = ResourceSaver.save(_resource, res_path)
+	_resource.take_over_path(_resource.resource_path)
 	
 	if error == OK:
-		print("%d Quadrados Corretos da QuadTree Salvos no Resource %s" % 
-			[qtd_posicoes, res_path] )
+		print("Salvo Resource %s" % res_path )
 	else:
-		push_warning("Não foi possível salvar o resource, error code %d" % error)
+		push_warning("Não foi possível salvar o resource (%s), error code %d" % [res_path, error])

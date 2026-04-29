@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1llmph08thjn" path="res://scene/MiniGames/SelectQuadrados/tool/tool_window_gerenciador_quad_tree.gd" id="1_lhxhy"]
 
-[node name="ToolWindowGerenciadorQuadTree" type="MarginContainer" unique_id=1961122940]
+[node name="ToolWindowGerenciadorQuadTree" type="MarginContainer" unique_id=1961122940 node_paths=PackedStringArray("img_start_pos_node")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,6 +13,7 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 script = ExtResource("1_lhxhy")
+img_start_pos_node = NodePath("ShowQuadTree/VBox/ImgStartPivot/ImgStartPos")
 
 [node name="CriarQuadTree" type="Control" parent="." unique_id=1038929778]
 visible = false
