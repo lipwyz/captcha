@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://cj0agp435nvsu" path="res://themes/new_theme.tres" id="1_i7xe7"]
 [ext_resource type="Script" uid="uid://cnbh364hlf6ow" path="res://scene/Navegador/Scripts/navegador_controles.gd" id="1_ouk7q"]
+[ext_resource type="Texture2D" uid="uid://dttw0dj2ycnm1" path="res://Assets/sprites/Navegador/sinal2.png" id="3_i7xe7"]
 
 [node name="NavegadorControles" type="Panel" unique_id=1818094128 node_paths=PackedStringArray("label_url", "h_box_abas", "h_box_setas")]
 custom_minimum_size = Vector2(0, 100)
@@ -37,18 +38,18 @@ localize_numeral_system = false
 
 [node name="ButtonMinimizar" type="Button" parent="PosControles/Controles" unique_id=231685938]
 layout_mode = 2
-text = "-"
+icon = ExtResource("3_i7xe7")
 
 [node name="ButtonMaximizar" type="Button" parent="PosControles/Controles" unique_id=1264854560]
 layout_mode = 2
-text = "[]"
+icon = ExtResource("3_i7xe7")
 
 [node name="ButtonFechar" type="Button" parent="PosControles/Controles" unique_id=1879285661]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_color = Color(1, 0.57254905, 0.50980395, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.9137255, 0, 0, 1)
-text = "X"
+icon = ExtResource("3_i7xe7")
 
 [node name="VBox" type="VBoxContainer" parent="." unique_id=981328887]
 layout_mode = 1
@@ -80,7 +81,7 @@ layout_mode = 2
 
 [node name="ButtonSetaEsq" type="Button" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=154491246]
 layout_mode = 2
-text = "<"
+icon = ExtResource("3_i7xe7")
 
 [node name="Separador2" type="Control" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=1791061419]
 custom_minimum_size = Vector2(5, 0)
@@ -89,7 +90,7 @@ layout_mode = 2
 [node name="ButtonSetaDir" type="Button" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=341463226]
 layout_mode = 2
 theme = ExtResource("1_i7xe7")
-text = ">"
+icon = ExtResource("3_i7xe7")
 
 [node name="HotBar" type="Control" parent="VBox" unique_id=274340694]
 layout_mode = 2

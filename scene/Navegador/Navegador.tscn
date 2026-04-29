@@ -43,9 +43,9 @@ layout_mode = 2
 
 [node name="PanelAddress" parent="Panel/VSplit/NavegadorControles/VBox/HotBar" parent_id_path=PackedInt32Array(1883575481, 274340694) index="0" unique_id=634013428]
 offset_left = 21.0
-offset_top = 73.69425
+offset_top = 26.555405
 offset_right = 721.0
-offset_bottom = 98.69425
+offset_bottom = 51.555405
 
 [node name="NavegadorConteudo" parent="Panel/VSplit" unique_id=811463956 node_paths=PackedStringArray("conteudos_abas_minimizadas") instance=ExtResource("3_e3m55")]
 layout_mode = 2
