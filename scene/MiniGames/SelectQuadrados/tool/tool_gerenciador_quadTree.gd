@@ -5,6 +5,10 @@ extends Node
 @export_category("Resource Level")
 @export var quadTree_resource: MG_SelecaoDefinicoesRes
 
+@export_group("Dados Imagem")
+@export var imagem_sprite: Sprite2D
+@export_tool_button("Capturar Dados Imagem", "ActionPaste") var button_dados_sprite = _tool_capturar_dados_sprite
+
 @export_category("Janela Edição")
 @export var size_janela_edicao := Vector2i(600, 700)
 @export_tool_button("Abrir Janela Configuracao", "ScriptCreateDialog") var button_janela = _tool_janela
@@ -36,6 +40,8 @@ func get_max_selecoes_nao_corretas() -> int:
 # Tool
 # ------------------------------------------------------------------------------
 
+# --------------------------------------------------------
+# Janela Editar QuadTree
 func _tool_janela():
 	if not Engine.is_editor_hint(): return
 	
@@ -101,6 +107,28 @@ func _salvar_quadrados() -> void:
 	# salva o resource no disco
 	_salvar_disco_resource(quadTree_resource)
 
+# --------------------------------------------------------
+# Capturar dados Sprite
+func _tool_capturar_dados_sprite() -> void:
+	if not Engine.is_editor_hint(): return
+	# se a sprite nao tiver setada corretamente, pare
+	if (not imagem_sprite) or (imagem_sprite == null):
+		push_warning("Referencia da Sprite Faltando")
+		return
+	# captura os dados da imagem e passa pro resource
+	quadTree_resource.imagem_texture = imagem_sprite.texture
+	quadTree_resource.imagem_scale = imagem_sprite.scale
+	if imagem_sprite.region_enabled: # se tem region rect, salve o rect
+		quadTree_resource.imagem_region_rect = imagem_sprite.region_rect
+	else:
+		quadTree_resource.imagem_region_rect = Rect2(0,0,0,0)
+	
+	# salvar o resource
+	_salvar_disco_resource(quadTree_resource)
+	print("Dados da Imagem atualizados no Resource ")
+
+# --------------------------------------------------------
+# Salvar Resource
 func _salvar_disco_resource(_resource: Resource) -> void:
 	var res_path := _resource.resource_path
 	var error = ResourceSaver.save(_resource, res_path)
