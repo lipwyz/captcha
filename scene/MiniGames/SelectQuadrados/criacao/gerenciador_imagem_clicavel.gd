@@ -4,8 +4,7 @@ extends Node2D
 
 @export var gerenciador_quadTree: GerenciadorQuadTree
 ## Imagem que o jogador vai clicar
-#@export var imagem_verificador: Sprite2D
-@export var colisor_imagem : CollisionShape2D
+@export var sprite_imagem : Sprite2D
 
 @export var pai_linhas: Node2D
 
@@ -40,8 +39,6 @@ func _ready() -> void:
 	for c: Node2D in get_children():
 		assert(c.position == Vector2.ZERO, "Nodo %s nao esta na origem da Imagem (position != (0,0)), pode causar problemas" % c.name)
 	
-	# ajusta os dados relacionados ao tamanho da imagem
-	ajustar_dados_tamanho_imagem()
 	# carrega os dados
 	_load_dados_level()
 	# mostra os quadrados que sao visiveis
@@ -51,8 +48,8 @@ func _ready() -> void:
 ## Ajusta os dados relacionados ao tamanho da imagem
 ## 		Chamar antes de qualquer desenhar quadrados na imagem, pois precisa dos dados
 func ajustar_dados_tamanho_imagem() -> void:
-	var rect : Rect2 = colisor_imagem.shape.get_rect()
-	var tamanho = rect.size
+	var rect : Rect2 = sprite_imagem.get_rect()
+	var tamanho = rect.size * sprite_imagem.scale
 	var pos_base := Vector2.ZERO
 	pos_start = pos_base
 	pos_end   = pos_base + tamanho
@@ -68,6 +65,12 @@ func _load_dados_level() -> void:
 	max_falta_selecionar_corretas = gerenciador_quadTree.get_max_falta_selecionar_corretas()
 	max_selecoes_nao_corretas = gerenciador_quadTree.get_max_selecoes_nao_corretas()
 	
+	##
+	var level_res: MG_SelecaoDefinicoesRes = gerenciador_quadTree.quadTree_resource
+	set_imagem(level_res.imagem_texture, level_res.imagem_scale, level_res.imagem_region_rect)
+	
+	# ajusta os dados relacionados ao tamanho da imagem
+	ajustar_dados_tamanho_imagem()
 
 #------------------------------------------------------------------------------
 # Desenha Quadrados
@@ -154,6 +157,30 @@ func _processar_click(pos: Vector2) -> void:
 	click(pos)
 
 #------------------------------------------------------------------------------
+# Set Imagem
+
+func set_imagem(_texture: Texture2D,
+				_scale: Vector2 = Vector2.ONE,
+				region_rect: Rect2 = Rect2(0,0,0,0)
+				) -> void:
+	sprite_imagem.texture = _texture
+	sprite_imagem.scale = _scale
+	
+	# region rect no esta fazio
+	if region_rect.size > Vector2.ONE:
+		sprite_imagem.region_enabled = true
+		sprite_imagem.region_rect = region_rect
+	else:
+		sprite_imagem.region_enabled = false
+		region_rect = Rect2(
+			Vector2.ZERO,
+			sprite_imagem.texture.get_size()
+		)
+	
+	#colisor_imagem.shape.size = region_rect.size
+	#colisor_imagem.shape.size -= region_rect.position
+	
+#------------------------------------------------------------------------------
 # Conclusao
 
 func verificar_concluido() -> void:
@@ -183,8 +210,6 @@ func _converter_ponto_tela_para_quadTree(ponto_tela: Vector2) -> Vector2:
 # TOOL
 
 func tool_ready() -> void:
-	# ajusta os dados relacionados ao tamanho da imagem
-	ajustar_dados_tamanho_imagem()
 	# carrega os dados
 	_load_dados_level()
 	

@@ -1,9 +1,14 @@
 [gd_resource type="Resource" script_class="MG_SelecaoDefinicoesRes" format=3 uid="uid://11v5pviy23ex"]
 
 [ext_resource type="Script" uid="uid://bqtfpc0v7evi3" path="res://scene/MiniGames/SelectQuadrados/MG_SelecaoDefinicoesRes.gd" id="1_dwdsl"]
+[ext_resource type="Texture2D" uid="uid://dlpoyy50lurgs" path="res://Assets/Sprites/sheets/propaganda hamburger-Sheet.png" id="1_u5cud"]
 
 [resource]
 script = ExtResource("1_dwdsl")
+max_selecoes_nao_corretas = 2
+imagem_texture = ExtResource("1_u5cud")
+imagem_scale = Vector2(0.46851844, 0.46666664)
+imagem_region_rect = Rect2(1080, 2160, 1080, 1080)
 profundidade = 3
 posicoes_folhas_corretas = PackedVector2Array(0.4375, 0.3125, 0.4375, 0.4375, 0.5625, 0.3125, 0.6875, 0.3125, 0.5625, 0.4375, 0.6875, 0.4375, 0.8125, 0.3125, 0.9375, 0.3125, 0.8125, 0.4375, 0.9375, 0.4375, 0.4375, 0.5625, 0.4375, 0.6875, 0.5625, 0.5625, 0.6875, 0.5625, 0.5625, 0.6875, 0.6875, 0.6875, 0.8125, 0.5625, 0.9375, 0.5625, 0.8125, 0.6875, 0.9375, 0.6875)
 metadata/_custom_type_script = "uid://bqtfpc0v7evi3"
