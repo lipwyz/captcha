@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://clrp372fotl3b" path="res://scene/MiniGames/SelectQuadrados/criacao/mini_game_select_quadrados.gd" id="1_tsssp"]
 [ext_resource type="Texture2D" uid="uid://dhq7s7j276aqr" path="res://Assets/1_JiSQVnR_nibjRC1azRl6Fw.jpg" id="2_aub4a"]
 [ext_resource type="Script" uid="uid://bk4b6h23vr48" path="res://scene/MiniGames/SelectQuadrados/tool/tool_gerenciador_quadTree.gd" id="2_v4f0m"]
-[ext_resource type="Resource" uid="uid://8pjqal17gkw5" path="res://scene/MiniGames/SelectQuadrados/MG_SelecaoDef_2.tres" id="3_v4f0m"]
+[ext_resource type="Resource" uid="uid://8pjqal17gkw5" path="res://scene/MiniGames/SelectQuadrados/variacoes/MG_SelDef_test_2.tres" id="3_v4f0m"]
 [ext_resource type="PackedScene" uid="uid://bwk2s0vp06pp8" path="res://scene/MiniGames/SelectQuadrados/criacao/imagem_clicavel.tscn" id="5_v4f0m"]
 
 [node name="MiniGameSelectQuadrados" type="Control" unique_id=1699504470]

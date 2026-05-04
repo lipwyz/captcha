@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MG_SelecaoDefinicoesRes" format=3 uid="uid://8pjqal17gkw5"]
 
 [ext_resource type="Texture2D" uid="uid://dhq7s7j276aqr" path="res://Assets/1_JiSQVnR_nibjRC1azRl6Fw.jpg" id="1_weptk"]
-[ext_resource type="Script" uid="uid://bqtfpc0v7evi3" path="res://scene/MiniGames/SelectQuadrados/MG_SelecaoDefinicoesRes.gd" id="2_rfk6l"]
+[ext_resource type="Script" uid="uid://bqtfpc0v7evi3" path="res://scene/MiniGames/SelectQuadrados/variacoes/MG_SelecaoDefinicoesRes.gd" id="2_rfk6l"]
 
 [resource]
 script = ExtResource("2_rfk6l")
