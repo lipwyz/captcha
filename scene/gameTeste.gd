@@ -41,3 +41,7 @@ func test_abas() -> void:
 	# aba 4 - Bario World
 	var mini_game_4 : MiniGameRes = load("uid://b4cu5kbxiwxwn")
 	mini_game_4.navegador_add_mini_game(navegador)
+	
+	# aba 6 - Selecionar quadrados
+	var mini_game_6 : MiniGameRes = load("uid://c8lyg2jjrh1j2")
+	mini_game_6.navegador_add_mini_game(navegador)
