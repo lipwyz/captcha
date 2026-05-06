@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cb32ypajp5ipx"]
 
 [ext_resource type="Script" uid="uid://doxeim8r6txmw" path="res://scene/MiniGames/conteudoTeste/conteudo_1.gd" id="1_vpb4p"]
+[ext_resource type="Resource" uid="uid://c7tjim70hbg0b" path="res://scene/MiniGames/conteudoTeste/miniGame2.tres" id="2_khsew"]
 
 [node name="Control1" type="Control" unique_id=118735360]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vpb4p")
+nova_aba = ExtResource("2_khsew")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=203352543]
 layout_mode = 1

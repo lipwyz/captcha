@@ -11,6 +11,7 @@ extends Node
 func _ready() -> void:
 	# comeca com o navegador escondido
 	navegador.fechar()
+	GerenciadorGlobal.navegador = navegador
 	
 	# TODO: sugestao colocar a animacao de intro antes de conectar os sinais
 	_conectar_sinais()
