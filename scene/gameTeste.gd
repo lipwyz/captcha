@@ -15,8 +15,7 @@ func _ready() -> void:
 func criar_aba_inicial() -> void:
 	var mini_game_abode : MiniGameRes = load("uid://xid604ljsui1")
 	var aba_abode := mini_game_abode.criar_aba()
-	navegador.add_aba(aba_abode)
-	navegador.criar_conteudo_aba(aba_abode, mini_game_abode.conteudo)
+	navegador.add_aba(aba_abode, mini_game_abode.conteudo)
 	## coloca essa aba como a padrao
 	navegador.aba_padrao = aba_abode
 	navegador.atual_aba = aba_abode

@@ -1,8 +1,8 @@
 class_name AreaTrabalho
 extends Control
 
-@export var navegador: Navegador
+signal click_navegador
 
-# ao apertar o icone do explorer -> abrir o navegador
+## Apertar o icone do explorer
 func _on_button_explorer_pressed() -> void:
-	navegador.abrir()
+	click_navegador.emit()

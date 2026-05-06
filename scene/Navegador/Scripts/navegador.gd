@@ -11,17 +11,6 @@ var atual_aba : Aba = null
 signal aberto
 signal fechado
 
-# abrir navegador pelo app do desktop
-func abrir() -> void:
-	show()
-	emit_signal("aberto")
-
-# fechar o navegador e voltar pro desktop
-#	(nao precisamos fechar realmente, so esconder)
-func fechar() -> void:
-	hide()
-	emit_signal("fechado")
-
 func _ready() -> void:
 	# garante que abas minimizadas nao sao visiveis
 	conteudos_abas_minimizadas.hide()
@@ -33,7 +22,24 @@ func _ready() -> void:
 	# conecta o sinal de minimizar para fechar o navegador tb
 	navegador_controles.minimizar.connect(fechar)
 
-## funcao que sai da aba anterior, e display o conteudo da aba atual
+# -----------------------------------------------------------------------------
+# Display do Navegador
+
+## Abrir navegador pelo app do desktop
+func abrir() -> void:
+	show()
+	emit_signal("aberto")
+
+## Fechar o navegador e voltar pro desktop
+##	(nao precisamos fechar realmente, so esconder)
+func fechar() -> void:
+	hide()
+	emit_signal("fechado")
+
+# -----------------------------------------------------------------------------
+# Gerenciamento das Abas
+
+## Funcao que sai da aba anterior, e display o conteudo da aba atual
 func mudar_aba(nova_aba : Aba) -> void:
 	# sai da aba anterior
 	#	mudar o display da aba, para refletir que saiu dela
@@ -48,19 +54,24 @@ func mudar_aba(nova_aba : Aba) -> void:
 	# load conteudo da nova aba
 	navegador_conteudo.mostrar_conteudo(nova_aba)
 
-## adiciona uma aba no navegador
-func add_aba(aba : Aba) -> void:
+## Adiciona uma aba no navegador, com um conetudo
+func add_aba(aba : Aba, conteudo_ref : PackedScene) -> void:
+	_add_aba_visual(aba)
+	_criar_conteudo_aba(aba, conteudo_ref)
+
+## Adiciona a aba visualmente ao navegador e conecta os sinais
+func _add_aba_visual(aba : Aba) -> void:
 	# conecta os sinais da aba
 	aba.clicada.connect(mudar_aba.bind(aba))
 	aba.fechada.connect(deletar_aba.bind(aba))
 	# adiciona na tree e visualmente no jogo
 	navegador_controles.add_aba(aba)
 
-## coloca o conteudo que vai ser mostrado em uma aba
-func criar_conteudo_aba(aba : Aba, conteudo_ref : PackedScene) -> void:
+## Coloca o conteudo que vai ser mostrado em uma aba
+func _criar_conteudo_aba(aba : Aba, conteudo_ref : PackedScene) -> void:
 	navegador_conteudo.criar_conteudo(aba, conteudo_ref)
 
-## fecha a aba, removendo o conteudo dela
+## Fecha a aba, removendo o conteudo dela
 func deletar_aba(aba : Aba) -> void:
 	mudar_aba(aba_padrao)
 	navegador_conteudo.liberar_conteudo_aba(aba)

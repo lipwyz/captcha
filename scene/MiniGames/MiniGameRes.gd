@@ -26,5 +26,4 @@ func criar_aba() -> Aba:
 
 func navegador_add_mini_game(navegador : Navegador) -> void:
 	var aba := criar_aba()
-	navegador.add_aba(aba)
-	navegador.criar_conteudo_aba(aba, conteudo)
+	navegador.add_aba(aba, conteudo)
