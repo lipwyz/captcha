@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhpq0xlcenlex"
-path="res://.godot/imported/Sinal[].png-eb222bc6b48b4597202bde1b6b74e2e9.ctex"
+path="res://.godot/imported/Sinal[].png-40f4ff33b210b54754ccdd1355a1b9c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Navegador/Sinal[].png"
-dest_files=["res://.godot/imported/Sinal[].png-eb222bc6b48b4597202bde1b6b74e2e9.ctex"]
+source_file="res://Assets/Sprites/Navegador/Sinal[].png"
+dest_files=["res://.godot/imported/Sinal[].png-40f4ff33b210b54754ccdd1355a1b9c5.ctex"]
 
 [params]
 
