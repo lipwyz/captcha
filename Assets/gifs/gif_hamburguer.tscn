@@ -54,11 +54,12 @@ vframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Gif" unique_id=1483172570]
 libraries/ = SubResource("AnimationLibrary_mxvaa")
+autoplay = &"Gifhamburguer"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Gif" unique_id=659497978]
 
 [node name="ColorRect" type="ColorRect" parent="Gif/CanvasLayer" unique_id=104313974]
 material = ExtResource("2_qjct8")
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 52.929485
 scale = Vector2(152.35286, 20.55565)

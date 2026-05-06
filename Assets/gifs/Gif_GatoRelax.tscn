@@ -53,3 +53,4 @@ vframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1025119666]
 libraries/ = SubResource("AnimationLibrary_r7fjr")
+autoplay = &"GifGatoRelax"

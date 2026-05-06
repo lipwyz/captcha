@@ -53,3 +53,4 @@ vframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1132043602]
 libraries/ = SubResource("AnimationLibrary_njx6s")
+autoplay = &"GifGodmode"
