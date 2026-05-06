@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("2_dhrsu")
-aba_titulo = "Abode"
+aba_titulo = "Abobe"
 aba_url = "https://Abode.com/inscricao/cancelar/com-certeza-vai-dar-bom.com"
 conteudo = ExtResource("1_0kj8y")

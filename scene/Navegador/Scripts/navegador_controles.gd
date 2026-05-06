@@ -17,6 +17,7 @@ var abas_list : Array[Aba] = []
 var abas_mostradas_index : int = 0
 
 func _ready() -> void:
+	# esconde as setas
 	h_box_setas.hide()
 
 ## muda o url que esta sendo mostrado atualmente
@@ -72,13 +73,13 @@ func _clipar_move_direita() -> void:
 
 # --- Conecta os botoes aos seus respectivos sinais ---
 func _on_button_fechar_navegador_pressed() -> void:
-	emit_signal("fechar")
+	fechar.emit()
 
 func _on_button_maximizar_pressed() -> void:
-	emit_signal("maximizar")
+	maximizar.emit()
 
 func _on_button_minimizar_pressed() -> void:
-	emit_signal("minimizar")
+	minimizar.emit()
 
 
 # detectar o click na aba, para clicar e entrar em uma aba
