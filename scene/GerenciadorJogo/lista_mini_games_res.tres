@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ListaMiniGamesRes" format=3 uid="uid://cjwmi1d4ulsch"]
+
+[ext_resource type="Script" uid="uid://cp2dri3177uqs" path="res://scene/MiniGames/MiniGameRes.gd" id="1_o1ruj"]
+[ext_resource type="Script" uid="uid://wmohus0qdr6r" path="res://scene/GerenciadorJogo/ListaMiniGamesRes.gd" id="2_0kicx"]
+[ext_resource type="Resource" uid="uid://b4cu5kbxiwxwn" path="res://scene/MiniGames/Mario/miniGameMario.tres" id="2_8w2v5"]
+[ext_resource type="Resource" uid="uid://c7tjim70hbg0b" path="res://scene/MiniGames/conteudoTeste/miniGame2.tres" id="3_tvyyn"]
+[ext_resource type="Resource" uid="uid://c4jo8i3ff08nm" path="res://scene/MiniGames/conteudoTeste/miniGame3.tres" id="4_5tywl"]
+[ext_resource type="Resource" uid="uid://c8lyg2jjrh1j2" path="res://scene/MiniGames/SelectQuadrados/migiGameSelectQuadrados.tres" id="6_jdwrc"]
+
+[resource]
+script = ExtResource("2_0kicx")
+lista_faceis = Array[ExtResource("1_o1ruj")]([ExtResource("3_tvyyn"), ExtResource("4_5tywl"), ExtResource("2_8w2v5"), ExtResource("6_jdwrc")])
+metadata/_custom_type_script = "uid://wmohus0qdr6r"

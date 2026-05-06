@@ -28,13 +28,13 @@ func _ready() -> void:
 ## Abrir navegador pelo app do desktop
 func abrir() -> void:
 	show()
-	emit_signal("aberto")
+	aberto.emit()
 
 ## Fechar o navegador e voltar pro desktop
 ##	(nao precisamos fechar realmente, so esconder)
 func fechar() -> void:
 	hide()
-	emit_signal("fechado")
+	fechado.emit()
 
 # -----------------------------------------------------------------------------
 # Gerenciamento das Abas
