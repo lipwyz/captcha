@@ -72,13 +72,13 @@ func _clipar_move_direita() -> void:
 
 # --- Conecta os botoes aos seus respectivos sinais ---
 func _on_button_fechar_navegador_pressed() -> void:
-	emit_signal("fechar")
+	fechar.emit()
 
 func _on_button_maximizar_pressed() -> void:
-	emit_signal("maximizar")
+	maximizar.emit()
 
 func _on_button_minimizar_pressed() -> void:
-	emit_signal("minimizar")
+	minimizar.emit()
 
 
 # detectar o click na aba, para clicar e entrar em uma aba
