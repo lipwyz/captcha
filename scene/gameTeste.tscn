@@ -2,19 +2,23 @@
 
 [ext_resource type="Script" uid="uid://ba5csyeytnbli" path="res://scene/gameTeste.gd" id="1_7q5p8"]
 [ext_resource type="PackedScene" uid="uid://bt12d62er2cam" path="res://scene/AreaTrabalho/area_trabalho.tscn" id="2_4dg7q"]
+[ext_resource type="PackedScene" uid="uid://cryhhrnjf4r5c" path="res://scene/GerenciadorJogo/GerenciadorJogo.tscn" id="2_uhqut"]
 [ext_resource type="PackedScene" uid="uid://cxdrd8o2eceyg" path="res://scene/Navegador/Navegador.tscn" id="3_uappg"]
-[ext_resource type="Texture2D" uid="uid://mqsl5eli6kn5" path="res://Assets/sprites/Navegador/Sinal-.png" id="4_1t0qi"]
+[ext_resource type="Texture2D" uid="uid://mqsl5eli6kn5" path="res://Assets/Sprites/Navegador/Sinal-.png" id="4_1t0qi"]
 [ext_resource type="PackedScene" uid="uid://sv6hm87ln5ip" path="res://_Debug/Testes/imagem_tam_ref.tscn" id="4_4dg7q"]
-[ext_resource type="Texture2D" uid="uid://dhpq0xlcenlex" path="res://Assets/sprites/Navegador/Sinal[].png" id="5_uhqut"]
-[ext_resource type="Texture2D" uid="uid://c2am4y0icg5ex" path="res://Assets/sprites/Navegador/SinalX.png" id="6_m0f4i"]
-[ext_resource type="Texture2D" uid="uid://bk402gbs5gpy7" path="res://Assets/sprites/Navegador/SetaE.png" id="7_cnn71"]
-[ext_resource type="Texture2D" uid="uid://7bukepogt65y" path="res://Assets/sprites/Navegador/SetaD.png" id="8_wu5we"]
+[ext_resource type="Texture2D" uid="uid://dhpq0xlcenlex" path="res://Assets/Sprites/Navegador/Sinal[].png" id="5_uhqut"]
+[ext_resource type="Texture2D" uid="uid://c2am4y0icg5ex" path="res://Assets/Sprites/Navegador/SinalX.png" id="6_m0f4i"]
+[ext_resource type="Texture2D" uid="uid://bk402gbs5gpy7" path="res://Assets/Sprites/Navegador/SetaE.png" id="7_cnn71"]
+[ext_resource type="Texture2D" uid="uid://7bukepogt65y" path="res://Assets/Sprites/Navegador/SetaD.png" id="8_wu5we"]
 
 [node name="GameTeste" type="Node" unique_id=778971112]
 script = ExtResource("1_7q5p8")
 
-[node name="AreaTrabalho" parent="." unique_id=24769322 node_paths=PackedStringArray("navegador") instance=ExtResource("2_4dg7q")]
+[node name="GerenciadorJogo" parent="." unique_id=1924470162 node_paths=PackedStringArray("navegador", "area_trabalho") instance=ExtResource("2_uhqut")]
 navegador = NodePath("../Navegador")
+area_trabalho = NodePath("../AreaTrabalho")
+
+[node name="AreaTrabalho" parent="." unique_id=24769322 instance=ExtResource("2_4dg7q")]
 
 [node name="Navegador" parent="." unique_id=1862273277 instance=ExtResource("3_uappg")]
 texture_filter = 1
@@ -22,6 +26,20 @@ offset_left = 186.0
 offset_top = 47.0
 offset_right = -137.0
 offset_bottom = -50.0
+
+[node name="ButtonSetaEsq" parent="Navegador/Panel/VSplit/NavegadorControles/VBox/MarginAbasBar/HBox/HBoxSetas" parent_id_path=PackedInt32Array(1862273277, 1883575481, 464330227) index="1" unique_id=154491246]
+icon = ExtResource("7_cnn71")
+flat = true
+
+[node name="ButtonSetaDir" parent="Navegador/Panel/VSplit/NavegadorControles/VBox/MarginAbasBar/HBox/HBoxSetas" parent_id_path=PackedInt32Array(1862273277, 1883575481, 464330227) index="3" unique_id=341463226]
+icon = ExtResource("8_wu5we")
+flat = true
+
+[node name="PanelAddress" parent="Navegador/Panel/VSplit/NavegadorControles/VBox/HotBar" parent_id_path=PackedInt32Array(1862273277, 1883575481, 274340694) index="0" unique_id=634013428]
+offset_left = 26.0
+offset_top = 27.562346
+offset_right = 1502.0
+offset_bottom = 52.562347
 
 [node name="Controles" parent="Navegador/Panel/VSplit/NavegadorControles/PosControles" parent_id_path=PackedInt32Array(1862273277, 1883575481, 1169384076) index="0" unique_id=825964034]
 offset_left = -115.0
@@ -40,26 +58,13 @@ flat = true
 icon = ExtResource("6_m0f4i")
 flat = true
 
-[node name="ButtonSetaEsq" parent="Navegador/Panel/VSplit/NavegadorControles/VBox/MarginAbasBar/HBox/HBoxSetas" parent_id_path=PackedInt32Array(1862273277, 1883575481, 464330227) index="1" unique_id=154491246]
-icon = ExtResource("7_cnn71")
-flat = true
-
-[node name="ButtonSetaDir" parent="Navegador/Panel/VSplit/NavegadorControles/VBox/MarginAbasBar/HBox/HBoxSetas" parent_id_path=PackedInt32Array(1862273277, 1883575481, 464330227) index="3" unique_id=341463226]
-icon = ExtResource("8_wu5we")
-flat = true
-
-[node name="PanelAddress" parent="Navegador/Panel/VSplit/NavegadorControles/VBox/HotBar" parent_id_path=PackedInt32Array(1862273277, 1883575481, 274340694) index="0" unique_id=634013428]
-offset_left = 26.0
-offset_top = 27.562346
-offset_right = 1502.0
-offset_bottom = 52.562347
-
 [node name="ImagemTamRef" parent="Navegador/Panel/VSplit/NavegadorConteudo/Margin/PanelConteudo" parent_id_path=PackedInt32Array(1862273277, 811463956, 1499278014) index="0" unique_id=1342923152 instance=ExtResource("4_4dg7q")]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 
+[editable path="GerenciadorJogo"]
 [editable path="Navegador"]
 [editable path="Navegador/Panel/VSplit/NavegadorControles"]
 [editable path="Navegador/Panel/VSplit/NavegadorConteudo"]
