@@ -17,6 +17,7 @@ var abas_list : Array[Aba] = []
 var abas_mostradas_index : int = 0
 
 func _ready() -> void:
+	# esconde as setas
 	h_box_setas.hide()
 
 ## muda o url que esta sendo mostrado atualmente

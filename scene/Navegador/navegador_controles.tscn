@@ -19,6 +19,7 @@ script = ExtResource("1_ouk7q")
 label_url = NodePath("VBox/HotBar/PanelAddress/Margin/LabelUrl")
 h_box_abas = NodePath("VBox/MarginAbasBar/HBox/HBoxAbas")
 h_box_setas = NodePath("VBox/MarginAbasBar/HBox/HBoxSetas")
+max_abas_mostradas = 10
 
 [node name="VBox" type="VBoxContainer" parent="." unique_id=981328887]
 layout_mode = 1
@@ -38,6 +39,7 @@ theme_override_constants/margin_right = 25
 layout_mode = 2
 
 [node name="HBoxAbas" type="HBoxContainer" parent="VBox/MarginAbasBar/HBox" unique_id=802627846]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="HBoxSetas" type="HBoxContainer" parent="VBox/MarginAbasBar/HBox" unique_id=464330227]
