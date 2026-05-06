@@ -16,6 +16,7 @@ func _ready() -> void:
 	GerenciadorGlobal.navegador = navegador
 	# comeca com o navegador escondido
 	navegador.fechar()
+	GerenciadorGlobal.navegador = navegador
 	
 	await get_tree().process_frame
 	iniciar_cutscene()
