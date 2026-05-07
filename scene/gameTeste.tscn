@@ -4,12 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://cryhhrnjf4r5c" path="res://scene/GerenciadorJogo/GerenciadorJogo.tscn" id="2_uhqut"]
 [ext_resource type="Resource" uid="uid://cjwmi1d4ulsch" path="res://scene/GerenciadorJogo/lista_mini_games_res.tres" id="3_m0f4i"]
 [ext_resource type="PackedScene" uid="uid://cxdrd8o2eceyg" path="res://scene/Navegador/Navegador.tscn" id="3_uappg"]
-[ext_resource type="Texture2D" uid="uid://mqsl5eli6kn5" path="res://Assets/Sprites/Navegador/Sinal-.png" id="4_1t0qi"]
+[ext_resource type="Texture2D" uid="uid://mqsl5eli6kn5" path="res://Assets/sprites/Navegador/Sinal-.png" id="4_1t0qi"]
 [ext_resource type="PackedScene" uid="uid://sv6hm87ln5ip" path="res://_Debug/Testes/imagem_tam_ref.tscn" id="4_4dg7q"]
-[ext_resource type="Texture2D" uid="uid://dhpq0xlcenlex" path="res://Assets/Sprites/Navegador/Sinal[].png" id="5_uhqut"]
-[ext_resource type="Texture2D" uid="uid://c2am4y0icg5ex" path="res://Assets/Sprites/Navegador/SinalX.png" id="6_m0f4i"]
-[ext_resource type="Texture2D" uid="uid://bk402gbs5gpy7" path="res://Assets/Sprites/Navegador/SetaE.png" id="7_cnn71"]
-[ext_resource type="Texture2D" uid="uid://7bukepogt65y" path="res://Assets/Sprites/Navegador/SetaD.png" id="8_wu5we"]
+[ext_resource type="Texture2D" uid="uid://dhpq0xlcenlex" path="res://Assets/sprites/Navegador/Sinal[].png" id="5_uhqut"]
+[ext_resource type="Texture2D" uid="uid://c2am4y0icg5ex" path="res://Assets/sprites/Navegador/SinalX.png" id="6_m0f4i"]
+[ext_resource type="Texture2D" uid="uid://bk402gbs5gpy7" path="res://Assets/sprites/Navegador/SetaE.png" id="7_cnn71"]
+[ext_resource type="Texture2D" uid="uid://7bukepogt65y" path="res://Assets/sprites/Navegador/SetaD.png" id="8_wu5we"]
 
 [node name="GameTeste" type="Node" unique_id=778971112]
 
@@ -32,9 +32,9 @@ flat = true
 
 [node name="PanelAddress" parent="Navegador/Panel/VSplit/NavegadorControles/VBox/HotBar" parent_id_path=PackedInt32Array(1862273277, 1883575481, 274340694) index="0" unique_id=634013428]
 offset_left = 26.0
-offset_top = 27.562346
+offset_top = 10.0
 offset_right = 1502.0
-offset_bottom = 52.562347
+offset_bottom = 36.0
 
 [node name="Controles" parent="Navegador/Panel/VSplit/NavegadorControles/PosControles" parent_id_path=PackedInt32Array(1862273277, 1883575481, 1169384076) index="0" unique_id=825964034]
 offset_left = -115.0
