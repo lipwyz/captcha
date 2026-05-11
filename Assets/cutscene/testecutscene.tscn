@@ -67,13 +67,12 @@ _data = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" unique_id=810749844]
 libraries/ = SubResource("AnimationLibrary_5aa45")
-autoplay = &"testecutscene"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=459253539]
 anchor_mode = 0
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=426054521]
-position = Vector2(960.00006, 296)
+position = Vector2(960, 1888)
 scale = Vector2(1904.5, -3146.0002)
 mesh = SubResource("QuadMesh_iwyu8")
 texture = ExtResource("1_besur")
