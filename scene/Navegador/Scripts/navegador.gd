@@ -41,9 +41,11 @@ func fechar() -> void:
 
 ## Funcao que sai da aba anterior, e display o conteudo da aba atual
 func mudar_aba(nova_aba : Aba) -> void:
-	# sai da aba anterior
-	#	mudar o display da aba, para refletir que saiu dela
-	atual_aba.sair_aba()
+	# se tiver uma aba atual (inicio de jogo nao tem aba atual)
+	if atual_aba and is_instance_valid(atual_aba):
+		# sai da aba anterior
+		#	mudar o display da aba, para refletir que saiu dela
+		atual_aba.sair_aba()
 	
 	atual_aba = nova_aba
 	# entra na nova aba

@@ -38,21 +38,31 @@ func iniciar_cutscene() -> void:
 	# TODO: inicar a cut scene
 	var nav_cont = navegador.navegador_conteudo
 	var teste_cutscene = nav_cont.conteudo_por_aba[aba_cutscene]
-	if teste_cutscene is TestCutScene:
-		aba_cutscene.clicada.connect(
-			func():
-				teste_cutscene.iniciar_cutscene()
-		)
+	#if teste_cutscene is TestCutScene:
+		#aba_cutscene.clicada.connect(
+			#func():
+				#teste_cutscene.iniciar_cutscene()
+		#)
 	
 	# -------------
-	var aba_cutscene_2 := Aba.criar_aba(
-			"TwiXer 2",
-			false,
-			Aba.Estados.Idle,
-			"TwiXer/forYou")
-	navegador.add_aba(aba_cutscene_2, cena_cutscene_2)
-	var teste_cutscene_2 = nav_cont.conteudo_por_aba[aba_cutscene_2]
-	aba_cutscene_2.clicada.connect(func(): teste_cutscene_2.iniciar_cutscene() )
+	#var aba_cutscene_2 := Aba.criar_aba(
+			#"TwiXer 2",
+			#false,
+			#Aba.Estados.Idle,
+			#"TwiXer/forYou")
+	#navegador.add_aba(aba_cutscene_2, cena_cutscene_2)
+	#var teste_cutscene_2 = nav_cont.conteudo_por_aba[aba_cutscene_2]
+	#aba_cutscene_2.clicada.connect(func(): teste_cutscene_2.iniciar_cutscene() )
+	
+	# Ajustar a aba inicial
+	navegador.mudar_aba(aba_cutscene)
+	# TODO: mudar essa inicializacao
+	area_trabalho.click_navegador.connect(_iniciar_cutscene.bind(teste_cutscene))
+
+func _iniciar_cutscene(teste_cutscene: TestCutScene) -> void:
+	area_trabalho.click_navegador.disconnect(_iniciar_cutscene)
+	#await get_tree().create_timer(0.2).timeout
+	teste_cutscene.iniciar_cutscene()
 
 
 # TODO: funcoes temporarias
@@ -67,7 +77,6 @@ func criar_aba_inicial() -> void:
 	navegador.add_aba(aba_abode, mini_game_abode.conteudo)
 	## coloca essa aba como a padrao
 	navegador.aba_padrao = aba_abode
-	navegador.atual_aba = aba_abode
 
 func iniciar_minigames() -> void:
 	for mg_res: MiniGameRes in lista_mini_games.lista_faceis:
