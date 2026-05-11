@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c6maudplvsd3u"]
+
+[ext_resource type="Texture2D" uid="uid://d2joj4wyo7sch" path="res://Assets/cutscene/cutscenetest1.png" id="1_2mvun"]
+[ext_resource type="Script" uid="uid://s8rwh5mj1tj8" path="res://Assets/cutscene/teste_cutscene_2.gd" id="1_kwg2n"]
+
+[node name="TesteCutScene2" type="Control" unique_id=881631723 node_paths=PackedStringArray("conteudo")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kwg2n")
+conteudo = NodePath("ScrollContainer/TextureRect")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=824242923]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer" unique_id=1708287635]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_2mvun")
+expand_mode = 5
+stretch_mode = 4
