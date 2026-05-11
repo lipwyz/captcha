@@ -8,12 +8,19 @@ extends Node
 @export var cena_cutscene: PackedScene
 @export var cena_cutscene_2: PackedScene
 
+@export_group("Abobe")
+@export var site_abobe_resource: MiniGameRes
+
 @export_group("Nodos")
 @export var navegador: Navegador
 @export var area_trabalho: AreaTrabalho
 
+@onready var gerenciador_mini_games: GerenciadorMiniGames = $GerenciadorMiniGames
+
 func _ready() -> void:
+	GerenciadorGlobal.gerenciador_jogo = self
 	GerenciadorGlobal.navegador = navegador
+	
 	# comeca com o navegador escondido
 	navegador.fechar()
 	
@@ -69,18 +76,24 @@ func _iniciar_cutscene(teste_cutscene: TestCutScene) -> void:
 func iniciar_abas() -> void:
 	# cria a aba inicial
 	criar_aba_inicial()
-	iniciar_minigames()
 
 func criar_aba_inicial() -> void:
-	var mini_game_abode : MiniGameRes = load("uid://xid604ljsui1")
-	var aba_abode := mini_game_abode.criar_aba()
-	navegador.add_aba(aba_abode, mini_game_abode.conteudo)
+	var aba_abode := site_abobe_resource.criar_aba()
+	navegador.add_aba(aba_abode, site_abobe_resource.conteudo)
 	## coloca essa aba como a padrao
 	navegador.aba_padrao = aba_abode
 
-func iniciar_minigames() -> void:
-	for mg_res: MiniGameRes in lista_mini_games.lista_faceis:
-		mg_res.navegador_add_mini_game(navegador)
+
+# -----------------------------------------------------------------------------
+# Mini Games
+# -----------------------------------------------------------------------------
+
+func iniciar_mini_games() -> void:
+	gerenciador_mini_games.iniciar_mini_games()
+
+#func iniciar_minigames() -> void:
+	#for mg_res: MiniGameRes in lista_mini_games.lista_faceis:
+		#mg_res.navegador_add_mini_game(navegador)
 
 # -----------------------------------------------------------------------------
 # Conectar os sinais
