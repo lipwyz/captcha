@@ -1,5 +1,6 @@
 extends Control
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var scroll_container: ScrollContainer = $ScrollContainer
 @export var conteudo : Control
 
@@ -10,12 +11,19 @@ extends Control
 	#iniciar_cutscene()
 
 func iniciar_cutscene() -> void:
+	animation_player.play("cutscene")
+	#_cutscene_code()
+
+func _cutscene_code() -> void:
 	# final
-	var pos : float = conteudo.size.y
+	var pos_final : float = conteudo.size.y
 	# posicao
-	pos -= scroll_container.size.y
+	pos_final -= scroll_container.size.y
 	# algo
-	pos -= scroll_container.size.y
+	pos_final -= scroll_container.size.y
+	
+	# pular pra posicao final
+	#scroll_container.scroll_vertical = int(pos_final)
 	
 	# aaaa
 	var tween := create_tween()
@@ -23,8 +31,7 @@ func iniciar_cutscene() -> void:
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(scroll_container,
 						"scroll_vertical",
-						int(pos),
+						int(pos_final),
 						2.5
 						).from_current()
 	
-	#scroll_container.scroll_vertical = int(pos)
