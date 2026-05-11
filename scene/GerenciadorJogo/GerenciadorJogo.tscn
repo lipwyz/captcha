@@ -1,10 +1,22 @@
 [gd_scene format=3 uid="uid://cryhhrnjf4r5c"]
 
 [ext_resource type="Script" uid="uid://bp0j4nl28yf4r" path="res://scene/GerenciadorJogo/scripts/gerenciador_jogo.gd" id="1_0ycjh"]
+[ext_resource type="Resource" uid="uid://d0yeacqprodn3" path="res://scene/Abobe/siteAbobe.tres" id="2_8h8tx"]
 [ext_resource type="Script" uid="uid://bxi1hf0sdhgjx" path="res://scene/GerenciadorJogo/scripts/gerenciador_mini_games.gd" id="2_im48h"]
+[ext_resource type="Script" uid="uid://dv17hq7yts0f5" path="res://scene/GerenciadorJogo/scripts/gerenciador_cut_scene_inicial.gd" id="3_y0wat"]
+[ext_resource type="Resource" uid="uid://cjwmi1d4ulsch" path="res://scene/GerenciadorJogo/lista_mini_games_res.tres" id="4_uumkp"]
+[ext_resource type="PackedScene" uid="uid://c6maudplvsd3u" path="res://Assets/cutscene/teste_cutscene_2.tscn" id="5_8h8tx"]
+[ext_resource type="PackedScene" uid="uid://q1q63lxlxm2" path="res://Assets/cutscene/navegador_teste_cutscene.tscn" id="6_uumkp"]
 
 [node name="GerenciadorJogo" type="Node" unique_id=1924470162]
 script = ExtResource("1_0ycjh")
+site_abobe_resource = ExtResource("2_8h8tx")
 
 [node name="GerenciadorMiniGames" type="Node" parent="." unique_id=1644025296]
 script = ExtResource("2_im48h")
+lista_mini_games = ExtResource("4_uumkp")
+
+[node name="GerenciadorCutSceneInicial" type="Node" parent="." unique_id=1161165819]
+script = ExtResource("3_y0wat")
+cena_cutscene = ExtResource("6_uumkp")
+cena_cutscene_2 = ExtResource("5_8h8tx")
