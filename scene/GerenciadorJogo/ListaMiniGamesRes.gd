@@ -1,7 +1,7 @@
 class_name ListaMiniGamesRes
 extends Resource
 
-#enum Dificuldade {FACIL, MEDIO, DIFICIL}
+enum Dificuldade {FACIL, MEDIO, DIFICIL}
 
 @export_group("Fáceis")
 @export var lista_faceis: Array[MiniGameRes]
