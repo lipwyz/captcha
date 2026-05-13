@@ -102,4 +102,5 @@ position = Vector2(498, 512)
 [node name="Cata_Vento3" parent="." unique_id=1697578856 instance=ExtResource("2_t328u")]
 position = Vector2(626, 512)
 
+[connection signal="colided" from="mouseDetector" to="." method="_ready"]
 [connection signal="timeout" from="TileMapLayer/Time_until_detect" to="TileMapLayer" method="_on_timer_timeout"]

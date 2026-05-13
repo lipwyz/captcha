@@ -27,7 +27,7 @@ func _check_hover():
 		current_hovered_tile = new_hovered
 
 func _on_tile_hover_entered(tile_coords: Vector2i):
-	emit_signal("tile_entered")
+	tile_entered.emit()
 	print("Entered tile ", tile_coords)
 
 func _on_tile_hover_exited(tile_coords: Vector2i):
