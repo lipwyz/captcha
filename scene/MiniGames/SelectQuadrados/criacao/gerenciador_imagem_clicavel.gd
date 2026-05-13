@@ -2,6 +2,8 @@
 class_name GerenciadorImagemClicavel
 extends Node2D
 
+signal concluido
+
 @export var gerenciador_quadTree: GerenciadorQuadTree
 ## Imagem que o jogador vai clicar
 @export var sprite_imagem : Sprite2D
@@ -185,7 +187,7 @@ func set_imagem(_texture: Texture2D,
 
 func verificar_concluido() -> void:
 	if is_level_concluido():
-		print("concluido")
+		concluido.emit()
 
 func is_level_concluido() -> bool:
 	if quadTree.qtd_falta_selecionar_corretas() > max_falta_selecionar_corretas:

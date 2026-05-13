@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://11v5pviy23ex" path="res://scene/MiniGames/SelectQuadrados/variacoes/MG_SelDef_test_1.tres" id="3_v4f0m"]
 [ext_resource type="PackedScene" uid="uid://bwk2s0vp06pp8" path="res://scene/MiniGames/SelectQuadrados/criacao/imagem_clicavel.tscn" id="5_v4f0m"]
 
-[node name="MiniGameSelectQuadrados" type="Control" unique_id=1699504470]
+[node name="MiniGameSelectQuadrados" type="Control" unique_id=1699504470 node_paths=PackedStringArray("gerenciador_imagem")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
