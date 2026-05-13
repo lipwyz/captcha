@@ -78,4 +78,6 @@ func deletar_aba(aba : Aba) -> void:
 	mudar_aba(aba_padrao)
 	navegador_conteudo.liberar_conteudo_aba(aba)
 	navegador_controles.remove_aba(aba)
-	
+
+func get_conteudo_aba(aba: Aba) -> ConteudoAba:
+	return navegador_conteudo.conteudo_por_aba[aba]

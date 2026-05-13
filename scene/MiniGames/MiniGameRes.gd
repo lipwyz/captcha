@@ -24,14 +24,18 @@ func criar_aba() -> Aba:
 	var aba = Aba.criar_aba(aba_titulo, aba_fechavel, aba_estado_inicial, aba_url)
 	return aba
 
-func navegador_add_mini_game(navegador : Navegador) -> void:
+func navegador_add_mini_game(navegador : Navegador) -> ConteudoAba:
 	var aba := criar_aba()
 	navegador.add_aba(aba, conteudo)
+	# pegar conteudo da aba
+	return navegador.get_conteudo_aba(aba)
 
 func navegador_add_mini_game_editado(
 			navegador : Navegador,
 			_aba_fechavel: bool = false,
 			_aba_estado_inicial: Aba.Estados = Aba.Estados.Idle
-			) -> void:
+			) -> ConteudoAba:
 	var aba = Aba.criar_aba(aba_titulo, _aba_fechavel, _aba_estado_inicial, aba_url)
 	navegador.add_aba(aba, conteudo)
+	# pegar conteudo da aba
+	return navegador.get_conteudo_aba(aba)

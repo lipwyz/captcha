@@ -37,4 +37,5 @@ func _get_mini_game(dificuldade: ListaMiniGamesRes.Dificuldade) -> MiniGameRes:
 ## 
 func iniciar_mini_games(navegador: Navegador) -> void:
 	var minigame_res : MiniGameRes = _get_mini_game(ListaMiniGamesRes.Dificuldade.FACIL)
-	minigame_res.navegador_add_mini_game(navegador)
+	var conteudo_aba : ConteudoAba = minigame_res.navegador_add_mini_game(navegador)
+	conteudo_aba.terminado.connect(func(): print("terminado") )

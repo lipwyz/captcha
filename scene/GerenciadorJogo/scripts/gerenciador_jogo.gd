@@ -48,10 +48,6 @@ func criar_aba_inicial() -> void:
 func iniciar_mini_games() -> void:
 	gerenciador_mini_games.iniciar_mini_games(navegador)
 
-#func iniciar_minigames() -> void:
-	#for mg_res: MiniGameRes in lista_mini_games.lista_faceis:
-		#mg_res.navegador_add_mini_game(navegador)
-
 # -----------------------------------------------------------------------------
 # Conectar os sinais
 # -----------------------------------------------------------------------------
