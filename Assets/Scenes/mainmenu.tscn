@@ -32,9 +32,11 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="." unique_id=1224765332]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_right = 1.667
+anchor_bottom = 1.667
+offset_right = -1280.6401
+offset_bottom = -720.3601
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_wtcfe")
@@ -91,4 +93,5 @@ text = "exit
 [node name="Window" type="Window" parent="." unique_id=538483060]
 oversampling_override = 1.0
 position = Vector2i(0, 36)
+visible = false
 script = ExtResource("3_o7t0x")
