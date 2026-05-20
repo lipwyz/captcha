@@ -1,6 +1,8 @@
 class_name GerenciadorMiniGames
 extends Node
 
+signal pedir_anuncio
+
 @export_group("Game")
 @export var lista_mini_games: ListaMiniGamesRes
 
@@ -34,8 +36,25 @@ func _get_mini_game(dificuldade: ListaMiniGamesRes.Dificuldade) -> MiniGameRes:
 		_reset_mini_games(dificuldade)
 	return listas_por_dificuldade[dificuldade].pop_back()
 
+
+
+# -----------------------------------------------------------------------------
+# Iniciar Mini game
+# -----------------------------------------------------------------------------
+
 ## 
 func iniciar_mini_games(navegador: Navegador) -> void:
 	var minigame_res : MiniGameRes = _get_mini_game(ListaMiniGamesRes.Dificuldade.FACIL)
 	var conteudo_aba : ConteudoAba = minigame_res.navegador_add_mini_game(navegador)
+	_conectar_sinais_mini_game(conteudo_aba)
+
+func _conectar_sinais_mini_game(conteudo_aba : ConteudoAba) -> void:
 	conteudo_aba.terminado.connect(func(): print("terminado") )
+	conteudo_aba.falha.connect(_falhar_mini_game)
+
+# -----------------------------------------------------------------------------
+# Acoes do Mini Game
+# -----------------------------------------------------------------------------
+
+func _falhar_mini_game() -> void:
+	pedir_anuncio.emit()
