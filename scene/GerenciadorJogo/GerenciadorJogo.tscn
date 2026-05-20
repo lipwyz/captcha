@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bxi1hf0sdhgjx" path="res://scene/GerenciadorJogo/scripts/gerenciador_mini_games.gd" id="2_im48h"]
 [ext_resource type="Script" uid="uid://dv17hq7yts0f5" path="res://scene/GerenciadorJogo/scripts/gerenciador_cut_scene_inicial.gd" id="3_y0wat"]
 [ext_resource type="Resource" uid="uid://cjwmi1d4ulsch" path="res://scene/GerenciadorJogo/lista_mini_games_res.tres" id="4_uumkp"]
+[ext_resource type="Script" uid="uid://xyqicgojedu8" path="res://scene/GerenciadorJogo/scripts/gerenciador_anuncios.gd" id="5_5j3yu"]
 [ext_resource type="PackedScene" uid="uid://c6maudplvsd3u" path="res://Assets/cutscene/teste_cutscene_2.tscn" id="5_8h8tx"]
 [ext_resource type="PackedScene" uid="uid://q1q63lxlxm2" path="res://Assets/cutscene/navegador_teste_cutscene.tscn" id="6_uumkp"]
 
@@ -15,6 +16,10 @@ site_abobe_resource = ExtResource("2_8h8tx")
 [node name="GerenciadorMiniGames" type="Node" parent="." unique_id=1644025296]
 script = ExtResource("2_im48h")
 lista_mini_games = ExtResource("4_uumkp")
+
+[node name="GerenciadorAnuncios" type="Node" parent="." unique_id=376495426]
+script = ExtResource("5_5j3yu")
+anuncios_ref = Array[PackedScene]([null, null])
 
 [node name="GerenciadorCutSceneInicial" type="Node" parent="." unique_id=1161165819]
 script = ExtResource("3_y0wat")
