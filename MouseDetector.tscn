@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://vmlmiegrkd4p" path="res://Assets/placeholders/image.png" id="2_l2s65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0c8av"]
-size = Vector2(1, 1)
+size = Vector2(0, 0)
 
 [node name="mouseDetector" type="Area2D" unique_id=1210839782]
 script = ExtResource("1_hfl28")
