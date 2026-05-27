@@ -28,7 +28,7 @@ func spawnar_anuncio() -> void:
 	# se nao puder da lista de espera, crie
 	else:
 		anuncio = _criar_anuncio()
-	# anuncios do anuncio
+	# adiciona nos anuncios mostrados
 	lista_anuncios_mostrados.append(anuncio)
 	anuncios_mostrados.add_child(anuncio)
 	# posiciona
@@ -45,21 +45,23 @@ func _criar_anuncio() -> AnuncioPopUp:
 	return anuncio
 
 func _pode_pegar_anuncio_lista_espera() -> bool:
-	# nao spawnou um de cada tipo de anuncio ainda, entao nao pegue
+	# se nao spawnou um de cada tipo de anuncio ainda, entao nao pegue
 	if lista_anuncios_espera.size() <= lista_imagens_anuncios.size():
 		return false
 	return true
 
 func _pegar_anuncio_lista_espera() -> AnuncioPopUp:
+	# cada vez que tiver na lista quantidade proporcional de imagens ref, embaralhe os anuncios 
+	#	(para evitar a mesma repeticao, mas sem dar shuffle o tempo todo)
 	if lista_anuncios_espera.size() % lista_imagens_anuncios.size() == 0:
 		lista_anuncios_espera.shuffle()
-	
+	#
 	var anuncio: AnuncioPopUp = lista_anuncios_espera.pop_back()
 	anuncios_espera.remove_child(anuncio)
-	#
+	# ativa o anuncio para ser mostrado novamente
 	anuncio.show()
 	anuncio.process_mode = Node.PROCESS_MODE_INHERIT
-	#
+	# retorna o anuncio
 	return anuncio
 
 ## Fecha anuncio, e emite sinal anuncio_fechado
