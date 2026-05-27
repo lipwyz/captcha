@@ -59,3 +59,6 @@ func _resize_tamanho_max(imagem_anuncio: ImagemAnuncio) -> Vector2:
 		# atualiza o _size
 		_size = _size * (tamanho_max.x / _size.x)
 	return _size
+
+func posicionar(posicao: Vector2) -> void:
+	position = posicao

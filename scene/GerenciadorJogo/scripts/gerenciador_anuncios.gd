@@ -31,6 +31,9 @@ func spawnar_anuncio() -> void:
 	# anuncios do anuncio
 	lista_anuncios_mostrados.append(anuncio)
 	anuncios_mostrados.add_child(anuncio)
+	# posiciona
+	var posicao : Vector2 = _get_posicao_spawn_anuncio(anuncio)
+	anuncio.posicionar(posicao)
 
 func _criar_anuncio() -> AnuncioPopUp:
 	var anuncio : AnuncioPopUp = anuncios_ref.instantiate()
@@ -87,3 +90,21 @@ func _criar_imagem_anuncio() -> ImagemAnuncio:
 		lista_imagens_anuncios.shuffle()
 	# retona a imagem criada
 	return imagem_ref.instantiate()
+
+## Posicao da origem (top esq) do anuncio, para spawnar na tela
+## 		Passado AnuncioPopUp, para nao spawnar com pedaco fora area
+func _get_posicao_spawn_anuncio(anuncio: AnuncioPopUp) -> Vector2:
+	# nodo de controle que tem a area total que os nodos podem spawnar
+	var espaco_tela : Control = anuncios_mostrados
+	# tamanho do anuncio, para nao spawnar com pedaco fora area
+	var tam_anuncio = anuncio.size
+	# posicao canto top esq
+	var min_pos: Vector2 = espaco_tela.position
+	# posicao canto bot dir, retirado o tamanho do anuncio (pos base do anuncio eh top esq)
+	var max_pos: Vector2 = espaco_tela.size - Vector2(tam_anuncio)
+	# posicao que a origem (top esq) do anuncio vai spawnar
+	var pos := Vector2(
+		randf_range(min_pos.x, max_pos.x),
+		randf_range(min_pos.y, max_pos.y)
+	)
+	return pos
