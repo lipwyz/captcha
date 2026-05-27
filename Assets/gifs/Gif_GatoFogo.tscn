@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://7lscoemnuqxv"]
 
-[ext_resource type="Texture2D" uid="uid://darw64d7y8lql" path="res://Assets/sprites/sheets/gif.png" id="1_gg2dv"]
+[ext_resource type="Script" uid="uid://ba64veiiu4e71" path="res://scene/Anuncios/imagem_anuncio.gd" id="1_1q1hf"]
+[ext_resource type="Texture2D" uid="uid://darw64d7y8lql" path="res://Assets/Sprites/sheets/gif.png" id="1_gg2dv"]
 
 [sub_resource type="Animation" id="Animation_2jm5q"]
 resource_name = "GifGatoFogo"
@@ -41,7 +42,9 @@ _data = {
 &"RESET": SubResource("Animation_gllxa")
 }
 
-[node name="Node2D" type="Node2D" unique_id=1928964441]
+[node name="GifGatoFogo" type="Node2D" unique_id=1928964441 node_paths=PackedStringArray("sprite_imagem")]
+script = ExtResource("1_1q1hf")
+sprite_imagem = NodePath("Sprite2D/Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1425726770]
 
