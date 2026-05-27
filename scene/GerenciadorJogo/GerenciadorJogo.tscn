@@ -39,6 +39,8 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 50
 
 [node name="AnunciosMostrados" type="Control" parent="GerenciadorAnuncios/AnunciosMargin" unique_id=1502041990]
+editor_description = "Nodo que mostra os anuncios na tela.
+Tambem eh o nodo que tem o espaço da tela que os anuncios podem spawnar dentro."
 layout_mode = 2
 
 [node name="AnunciosEspera" type="Control" parent="GerenciadorAnuncios" unique_id=1071151342]
