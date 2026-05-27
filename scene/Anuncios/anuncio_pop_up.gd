@@ -28,23 +28,23 @@ func iniciar(imagem_anuncio: ImagemAnuncio, _tamanho_max: Vector2) -> void:
 	_ajustar_botao_fechar(imagem_anuncio_size)
 
 ## Ajusta a posicao do botao de fechar dentro da janela
-func _ajustar_botao_fechar(imagem_anuncio_size: Vector2) -> void:
+func _ajustar_botao_fechar(_imagem_anuncio_size: Vector2) -> void:
 	# posicao minimas e maximas dentro da janela
 	var min_pos := Vector2.ZERO
 	var max_pos := Vector2(
-		imagem_anuncio_size.x - botao_fechar.size.x,
-		imagem_anuncio_size.y - botao_fechar.size.y
+		_imagem_anuncio_size.x - botao_fechar.size.x,
+		_imagem_anuncio_size.y - botao_fechar.size.y
 	)
 	# posicao aleatoria dentro do min e max
-	var pos_x := randf_range(0, max_pos.x)
-	var pos_y := randf_range(0, max_pos.y)
+	var pos_x := randf_range(min_pos.x, max_pos.x)
+	var pos_y := randf_range(min_pos.y, max_pos.y)
 	botao_fechar.position = Vector2(pos_x, pos_y)
 	# move para frente da janela para poder ser clicado
 	botao_fechar.move_to_front()
 
 ## Ajusta o tamanho da janela para o mesmo da imagem
-func _resize_tamanho_window(imagem_anuncio_size: Vector2) -> void:
-	size = imagem_anuncio_size
+func _resize_tamanho_window(_imagem_anuncio_size: Vector2) -> void:
+	size = _imagem_anuncio_size
 
 ## Ajusta o tamanho maximo da imagem para ficar dentro de tamanho_max
 ##		Retorna o tamanho da imagem apos sofrer o scale
