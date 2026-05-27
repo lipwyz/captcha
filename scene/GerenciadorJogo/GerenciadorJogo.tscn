@@ -38,8 +38,15 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 50
 
-[node name="AnunciosPai" type="Control" parent="GerenciadorAnuncios/AnunciosMargin" unique_id=1502041990]
+[node name="AnunciosMostrados" type="Control" parent="GerenciadorAnuncios/AnunciosMargin" unique_id=1502041990]
 layout_mode = 2
+
+[node name="AnunciosEspera" type="Control" parent="GerenciadorAnuncios" unique_id=1071151342]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="GerenciadorCutSceneInicial" type="Node" parent="." unique_id=1161165819]
 script = ExtResource("3_y0wat")
