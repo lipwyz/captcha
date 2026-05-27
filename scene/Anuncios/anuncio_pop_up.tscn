@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dvsgiilvktsnd" path="res://scene/Anuncios/anuncio_pop_up.gd" id="1_c0o18"]
 [ext_resource type="Texture2D" uid="uid://c2am4y0icg5ex" path="res://Assets/Sprites/Navegador/SinalX.png" id="6_u6r58"]
 
-[node name="AnuncioPopUp" type="Window" unique_id=1063998431 node_paths=PackedStringArray("botao_x")]
+[node name="AnuncioPopUp" type="Window" unique_id=1063998431 node_paths=PackedStringArray("botao_fechar")]
 disable_3d = true
 gui_embed_subwindows = true
 oversampling_override = 1.0
@@ -18,7 +18,7 @@ minimize_disabled = true
 maximize_disabled = true
 min_size = Vector2i(10, 10)
 script = ExtResource("1_c0o18")
-botao_x = NodePath("ButtonX")
+botao_fechar = NodePath("ButtonX")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=91253162]
 anchors_preset = 15
