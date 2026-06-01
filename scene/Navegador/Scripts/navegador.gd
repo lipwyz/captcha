@@ -6,7 +6,7 @@ extends Control
 @onready var conteudos_abas_minimizadas: Control = $ConteudosAbasMinimizadas
 
 @export var aba_padrao : Aba
-var atual_aba : Aba = null
+var aba_atual : Aba = null
 
 signal aberto
 signal fechado
@@ -42,12 +42,12 @@ func fechar() -> void:
 ## Funcao que sai da aba anterior, e display o conteudo da aba atual
 func mudar_aba(nova_aba : Aba) -> void:
 	# se tiver uma aba atual (inicio de jogo nao tem aba atual)
-	if atual_aba and is_instance_valid(atual_aba):
+	if aba_atual and is_instance_valid(aba_atual):
 		# sai da aba anterior
 		#	mudar o display da aba, para refletir que saiu dela
-		atual_aba.sair_aba()
+		aba_atual.sair_aba()
 	
-	atual_aba = nova_aba
+	aba_atual = nova_aba
 	# entra na nova aba
 	nova_aba.entrar_aba()
 	# muda o url para o da aba
@@ -76,7 +76,8 @@ func _criar_conteudo_aba(aba : Aba, conteudo_ref : PackedScene) -> void:
 
 ## Fecha a aba, removendo o conteudo dela
 func deletar_aba(aba : Aba) -> void:
-	mudar_aba(aba_padrao)
+	if aba_atual != aba_padrao:
+		mudar_aba(aba_padrao)
 	navegador_conteudo.liberar_conteudo_aba(aba)
 	navegador_controles.remove_aba(aba)
 
@@ -86,6 +87,6 @@ func get_conteudo_aba(aba: Aba) -> ConteudoAba:
 ## Fecha todas as abas aberta, exceto a aba padrao
 func fechar_todas_abas_exceto_padrao() -> void:
 	mudar_aba(aba_padrao)
-	for aba: Aba in navegador_controles.abas_list:
+	for aba: Aba in navegador_controles.abas_list.duplicate():
 		if aba != aba_padrao:
 			deletar_aba(aba)
