@@ -14,9 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://bthx3u3fq3xif" path="res://Assets/Gifs/Gif_GodMode.tscn" id="9_csxmw"]
 [ext_resource type="PackedScene" uid="uid://c0b3bl2cyj4dr" path="res://Assets/Gifs/Gif_hamburguer.tscn" id="10_28axa"]
 
-[node name="GerenciadorJogo" type="Node" unique_id=1924470162]
+[node name="GerenciadorJogo" type="Node" unique_id=1924470162 node_paths=PackedStringArray("gerenciador_mini_games", "gerenciador_cut_scene_inicial", "gerenciador_anuncios")]
 script = ExtResource("1_0ycjh")
 site_abobe_resource = ExtResource("2_8h8tx")
+gerenciador_mini_games = NodePath("GerenciadorMiniGames")
+gerenciador_cut_scene_inicial = NodePath("GerenciadorCutSceneInicial")
+gerenciador_anuncios = NodePath("GerenciadorAnuncios")
 
 [node name="GerenciadorMiniGames" type="Node" parent="." unique_id=1644025296]
 script = ExtResource("2_im48h")
