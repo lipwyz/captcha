@@ -1,11 +1,15 @@
 class_name ConteudoAba
 extends Control
 
-signal terminado
-signal falha
+signal minigame_ganhou
+signal minigame_perdeu
+signal minigame_errou
 
-func terminar() -> void:
-	terminado.emit()
+func minigame_ganhar() -> void:
+	minigame_ganhou.emit()
 
-func falhar() -> void:
-	falha.emit()
+func minigame_perder() -> void:
+	minigame_perdeu.emit()
+
+func minigame_errar() -> void:
+	minigame_errou.emit()

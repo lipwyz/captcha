@@ -6,4 +6,4 @@ extends ConteudoAba
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print("entrou ", body)
 	area_2d.queue_free()
-	terminar()
+	minigame_ganhar()
