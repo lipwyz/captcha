@@ -430,6 +430,10 @@ sprite_frames = SubResource("SpriteFrames_35bf2")
 autoplay = "default"
 frame_progress = 0.23955297
 
+[node name="SpawnJogador" type="Node2D" parent="SubViewportContainer/SubViewport/Mundo" unique_id=375122897]
+position = Vector2(156.99998, 790.99994)
+scale = Vector2(0.99999994, 0.99999994)
+
 [node name="Jogador" type="CharacterBody2D" parent="SubViewportContainer/SubViewport/Mundo" unique_id=587445803]
 position = Vector2(159, 669)
 collision_layer = 2
