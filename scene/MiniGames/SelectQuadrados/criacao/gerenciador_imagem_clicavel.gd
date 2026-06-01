@@ -2,6 +2,9 @@
 class_name GerenciadorImagemClicavel
 extends Node2D
 
+signal concluido
+signal errado
+
 @export var gerenciador_quadTree: GerenciadorQuadTree
 ## Imagem que o jogador vai clicar
 @export var sprite_imagem : Sprite2D
@@ -138,7 +141,10 @@ func click(pos: Vector2) -> void:
 	
 	# selecionar os quadrados
 	quadTree.deixar_filho_visivel(pos_quad)
-	quadTree.toggle_selecionado(pos_quad)
+	var valor_nodo : bool = quadTree.toggle_selecionado(pos_quad)
+	# se estava visivel E se desmarcaram, emitir o errado
+	if quadTree.get_visivel_folha(pos_quad) and (not valor_nodo):
+		errado.emit()
 	# desenha os quadrados visiveis
 	desenhar_quadrados_visiveis(quadTree)
 	
@@ -185,7 +191,7 @@ func set_imagem(_texture: Texture2D,
 
 func verificar_concluido() -> void:
 	if is_level_concluido():
-		print("concluido")
+		concluido.emit()
 
 func is_level_concluido() -> bool:
 	if quadTree.qtd_falta_selecionar_corretas() > max_falta_selecionar_corretas:
@@ -194,6 +200,11 @@ func is_level_concluido() -> bool:
 		return false
 	return true
 
+#------------------------------------------------------------------------------
+# Getters
+
+func get_image_size() -> Vector2:
+	return _converter_ponto_quadTree_para_tela(Vector2.ONE)
 
 #------------------------------------------------------------------------------
 # Conversores

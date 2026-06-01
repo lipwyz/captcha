@@ -33,7 +33,6 @@ func get_dimensoes_all_folhas() -> Array[Array]:
 func deixar_filho_visivel(posicao: Vector2) -> void:
 	root.deixar_filho_visivel(posicao)
 
-
 ## Deixa todos os nodos visiveis
 func deixar_all_visiveis() -> void:
 	root.deixar_all_visiveis()
@@ -45,8 +44,13 @@ func marcar_selecionado(posicao: Vector2) -> void:
 
 ## Marca com FLAG_SELECIONADO os nodo folha que sao filhos visiveis.
 ## 		Para nodos que nao sao visiveis nao acontece nada
-func toggle_selecionado(posicao: Vector2) -> void:
+##		Retorna o valor atual que foi setado o nodo
+func toggle_selecionado(posicao: Vector2) -> bool:
 	root.toggle_selecionar_folha_visivel(posicao)
+	return root.get_selecionar_folha_visivel(posicao)
+
+func get_visivel_folha(posicao: Vector2) -> bool:
+	return root.get_visivel_folha(posicao)
 
 ## Marca com FLAG_CORRETO os nodo folha na posicao
 func marcar_correto(posicao: Vector2) -> void:
@@ -274,7 +278,7 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 		if is_nodo_folha():
 			var valor_flag: bool = _get_node_flag(FLAG_SELECIONADO)
 			_set_node_flag(FLAG_SELECIONADO, not valor_flag)
-			return
+			return 
 		# se nao for folha, veja se os filhos sao visiveis
 		var is_filhos_visiveis : bool = _get_node_flag(FLAG_SHOW_FILHOS)
 		if is_filhos_visiveis:
@@ -283,6 +287,24 @@ class QuadTreeSelecaoNode extends QuadTreeNode:
 		else:
 			# filhos nao sao visiveis, pare
 			return
+	
+	## Retorna o valor da flag '' no nodo folha da posicao
+	func get_selecionar_folha_visivel(posicao: Vector2) -> bool:
+		if is_nodo_folha():
+			var valor_flag: bool = _get_node_flag(FLAG_SELECIONADO)
+			return valor_flag
+		return _get_nodo_filho(posicao).get_selecionar_folha_visivel(posicao)
+	
+	func get_visivel_folha(posicao: Vector2) -> bool:
+		if is_nodo_folha(): return true
+		# se nao for folha, veja se os filhos sao visiveis
+		var is_filhos_visiveis : bool = _get_node_flag(FLAG_SHOW_FILHOS)
+		if is_filhos_visiveis:
+			# se os filhos forem visiveis, continue
+			return _get_nodo_filho(posicao).get_visivel_folha(posicao)
+		else:
+			# filhos nao sao visiveis, pare
+			return false
 	
 	## Retorna a posicao metade de todos os nodos folha que possuem a 'flag' como true
 	func get_posicao_all_nodos_folha_flag(flag: int) -> Array[Vector2]:
