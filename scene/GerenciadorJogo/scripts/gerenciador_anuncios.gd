@@ -2,6 +2,7 @@ class_name GerenciadorAnuncios
 extends Node
 
 signal anuncio_fechado
+signal todos_anuncios_fechados
 
 @export var tamanho_max := Vector2(600, 400)
 @export var anuncios_ref: PackedScene
@@ -17,6 +18,9 @@ var lista_anuncios_mostrados: Array[AnuncioPopUp] = []
 var lista_anuncios_espera: Array = [AnuncioPopUp]
 
 func _ready() -> void:
+	# conecta os sinais
+	anuncio_fechado.connect(_verificar_todos_anuncios_fechados)
+	# aleatoriza a imagem dos anuncios
 	lista_imagens_anuncios.shuffle()
 
 ## Cria um anuncio para mostrar na tela
@@ -80,6 +84,10 @@ func fechar_anuncio(anuncio: AnuncioPopUp) -> void:
 ## Retona true sem tem anuncios sendo mostrados
 func tem_anuncios_sendo_mostrados() -> bool:
 	return not lista_anuncios_mostrados.is_empty()
+
+func _verificar_todos_anuncios_fechados() -> void:
+	if not tem_anuncios_sendo_mostrados():
+		todos_anuncios_fechados.emit()
 
 func _criar_imagem_anuncio() -> ImagemAnuncio:
 	# pega a imagem da lista no id atual
