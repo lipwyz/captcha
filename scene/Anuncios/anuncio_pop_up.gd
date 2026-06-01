@@ -4,6 +4,8 @@ extends Window
 signal fechado
 
 @export var botao_fechar : Button
+@export var local_imagem: Control
+@export var panel_container: PanelContainer
 
 ## tamanho maximo que a imagem / janela do anuncio deve ter
 var tamanho_max := Vector2.ONE
@@ -19,7 +21,8 @@ func _ready() -> void:
 ##		_tamanho_max a tamanho maximo que a imagem deve ter
 func iniciar(imagem_anuncio: ImagemAnuncio, _tamanho_max: Vector2) -> void:
 	tamanho_max = _tamanho_max
-	add_child(imagem_anuncio)
+	local_imagem.add_child(imagem_anuncio)
+	imagem_anuncio.position = Vector2.ZERO
 	# resize a imagem
 	imagem_anuncio_size = _resize_tamanho_max(imagem_anuncio)
 	# resize a window
@@ -29,22 +32,22 @@ func iniciar(imagem_anuncio: ImagemAnuncio, _tamanho_max: Vector2) -> void:
 
 ## Ajusta a posicao do botao de fechar dentro da janela
 func _ajustar_botao_fechar(_imagem_anuncio_size: Vector2) -> void:
-	# posicao minimas e maximas dentro da janela
-	var min_pos := Vector2.ZERO
-	var max_pos := Vector2(
-		_imagem_anuncio_size.x - botao_fechar.size.x,
-		_imagem_anuncio_size.y - botao_fechar.size.y
-	)
-	# posicao aleatoria dentro do min e max
-	var pos_x := randf_range(min_pos.x, max_pos.x)
-	var pos_y := randf_range(min_pos.y, max_pos.y)
-	botao_fechar.position = Vector2(pos_x, pos_y)
-	# move para frente da janela para poder ser clicado
-	botao_fechar.move_to_front()
+	# decide se o botao fica na esq ou dir
+	var esq : bool = randi_range(0, 1) == 0
+	if esq:
+		# orientacao da esquerda -> direita
+		panel_container.layout_direction = Control.LAYOUT_DIRECTION_LTR
+	else:
+		# orientacao da direita -> esquerda
+		panel_container.layout_direction = Control.LAYOUT_DIRECTION_RTL
+	return
 
 ## Ajusta o tamanho da janela para o mesmo da imagem
 func _resize_tamanho_window(_imagem_anuncio_size: Vector2) -> void:
-	size = _imagem_anuncio_size
+	var _size = _imagem_anuncio_size
+	#_size.y += local_imagem.position.y
+	_size.y += panel_container.size.y
+	size = _size
 
 ## Ajusta o tamanho maximo da imagem para ficar dentro de tamanho_max
 ##		Retorna o tamanho da imagem apos sofrer o scale
