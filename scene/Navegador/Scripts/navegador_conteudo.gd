@@ -27,7 +27,7 @@ func criar_conteudo(aba : Aba, conteudo_ref : PackedScene) -> void:
 	# TODO: teste, colocar solucao melhor depois
 	if conteudo is Conteudo3:
 		conteudo_3 = conteudo
-		conteudo.terminado.connect(conteudo_3_completo)
+		conteudo.minigame_ganhou.connect(conteudo_3_completo)
 
 # TODO: teste, colocar solucao melhor depois
 var conteudo_3 : Conteudo3 = null

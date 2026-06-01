@@ -49,8 +49,9 @@ func iniciar_mini_games(navegador: Navegador) -> void:
 	_conectar_sinais_mini_game(conteudo_aba)
 
 func _conectar_sinais_mini_game(conteudo_aba : ConteudoAba) -> void:
-	conteudo_aba.terminado.connect(func(): print("terminado") )
-	conteudo_aba.falha.connect(_falhar_mini_game)
+	conteudo_aba.minigame_ganhou.connect(func(): print("terminado") )
+	#conteudo_aba.minigame_perdeu.connect(_falhar_mini_game)
+	conteudo_aba.minigame_errou.connect(_falhar_mini_game)
 
 # -----------------------------------------------------------------------------
 # Acoes do Mini Game
