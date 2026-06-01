@@ -8,9 +8,10 @@ extends Node
 @export var navegador: Navegador
 @export var area_trabalho: AreaTrabalho
 
-@onready var gerenciador_mini_games: GerenciadorMiniGames = $GerenciadorMiniGames
-@onready var gerenciador_cut_scene_inicial: GerenciadorCutSceneInicial = $GerenciadorCutSceneInicial
-@onready var gerenciador_anuncios: GerenciadorAnuncios = $GerenciadorAnuncios
+@export_group("Gerenciadores")
+@export var gerenciador_mini_games: GerenciadorMiniGames
+@export var gerenciador_cut_scene_inicial: GerenciadorCutSceneInicial
+@export var gerenciador_anuncios: GerenciadorAnuncios
 
 func _ready() -> void:
 	GerenciadorGlobal.gerenciador_jogo = self
