@@ -6,10 +6,14 @@ func _ready() -> void:
 	# conecta os sinais de "fim de jogo"
 	mundo.ganhou.connect(minigame_ganhar)
 	mundo.acabou_vidas.connect(minigame_perder)
-	mundo.morreu.connect(mostrar_ad)
+	mundo.morreu.connect(respawn_ad)
+	mundo.mostrar_anuncio.connect(_mostrar_ad)
 
-func mostrar_ad() -> void:
+func respawn_ad() -> void:
 	# mostra o anuncio
-	minigame_errar()
+	_mostrar_ad()
 	# respawna o jogador
 	mundo.spawn()
+
+func _mostrar_ad() -> void:
+	minigame_errar()
