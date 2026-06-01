@@ -49,14 +49,12 @@ func _minimizar_conteudo_atual() -> void:
 ## minimiza um nodo, parando seu processamento
 func _minimizar_conteudo(node : Node) -> void:
 	conteudos_abas_minimizadas.add_child(node)
-	node.set_process(false)
-	node.set_physics_process(false)
+	node.process_mode = Node.PROCESS_MODE_DISABLED
 
 ## desfaz a minimizacao, voltando o processamento do nodo
 func _desminimizar_conteudo(node : Node) -> void:
 	conteudos_abas_minimizadas.remove_child(node)
-	node.set_process(true)
-	node.set_physics_process(true)
+	node.process_mode = Node.PROCESS_MODE_INHERIT
 
 ## mostra um conteudo que foi minimizado
 func _display_conteudo_minimizado(aba: Aba) -> void:

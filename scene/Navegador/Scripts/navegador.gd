@@ -60,6 +60,7 @@ func mudar_aba(nova_aba : Aba) -> void:
 func add_aba(aba : Aba, conteudo_ref : PackedScene) -> void:
 	_add_aba_visual(aba)
 	_criar_conteudo_aba(aba, conteudo_ref)
+	mudar_aba(aba)
 
 ## Adiciona a aba visualmente ao navegador e conecta os sinais
 func _add_aba_visual(aba : Aba) -> void:
@@ -81,3 +82,10 @@ func deletar_aba(aba : Aba) -> void:
 
 func get_conteudo_aba(aba: Aba) -> ConteudoAba:
 	return navegador_conteudo.conteudo_por_aba[aba]
+
+## Fecha todas as abas aberta, exceto a aba padrao
+func fechar_todas_abas_exceto_padrao() -> void:
+	mudar_aba(aba_padrao)
+	for aba: Aba in navegador_controles.abas_list:
+		if aba != aba_padrao:
+			deletar_aba(aba)

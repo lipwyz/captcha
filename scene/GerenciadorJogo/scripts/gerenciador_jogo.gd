@@ -48,6 +48,8 @@ func criar_aba_inicial() -> void:
 
 func _gerenciadores_conectar_sinais() -> void:
 	gerenciador_mini_games.pedir_anuncio.connect(gerenciador_anuncios.spawnar_anuncio)
+	gerenciador_mini_games.ganhou_minigame.connect(proximo_mini_game)
+	gerenciador_mini_games.perdeu_minigame.connect(perder_mini_game)
 
 # -----------------------------------------------------------------------------
 # Mini Games
@@ -55,6 +57,12 @@ func _gerenciadores_conectar_sinais() -> void:
 
 func iniciar_mini_games() -> void:
 	gerenciador_mini_games.iniciar_mini_games(navegador)
+
+func proximo_mini_game() -> void:
+	iniciar_mini_games()
+
+func perder_mini_game() -> void:
+	navegador.fechar_todas_abas_exceto_padrao()
 
 # -----------------------------------------------------------------------------
 # Area Trabalho

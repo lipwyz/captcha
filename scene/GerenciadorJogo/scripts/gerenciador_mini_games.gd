@@ -1,6 +1,8 @@
 class_name GerenciadorMiniGames
 extends Node
 
+signal ganhou_minigame
+signal perdeu_minigame
 signal pedir_anuncio
 
 @export_group("Game")
@@ -49,13 +51,20 @@ func iniciar_mini_games(navegador: Navegador) -> void:
 	_conectar_sinais_mini_game(conteudo_aba)
 
 func _conectar_sinais_mini_game(conteudo_aba : ConteudoAba) -> void:
-	conteudo_aba.minigame_ganhou.connect(func(): print("terminado") )
-	#conteudo_aba.minigame_perdeu.connect(_falhar_mini_game)
-	conteudo_aba.minigame_errou.connect(_falhar_mini_game)
+	conteudo_aba.minigame_ganhou.connect(_ganhou_minigame)
+	conteudo_aba.minigame_perdeu.connect(_perdeu_minigame)
+	conteudo_aba.minigame_errou.connect(_falhar_minigame)
 
 # -----------------------------------------------------------------------------
 # Acoes do Mini Game
 # -----------------------------------------------------------------------------
 
-func _falhar_mini_game() -> void:
+func _ganhou_minigame() -> void:
+	ganhou_minigame.emit()
+
+func _perdeu_minigame() -> void:
+	perdeu_minigame.emit()
+
+func _falhar_minigame() -> void:
 	pedir_anuncio.emit()
+	
