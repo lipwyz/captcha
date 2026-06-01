@@ -71,6 +71,8 @@ func _display_conteudo(conteudo : Node) -> void:
 ## libera da memoria o conteudo da aba
 func liberar_conteudo_aba(aba: Aba) -> void:
 	if conteudo_por_aba.has(aba):
+		# desativa o funcionamento do conteudo
+		conteudo_por_aba[aba].process_mode = Node.PROCESS_MODE_DISABLED
 		# deleta o conteudo da aba
 		conteudo_por_aba[aba].queue_free()
 		# apaga do dicionario
