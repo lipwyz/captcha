@@ -46,10 +46,11 @@ func _morrer(_body : Node) -> void:
 	if imortal: return
 	
 	# retira uma vida
-	vidas.pop_back().queue_free()
-	# fim de jogo
+	var vida_perdida : Sprite2D = vidas.pop_back()
+	# sem vidas, fim de jogo
 	if vidas.is_empty():
 		acabou_vidas.emit()
 		return
 	# morreu, respawn
 	morreu.emit()
+	vida_perdida.queue_free()
