@@ -12,5 +12,5 @@ func _on_mouse_entered():
 	##print("colococec")
 	pass
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	rotate(velocity)
