@@ -12,6 +12,7 @@ extends Resource
 @export var imagem_texture : Texture2D
 @export var imagem_scale : Vector2 = Vector2.ONE
 @export var imagem_region_rect : Rect2 = Rect2(0,0,0,0)
+@export var imagem_self_modulate : Color = Color.WHITE
 
 # --- Criacao da QuadTree --- 
 @export_group("Dados QuadTree")
@@ -33,3 +34,31 @@ func load_corretos_quadTree() -> QuadTreeSelecao:
 		quadTree.marcar_correto(pos)
 	
 	return quadTree
+
+# -----------------------------------------------------------------------------
+# Dados
+
+func obter_dados_imagem(sprite: Sprite2D) -> void:
+	imagem_texture = sprite.texture
+	imagem_scale = sprite.scale
+	if sprite.region_enabled: # se tem region rect, salve o rect
+		imagem_region_rect = sprite.region_rect
+	else:
+		imagem_region_rect = Rect2(0,0,0,0)
+	imagem_self_modulate = sprite.self_modulate
+
+func aplicar_dados_imagem(sprite: Sprite2D) -> void:
+	sprite.texture = imagem_texture
+	sprite.scale = imagem_scale
+	# region rect no esta fazio
+	if imagem_region_rect.size > Vector2.ONE:
+		sprite.region_enabled = true
+		sprite.region_rect = imagem_region_rect
+	else:
+		sprite.region_enabled = false
+		sprite.region_rect = Rect2(
+			Vector2.ZERO,
+			sprite.texture.get_size()
+		)
+	
+	sprite.self_modulate = imagem_self_modulate

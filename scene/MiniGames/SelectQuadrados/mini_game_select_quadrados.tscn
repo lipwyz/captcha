@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clrp372fotl3b" path="res://scene/MiniGames/SelectQuadrados/criacao/mini_game_select_quadrados.gd" id="1_tsssp"]
 [ext_resource type="Script" uid="uid://bk4b6h23vr48" path="res://scene/MiniGames/SelectQuadrados/tool/tool_gerenciador_quadTree.gd" id="2_v4f0m"]
-[ext_resource type="Resource" uid="uid://11v5pviy23ex" path="res://scene/MiniGames/SelectQuadrados/variacoes/MG_SelDef_test_1.tres" id="3_v4f0m"]
+[ext_resource type="Resource" uid="uid://8pjqal17gkw5" path="res://scene/MiniGames/SelectQuadrados/variacoes/MG_Sel_Def_matrix.tres" id="3_d1qgx"]
 [ext_resource type="PackedScene" uid="uid://bwk2s0vp06pp8" path="res://scene/MiniGames/SelectQuadrados/criacao/imagem_clicavel.tscn" id="5_v4f0m"]
 
 [node name="MiniGameSelectQuadrados" type="Control" unique_id=1699504470 node_paths=PackedStringArray("gerenciador_imagem_clicavel")]
@@ -18,9 +18,10 @@ script = ExtResource("1_tsssp")
 gerenciador_imagem_clicavel = NodePath("Verificador/VBox/PivotMundo/Mundo/GerenciadorImagemClicavel")
 metadata/_edit_lock_ = true
 
-[node name="GerenciadorQuadTree" type="Node" parent="." unique_id=1081839330]
+[node name="GerenciadorQuadTree" type="Node" parent="." unique_id=1081839330 node_paths=PackedStringArray("imagem_sprite")]
 script = ExtResource("2_v4f0m")
-quadTree_resource = ExtResource("3_v4f0m")
+quadTree_resource = ExtResource("3_d1qgx")
+imagem_sprite = NodePath("../Verificador/VBox/PivotMundo/Mundo/GerenciadorImagemClicavel/SpriteImagem")
 
 [node name="Verificador" type="Control" parent="." unique_id=1210379907]
 layout_mode = 1
@@ -68,3 +69,8 @@ layout_mode = 2
 
 [node name="GerenciadorImagemClicavel" parent="Verificador/VBox/PivotMundo/Mundo" unique_id=1502582107 node_paths=PackedStringArray("gerenciador_quadTree") instance=ExtResource("5_v4f0m")]
 gerenciador_quadTree = NodePath("../../../../../GerenciadorQuadTree")
+
+[node name="SpriteImagem" parent="Verificador/VBox/PivotMundo/Mundo/GerenciadorImagemClicavel" index="0" unique_id=1847807575]
+self_modulate = Color(0.7, 0.7, 0.7, 1)
+
+[editable path="Verificador/VBox/PivotMundo/Mundo/GerenciadorImagemClicavel"]
