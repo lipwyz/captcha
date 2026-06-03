@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_0ptuj")
-aba_titulo = "O Mais funny"
+aba_titulo = "Verificador"
 aba_url = "https://site-maneiro.descolado.com"
 conteudo = ExtResource("1_11msn")
 metadata/_custom_type_script = "uid://cp2dri3177uqs"
