@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://crwwoa16ktcql"]
 
-[ext_resource type="Texture2D" uid="uid://cvvhh52nwd701" path="res://Assets/menu principal/Start menu 3.png" id="1_sepwh"]
-[ext_resource type="Texture2D" uid="uid://d0nvienk43c8m" path="res://Assets/menu principal/Start 2.png" id="2_14wem"]
-[ext_resource type="Texture2D" uid="uid://cn5jf5pggbgke" path="res://Assets/menu principal/option.png" id="3_2atga"]
-[ext_resource type="Texture2D" uid="uid://baj6hv3l244ef" path="res://Assets/menu principal/credits.png" id="4_by01r"]
-[ext_resource type="Texture2D" uid="uid://ccjktepmkho1m" path="res://Assets/menu principal/Exit.png" id="5_dclss"]
+[ext_resource type="Script" uid="uid://1wvkn18j5jwq" path="res://scene/MainMenu/main_menu.gd" id="1_vim0l"]
+[ext_resource type="Texture2D" uid="uid://cvvhh52nwd701" path="res://Assets/menu principal/Start menu 3.png" id="2_1ykni"]
+[ext_resource type="PackedScene" uid="uid://dka1omdqylv6o" path="res://scene/gameTeste.tscn" id="2_r1wc4"]
+[ext_resource type="Texture2D" uid="uid://d0nvienk43c8m" path="res://Assets/menu principal/Start 2.png" id="3_r1wc4"]
+[ext_resource type="Texture2D" uid="uid://cn5jf5pggbgke" path="res://Assets/menu principal/option.png" id="4_tr5oq"]
+[ext_resource type="Texture2D" uid="uid://baj6hv3l244ef" path="res://Assets/menu principal/credits.png" id="5_xl1h7"]
+[ext_resource type="Texture2D" uid="uid://ccjktepmkho1m" path="res://Assets/menu principal/Exit.png" id="6_28pg5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eekkd"]
-texture = ExtResource("1_sepwh")
+texture = ExtResource("2_1ykni")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e48y"]
 bg_color = Color(0.86467505, 0.86467516, 0.864675, 1)
@@ -30,6 +32,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vim0l")
+cena_jogo = ExtResource("2_r1wc4")
 
 [node name="Panel2" type="Panel" parent="." unique_id=1883160987]
 layout_mode = 0
@@ -53,7 +57,7 @@ grow_vertical = 2
 scale = Vector2(1.5752479, 1.4195403)
 theme_override_constants/separation = 18
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1988171816]
+[node name="ButtonStart" type="Button" parent="VBoxContainer" unique_id=1988171816]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -61,12 +65,12 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wtcfe")
-icon = ExtResource("2_14wem")
+icon = ExtResource("3_r1wc4")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1959079553]
+[node name="ButtonOptions" type="Button" parent="VBoxContainer" unique_id=1959079553]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -74,12 +78,12 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wtcfe")
-icon = ExtResource("3_2atga")
+icon = ExtResource("4_tr5oq")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1184670105]
+[node name="ButtonCredits" type="Button" parent="VBoxContainer" unique_id=1184670105]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -87,12 +91,12 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wtcfe")
-icon = ExtResource("4_by01r")
+icon = ExtResource("5_xl1h7")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button4" type="Button" parent="VBoxContainer" unique_id=1915325809]
+[node name="ButtonExit" type="Button" parent="VBoxContainer" unique_id=1915325809]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -100,7 +104,22 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wtcfe")
-icon = ExtResource("5_dclss")
+icon = ExtResource("6_28pg5")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="LabelNaoImplementado" type="Label" parent="." unique_id=989177155]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 25
+text = "Não implementado ainda"
+
+[connection signal="pressed" from="VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonOptions" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonCredits" to="." method="_on_button_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
