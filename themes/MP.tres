@@ -1,0 +1,19 @@
+[gd_resource type="Theme" format=3 uid="uid://dwv38kewgnsi0"]
+
+[ext_resource type="Texture2D" uid="uid://66qc0a0uylgm" path="res://Assets/menu principal/Exit/Exit pressed-export.png" id="1_xl54p"]
+[ext_resource type="Texture2D" uid="uid://ccjktepmkho1m" path="res://Assets/menu principal/Exit/Exit.png" id="2_lgtwf"]
+[ext_resource type="Texture2D" uid="uid://p42jo6d8d5fq" path="res://Assets/menu principal/Exit/Exit hover.png" id="3_vs0tl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwrf7"]
+texture = ExtResource("1_xl54p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8v65w"]
+texture = ExtResource("2_lgtwf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ta3wu"]
+texture = ExtResource("3_vs0tl")
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxTexture_kwrf7")
+Button/styles/normal = SubResource("StyleBoxTexture_8v65w")
+Button/styles/pressed = SubResource("StyleBoxTexture_ta3wu")

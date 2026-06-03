@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cbrpvi6rnvw0i"]
+
+[ext_resource type="Texture2D" uid="uid://dknbixh4ifhf2" path="res://Assets/menu principal/Start menu 4.png" id="1_vh50t"]
+[ext_resource type="Theme" uid="uid://dfj6m712di4lp" path="res://themes/MP_start.tres" id="2_vh50t"]
+[ext_resource type="Theme" uid="uid://cpf56t0m1pfr2" path="res://themes/MP_opcoes.tres" id="3_vh50t"]
+[ext_resource type="Theme" uid="uid://cebsw5ap58irc" path="res://themes/MP_Credits.tres" id="4_egvns"]
+[ext_resource type="Theme" uid="uid://cf3sv3in2cikv" path="res://themes/MP_Exit.tres" id="5_vh50t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eekkd"]
+texture = ExtResource("1_vh50t")
+
+[node name="Control" type="Control" unique_id=430253804]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="." unique_id=1883160987]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_eekkd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1437756082]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.99994
+offset_top = 60.0
+offset_right = 46.064026
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5752479, 1.4195403)
+theme_override_constants/separation = 18
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1988171816]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_vh50t")
+theme_override_font_sizes/font_size = 16
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1959079553]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_vh50t")
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1184670105]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_egvns")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button4" type="Button" parent="VBoxContainer" unique_id=1915325809]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_vh50t")
+icon_alignment = 1
+expand_icon = true

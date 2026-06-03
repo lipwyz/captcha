@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clgkwky3sun4y"
-path="res://.godot/imported/Navegador 1920x1080.png-6beed225af627dc1b0e94e56c4e073a3.ctex"
+path="res://.godot/imported/Navegador 1920x1080.png-fe294634a985cf1bae89d909ddc87179.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Navegador/Navegador 1920x1080.png"
-dest_files=["res://.godot/imported/Navegador 1920x1080.png-6beed225af627dc1b0e94e56c4e073a3.ctex"]
+source_file="res://Assets/sprites/Navegador/Navegador 1920x1080.png"
+dest_files=["res://.godot/imported/Navegador 1920x1080.png-fe294634a985cf1bae89d909ddc87179.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cybfjswqlkolw"
-path="res://.godot/imported/label teste2.png-48af4ba66436cda931c88a5591ab431a.ctex"
+path="res://.godot/imported/label teste2.png-3f06bff682d7983d60b5e620e2414603.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Navegador/label teste2.png"
-dest_files=["res://.godot/imported/label teste2.png-48af4ba66436cda931c88a5591ab431a.ctex"]
+source_file="res://Assets/sprites/Navegador/label teste2.png"
+dest_files=["res://.godot/imported/label teste2.png-3f06bff682d7983d60b5e620e2414603.ctex"]
 
 [params]
 

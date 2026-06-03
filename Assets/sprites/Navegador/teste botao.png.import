@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmfjwxnt7ccmm"
-path="res://.godot/imported/teste botao.png-c0c95f2d2b30ce43560c53b7d26d17b6.ctex"
+path="res://.godot/imported/teste botao.png-efac41dc6d4507fa1f38f2b2af927345.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Navegador/teste botao.png"
-dest_files=["res://.godot/imported/teste botao.png-c0c95f2d2b30ce43560c53b7d26d17b6.ctex"]
+source_file="res://Assets/sprites/Navegador/teste botao.png"
+dest_files=["res://.godot/imported/teste botao.png-efac41dc6d4507fa1f38f2b2af927345.ctex"]
 
 [params]
 

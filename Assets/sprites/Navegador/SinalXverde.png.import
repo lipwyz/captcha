@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dof6jksux3ino"
-path="res://.godot/imported/Start.png-dd9f0b03948d1829fcc565b34716e712.ctex"
+uid="uid://g6adtpvgw0hn"
+path="res://.godot/imported/SinalXverde.png-f4116b12f270c02b6f4d81750355b93c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/menu principal/Start.png"
-dest_files=["res://.godot/imported/Start.png-dd9f0b03948d1829fcc565b34716e712.ctex"]
+source_file="res://Assets/sprites/Navegador/SinalXverde.png"
+dest_files=["res://.godot/imported/SinalXverde.png-f4116b12f270c02b6f4d81750355b93c.ctex"]
 
 [params]
 

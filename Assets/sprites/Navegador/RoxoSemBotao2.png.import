@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmviw3n038y6t"
-path="res://.godot/imported/RoxoSemBotao2.png-df0edb88fec2db3b864e2d6c831a848e.ctex"
+path="res://.godot/imported/RoxoSemBotao2.png-441ff9b0cdb3d388b008efe2a3a2c796.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Navegador/RoxoSemBotao2.png"
-dest_files=["res://.godot/imported/RoxoSemBotao2.png-df0edb88fec2db3b864e2d6c831a848e.ctex"]
+source_file="res://Assets/sprites/Navegador/RoxoSemBotao2.png"
+dest_files=["res://.godot/imported/RoxoSemBotao2.png-441ff9b0cdb3d388b008efe2a3a2c796.ctex"]
 
 [params]
 

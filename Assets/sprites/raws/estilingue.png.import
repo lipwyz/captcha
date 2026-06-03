@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://716o5qwyodrb"
-path="res://.godot/imported/estilingue.png-29a73024cb3d40e8a72657a68b3ca170.ctex"
+path="res://.godot/imported/estilingue.png-4dd850c163caec3e977a249ba4edb9a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/raws/estilingue.png"
-dest_files=["res://.godot/imported/estilingue.png-29a73024cb3d40e8a72657a68b3ca170.ctex"]
+source_file="res://Assets/sprites/raws/estilingue.png"
+dest_files=["res://.godot/imported/estilingue.png-4dd850c163caec3e977a249ba4edb9a1.ctex"]
 
 [params]
 

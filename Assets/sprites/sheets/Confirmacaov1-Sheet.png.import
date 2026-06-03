@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqccc3ftxnhrt"
-path="res://.godot/imported/Confirmacaov1-Sheet.png-fa8790e19b32cd9d275997be5d680b30.ctex"
+path="res://.godot/imported/Confirmacaov1-Sheet.png-6abad275276c0348a2452a37be268c78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/sheets/Confirmacaov1-Sheet.png"
-dest_files=["res://.godot/imported/Confirmacaov1-Sheet.png-fa8790e19b32cd9d275997be5d680b30.ctex"]
+source_file="res://Assets/sprites/sheets/Confirmacaov1-Sheet.png"
+dest_files=["res://.godot/imported/Confirmacaov1-Sheet.png-6abad275276c0348a2452a37be268c78.ctex"]
 
 [params]
 

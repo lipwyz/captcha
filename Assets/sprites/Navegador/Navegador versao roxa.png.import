@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwbwqfwqt4qgt"
-path="res://.godot/imported/Navegador versao roxa.png-c441f7f2f786beb9259a6f709dcabafb.ctex"
+path="res://.godot/imported/Navegador versao roxa.png-fec54398897f57fd3c5b4f7d9ca1e9dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Navegador/Navegador versao roxa.png"
-dest_files=["res://.godot/imported/Navegador versao roxa.png-c441f7f2f786beb9259a6f709dcabafb.ctex"]
+source_file="res://Assets/sprites/Navegador/Navegador versao roxa.png"
+dest_files=["res://.godot/imported/Navegador versao roxa.png-fec54398897f57fd3c5b4f7d9ca1e9dc.ctex"]
 
 [params]
 

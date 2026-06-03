@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqyo86ggv3vj"
-path="res://.godot/imported/cetaE1.png-6959156dbd3036735262a89402e93095.ctex"
+path="res://.godot/imported/cetaE1.png-f747a65173aa1937e15ce923f53d6cfb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Navegador/cetaE1.png"
-dest_files=["res://.godot/imported/cetaE1.png-6959156dbd3036735262a89402e93095.ctex"]
+source_file="res://Assets/sprites/Navegador/cetaE1.png"
+dest_files=["res://.godot/imported/cetaE1.png-f747a65173aa1937e15ce923f53d6cfb.ctex"]
 
 [params]
 

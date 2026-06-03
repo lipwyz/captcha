@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bk402gbs5gpy7"
-path="res://.godot/imported/SetaE.png-95dcbf8765caee34d95265bff11f2a89.ctex"
+path="res://.godot/imported/SetaE.png-873d03f574a5d5ce02ec03f414fcaa54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Navegador/SetaE.png"
-dest_files=["res://.godot/imported/SetaE.png-95dcbf8765caee34d95265bff11f2a89.ctex"]
+source_file="res://Assets/sprites/Navegador/SetaE.png"
+dest_files=["res://.godot/imported/SetaE.png-873d03f574a5d5ce02ec03f414fcaa54.ctex"]
 
 [params]
 
