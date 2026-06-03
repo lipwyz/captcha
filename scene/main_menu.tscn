@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://crwwoa16ktcql"]
 
-[ext_resource type="Texture2D" uid="uid://cvvhh52nwd701" path="res://Assets/menu principal/Start menu 3.png" id="1_eekkd"]
-[ext_resource type="Texture2D" uid="uid://d0nvienk43c8m" path="res://Assets/menu principal/Start 2.png" id="2_vh50t"]
-[ext_resource type="Texture2D" uid="uid://cn5jf5pggbgke" path="res://Assets/menu principal/option.png" id="3_vh50t"]
-[ext_resource type="Texture2D" uid="uid://baj6hv3l244ef" path="res://Assets/menu principal/credits.png" id="4_3l6v1"]
-[ext_resource type="Texture2D" uid="uid://ccjktepmkho1m" path="res://Assets/menu principal/Exit.png" id="5_egvns"]
+[ext_resource type="Texture2D" uid="uid://cvvhh52nwd701" path="res://Assets/menu principal/Start menu 3.png" id="1_sepwh"]
+[ext_resource type="Texture2D" uid="uid://d0nvienk43c8m" path="res://Assets/menu principal/Start 2.png" id="2_14wem"]
+[ext_resource type="Texture2D" uid="uid://cn5jf5pggbgke" path="res://Assets/menu principal/option.png" id="3_2atga"]
+[ext_resource type="Texture2D" uid="uid://baj6hv3l244ef" path="res://Assets/menu principal/credits.png" id="4_by01r"]
+[ext_resource type="Texture2D" uid="uid://ccjktepmkho1m" path="res://Assets/menu principal/Exit.png" id="5_dclss"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eekkd"]
-texture = ExtResource("1_eekkd")
+texture = ExtResource("1_sepwh")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e48y"]
 bg_color = Color(0.86467505, 0.86467516, 0.864675, 1)
@@ -23,7 +23,7 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[node name="Control" type="Control" unique_id=430253804]
+[node name="MainMenu" type="Control" unique_id=430253804]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,7 +61,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wtcfe")
-icon = ExtResource("2_vh50t")
+icon = ExtResource("2_14wem")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -74,7 +74,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wtcfe")
-icon = ExtResource("3_vh50t")
+icon = ExtResource("3_2atga")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -87,7 +87,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wtcfe")
-icon = ExtResource("4_3l6v1")
+icon = ExtResource("4_by01r")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -100,7 +100,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0e48y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wtcfe")
-icon = ExtResource("5_egvns")
+icon = ExtResource("5_dclss")
 flat = true
 icon_alignment = 1
 expand_icon = true
