@@ -23,8 +23,8 @@ func _deletar_isso() -> void:
 	add_child(label)
 	label.show()
 	label.global_position = get_global_mouse_position()
-	label.global_position += Vector2(randi_range(-20, 20), randi_range(-10, 10))
-	get_tree().create_timer(2.0).timeout.connect(
+	label.global_position += Vector2(randi_range(-70, 30), randi_range(-40, 20))
+	get_tree().create_timer(1.5).timeout.connect(
 		func(): 
 			if is_instance_valid(label):
 				label.queue_free()
