@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cp2dri3177uqs" path="res://scene/MiniGames/MiniGameRes.gd" id="1_o1ruj"]
 [ext_resource type="Script" uid="uid://wmohus0qdr6r" path="res://scene/GerenciadorJogo/ListaMiniGamesRes.gd" id="2_0kicx"]
-[ext_resource type="Resource" uid="uid://b4cu5kbxiwxwn" path="res://scene/MiniGames/Mario/miniGameMario.tres" id="2_8w2v5"]
+[ext_resource type="Resource" uid="uid://b4cu5kbxiwxwn" path="res://scene/MiniGames/BarioWorld/miniGameBario.tres" id="2_8w2v5"]
 [ext_resource type="Resource" uid="uid://c8lyg2jjrh1j2" path="res://scene/MiniGames/SelectQuadrados/miniGameSelectQuadrados.tres" id="6_jdwrc"]
 
 [resource]
