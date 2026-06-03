@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://cj0agp435nvsu"]
 
-[ext_resource type="Texture2D" uid="uid://bwbwqfwqt4qgt" path="res://Assets/sprites/Navegador/Navegador versao roxa.png" id="1_s1hyc"]
-[ext_resource type="Texture2D" uid="uid://dttw0dj2ycnm1" path="res://Assets/sprites/Navegador/sinal2.png" id="1_uw25j"]
+[ext_resource type="Texture2D" uid="uid://bwbwqfwqt4qgt" path="res://Assets/Sprites/Navegador/Navegador versao roxa.png" id="1_s1hyc"]
+[ext_resource type="Texture2D" uid="uid://dttw0dj2ycnm1" path="res://Assets/Sprites/Navegador/sinal2.png" id="1_uw25j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1hyc"]
 texture = ExtResource("1_uw25j")

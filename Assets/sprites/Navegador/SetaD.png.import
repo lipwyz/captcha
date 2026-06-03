@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7bukepogt65y"
-path="res://.godot/imported/SetaD.png-729387f225712f1fe666c42a1935f0b2.ctex"
+path="res://.godot/imported/SetaD.png-2ad4def0d18033def900346f1065b04c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Navegador/SetaD.png"
-dest_files=["res://.godot/imported/SetaD.png-729387f225712f1fe666c42a1935f0b2.ctex"]
+source_file="res://Assets/Sprites/Navegador/SetaD.png"
+dest_files=["res://.godot/imported/SetaD.png-2ad4def0d18033def900346f1065b04c.ctex"]
 
 [params]
 

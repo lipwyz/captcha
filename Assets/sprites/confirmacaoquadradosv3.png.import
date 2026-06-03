@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gw723ucgpkp1"
-path="res://.godot/imported/confirmacaoquadradosv3.png-632f782b6d35782c14bc580cf18fa2cb.ctex"
+path="res://.godot/imported/confirmacaoquadradosv3.png-e84f523f6cc4e385eebf3f1f2d3820a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/confirmacaoquadradosv3.png"
-dest_files=["res://.godot/imported/confirmacaoquadradosv3.png-632f782b6d35782c14bc580cf18fa2cb.ctex"]
+source_file="res://Assets/Sprites/confirmacaoquadradosv3.png"
+dest_files=["res://.godot/imported/confirmacaoquadradosv3.png-e84f523f6cc4e385eebf3f1f2d3820a2.ctex"]
 
 [params]
 
