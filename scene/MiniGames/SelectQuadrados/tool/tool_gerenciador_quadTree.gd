@@ -116,13 +116,7 @@ func _tool_capturar_dados_sprite() -> void:
 		push_warning("Referencia da Sprite Faltando")
 		return
 	# captura os dados da imagem e passa pro resource
-	quadTree_resource.imagem_texture = imagem_sprite.texture
-	quadTree_resource.imagem_scale = imagem_sprite.scale
-	if imagem_sprite.region_enabled: # se tem region rect, salve o rect
-		quadTree_resource.imagem_region_rect = imagem_sprite.region_rect
-	else:
-		quadTree_resource.imagem_region_rect = Rect2(0,0,0,0)
-	
+	quadTree_resource.obter_dados_imagem(imagem_sprite)
 	# salvar o resource
 	_salvar_disco_resource(quadTree_resource)
 	print("Dados da Imagem atualizados no Resource ")
