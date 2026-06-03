@@ -70,7 +70,7 @@ func _load_dados_level() -> void:
 	
 	##
 	var level_res: MG_SelecaoDefinicoesRes = gerenciador_quadTree.quadTree_resource
-	set_imagem(level_res.imagem_texture, level_res.imagem_scale, level_res.imagem_region_rect)
+	set_imagem(level_res)
 	
 	# ajusta os dados relacionados ao tamanho da imagem
 	ajustar_dados_tamanho_imagem()
@@ -165,26 +165,8 @@ func _processar_click(pos: Vector2) -> void:
 #------------------------------------------------------------------------------
 # Set Imagem
 
-func set_imagem(_texture: Texture2D,
-				_scale: Vector2 = Vector2.ONE,
-				region_rect: Rect2 = Rect2(0,0,0,0)
-				) -> void:
-	sprite_imagem.texture = _texture
-	sprite_imagem.scale = _scale
-	
-	# region rect no esta fazio
-	if region_rect.size > Vector2.ONE:
-		sprite_imagem.region_enabled = true
-		sprite_imagem.region_rect = region_rect
-	else:
-		sprite_imagem.region_enabled = false
-		region_rect = Rect2(
-			Vector2.ZERO,
-			sprite_imagem.texture.get_size()
-		)
-	
-	#colisor_imagem.shape.size = region_rect.size
-	#colisor_imagem.shape.size -= region_rect.position
+func set_imagem(level_res: MG_SelecaoDefinicoesRes) -> void:
+	level_res.aplicar_dados_imagem(sprite_imagem)
 	
 #------------------------------------------------------------------------------
 # Conclusao

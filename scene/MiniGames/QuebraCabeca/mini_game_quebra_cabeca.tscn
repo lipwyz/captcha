@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dgv32pqtu5igv"]
+
+[ext_resource type="Script" uid="uid://jb7gwaoj6b4i" path="res://scene/MiniGames/QuebraCabeca/criacao/mini_game_quebra_cabeca.gd" id="1_0jkjx"]
+[ext_resource type="Script" uid="uid://cyih6pipgo1xy" path="res://scene/MiniGames/QuebraCabeca/criacao/mundo_quebra_cabeca.gd" id="2_0a6pw"]
+[ext_resource type="Texture2D" uid="uid://dnfjtu2hkjisg" path="res://Assets/Sprites/paisagem 3.jpeg" id="2_b7nua"]
+
+[node name="MiniGameQuebraCabeca" type="Control" unique_id=1699504470 node_paths=PackedStringArray("mundo_quebra_cabeca")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_0jkjx")
+mundo_quebra_cabeca = NodePath("SubViewportContainer/SubViewport/MundoQuebraCabeca")
+metadata/_edit_lock_ = true
+
+[node name="ColorFundo" type="ColorRect" parent="." unique_id=1074253091]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23308125, 0.26503602, 0.3474972, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=639898319]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1798195077]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1920, 1080)
+size_2d_override = Vector2i(1920, 1080)
+size_2d_override_stretch = true
+
+[node name="MundoQuebraCabeca" type="Node2D" parent="SubViewportContainer/SubViewport" unique_id=1606530996 node_paths=PackedStringArray("imagem_ref")]
+script = ExtResource("2_0a6pw")
+imagem_ref = NodePath("Sprite2DReferencia")
+quantidade_divisoes = Vector2i(2, 2)
+
+[node name="Sprite2DReferencia" type="Sprite2D" parent="SubViewportContainer/SubViewport/MundoQuebraCabeca" unique_id=796335692]
+position = Vector2(939.00006, 541)
+scale = Vector2(0.825, 0.825)
+texture = ExtResource("2_b7nua")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)

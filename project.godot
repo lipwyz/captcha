@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Captcha"
-run/main_scene="uid://dka1omdqylv6o"
+run/main_scene="uid://cbrpvi6rnvw0i"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
@@ -36,6 +36,7 @@ folder_colors={
 "res://_Debug/": "gray",
 "res://scene/": "orange",
 "res://scene/AreaTrabalho/": "blue",
+"res://scene/MainMenu/": "red",
 "res://scene/MiniGames/": "purple",
 "res://scene/Navegador/": "green",
 "res://themes/": "yellow"
