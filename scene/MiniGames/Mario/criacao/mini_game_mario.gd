@@ -1,23 +1,19 @@
 extends ConteudoAba
 
-@onready var ad_popup: Control = $AdPopup
-@onready var button_skip: Button = $AdPopup/ButtonSkip
 @onready var mundo: MundoMario = $SubViewportContainer/SubViewport/Mundo
 
 func _ready() -> void:
-	ad_popup.hide()
 	# conecta os sinais de "fim de jogo"
-	mundo.perdeu.connect(mostrar_ad)
-	mundo.ganhou.connect(terminar)
-	# conecta o botao de sair do ad
-	button_skip.pressed.connect(_sair_ad)
+	mundo.ganhou.connect(minigame_ganhar)
+	mundo.acabou_vidas.connect(minigame_perder)
+	mundo.morreu.connect(respawn_ad)
+	mundo.mostrar_anuncio.connect(_mostrar_ad)
 
-func mostrar_ad() -> void:
-	ad_popup.show()
-	# pausa o mundo (processamento, animacoes, etc)
-	mundo.process_mode = Node.PROCESS_MODE_DISABLED
+func respawn_ad() -> void:
+	# mostra o anuncio
+	_mostrar_ad()
+	# respawna o jogador
+	mundo.spawn()
 
-func _sair_ad() -> void:
-	ad_popup.hide()
-	# termina
-	terminar()
+func _mostrar_ad() -> void:
+	minigame_errar()

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cs57c0ei2xtiq"]
 
-[ext_resource type="Texture2D" uid="uid://cb00rsdqxc2qf" path="res://Assets/sprites/sheets/gif.gato.png" id="1_elafl"]
+[ext_resource type="Texture2D" uid="uid://cb00rsdqxc2qf" path="res://Assets/Sprites/sheets/gif.gato.png" id="1_elafl"]
+[ext_resource type="Script" uid="uid://ba64veiiu4e71" path="res://scene/Anuncios/imagem_anuncio.gd" id="1_sijle"]
 
 [sub_resource type="Animation" id="Animation_uwq7i"]
 resource_name = "GifGatoRelax"
@@ -41,7 +42,9 @@ _data = {
 &"RESET": SubResource("Animation_x7how")
 }
 
-[node name="Node2D" type="Node2D" unique_id=158221611]
+[node name="GifGatoRelax" type="Node2D" unique_id=158221611 node_paths=PackedStringArray("sprite_imagem")]
+script = ExtResource("1_sijle")
+sprite_imagem = NodePath("Sprite2D/Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=757255484]
 

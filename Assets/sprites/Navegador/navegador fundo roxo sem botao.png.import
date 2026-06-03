@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3bawsmtoagq4"
-path="res://.godot/imported/navegador fundo roxo sem botao.png-33f64443df5ac0f2c0b029f6c7ece05f.ctex"
+path="res://.godot/imported/navegador fundo roxo sem botao.png-801b16b6afc61f161157fe048ffe8610.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Navegador/navegador fundo roxo sem botao.png"
-dest_files=["res://.godot/imported/navegador fundo roxo sem botao.png-33f64443df5ac0f2c0b029f6c7ece05f.ctex"]
+source_file="res://Assets/Sprites/Navegador/navegador fundo roxo sem botao.png"
+dest_files=["res://.godot/imported/navegador fundo roxo sem botao.png-801b16b6afc61f161157fe048ffe8610.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cubs3nugofltn"
-path="res://.godot/imported/label teste.png-46f4a2a3a82db2f8ce11db082fe17aee.ctex"
+path="res://.godot/imported/label teste.png-24a7fded1092286f514019770c9f054a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Navegador/label teste.png"
-dest_files=["res://.godot/imported/label teste.png-46f4a2a3a82db2f8ce11db082fe17aee.ctex"]
+source_file="res://Assets/Sprites/Navegador/label teste.png"
+dest_files=["res://.godot/imported/label teste.png-24a7fded1092286f514019770c9f054a.ctex"]
 
 [params]
 

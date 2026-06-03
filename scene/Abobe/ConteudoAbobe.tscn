@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bdk6kmg8y2xl6"]
+
+[ext_resource type="Script" uid="uid://cms6gm44yy7sw" path="res://scene/Abobe/conteudo_abobe.gd" id="1_gwkil"]
+
+[node name="ConteudoAbobe" type="Control" unique_id=118735360]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gwkil")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=203352543]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.32268745, 0.24041724, 0.50648636, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1846232501]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.5
+offset_top = -247.0
+offset_right = 99.5
+offset_bottom = -205.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Site da Abobe"
+
+[node name="Label2" type="Label" parent="." unique_id=41711829]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.5
+offset_top = -151.0
+offset_right = 99.5
+offset_bottom = -109.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Aumento de preços omg"
+
+[node name="ButtonCancelarAssinatura" type="Button" parent="." unique_id=2077576338]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = 50.0
+offset_right = 70.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Cancelar Assinatura"
+
+[connection signal="pressed" from="ButtonCancelarAssinatura" to="." method="_on_button_cancelar_assinatura_pressed"]

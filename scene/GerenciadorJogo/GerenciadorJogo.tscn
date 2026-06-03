@@ -1,6 +1,59 @@
 [gd_scene format=3 uid="uid://cryhhrnjf4r5c"]
 
-[ext_resource type="Script" uid="uid://bp0j4nl28yf4r" path="res://scene/GerenciadorJogo/gerenciador_jogo.gd" id="1_0ycjh"]
+[ext_resource type="Script" uid="uid://bp0j4nl28yf4r" path="res://scene/GerenciadorJogo/scripts/gerenciador_jogo.gd" id="1_0ycjh"]
+[ext_resource type="Resource" uid="uid://d0yeacqprodn3" path="res://scene/Abobe/siteAbobe.tres" id="2_8h8tx"]
+[ext_resource type="Script" uid="uid://bxi1hf0sdhgjx" path="res://scene/GerenciadorJogo/scripts/gerenciador_mini_games.gd" id="2_im48h"]
+[ext_resource type="Script" uid="uid://dv17hq7yts0f5" path="res://scene/GerenciadorJogo/scripts/gerenciador_cut_scene_inicial.gd" id="3_y0wat"]
+[ext_resource type="Resource" uid="uid://cjwmi1d4ulsch" path="res://scene/GerenciadorJogo/lista_mini_games_res.tres" id="4_uumkp"]
+[ext_resource type="Script" uid="uid://xyqicgojedu8" path="res://scene/GerenciadorJogo/scripts/gerenciador_anuncios.gd" id="5_5j3yu"]
+[ext_resource type="PackedScene" uid="uid://c6maudplvsd3u" path="res://Assets/cutscene/teste_cutscene_2.tscn" id="5_8h8tx"]
+[ext_resource type="PackedScene" uid="uid://dp28ip4s4xggd" path="res://scene/Anuncios/anuncio_pop_up.tscn" id="6_fk4wo"]
+[ext_resource type="PackedScene" uid="uid://q1q63lxlxm2" path="res://Assets/cutscene/navegador_teste_cutscene.tscn" id="6_uumkp"]
+[ext_resource type="PackedScene" uid="uid://7lscoemnuqxv" path="res://Assets/Gifs/Gif_GatoFogo.tscn" id="7_jmij5"]
+[ext_resource type="PackedScene" uid="uid://cs57c0ei2xtiq" path="res://Assets/Gifs/Gif_GatoRelax.tscn" id="8_i57ly"]
+[ext_resource type="PackedScene" uid="uid://bthx3u3fq3xif" path="res://Assets/Gifs/Gif_GodMode.tscn" id="9_csxmw"]
+[ext_resource type="PackedScene" uid="uid://c0b3bl2cyj4dr" path="res://Assets/Gifs/Gif_hamburguer.tscn" id="10_28axa"]
 
-[node name="GerenciadorJogo" type="Node" unique_id=1924470162]
+[node name="GerenciadorJogo" type="Node" unique_id=1924470162 node_paths=PackedStringArray("gerenciador_mini_games", "gerenciador_cut_scene_inicial", "gerenciador_anuncios")]
 script = ExtResource("1_0ycjh")
+site_abobe_resource = ExtResource("2_8h8tx")
+gerenciador_mini_games = NodePath("GerenciadorMiniGames")
+gerenciador_cut_scene_inicial = NodePath("GerenciadorCutSceneInicial")
+gerenciador_anuncios = NodePath("GerenciadorAnuncios")
+
+[node name="GerenciadorMiniGames" type="Node" parent="." unique_id=1644025296]
+script = ExtResource("2_im48h")
+lista_mini_games = ExtResource("4_uumkp")
+
+[node name="GerenciadorAnuncios" type="Node" parent="." unique_id=376495426]
+script = ExtResource("5_5j3yu")
+anuncios_ref = ExtResource("6_fk4wo")
+lista_imagens_anuncios = Array[PackedScene]([ExtResource("10_28axa"), ExtResource("7_jmij5"), ExtResource("8_i57ly"), ExtResource("9_csxmw")])
+
+[node name="AnunciosMargin" type="MarginContainer" parent="GerenciadorAnuncios" unique_id=1235863543]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 50
+
+[node name="AnunciosMostrados" type="Control" parent="GerenciadorAnuncios/AnunciosMargin" unique_id=1502041990]
+editor_description = "Nodo que mostra os anuncios na tela.
+Tambem eh o nodo que tem o espaço da tela que os anuncios podem spawnar dentro."
+layout_mode = 2
+
+[node name="AnunciosEspera" type="Control" parent="GerenciadorAnuncios" unique_id=1071151342]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GerenciadorCutSceneInicial" type="Node" parent="." unique_id=1161165819]
+script = ExtResource("3_y0wat")
+cena_cutscene = ExtResource("6_uumkp")
+cena_cutscene_2 = ExtResource("5_8h8tx")

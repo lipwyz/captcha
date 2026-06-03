@@ -6,7 +6,8 @@
 [ext_resource type="Script" uid="uid://cmsw73j0rxgbg" path="res://scene/MiniGames/Mario/criacao/jogador.gd" id="3_35bf2"]
 [ext_resource type="Texture2D" uid="uid://clswog3ou4t04" path="res://_Debug/Temporarios/Mario/Spritesheet.png" id="3_h3lef"]
 [ext_resource type="Texture2D" uid="uid://bgrspnx60cqns" path="res://_Debug/Temporarios/Mario/cherry.png" id="5_j377t"]
-[ext_resource type="Texture2D" uid="uid://dhq7s7j276aqr" path="res://Assets/1_JiSQVnR_nibjRC1azRl6Fw.jpg" id="7_bw8wr"]
+[ext_resource type="Texture2D" uid="uid://83wbb3aaqp4u" path="res://_Debug/Temporarios/Mario/platformPack_item017.png" id="7_bw8wr"]
+[ext_resource type="Texture2D" uid="uid://ba2xw31n0men6" path="res://_Debug/Temporarios/Mario/starGold.png" id="8_xd4wd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j377t"]
 texture = ExtResource("2_35bf2")
@@ -197,8 +198,8 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.9754484, 2.0599962e-05, 0.66333324, 1)
 sources/0 = SubResource("TileSetAtlasSource_j377t")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_j377t"]
-radius = 7.8102684
+[sub_resource type="CircleShape2D" id="CircleShape2D_xd4wd"]
+radius = 9.503709
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c457n"]
 atlas = ExtResource("5_j377t")
@@ -365,6 +366,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hi4jm"]
 size = Vector2(2106, 336)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_j377t"]
+radius = 31.0
+
 [node name="MiniGameMario" type="Control" unique_id=1548916444]
 physics_interpolation_mode = 0
 clip_contents = true
@@ -404,8 +408,9 @@ size_2d_override = Vector2i(1920, 1080)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="Mundo" type="Node2D" parent="SubViewportContainer/SubViewport" unique_id=435865573]
+[node name="Mundo" type="Node2D" parent="SubViewportContainer/SubViewport" unique_id=435865573 node_paths=PackedStringArray("lista_coletaveis_anuncio")]
 script = ExtResource("2_hi4jm")
+lista_coletaveis_anuncio = [NodePath("ColetavelAd_1"), NodePath("ColetavelAd_2")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="SubViewportContainer/SubViewport/Mundo" unique_id=758470813]
 texture_filter = 1
@@ -413,22 +418,26 @@ scale = Vector2(5, 5)
 tile_map_data = PackedByteArray("AAD//wsAAAABAAEAAAD//woAAAABAAEAAAD//wkAAAABAAEAAAD//wgAAAABAAEAAAD//wcAAAABAAEAAAD//wYAAAABAAEAAAD//wUAAAABAAEAAAD//wQAAAABAAEAAAD//wMAAAABAAEAAAD//wIAAAABAAEAAAD//wEAAAABAAEAAAD//wAAAAABAAEAAAAYAAsAAAABAAEAAAAYAAoAAAABAAEAAAAYAAkAAAABAAEAAAAYAAgAAAABAAEAAAAYAAcAAAABAAEAAAAYAAYAAAABAAEAAAAYAAUAAAABAAEAAAAYAAQAAAABAAEAAAAYAAMAAAABAAEAAAAYAAIAAAABAAEAAAAYAAEAAAABAAEAAAAYAAAAAAABAAEAAAAYAA0AAAAFAAoAAAAYAAwAAAAFAAMAAAAXAA0AAAAHAAEAAAAXAAwAAAADAAEAAAAWAA0AAAAHAAEAAAAWAAwAAAADAAEAAAAVAA0AAAAHAAEAAAAVAAwAAAADAAEAAAAUAA0AAAAHAAEAAAAUAAwAAAADAAEAAAATAA0AAAABAAoAAAATAAwAAAABAAEAAAANAA0AAAAFAAoAAAANAAwAAAAFAAEAAAAMAA0AAAABAAoAAAAMAAwAAAADAAEAAAAJAA0AAAAFAAoAAAAJAAwAAAADAAEAAAAIAA0AAAAHAAEAAAAIAAwAAAADAAEAAAAHAA0AAAABAAoAAAAHAAwAAAABAAEAAAADAA0AAAAHAAEAAAADAAwAAAADAAEAAAACAA0AAAAHAAEAAAACAAwAAAADAAEAAAABAA0AAAAHAAEAAAABAAwAAAADAAEAAAAAAA0AAAAHAAEAAAAAAAwAAAADAAEAAAD//w0AAAABAAoAAAD//wwAAAABAAMAAAAEAA0AAAAFAAoAAAAEAAwAAAAFAAEAAAALAAoAAAAFAAEAAAAKAAoAAAABAAEAAAALAAwAAAAHAAEAAAALAAsAAAAFAAMAAAAKAAwAAAAHAAEAAAAKAAsAAAABAAMAAAAPAAkAAAAHAAEAAAAPAAgAAAADAAEAAAAOAAkAAAABAAoAAAAOAAgAAAABAAEAAAAQAAkAAAAFAAoAAAAQAAgAAAAFAAEAAAA=")
 tile_set = SubResource("TileSet_hi4jm")
 
-[node name="Coletavel" type="Area2D" parent="SubViewportContainer/SubViewport/Mundo" unique_id=298264186]
+[node name="ColetavelFim" type="Area2D" parent="SubViewportContainer/SubViewport/Mundo" unique_id=298264186]
 position = Vector2(1750.9999, 886.99994)
 scale = Vector2(5, 5)
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Mundo/Coletavel" unique_id=1351250612]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Mundo/ColetavelFim" unique_id=1351250612]
 scale = Vector2(0.99999994, 0.99999994)
-shape = SubResource("CircleShape2D_j377t")
+shape = SubResource("CircleShape2D_xd4wd")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Mundo/Coletavel" unique_id=1741729630]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Mundo/ColetavelFim" unique_id=1741729630]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_35bf2")
 autoplay = "default"
 frame_progress = 0.23955297
+
+[node name="SpawnJogador" type="Node2D" parent="SubViewportContainer/SubViewport/Mundo" unique_id=375122897]
+position = Vector2(156.99998, 790.99994)
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Jogador" type="CharacterBody2D" parent="SubViewportContainer/SubViewport/Mundo" unique_id=587445803]
 position = Vector2(159, 669)
@@ -457,29 +466,38 @@ collision_mask = 2
 position = Vector2(958, 76)
 shape = SubResource("RectangleShape2D_hi4jm")
 
-[node name="AdPopup" type="Control" parent="." unique_id=872075001]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="AdPopup" unique_id=1952193602]
+[node name="Coracao_1" type="Sprite2D" parent="SubViewportContainer/SubViewport/Mundo" unique_id=1502236168]
+texture_filter = 3
+position = Vector2(137, 133)
+scale = Vector2(3, 3)
 texture = ExtResource("7_bw8wr")
 
-[node name="ButtonSkip" type="Button" parent="AdPopup" unique_id=848766565]
-layout_mode = 0
-offset_left = 90.0
-offset_top = 311.0
-offset_right = 255.0
-offset_bottom = 387.0
-text = " "
-flat = true
+[node name="ColetavelAd_1" type="Area2D" parent="SubViewportContainer/SubViewport/Mundo" unique_id=1932187467]
+position = Vector2(1037, 901)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Mundo/ColetavelAd_1" unique_id=445652267]
+texture_filter = 3
+scale = Vector2(2, 2)
+texture = ExtResource("8_xd4wd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Mundo/ColetavelAd_1" unique_id=1298749865]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CircleShape2D_j377t")
+
+[node name="ColetavelAd_2" type="Area2D" parent="SubViewportContainer/SubViewport/Mundo" unique_id=2136079198]
+position = Vector2(1311, 578)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Mundo/ColetavelAd_2" unique_id=1250536951]
+texture_filter = 3
+scale = Vector2(2, 2)
+texture = ExtResource("8_xd4wd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Mundo/ColetavelAd_2" unique_id=29419437]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CircleShape2D_j377t")
