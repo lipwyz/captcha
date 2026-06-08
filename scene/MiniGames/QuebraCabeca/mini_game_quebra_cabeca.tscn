@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jb7gwaoj6b4i" path="res://scene/MiniGames/QuebraCabeca/criacao/mini_game_quebra_cabeca.gd" id="1_0jkjx"]
 [ext_resource type="Script" uid="uid://cyih6pipgo1xy" path="res://scene/MiniGames/QuebraCabeca/criacao/mundo_quebra_cabeca.gd" id="2_0a6pw"]
-[ext_resource type="Texture2D" uid="uid://dnfjtu2hkjisg" path="res://Assets/Sprites/paisagem 3.jpeg" id="2_b7nua"]
+[ext_resource type="Texture2D" uid="uid://dnfjtu2hkjisg" path="res://Assets/sprites/pngs/paisagem 3.jpeg" id="2_b7nua"]
 
 [node name="MiniGameQuebraCabeca" type="Control" unique_id=1699504470 node_paths=PackedStringArray("mundo_quebra_cabeca")]
 layout_mode = 3

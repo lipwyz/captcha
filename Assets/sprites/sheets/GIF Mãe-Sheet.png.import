@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhq7s7j276aqr"
-path="res://.godot/imported/1_JiSQVnR_nibjRC1azRl6Fw.jpg-6d6b3945ad0a7741d48f70dcb42320fe.ctex"
+uid="uid://cb26cihl8cidk"
+path="res://.godot/imported/GIF Mãe-Sheet.png-1ccbe65a25504e1b5eb74d1b39dfcc22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/1_JiSQVnR_nibjRC1azRl6Fw.jpg"
-dest_files=["res://.godot/imported/1_JiSQVnR_nibjRC1azRl6Fw.jpg-6d6b3945ad0a7741d48f70dcb42320fe.ctex"]
+source_file="res://Assets/sprites/sheets/GIF Mãe-Sheet.png"
+dest_files=["res://.godot/imported/GIF Mãe-Sheet.png-1ccbe65a25504e1b5eb74d1b39dfcc22.ctex"]
 
 [params]
 

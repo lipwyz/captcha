@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://c0b3bl2cyj4dr"]
+[gd_scene format=3 uid="uid://chgdfkeq08m0h"]
 
-[ext_resource type="Texture2D" uid="uid://dlpoyy50lurgs" path="res://Assets/sprites/sheets/propaganda hamburger-Sheet.png" id="1_tsl64"]
-[ext_resource type="Script" uid="uid://ba64veiiu4e71" path="res://scene/Anuncios/imagem_anuncio.gd" id="1_v6i5m"]
-[ext_resource type="Material" uid="uid://dr1n8yosdjw2b" path="res://Shaders/Pixelado.tres" id="2_qjct8"]
+[ext_resource type="Script" uid="uid://ba64veiiu4e71" path="res://scene/Anuncios/imagem_anuncio.gd" id="1_y2nou"]
+[ext_resource type="Texture2D" uid="uid://brsjq1yx2ra7s" path="res://Assets/sprites/sheets/buy it skull.png" id="2_y2nou"]
+[ext_resource type="Shader" uid="uid://27y7qybqoomt" path="res://Shaders/Pixelado.gdshader" id="3_y2nou"]
 
 [sub_resource type="Animation" id="Animation_qjct8"]
 resource_name = "Gifhamburguer"
-length = 0.8
+length = 0.4
 loop_mode = 1
-step = 0.1
+step = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -16,10 +16,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 1]
 }
 
 [sub_resource type="Animation" id="Animation_kw4bp"]
@@ -33,7 +33,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [0]
 }
 
@@ -43,17 +43,20 @@ _data = {
 &"RESET": SubResource("Animation_kw4bp")
 }
 
-[node name="GifHamburguer" type="Node2D" unique_id=249062716 node_paths=PackedStringArray("sprite_imagem")]
-script = ExtResource("1_v6i5m")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wgawg"]
+render_priority = 1
+shader = ExtResource("3_y2nou")
+
+[node name="GifBuySkull" type="Node2D" unique_id=249062716 node_paths=PackedStringArray("sprite_imagem")]
+script = ExtResource("1_y2nou")
 sprite_imagem = NodePath("Gif/Sprite2D")
 
 [node name="Gif" type="Sprite2D" parent="." unique_id=677030562]
 
 [node name="Sprite2D" type="Sprite2D" parent="Gif" unique_id=82832910]
-position = Vector2(540, 540)
-texture = ExtResource("1_tsl64")
-hframes = 3
-vframes = 3
+position = Vector2(272, 277)
+texture = ExtResource("2_y2nou")
+hframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Gif" unique_id=1483172570]
 libraries/ = SubResource("AnimationLibrary_mxvaa")
@@ -63,7 +66,11 @@ autoplay = &"Gifhamburguer"
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Gif/CanvasLayer" unique_id=104313974]
-material = ExtResource("2_qjct8")
-offset_right = 40.0
-offset_bottom = 52.929485
+material = SubResource("ShaderMaterial_wgawg")
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -1907.3977
+offset_bottom = -1026.0706
 scale = Vector2(152.35286, 20.55565)

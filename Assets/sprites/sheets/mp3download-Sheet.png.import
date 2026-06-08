@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnfjtu2hkjisg"
-path="res://.godot/imported/paisagem 3.jpeg-bacad6298e1811272d3db009298cf68d.ctex"
+uid="uid://dnhyy0fj718ct"
+path="res://.godot/imported/mp3download-Sheet.png-c4ba32ef9ba109a16a5da9b62634227b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/paisagem 3.jpeg"
-dest_files=["res://.godot/imported/paisagem 3.jpeg-bacad6298e1811272d3db009298cf68d.ctex"]
+source_file="res://Assets/sprites/sheets/mp3download-Sheet.png"
+dest_files=["res://.godot/imported/mp3download-Sheet.png-c4ba32ef9ba109a16a5da9b62634227b.ctex"]
 
 [params]
 

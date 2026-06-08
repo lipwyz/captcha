@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MG_SelecaoDefinicoesRes" format=3 uid="uid://8pjqal17gkw5"]
 
-[ext_resource type="Texture2D" uid="uid://gw723ucgpkp1" path="res://Assets/Sprites/confirmacaoquadradosv3.png" id="1_feyua"]
+[ext_resource type="Texture2D" uid="uid://gw723ucgpkp1" path="res://Assets/sprites/pngs/confirmacaoquadradosv3.png" id="1_feyua"]
 [ext_resource type="Script" uid="uid://bqtfpc0v7evi3" path="res://scene/MiniGames/SelectQuadrados/variacoes/MG_SelecaoDefinicoesRes.gd" id="2_bt7x2"]
 
 [resource]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bwk2s0vp06pp8"]
 
 [ext_resource type="Script" uid="uid://bidhxpw4kprep" path="res://scene/MiniGames/SelectQuadrados/criacao/gerenciador_imagem_clicavel.gd" id="2_7wts2"]
-[ext_resource type="Texture2D" uid="uid://gw723ucgpkp1" path="res://Assets/Sprites/confirmacaoquadradosv3.png" id="2_h5hnt"]
+[ext_resource type="Texture2D" uid="uid://gw723ucgpkp1" path="res://Assets/sprites/pngs/confirmacaoquadradosv3.png" id="2_h5hnt"]
 
 [node name="GerenciadorImagemClicavel" type="Node2D" unique_id=1502582107 node_paths=PackedStringArray("sprite_imagem", "pai_linhas", "referencia_line_2d", "referencia_polygon_2d")]
 script = ExtResource("2_7wts2")
