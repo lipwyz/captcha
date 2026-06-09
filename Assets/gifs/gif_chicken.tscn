@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cix7d8lp2fi5u"]
+
+[ext_resource type="Script" uid="uid://ba64veiiu4e71" path="res://scene/Anuncios/imagem_anuncio.gd" id="1_0h1d6"]
+[ext_resource type="Texture2D" uid="uid://j6b4uv1rtaa3" path="res://Assets/sprites/sheets/chicken-sheet.png" id="2_0h1d6"]
+[ext_resource type="Shader" uid="uid://27y7qybqoomt" path="res://Shaders/Pixelado.gdshader" id="3_n8xkv"]
+
+[sub_resource type="Animation" id="Animation_qjct8"]
+resource_name = "Gifhamburguer"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 2.1000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 7]
+}
+
+[sub_resource type="Animation" id="Animation_kw4bp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mxvaa"]
+_data = {
+&"Gifhamburguer": SubResource("Animation_qjct8"),
+&"RESET": SubResource("Animation_kw4bp")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wgawg"]
+render_priority = 1
+shader = ExtResource("3_n8xkv")
+
+[node name="Gif chicken" type="Node2D" unique_id=249062716 node_paths=PackedStringArray("sprite_imagem")]
+script = ExtResource("1_0h1d6")
+sprite_imagem = NodePath("Gif/Sprite2D")
+
+[node name="Gif" type="Sprite2D" parent="." unique_id=677030562]
+
+[node name="Sprite2D" type="Sprite2D" parent="Gif" unique_id=82832910]
+position = Vector2(541, 540)
+texture = ExtResource("2_0h1d6")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Gif" unique_id=1483172570]
+libraries/ = SubResource("AnimationLibrary_mxvaa")
+autoplay = &"Gifhamburguer"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Gif" unique_id=659497978]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Gif/CanvasLayer" unique_id=104313974]
+material = SubResource("ShaderMaterial_wgawg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -1907.3977
+offset_bottom = -1026.0706
+scale = Vector2(152.35286, 20.55565)
