@@ -113,6 +113,9 @@ func _gerar_minigame_subviewport(cena: Node) -> void:
 ## [b]Salva em disco a cena[/b], retorna o path da cena nos arquivos
 func _salvar_minigame_cena(cena: Node, 
 							dir_path : String, nome_eng: String) -> PackedScene:
+	# ajuste dos filhos para terem a cena como owner (para nao serem ignoradas pelo packing)
+	_set_owner_recursive(cena, cena)
+	# faz o packing da cena
 	var packed_cena = PackedScene.new()
 	var packed_err := packed_cena.pack(cena)
 	# falhou ao dar o pack
@@ -133,6 +136,11 @@ func _salvar_minigame_cena(cena: Node,
 	# deu certo o save
 	print("Cena salva em '{path}'".format({'path': path}))
 	return packed_cena
+
+func _set_owner_recursive(node: Node, new_owner: Node):
+	if node != new_owner: node.owner = new_owner
+	for child in node.get_children():
+		_set_owner_recursive(child, new_owner)
 
 ## Cria no disco o resource de mini game.[br] 
 ## Retorna [code]True[/code] se foi possivel[br] 
