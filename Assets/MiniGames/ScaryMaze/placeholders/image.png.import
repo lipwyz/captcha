@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhq7s7j276aqr"
-path="res://.godot/imported/1_JiSQVnR_nibjRC1azRl6Fw.jpg-854df6bdbe0da84b911390184a0f2c09.ctex"
+uid="uid://vmlmiegrkd4p"
+path="res://.godot/imported/image.png-c6aae4ca3f2e4ce89defac613bf41b54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placeholders/1_JiSQVnR_nibjRC1azRl6Fw.jpg"
-dest_files=["res://.godot/imported/1_JiSQVnR_nibjRC1azRl6Fw.jpg-854df6bdbe0da84b911390184a0f2c09.ctex"]
+source_file="res://Assets/MiniGames/ScaryMaze/placeholders/image.png"
+dest_files=["res://.godot/imported/image.png-c6aae4ca3f2e4ce89defac613bf41b54.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bsndwouop7bau"]
 
-[ext_resource type="Script" uid="uid://dsg3eqvfog2a1" path="res://mouse_detector.gd" id="1_hfl28"]
-[ext_resource type="Texture2D" uid="uid://vmlmiegrkd4p" path="res://Assets/placeholders/image.png" id="2_l2s65"]
+[ext_resource type="Script" uid="uid://dsg3eqvfog2a1" path="res://Assets/MiniGames/ScaryMaze/criacao/mouse_detector.gd" id="1_hfl28"]
+[ext_resource type="Texture2D" uid="uid://vmlmiegrkd4p" path="res://Assets/MiniGames/ScaryMaze/placeholders/image.png" id="2_l2s65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0c8av"]
 size = Vector2(0, 0)

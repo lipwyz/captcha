@@ -11,9 +11,7 @@ config_version=5
 [application]
 
 config/name="Captcha"
-run/main_scene="uid://crwwoa16ktcql"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://Assets/placeholders/icon.svg"
 
 [display]
 

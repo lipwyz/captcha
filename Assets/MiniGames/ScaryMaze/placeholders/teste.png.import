@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bftwe576squca"
-path="res://.godot/imported/teste.png-a6bdf725498b81bc72581fc38350665b.ctex"
+path="res://.godot/imported/teste.png-73b8c9ada8ad4b729d369ddeca9badd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placeholders/teste.png"
-dest_files=["res://.godot/imported/teste.png-a6bdf725498b81bc72581fc38350665b.ctex"]
+source_file="res://Assets/MiniGames/ScaryMaze/placeholders/teste.png"
+dest_files=["res://.godot/imported/teste.png-73b8c9ada8ad4b729d369ddeca9badd7.ctex"]
 
 [params]
 
