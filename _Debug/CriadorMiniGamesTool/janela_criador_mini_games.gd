@@ -99,7 +99,10 @@ func _gerar_minigame_subviewport(cena: Node) -> void:
 	# -- SubViewport
 	var subviewport := SubViewport.new()
 	# ajusta para o tamanho da tela
-	var _size : Vector2 = get_window().size
+	var _size := Vector2(
+		ProjectSettings.get_setting("display/window/size/viewport_width"),
+		ProjectSettings.get_setting("display/window/size/viewport_height")
+	)
 	subviewport.size = _size
 	subviewport.size_2d_override = _size
 	subviewport.size_2d_override_stretch = true
