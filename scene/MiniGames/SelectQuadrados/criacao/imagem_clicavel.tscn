@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bwk2s0vp06pp8"]
+
+[ext_resource type="Script" uid="uid://bidhxpw4kprep" path="res://scene/MiniGames/SelectQuadrados/criacao/gerenciador_imagem_clicavel.gd" id="2_7wts2"]
+[ext_resource type="Texture2D" uid="uid://gw723ucgpkp1" path="res://Assets/sprites/pngs/confirmacaoquadradosv3.png" id="2_h5hnt"]
+
+[node name="GerenciadorImagemClicavel" type="Node2D" unique_id=1502582107 node_paths=PackedStringArray("sprite_imagem", "pai_linhas", "referencia_line_2d", "referencia_polygon_2d")]
+script = ExtResource("2_7wts2")
+sprite_imagem = NodePath("SpriteImagem")
+pai_linhas = NodePath("PaiLinhas")
+referencia_line_2d = NodePath("LinhasRef/ReferenciaLine2D")
+referencia_polygon_2d = NodePath("LinhasRef/ReferenciaPolygon2D")
+
+[node name="SpriteImagem" type="Sprite2D" parent="." unique_id=1847807575]
+scale = Vector2(0.46851844, 0.46666664)
+texture = ExtResource("2_h5hnt")
+centered = false
+region_rect = Rect2(1080, 2160, 1080, 1080)
+
+[node name="LinhasRef" type="Node2D" parent="." unique_id=842411860]
+visible = false
+
+[node name="ReferenciaPolygon2D" type="Polygon2D" parent="LinhasRef" unique_id=558992923]
+z_index = 10
+color = Color(1, 1, 1, 0.61960787)
+polygon = PackedVector2Array(100, 400, 100, 600, 300, 600, 300, 400)
+
+[node name="ReferenciaLine2D" type="Line2D" parent="LinhasRef" unique_id=496994214]
+z_index = 20
+points = PackedVector2Array(400, 400, 400, 600, 600, 600, 600, 400)
+closed = true
+width = 5.0
+
+[node name="PaiLinhas" type="Node2D" parent="." unique_id=525887982]

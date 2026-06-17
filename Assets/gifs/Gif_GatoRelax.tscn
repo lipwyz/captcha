@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cs57c0ei2xtiq"]
+
+[ext_resource type="Texture2D" uid="uid://cb00rsdqxc2qf" path="res://Assets/Sprites/sheets/gif.gato.png" id="1_elafl"]
+[ext_resource type="Script" uid="uid://ba64veiiu4e71" path="res://scene/Anuncios/imagem_anuncio.gd" id="1_sijle"]
+
+[sub_resource type="Animation" id="Animation_uwq7i"]
+resource_name = "GifGatoRelax"
+length = 1.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_x7how"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r7fjr"]
+_data = {
+&"GifGatoRelax": SubResource("Animation_uwq7i"),
+&"RESET": SubResource("Animation_x7how")
+}
+
+[node name="GifGatoRelax" type="Node2D" unique_id=158221611 node_paths=PackedStringArray("sprite_imagem")]
+script = ExtResource("1_sijle")
+sprite_imagem = NodePath("Sprite2D/Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=757255484]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=231786001]
+position = Vector2(240, 150)
+texture = ExtResource("1_elafl")
+hframes = 4
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1025119666]
+libraries/ = SubResource("AnimationLibrary_r7fjr")
+autoplay = &"GifGatoRelax"

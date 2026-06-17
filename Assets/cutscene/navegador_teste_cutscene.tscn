@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://q1q63lxlxm2"]
+
+[ext_resource type="PackedScene" uid="uid://ckpx0xdm50gyy" path="res://Assets/cutscene/testecutscene.tscn" id="1_1tb55"]
+[ext_resource type="Script" uid="uid://i1hmcbdeyjys" path="res://Assets/cutscene/navegador_teste_cutscene.gd" id="1_rj3hp"]
+
+[node name="NavegadorTesteCutScene" type="Control" unique_id=1466139331 node_paths=PackedStringArray("animation_player")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rj3hp")
+animation_player = NodePath("SubViewportContainer/SubViewport/AnimationPlayer")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1481950133]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=709578937]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+size_2d_override = Vector2i(1920, 1080)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="AnimationPlayer" parent="SubViewportContainer/SubViewport" unique_id=810749844 instance=ExtResource("1_1tb55")]

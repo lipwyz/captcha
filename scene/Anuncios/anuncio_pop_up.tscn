@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dp28ip4s4xggd"]
+
+[ext_resource type="Script" uid="uid://dvsgiilvktsnd" path="res://scene/Anuncios/anuncio_pop_up.gd" id="1_c0o18"]
+[ext_resource type="Theme" uid="uid://cj0agp435nvsu" path="res://Themes/new_theme.tres" id="2_4wlwd"]
+[ext_resource type="Texture2D" uid="uid://c2am4y0icg5ex" path="res://Assets/Sprites/Navegador/SinalX.png" id="6_u6r58"]
+
+[node name="AnuncioPopUp" type="Window" unique_id=1063998431 node_paths=PackedStringArray("botao_fechar", "local_imagem", "panel_container")]
+disable_3d = true
+gui_embed_subwindows = true
+oversampling_override = 1.0
+title = "Ad"
+size = Vector2i(1000, 1000)
+exclusive = true
+unresizable = true
+borderless = true
+always_on_top = true
+popup_wm_hint = true
+minimize_disabled = true
+maximize_disabled = true
+min_size = Vector2i(10, 10)
+script = ExtResource("1_c0o18")
+botao_fechar = NodePath("Header/PanelContainer/MarginContainer/ButtonX")
+local_imagem = NodePath("LocalImagem")
+panel_container = NodePath("Header/PanelContainer")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=91253162]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6955032, 0.6955031, 0.6955031, 1)
+
+[node name="LocalImagem" type="Control" parent="." unique_id=1303815417]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Control" parent="." unique_id=1194486195]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Header" unique_id=1171333501]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme = ExtResource("2_4wlwd")
+
+[node name="MarginContainer" type="MarginContainer" parent="Header/PanelContainer" unique_id=1843195374]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 7
+
+[node name="ButtonX" type="Button" parent="Header/PanelContainer/MarginContainer" unique_id=1378207414]
+z_index = 10
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+icon = ExtResource("6_u6r58")
+flat = true

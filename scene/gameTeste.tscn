@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://dka1omdqylv6o"]
+
+[ext_resource type="PackedScene" uid="uid://bt12d62er2cam" path="res://scene/AreaTrabalho/area_trabalho.tscn" id="2_4dg7q"]
+[ext_resource type="PackedScene" uid="uid://cryhhrnjf4r5c" path="res://scene/GerenciadorJogo/GerenciadorJogo.tscn" id="2_uhqut"]
+[ext_resource type="PackedScene" uid="uid://cxdrd8o2eceyg" path="res://scene/Navegador/Navegador.tscn" id="3_uappg"]
+[ext_resource type="PackedScene" uid="uid://sv6hm87ln5ip" path="res://_Debug/Testes/imagem_tam_ref.tscn" id="4_4dg7q"]
+[ext_resource type="Texture2D" uid="uid://cjkjgch72d6pu" path="res://Assets/sprites/Navegador/Navegador versao verde.png" id="4_wu5we"]
+[ext_resource type="Texture2D" uid="uid://cxpjwphjggw48" path="res://Assets/sprites/Navegador/SetaEverde.png" id="5_ebuc7"]
+[ext_resource type="Texture2D" uid="uid://bna47dnwk6r16" path="res://Assets/sprites/Navegador/SetaDverde.png" id="6_0cyi6"]
+[ext_resource type="Texture2D" uid="uid://dttw0dj2ycnm1" path="res://Assets/sprites/Navegador/sinal2.png" id="7_ysmpr"]
+[ext_resource type="Texture2D" uid="uid://bwbwqfwqt4qgt" path="res://Assets/sprites/Navegador/Navegador versao roxa.png" id="8_w61c1"]
+[ext_resource type="Texture2D" uid="uid://cr7wj3pnuimrc" path="res://Assets/sprites/Navegador/search bar verde.png" id="9_gnc2f"]
+[ext_resource type="Texture2D" uid="uid://yiu6mcmxakxq" path="res://Assets/sprites/Navegador/Sinal-verde.png" id="10_ngjeu"]
+[ext_resource type="Texture2D" uid="uid://bl4re1put6nsx" path="res://Assets/sprites/Navegador/Sinal[]verde.png" id="11_7bqxk"]
+[ext_resource type="Texture2D" uid="uid://g6adtpvgw0hn" path="res://Assets/sprites/Navegador/SinalXverde.png" id="12_jgjwf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lke02"]
+texture = ExtResource("4_wu5we")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1hyc"]
+texture = ExtResource("7_ysmpr")
+region_rect = Rect2(0, 1, 34, 50)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uw25j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_765p2"]
+texture = ExtResource("8_w61c1")
+region_rect = Rect2(18, 99, 1891, 52)
+
+[sub_resource type="Theme" id="Theme_ajgd1"]
+Button/styles/normal = SubResource("StyleBoxTexture_s1hyc")
+Panel/styles/panel = SubResource("StyleBoxTexture_uw25j")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_765p2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a17us"]
+texture = ExtResource("9_gnc2f")
+region_rect = Rect2(15, 99, 1891, 52)
+
+[node name="GameTeste" type="Node" unique_id=778971112]
+
+[node name="GerenciadorJogo" parent="." unique_id=1924470162 node_paths=PackedStringArray("navegador", "area_trabalho") instance=ExtResource("2_uhqut")]
+navegador = NodePath("../Navegador")
+area_trabalho = NodePath("../AreaTrabalho")
+
+[node name="AreaTrabalho" parent="." unique_id=24769322 instance=ExtResource("2_4dg7q")]
+
+[node name="Navegador" parent="." unique_id=1862273277 instance=ExtResource("3_uappg")]
+texture_filter = 1
+offset_left = 186.0
+offset_top = 47.0
+offset_right = -137.0
+offset_bottom = -50.0
+
+[node name="Panel" parent="Navegador" index="0" unique_id=1862289145]
+theme_override_styles/panel = SubResource("StyleBoxTexture_lke02")
+
+[node name="ButtonSetaEsq" parent="Navegador/Panel/VSplit/NavegadorControles/VBox/MarginAbasBar/HBox/HBoxSetas" parent_id_path=PackedInt32Array(1862273277, 1883575481, 464330227) index="1" unique_id=154491246]
+icon = ExtResource("5_ebuc7")
+flat = true
+
+[node name="ButtonSetaDir" parent="Navegador/Panel/VSplit/NavegadorControles/VBox/MarginAbasBar/HBox/HBoxSetas" parent_id_path=PackedInt32Array(1862273277, 1883575481, 464330227) index="3" unique_id=341463226]
+icon = ExtResource("6_0cyi6")
+flat = true
+
+[node name="PanelAddress" parent="Navegador/Panel/VSplit/NavegadorControles/VBox/HotBar" parent_id_path=PackedInt32Array(1862273277, 1883575481, 274340694) index="0" unique_id=634013428]
+offset_left = 26.0
+offset_top = 10.0
+offset_right = 1558.0
+offset_bottom = 36.0
+theme = SubResource("Theme_ajgd1")
+theme_override_styles/panel = SubResource("StyleBoxTexture_a17us")
+
+[node name="Controles" parent="Navegador/Panel/VSplit/NavegadorControles/PosControles" parent_id_path=PackedInt32Array(1862273277, 1883575481, 1169384076) index="0" unique_id=825964034]
+offset_left = -115.0
+offset_right = -5.0
+offset_bottom = 50.0
+
+[node name="ButtonMinimizar" parent="Navegador/Panel/VSplit/NavegadorControles/PosControles/Controles" index="0" unique_id=231685938]
+icon = ExtResource("10_ngjeu")
+flat = true
+
+[node name="ButtonMaximizar" parent="Navegador/Panel/VSplit/NavegadorControles/PosControles/Controles" index="1" unique_id=1264854560]
+icon = ExtResource("11_7bqxk")
+flat = true
+
+[node name="ButtonFechar" parent="Navegador/Panel/VSplit/NavegadorControles/PosControles/Controles" index="2" unique_id=1879285661]
+icon = ExtResource("12_jgjwf")
+flat = true
+
+[node name="ImagemTamRef" parent="Navegador/Panel/VSplit/NavegadorConteudo/Margin/PanelConteudo" parent_id_path=PackedInt32Array(1862273277, 811463956, 1499278014) index="0" unique_id=1342923152 instance=ExtResource("4_4dg7q")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+
+[editable path="GerenciadorJogo"]
+[editable path="Navegador"]
+[editable path="Navegador/Panel/VSplit/NavegadorControles"]
+[editable path="Navegador/Panel/VSplit/NavegadorConteudo"]
