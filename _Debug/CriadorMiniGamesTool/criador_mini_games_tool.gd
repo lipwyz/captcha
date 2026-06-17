@@ -18,7 +18,7 @@ func _run() -> void:
 		Rect2(Vector2.ONE*100, tamanho_tela)
 	)
 	# lida com fechar
-	window.close_requested.connect(func(): window.queue_free())
+	window.close_requested.connect( (func(x): x.queue_free()).bind(window) )
 	
 	# adiciona os elementos na janela
 	window.add_child(JANELA_CRIADOR_MINI_GAMES.instantiate())
