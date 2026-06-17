@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:Assets/MiniGames/ScaryMaze/placeholders/catavento.png.import
-uid="uid://brrebq5aoyoyc"
-path="res://.godot/imported/catavento.png-5db8dbed48ac0f0195f3cb365cfcaaeb.ctex"
-========
-uid="uid://dhq7s7j276aqr"
+uid="uid://0of73066jd3l"
 path="res://.godot/imported/1_JiSQVnR_nibjRC1azRl6Fw.jpg-b3444c911476e9151118715d85c50993.ctex"
->>>>>>>> main:Assets/sprites/pngs/1_JiSQVnR_nibjRC1azRl6Fw.jpg.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:Assets/MiniGames/ScaryMaze/placeholders/catavento.png.import
-source_file="res://Assets/MiniGames/ScaryMaze/placeholders/catavento.png"
-dest_files=["res://.godot/imported/catavento.png-5db8dbed48ac0f0195f3cb365cfcaaeb.ctex"]
-========
 source_file="res://Assets/sprites/pngs/1_JiSQVnR_nibjRC1azRl6Fw.jpg"
 dest_files=["res://.godot/imported/1_JiSQVnR_nibjRC1azRl6Fw.jpg-b3444c911476e9151118715d85c50993.ctex"]
->>>>>>>> main:Assets/sprites/pngs/1_JiSQVnR_nibjRC1azRl6Fw.jpg.import
 
 [params]
 

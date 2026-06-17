@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:Assets/MiniGames/ScaryMaze/placeholders/Maze.png.import
-uid="uid://3uvfjrfj0tjo"
-path="res://.godot/imported/Maze.png-b67613a2d89e836345ce278454591ffe.ctex"
-========
 uid="uid://00qm7qjpqnt"
 path="res://.godot/imported/dog.png-e7c96ec867f394eec624a76ac2609baf.ctex"
->>>>>>>> main:Assets/sprites/sheets/dog.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:Assets/MiniGames/ScaryMaze/placeholders/Maze.png.import
-source_file="res://Assets/MiniGames/ScaryMaze/placeholders/Maze.png"
-dest_files=["res://.godot/imported/Maze.png-b67613a2d89e836345ce278454591ffe.ctex"]
-========
 source_file="res://Assets/sprites/sheets/dog.png"
 dest_files=["res://.godot/imported/dog.png-e7c96ec867f394eec624a76ac2609baf.ctex"]
->>>>>>>> main:Assets/sprites/sheets/dog.png.import
 
 [params]
 
