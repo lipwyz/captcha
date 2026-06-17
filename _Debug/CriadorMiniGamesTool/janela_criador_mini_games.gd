@@ -61,6 +61,9 @@ func criar_mini_game() -> void:
 		cena_packed = _salvar_minigame_cena(cena, dir_path, nome_eng)
 	# cria a aba
 	_criar_minigame_res(dir_path, nome_eng, nome_aba, url_aba, cena_packed)
+	# updata o disco para mostrar os novos arquivos no editor
+	if Engine.is_editor_hint():
+		EditorInterface.get_resource_filesystem().scan()
 
 ## Cria no disco uma pasta.[br] 
 ## Retorna [code]True[/code] se foi possivel[br] 
