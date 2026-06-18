@@ -8,5 +8,5 @@ func _ready():
 
 func _process(delta):
 	scale -= Vector2(shrink_speed, shrink_speed) * delta
-	if scale.x <= 0:
+	if scale.x < 0:
 		scale = Vector2.ZERO
