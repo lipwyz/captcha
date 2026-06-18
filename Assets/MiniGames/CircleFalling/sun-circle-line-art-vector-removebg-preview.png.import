@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c77qx70jli0d3"
-path="res://.godot/imported/sun-circle-line-art-vector-removebg-preview.png-31e918937065ad8bac8b4b2a20d98baf.ctex"
+path="res://.godot/imported/sun-circle-line-art-vector-removebg-preview.png-93a4881179dd7199df688f4ac1f262bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MiniGames/ScaryMaze/placeholders/sun-circle-line-art-vector-removebg-preview.png"
-dest_files=["res://.godot/imported/sun-circle-line-art-vector-removebg-preview.png-31e918937065ad8bac8b4b2a20d98baf.ctex"]
+source_file="res://Assets/MiniGames/CircleFalling/sun-circle-line-art-vector-removebg-preview.png"
+dest_files=["res://.godot/imported/sun-circle-line-art-vector-removebg-preview.png-93a4881179dd7199df688f4ac1f262bd.ctex"]
 
 [params]
 

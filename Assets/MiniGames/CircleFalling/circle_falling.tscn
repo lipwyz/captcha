@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://c3qg8jnjpv6yh"]
+[gd_scene format=3 uid="uid://cdtf1su0lit7p"]
 
-[ext_resource type="Texture2D" uid="uid://c77qx70jli0d3" path="res://Assets/MiniGames/ScaryMaze/placeholders/sun-circle-line-art-vector-removebg-preview.png" id="1_mhu25"]
-[ext_resource type="Script" uid="uid://cxvvv5olooe7s" path="res://Assets/MiniGames/ScaryMaze/criacao/falling_circle.gd" id="2_2ccxr"]
+[ext_resource type="Texture2D" uid="uid://c77qx70jli0d3" path="res://Assets/MiniGames/CircleFalling/sun-circle-line-art-vector-removebg-preview.png" id="1_ya7tb"]
+[ext_resource type="Script" uid="uid://cxvvv5olooe7s" path="res://Assets/MiniGames/CircleFalling/falling_circle.gd" id="2_u7y64"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ptrw"]
 radius = 63.89053
@@ -12,8 +12,8 @@ radius = 63.89053
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=345656035]
 position = Vector2(494, 288)
-texture = ExtResource("1_mhu25")
-script = ExtResource("2_2ccxr")
+texture = ExtResource("1_ya7tb")
+script = ExtResource("2_u7y64")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D" unique_id=1482238874]
 position = Vector2(492, 288)
