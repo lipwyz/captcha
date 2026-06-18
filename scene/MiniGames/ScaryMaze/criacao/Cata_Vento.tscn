@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brx4r8gqv1e4i"]
 
-[ext_resource type="Script" uid="uid://bm075nr0f0rd5" path="res://Assets/MiniGames/ScaryMaze/criacao/cata_vento_scr.gd" id="1_qqgwi"]
+[ext_resource type="Script" uid="uid://bm075nr0f0rd5" path="res://scene/MiniGames/ScaryMaze/criacao/cata_vento_scr.gd" id="1_qqgwi"]
 [ext_resource type="Texture2D" uid="uid://cisqe2ul7ot03" path="res://_Debug/Temporarios/ScaryMaze/catavento2.png" id="2_qxl4h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qqgwi"]

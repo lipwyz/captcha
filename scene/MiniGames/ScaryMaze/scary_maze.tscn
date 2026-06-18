@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://lpodi2oivp3t"]
 
-[ext_resource type="Script" uid="uid://dmduhn6tnxvid" path="res://Assets/MiniGames/ScaryMaze/criacao/scary_maze_controll.gd" id="1_hlo06"]
-[ext_resource type="PackedScene" uid="uid://bsndwouop7bau" path="res://Assets/MiniGames/ScaryMaze/criacao/MouseDetector.tscn" id="2_7ncv7"]
+[ext_resource type="Script" uid="uid://dmduhn6tnxvid" path="res://scene/MiniGames/ScaryMaze/criacao/scary_maze_controll.gd" id="1_hlo06"]
+[ext_resource type="PackedScene" uid="uid://bsndwouop7bau" path="res://scene/MiniGames/ScaryMaze/criacao/MouseDetector.tscn" id="2_7ncv7"]
 [ext_resource type="Texture2D" uid="uid://3uvfjrfj0tjo" path="res://_Debug/Temporarios/ScaryMaze/Maze.png" id="2_33gcv"]
 [ext_resource type="Texture2D" uid="uid://bftwe576squca" path="res://_Debug/Temporarios/ScaryMaze/teste.png" id="2_iw04b"]
-[ext_resource type="PackedScene" uid="uid://brx4r8gqv1e4i" path="res://Assets/MiniGames/ScaryMaze/criacao/Cata_Vento.tscn" id="2_t328u"]
-[ext_resource type="Script" uid="uid://bn7sr3gxarbor" path="res://Assets/MiniGames/ScaryMaze/criacao/tile_map_colider.gd" id="3_hlo06"]
-[ext_resource type="Script" uid="uid://ghkgi233ocb6" path="res://Assets/MiniGames/ScaryMaze/criacao/mouse_pos.gd" id="3_p7u32"]
+[ext_resource type="PackedScene" uid="uid://brx4r8gqv1e4i" path="res://scene/MiniGames/ScaryMaze/criacao/Cata_Vento.tscn" id="2_t328u"]
+[ext_resource type="Script" uid="uid://bn7sr3gxarbor" path="res://scene/MiniGames/ScaryMaze/criacao/tile_map_colider.gd" id="3_hlo06"]
+[ext_resource type="Script" uid="uid://ghkgi233ocb6" path="res://scene/MiniGames/ScaryMaze/criacao/mouse_pos.gd" id="3_p7u32"]
 [ext_resource type="Texture2D" uid="uid://vmlmiegrkd4p" path="res://_Debug/Temporarios/ScaryMaze/image.png" id="6_qmr15"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_huwbb"]
