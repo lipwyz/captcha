@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cisqe2ul7ot03"
-path="res://.godot/imported/catavento2.png-8f317b26f77252787cf9f84dd2900fe8.ctex"
+uid="uid://3uvfjrfj0tjo"
+path="res://.godot/imported/Maze.png-61b374b6b48dfb6bd2622ae5ec83894f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MiniGames/ScaryMaze/placeholders/catavento2.png"
-dest_files=["res://.godot/imported/catavento2.png-8f317b26f77252787cf9f84dd2900fe8.ctex"]
+source_file="res://_Debug/Temporarios/ScaryMaze/Maze.png"
+dest_files=["res://.godot/imported/Maze.png-61b374b6b48dfb6bd2622ae5ec83894f.ctex"]
 
 [params]
 

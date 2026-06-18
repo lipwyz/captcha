@@ -7,12 +7,10 @@ signal tile_entered
 
 func _ready():
 	_timer.start()
-		
-func _process(delta: float) -> void:
+
+func _process(_delta: float) -> void:
 	if _timer.is_stopped():
 		_check_hover()
-	pass
-
 
 func _check_hover():
 	var local_mouse = to_local(get_global_mouse_position())
