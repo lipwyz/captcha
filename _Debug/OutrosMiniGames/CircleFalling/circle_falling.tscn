@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cdtf1su0lit7p"]
 
-[ext_resource type="Texture2D" uid="uid://c77qx70jli0d3" path="res://Assets/MiniGames/CircleFalling/sun-circle-line-art-vector-removebg-preview.png" id="1_ya7tb"]
-[ext_resource type="Script" uid="uid://cxvvv5olooe7s" path="res://Assets/MiniGames/CircleFalling/falling_circle.gd" id="2_u7y64"]
+[ext_resource type="Texture2D" uid="uid://c77qx70jli0d3" path="res://_Debug/OutrosMiniGames/CircleFalling/sun-circle-line-art-vector-removebg-preview.png" id="1_ya7tb"]
+[ext_resource type="Script" uid="uid://cxvvv5olooe7s" path="res://_Debug/OutrosMiniGames/CircleFalling/falling_circle.gd" id="2_u7y64"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ptrw"]
 radius = 63.89053
