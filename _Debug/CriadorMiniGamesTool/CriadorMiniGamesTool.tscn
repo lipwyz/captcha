@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://baxi66vp03lo1"]
+
+[ext_resource type="Script" uid="uid://b1adhjla6nhph" path="res://_Debug/CriadorMiniGamesTool/criador_mini_games_tool.gd" id="1_0b4xb"]
+
+[node name="CriadorMiniGamesTool" type="Node" unique_id=553299683]
+script = ExtResource("1_0b4xb")

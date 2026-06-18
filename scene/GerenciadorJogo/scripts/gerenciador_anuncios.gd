@@ -6,22 +6,25 @@ signal todos_anuncios_fechados
 
 @export var tamanho_max := Vector2(600, 400)
 @export var anuncios_ref: PackedScene
-@export var lista_imagens_anuncios: Array[PackedScene]
+@export var lista_cenas_anuncios: ListaCenasRes
 
 @onready var anuncios_mostrados: Control = $AnunciosMargin/AnunciosMostrados
 @onready var anuncios_espera: Control = $AnunciosEspera
 
-## Index da cena atual na lista_imagens_anuncios 
+## Index da cena atual na lista_anuncios 
 var _curr_imagem_id: int = 0
 
 var lista_anuncios_mostrados: Array[AnuncioPopUp] = []
 var lista_anuncios_espera: Array = [AnuncioPopUp]
 
+var lista_anuncios: Array[PackedScene]
+
 func _ready() -> void:
 	# conecta os sinais
 	anuncio_fechado.connect(_verificar_todos_anuncios_fechados)
 	# aleatoriza a imagem dos anuncios
-	lista_imagens_anuncios.shuffle()
+	lista_anuncios = lista_cenas_anuncios.lista_cenas
+	lista_anuncios.shuffle()
 
 ## Cria um anuncio para mostrar na tela
 func spawnar_anuncio() -> void:
@@ -50,14 +53,14 @@ func _criar_anuncio() -> AnuncioPopUp:
 
 func _pode_pegar_anuncio_lista_espera() -> bool:
 	# se nao spawnou um de cada tipo de anuncio ainda, entao nao pegue
-	if lista_anuncios_espera.size() <= lista_imagens_anuncios.size():
+	if lista_anuncios_espera.size() <= lista_anuncios.size():
 		return false
 	return true
 
 func _pegar_anuncio_lista_espera() -> AnuncioPopUp:
 	# cada vez que tiver na lista quantidade proporcional de imagens ref, embaralhe os anuncios 
 	#	(para evitar a mesma repeticao, mas sem dar shuffle o tempo todo)
-	if lista_anuncios_espera.size() % lista_imagens_anuncios.size() == 0:
+	if lista_anuncios_espera.size() % lista_anuncios.size() == 0:
 		lista_anuncios_espera.shuffle()
 	#
 	var anuncio: AnuncioPopUp = lista_anuncios_espera.pop_back()
@@ -91,13 +94,13 @@ func _verificar_todos_anuncios_fechados() -> void:
 
 func _criar_imagem_anuncio() -> ImagemAnuncio:
 	# pega a imagem da lista no id atual
-	var imagem_ref: PackedScene = lista_imagens_anuncios[_curr_imagem_id]
+	var imagem_ref: PackedScene = lista_anuncios[_curr_imagem_id]
 	# avanca pro proximo id
 	_curr_imagem_id += 1
 	# se tiver terminado a lista, shuffle e volte pro zero
-	if _curr_imagem_id >= lista_imagens_anuncios.size():
+	if _curr_imagem_id >= lista_anuncios.size():
 		_curr_imagem_id = 0
-		lista_imagens_anuncios.shuffle()
+		lista_anuncios.shuffle()
 	# retona a imagem criada
 	return imagem_ref.instantiate()
 
