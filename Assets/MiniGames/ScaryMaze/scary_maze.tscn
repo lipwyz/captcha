@@ -108,42 +108,43 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_iw04b")
 z_index = -1
 y_sort_enabled = true
 position = Vector2(896, 880)
-velocity = 0.03
+velocity = 1.8
 
 [node name="Cata_Vento2" parent="." unique_id=1626050612 instance=ExtResource("2_t328u")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(1152, 880)
-velocity = -0.03
+velocity = -1.8
 
 [node name="Cata_Vento3" parent="." unique_id=1209737482 instance=ExtResource("2_t328u")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(1408, 880)
+velocity = 2.4
 
 [node name="Cata_Vento4" parent="." unique_id=401133371 instance=ExtResource("2_t328u")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(1747, 445)
-velocity = 0.02
+velocity = 1.2
 
 [node name="Cata_Vento5" parent="." unique_id=195627571 instance=ExtResource("2_t328u")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(1272, 275)
-velocity = -0.025
+velocity = -1.5
 
 [node name="Cata_Vento6" parent="." unique_id=1814400177 instance=ExtResource("2_t328u")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(1163, 604)
-velocity = 0.03
+velocity = 1.8
 
 [node name="Cata_Vento8" parent="." unique_id=1134243267 instance=ExtResource("2_t328u")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(525, 737)
-velocity = -0.01
+velocity = -0.6
 
 [node name="Cata_Vento9" parent="." unique_id=944994665 instance=ExtResource("2_t328u")]
 z_index = -1
@@ -151,6 +152,6 @@ y_sort_enabled = true
 position = Vector2(525, 737.0001)
 rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
-velocity = -0.01
+velocity = -0.6
 
 [connection signal="timeout" from="TileMapLayer/Time_until_detect" to="TileMapLayer" method="_on_timer_timeout"]
