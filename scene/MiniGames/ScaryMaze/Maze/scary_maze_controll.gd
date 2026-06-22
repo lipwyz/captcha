@@ -12,6 +12,13 @@ signal ganhou
 
 @onready var label_start: Label = $Area2DInicio/LabelStart
 
+## Ja ganhou o jogo, e por tanto nao precisa emitir vitoria novamente
+var ja_ganhou: bool = false
+
+## Marca se o jogo esta rodando atualmente [br]
+## [code]True[/code] para o jogo que ja foi iniciado [br]
+## [code]False[/code] caso o jogo ainda nao tenha sido iniciado, e por tanto
+## nao deve emitir falhas e spawnar anuncios
 var iniciado: bool = false :
 	set(_iniciado):
 		iniciado = _iniciado
@@ -46,6 +53,10 @@ func falhar() -> void:
 
 func ganhar() -> void:
 	if not iniciado: return
+	# emite o sinal de vitoria apenas a primeira vez
+	if ja_ganhou: return
+	ja_ganhou = true
+	
 	# emite que ganhou
 	ganhou.emit()
 	# desativa o jogo
