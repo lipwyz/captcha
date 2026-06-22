@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://brx4r8gqv1e4i"]
+
+[ext_resource type="Script" uid="uid://bm075nr0f0rd5" path="res://scene/MiniGames/ScaryMaze/Maze/subItems/cata_vento_scr.gd" id="1_qqgwi"]
+[ext_resource type="Texture2D" uid="uid://cisqe2ul7ot03" path="res://_Debug/Temporarios/ScaryMaze/catavento2.png" id="2_qxl4h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqgwi"]
+size = Vector2(5, 254)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7548"]
+size = Vector2(254, 5)
+
+[node name="Cata_Vento" type="Area2D" unique_id=944994665]
+script = ExtResource("1_qqgwi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1773946398]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_qxl4h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=842016326]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_qqgwi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1467207831]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_y7548")
