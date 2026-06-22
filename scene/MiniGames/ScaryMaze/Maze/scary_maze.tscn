@@ -12,6 +12,9 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_huwbb"]
 texture = ExtResource("2_s2x67")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smq05"]
+size = Vector2(34, 33)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rr2p5"]
 texture = ExtResource("4_yaxd0")
 3:1/0 = 0
@@ -57,10 +60,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -11.0
-offset_top = 2.0
-offset_right = -1931.0
-offset_bottom = -1078.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -72,6 +71,14 @@ layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_huwbb")
+
+[node name="Area2DVitoria" type="Area2D" parent="." unique_id=1487726472]
+position = Vector2(744, 63)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DVitoria" unique_id=807393994]
+position = Vector2(0, 11.5)
+shape = SubResource("RectangleShape2D_smq05")
+debug_color = Color(0.5129791, 0.57736903, 1.92523e-07, 0.41960785)
 
 [node name="mouseDetector" parent="." unique_id=129938776 instance=ExtResource("3_a0cxp")]
 
@@ -93,7 +100,7 @@ position = Vector2(291, 712)
 script = ExtResource("6_0xkhj")
 mouse_warp = NodePath(".")
 
-[node name="Panel" type="Panel" parent="." unique_id=465140420]
+[node name="PanelErrar" type="Panel" parent="." unique_id=465140420]
 visible = false
 z_index = 1
 layout_mode = 0
