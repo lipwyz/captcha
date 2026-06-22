@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0c8av"]
 size = Vector2(0, 0)
 
-[node name="mouseDetector" type="Area2D" unique_id=1210839782]
+[node name="mouseDetector" type="Area2D" unique_id=344684658]
 script = ExtResource("1_hfl28")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1869571199]

@@ -1,19 +1,10 @@
 [gd_scene format=4 uid="uid://lpodi2oivp3t"]
 
 [ext_resource type="Script" uid="uid://dmduhn6tnxvid" path="res://scene/MiniGames/ScaryMaze/Maze/scary_maze_controll.gd" id="1_iday1"]
-[ext_resource type="Texture2D" uid="uid://bftwe576squca" path="res://_Debug/Temporarios/ScaryMaze/teste.png" id="2_s2x67"]
 [ext_resource type="PackedScene" uid="uid://bsndwouop7bau" path="res://scene/MiniGames/ScaryMaze/Maze/subItems/MouseDetector.tscn" id="3_a0cxp"]
 [ext_resource type="Texture2D" uid="uid://3uvfjrfj0tjo" path="res://_Debug/Temporarios/ScaryMaze/Maze.png" id="4_yaxd0"]
 [ext_resource type="Script" uid="uid://bn7sr3gxarbor" path="res://scene/MiniGames/ScaryMaze/Maze/subItems/tile_map_colider.gd" id="5_cmcev"]
-[ext_resource type="Script" uid="uid://ghkgi233ocb6" path="res://scene/MiniGames/ScaryMaze/Maze/subItems/mouse_pos.gd" id="6_0xkhj"]
-[ext_resource type="Texture2D" uid="uid://vmlmiegrkd4p" path="res://_Debug/Temporarios/ScaryMaze/image.png" id="7_tokhr"]
 [ext_resource type="PackedScene" uid="uid://brx4r8gqv1e4i" path="res://scene/MiniGames/ScaryMaze/Maze/subItems/Cata_Vento.tscn" id="8_4agdl"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_huwbb"]
-texture = ExtResource("2_s2x67")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_smq05"]
-size = Vector2(34, 33)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rr2p5"]
 texture = ExtResource("4_yaxd0")
@@ -50,37 +41,14 @@ texture = ExtResource("4_yaxd0")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_rr2p5")
 
-[sub_resource type="Theme" id="Theme_7ncv7"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_smq05"]
+radius = 66.189125
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iw04b"]
-texture = ExtResource("7_tokhr")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smq05"]
+size = Vector2(34, 33)
 
-[node name="ScaryMaze" type="Control" unique_id=1302752186]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
+[node name="ScaryMaze" type="Node2D" unique_id=1978390064]
 script = ExtResource("1_iday1")
-
-[node name="Panel2" type="Panel" parent="." unique_id=1381836645]
-visible = false
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_huwbb")
-
-[node name="Area2DVitoria" type="Area2D" parent="." unique_id=1487726472]
-position = Vector2(744, 63)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DVitoria" unique_id=807393994]
-position = Vector2(0, 11.5)
-shape = SubResource("RectangleShape2D_smq05")
-debug_color = Color(0.5129791, 0.57736903, 1.92523e-07, 0.41960785)
-
-[node name="mouseDetector" parent="." unique_id=129938776 instance=ExtResource("3_a0cxp")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1112217256]
 y_sort_enabled = true
@@ -89,76 +57,86 @@ tile_set = SubResource("TileSet_pm3sp")
 collision_visibility_mode = 1
 script = ExtResource("5_cmcev")
 
-[node name="Time_until_detect" type="Timer" parent="TileMapLayer" unique_id=86182707]
-process_callback = 0
-wait_time = 0.08
-one_shot = true
-autostart = true
+[node name="Area2DInicio" type="Area2D" parent="." unique_id=796339160]
+position = Vector2(274, 714)
+collision_layer = 64
 
-[node name="mousePos" type="Node2D" parent="." unique_id=172207351 node_paths=PackedStringArray("mouse_warp")]
-position = Vector2(291, 712)
-script = ExtResource("6_0xkhj")
-mouse_warp = NodePath(".")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DInicio" unique_id=1489717364]
+shape = SubResource("CircleShape2D_smq05")
+debug_color = Color(0.8324689, 0.0013846254, 0.9411816, 0.41960785)
 
-[node name="PanelErrar" type="Panel" parent="." unique_id=465140420]
-visible = false
-z_index = 1
-layout_mode = 0
-offset_left = 12.0
-offset_top = -1.0
-offset_right = 1931.0
-offset_bottom = 1080.0
-theme = SubResource("Theme_7ncv7")
-theme_override_styles/panel = SubResource("StyleBoxTexture_iw04b")
+[node name="LabelStart" type="Label" parent="Area2DInicio" unique_id=50148298]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_top = -137.0
+offset_right = 46.0
+offset_bottom = -88.0
+grow_horizontal = 2
+text = "Mouse here
+to Start"
+horizontal_alignment = 1
 
-[node name="Cata_Vento" parent="." unique_id=983422918 instance=ExtResource("8_4agdl")]
+[node name="Area2DVitoria" type="Area2D" parent="." unique_id=1487726472]
+position = Vector2(744, 63)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DVitoria" unique_id=807393994]
+position = Vector2(0, 11.5)
+shape = SubResource("RectangleShape2D_smq05")
+debug_color = Color(0.5129791, 0.57736903, 1.92523e-07, 0.41960785)
+
+[node name="mouseDetector" parent="." unique_id=129938776 instance=ExtResource("3_a0cxp")]
+
+[node name="Obstaculos" type="Node2D" parent="." unique_id=193414587]
+
+[node name="Cata_Vento" parent="Obstaculos" unique_id=983422918 instance=ExtResource("8_4agdl")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(896, 880)
 velocity = 1.8
 
-[node name="Cata_Vento2" parent="." unique_id=1626050612 instance=ExtResource("8_4agdl")]
+[node name="Cata_Vento2" parent="Obstaculos" unique_id=1626050612 instance=ExtResource("8_4agdl")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(1152, 880)
 velocity = -1.8
 
-[node name="Cata_Vento3" parent="." unique_id=1209737482 instance=ExtResource("8_4agdl")]
+[node name="Cata_Vento3" parent="Obstaculos" unique_id=1209737482 instance=ExtResource("8_4agdl")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(1408, 880)
 velocity = 2.4
 
-[node name="Cata_Vento4" parent="." unique_id=401133371 instance=ExtResource("8_4agdl")]
+[node name="Cata_Vento4" parent="Obstaculos" unique_id=401133371 instance=ExtResource("8_4agdl")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(1747, 445)
 velocity = 1.2
 
-[node name="Cata_Vento5" parent="." unique_id=195627571 instance=ExtResource("8_4agdl")]
+[node name="Cata_Vento5" parent="Obstaculos" unique_id=195627571 instance=ExtResource("8_4agdl")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(1272, 275)
 velocity = -1.5
 
-[node name="Cata_Vento6" parent="." unique_id=1814400177 instance=ExtResource("8_4agdl")]
+[node name="Cata_Vento6" parent="Obstaculos" unique_id=1814400177 instance=ExtResource("8_4agdl")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(1163, 604)
 velocity = 1.8
 
-[node name="Cata_Vento8" parent="." unique_id=1134243267 instance=ExtResource("8_4agdl")]
+[node name="Cata_Vento8" parent="Obstaculos" unique_id=1134243267 instance=ExtResource("8_4agdl")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(525, 737)
 velocity = -0.6
 
-[node name="Cata_Vento9" parent="." unique_id=944994665 instance=ExtResource("8_4agdl")]
+[node name="Cata_Vento9" parent="Obstaculos" unique_id=944994665 instance=ExtResource("8_4agdl")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(525, 737.0001)
 rotation = 0.7853982
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.9999999, 0.9999999)
 velocity = -0.6
-
-[connection signal="timeout" from="TileMapLayer/Time_until_detect" to="TileMapLayer" method="_on_timer_timeout"]

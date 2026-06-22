@@ -1,34 +1,56 @@
 class_name ScaryMaze
-extends Control
+extends Node2D
 
 signal falhou
 signal ganhou
 
-@onready var tile_map_layer: Controler = $TileMapLayer
-@onready var mouse_detector: Area2D = $mouseDetector
-@onready var collision: CollisionShape2D = $mouseDetector/Collision
-@onready var panel_errar: Panel = $PanelErrar
+@onready var area_2d_inicio: Area2D = $Area2DInicio
 @onready var area_2d_vitoria: Area2D = $Area2DVitoria
 
+@onready var controlador_tile_map: ControladorTileMap = $TileMapLayer
+@onready var mouse_detector: MouseDetector = $mouseDetector
+
+@onready var label_start: Label = $Area2DInicio/LabelStart
+
+var iniciado: bool = false :
+	set(_iniciado):
+		iniciado = _iniciado
+		controlador_tile_map.set_iniciado(_iniciado)
+		_display_iniciado_text()
+
 func _ready() -> void:
-	# espera um pouco antes de ligar a colisao
-	await get_tree().create_timer(0.2).timeout
-	collision.set_deferred("disabled", false)
-	# conecta os sianis de mouse entrou no local de falha
-	tile_map_layer.tile_entered.connect(entered)
-	mouse_detector.collided.connect(entered)
-	# condicao de vitoria
+	# condicao de inicio
+	area_2d_inicio.mouse_entered.connect(iniciar)
+	area_2d_inicio.area_entered.connect(func(_x): iniciar() )
+	# vitoria
 	area_2d_vitoria.mouse_entered.connect(ganhar)
+	area_2d_vitoria.area_entered.connect(func(_x): ganhar() )
+	# conecta os sinais de mouse entrou no local de falha
+	controlador_tile_map.tile_entered.connect(entered)
+	mouse_detector.collided.connect(entered)
+
+func iniciar() -> void:
+	if iniciado: return
+	iniciado = true
 
 func entered():
-	if mouse_detector.collided.is_connected(entered):
-		mouse_detector.collided.disconnect(entered)
-	collision.set_deferred("disabled", true)
+	if not iniciado: return
 	falhar()
 
 func falhar() -> void:
+	if not iniciado: return
+	# emite que errou
 	falhou.emit()
-	#panel_errar.visible = true
+	# tem que reiniciar
+	iniciado = false
 
 func ganhar() -> void:
+	if not iniciado: return
+	# emite que ganhou
 	ganhou.emit()
+	# desativa o jogo
+	iniciado = false
+	label_start.visible = false
+
+func _display_iniciado_text() -> void:
+	label_start.visible = not iniciado

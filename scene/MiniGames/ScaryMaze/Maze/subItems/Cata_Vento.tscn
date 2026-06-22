@@ -9,7 +9,7 @@ size = Vector2(5, 254)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7548"]
 size = Vector2(254, 5)
 
-[node name="Cata_Vento" type="Area2D" unique_id=944994665]
+[node name="Cata_Vento" type="StaticBody2D" unique_id=218498529]
 script = ExtResource("1_qqgwi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1773946398]

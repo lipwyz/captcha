@@ -5,4 +5,4 @@ extends ConteudoAba
 
 func _ready() -> void:
 	scary_maze.falhou.connect(minigame_errar)
-	scary_maze.falhou.connect(minigame_ganhar)
+	scary_maze.ganhou.connect(minigame_ganhar)

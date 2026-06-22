@@ -1,15 +1,17 @@
-class_name Controler
+class_name ControladorTileMap
 extends TileMapLayer
-@onready var _timer: Timer = $Time_until_detect
+
 var current_hovered_tile: Vector2i = Vector2i(-1, -1)
 
 signal tile_entered
 
-func _ready():
-	_timer.start()
+var iniciado: bool = false
 
-func _process(_delta: float) -> void:
-	if _timer.is_stopped():
+func set_iniciado(_iniciado: bool) -> void:
+	iniciado = _iniciado
+
+func _physics_process(_delta: float) -> void:
+	if iniciado:
 		_check_hover()
 
 func _check_hover():
@@ -24,9 +26,10 @@ func _check_hover():
 			_on_tile_hover_entered(new_hovered)
 		current_hovered_tile = new_hovered
 
-func _on_tile_hover_entered(tile_coords: Vector2i):
+func _on_tile_hover_entered(_tile_coords: Vector2i):
 	tile_entered.emit()
-	print("Entered tile ", tile_coords)
+	#print("Entered tile ", tile_coords)
 
-func _on_tile_hover_exited(tile_coords: Vector2i):
-	print("Exited tile ", tile_coords)
+func _on_tile_hover_exited(_tile_coords: Vector2i):
+	#print("Exited tile ", tile_coords)
+	pass
