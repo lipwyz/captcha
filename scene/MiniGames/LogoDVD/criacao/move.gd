@@ -4,12 +4,18 @@ extends CharacterBody2D
 ## Aplicado como [code]randf_range(-qtd_angulo_offset, qtd_angulo_offset)[/code]
 @export var qtd_angulo_offset := PI/16
 
-@export var velocidade_inicial : float = 200
+@export var velocidade_inicial : float = 250
 
-@export var velocidade_exponencial: float = 1.15
+@export var velocidade_exponencial: float = 1.10
 
-var velocidade_atual := velocidade_inicial
-var velocidade_vezes_aumentada := 0
+## [b]Durante o funny[/b] quantidade de vezes a mais que aumenta a velocidade
+@export var funny_velocidade_exponencial_extra := 1.5
+@export var funny_tempo_rapido := 2.0
+@export var funny_tempo_decrescente := 1.5
+
+var velocidade_atual : float = velocidade_inicial
+var velocidade_vezes_aumentada : int = 0
+var funny_velocidade_exponencial_extra_atual : float = 0.0
 
 func _ready() -> void:
 	# direcao inicial de (-180 a 180) - circulo completo
@@ -35,7 +41,11 @@ func _physics_process(delta: float) -> void:
 	
 
 func _update_velocidade() -> void:
-	velocidade_atual = velocidade_inicial ** (velocidade_exponencial ** velocidade_vezes_aumentada)
+	var expon := velocidade_exponencial ** (
+		velocidade_vezes_aumentada * 
+		(1 + funny_velocidade_exponencial_extra_atual)
+		)
+	velocidade_atual = velocidade_inicial ** expon
 	
 	# normaliza (deixa em tamanho = 1)
 	velocity = velocity.normalized()
@@ -49,20 +59,25 @@ func aumentar_velocidade() -> void:
 	
 	# aumenta muito mais e devagar depois
 	if (velocidade_vezes_aumentada > 1):
-		var guarda_velocidade = velocidade_vezes_aumentada
-		
-		velocidade_vezes_aumentada += 2
+		funny()
+	
+func funny() -> void:
+	# coloca a velocidade mais rapida
+	funny_velocidade_exponencial_extra_atual = funny_velocidade_exponencial_extra
+	_update_velocidade()
+	
+	# espera alguns segundos e volta antes de voltar ao normal
+	await get_tree().create_timer(funny_tempo_rapido).timeout
+	
+	# diminui gradualmente
+	const divisoes = 10
+	@warning_ignore("integer_division")
+	var subtracao := funny_velocidade_exponencial_extra_atual / divisoes
+	var tempo := funny_tempo_decrescente / divisoes
+	for i in range(divisoes):
+		funny_velocidade_exponencial_extra_atual -= subtracao
 		_update_velocidade()
-		
-		# espera uns 2 segundos e volta ao normal
-		await get_tree().create_timer(2.0).timeout
-		
-		# diminui gradualmente
-		for i in range(velocidade_vezes_aumentada, guarda_velocidade, -1):
-			velocidade_vezes_aumentada = i
-			_update_velocidade()
-			await get_tree().create_timer(1.0).timeout
-		
-		# volta a velocidade correta
-		velocidade_vezes_aumentada = guarda_velocidade
-		_update_velocidade()
+		await get_tree().create_timer(tempo).timeout
+	
+	# volta a velocidade correta
+	funny_velocidade_exponencial_extra_atual = 0
