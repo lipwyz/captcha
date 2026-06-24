@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bcfph6hbkylup"
+path="res://.godot/imported/dragon-studio-swoosh-3-376866.wav-e28bf1b9385a5d34d071b89bc7c07a41.sample"
+
+[deps]
+
+source_file="res://Assets/Mini Games/Fruit Ninja/SFX/dragon-studio-swoosh-3-376866.wav"
+dest_files=["res://.godot/imported/dragon-studio-swoosh-3-376866.wav-e28bf1b9385a5d34d071b89bc7c07a41.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
