@@ -5,8 +5,9 @@
 [ext_resource type="Resource" uid="uid://b4cu5kbxiwxwn" path="res://scene/MiniGames/Mario/miniGameMario.tres" id="2_6l5xu"]
 [ext_resource type="Resource" uid="uid://c8lyg2jjrh1j2" path="res://scene/MiniGames/SelectQuadrados/miniGameSelectQuadrados.tres" id="3_xfcxj"]
 [ext_resource type="Resource" uid="uid://dro16tmjsrthd" path="res://scene/MiniGames/ScaryMaze/miniGameScaryMaze.tres" id="4_6l5xu"]
+[ext_resource type="Resource" uid="uid://bngf4f8gsp1if" path="res://scene/MiniGames/LogoDVD/miniGameLogoDVD.tres" id="5_xfcxj"]
 
 [resource]
 script = ExtResource("2_0kicx")
-lista_faceis = Array[ExtResource("1_o1ruj")]([ExtResource("2_6l5xu"), ExtResource("3_xfcxj"), ExtResource("4_6l5xu")])
+lista_faceis = Array[ExtResource("1_o1ruj")]([ExtResource("2_6l5xu"), ExtResource("3_xfcxj"), ExtResource("4_6l5xu"), ExtResource("5_xfcxj")])
 metadata/_custom_type_script = "uid://wmohus0qdr6r"

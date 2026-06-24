@@ -2,6 +2,7 @@ class_name DVDMundo
 extends Node2D
 
 signal completo
+signal anuncio
 
 @export var qtde_item_movendo := 4
 

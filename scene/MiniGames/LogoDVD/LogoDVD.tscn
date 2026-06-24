@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dpav1f4tbfyso"]
 
-[ext_resource type="Script" uid="uid://0hrgf7ep2ulm" path="res://scene/Navegador/Scripts/ConteudoAba.gd" id="1_ugqn0"]
+[ext_resource type="Script" uid="uid://b22u548o106i5" path="res://scene/MiniGames/LogoDVD/logo_dvd.gd" id="1_g26if"]
 [ext_resource type="PackedScene" uid="uid://w1qnuv5m5xw4" path="res://scene/MiniGames/LogoDVD/criacao/mundo_dvd.tscn" id="2_g26if"]
 
 [node name="LogoDVD" type="Control" unique_id=1036968036]
@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_ugqn0")
+script = ExtResource("1_g26if")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=228637494]
 layout_mode = 1
