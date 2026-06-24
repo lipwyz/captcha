@@ -117,6 +117,10 @@ func _gerar_minigame_subviewport(cena: Node) -> void:
 	subviewport.handle_input_locally = false
 	# adiciona como filho do subviewport container
 	subview_container.add_child(subviewport)
+	
+	# -- renomeia ambos
+	subview_container.name 	= "SubViewportContainer"
+	subviewport.name 		= "SubViewport"
 
 ## [b]Salva em disco a cena[/b], retorna o path da cena nos arquivos
 func _salvar_minigame_cena(cena: Node, 
