@@ -86,6 +86,8 @@ func _gerar_minigame_cena(nome_engine: String) -> Node:
 	cena.name = nome_engine
 	# coloca o anchor do control para ser o full
 	cena.set_anchors_preset(Control.PRESET_FULL_RECT)
+	# troca mouse flag de stop para ignore
+	cena.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	return cena
 
 ## [b]Gera e adiciona subviewport[/b] a uma cena em memoria
