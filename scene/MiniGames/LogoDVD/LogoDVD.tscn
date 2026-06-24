@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dpav1f4tbfyso"]
+
+[ext_resource type="Script" uid="uid://0hrgf7ep2ulm" path="res://scene/Navegador/Scripts/ConteudoAba.gd" id="1_ugqn0"]
+[ext_resource type="PackedScene" uid="uid://w1qnuv5m5xw4" path="res://scene/MiniGames/LogoDVD/criacao/mundo_dvd.tscn" id="2_g26if"]
+
+[node name="LogoDVD" type="Control" unique_id=1036968036]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("1_ugqn0")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1749013081]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1091591559]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+size_2d_override = Vector2i(1920, 1080)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="MundoDVD" parent="SubViewportContainer/SubViewport" unique_id=1165485145 instance=ExtResource("2_g26if")]

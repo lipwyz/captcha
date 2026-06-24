@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="MiniGameRes" format=3 uid="uid://bngf4f8gsp1if"]
+
+[ext_resource type="Script" uid="uid://0hrgf7ep2ulm" path="res://scene/Navegador/Scripts/ConteudoAba.gd" id="1_823sr"]
+[ext_resource type="Script" uid="uid://cp2dri3177uqs" path="res://scene/MiniGames/MiniGameRes.gd" id="2_uptk6"]
+
+[sub_resource type="PackedScene" id="PackedScene_o3ol5"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("LogoDVD", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "script", "Control", "@SubViewportContainer@24002", "stretch", "SubViewportContainer", "@SubViewport@24003", "disable_3d", "transparent_bg", "handle_input_locally", "size", "size_2d_override", "size_2d_override_stretch", "SubViewport"),
+"node_count": 3,
+"node_ids": PackedInt32Array(1036968036, 1749013081, 1091591559),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 6, 0, -1, 5, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 0, 0, 0, 9, 7, -1, 4, 1, 1, 3, 2, 4, 2, 8, 4, 0, 1, 0, 17, 10, -1, 6, 11, 4, 12, 4, 13, 5, 14, 6, 15, 6, 16, 4, 0),
+"variants": [3, 0, 1.0, ExtResource("1_823sr"), true, false, Vector2i(1920, 1080)],
+"version": 3
+}
+
+[resource]
+script = ExtResource("2_uptk6")
+aba_titulo = "ScreenSaver"
+aba_url = "https://green-planet/save-your-screen.com"
+conteudo = SubResource("PackedScene_o3ol5")

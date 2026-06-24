@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://w1qnuv5m5xw4"]
+
+[ext_resource type="Texture2D" uid="uid://2ab7sovphfs7" path="res://Assets/sprites/pngs/negativoconfirmação.png" id="1_jrtqj"]
+[ext_resource type="Script" uid="uid://bdf3oak81ljn2" path="res://scene/MiniGames/LogoDVD/criacao/move.gd" id="1_vgqxe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smq05"]
+size = Vector2(187, 1239)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uea2y"]
+size = Vector2(1957, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6ok8"]
+size = Vector2(302, 72)
+
+[node name="MundoDVD" type="Node2D" unique_id=1165485145]
+
+[node name="StaticParedes" type="StaticBody2D" parent="." unique_id=1216909772]
+
+[node name="CollisionShape2DLado" type="CollisionShape2D" parent="StaticParedes" unique_id=1407906698]
+position = Vector2(-96.5, 538.5)
+shape = SubResource("RectangleShape2D_smq05")
+
+[node name="CollisionShape2DLado2" type="CollisionShape2D" parent="StaticParedes" unique_id=716872376]
+position = Vector2(2020, 538.5)
+shape = SubResource("RectangleShape2D_smq05")
+
+[node name="CollisionShape2D2Vertical" type="CollisionShape2D" parent="StaticParedes" unique_id=697929107]
+position = Vector2(968.5, -55)
+shape = SubResource("RectangleShape2D_uea2y")
+
+[node name="CollisionShape2D2Vertical2" type="CollisionShape2D" parent="StaticParedes" unique_id=1670058558]
+position = Vector2(968.5, 1138)
+shape = SubResource("RectangleShape2D_uea2y")
+
+[node name="AnimatableBody2D" type="CharacterBody2D" parent="." unique_id=1733015546]
+position = Vector2(559, 311)
+script = ExtResource("1_vgqxe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=173476954]
+shape = SubResource("RectangleShape2D_u6ok8")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=502234982]
+texture = ExtResource("1_jrtqj")
