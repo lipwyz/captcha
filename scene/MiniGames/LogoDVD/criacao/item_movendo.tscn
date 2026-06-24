@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://byktb26gt0ak3"]
+
+[ext_resource type="Script" uid="uid://bdf3oak81ljn2" path="res://scene/MiniGames/LogoDVD/criacao/move.gd" id="1_5ihth"]
+[ext_resource type="Texture2D" uid="uid://2ab7sovphfs7" path="res://Assets/sprites/pngs/negativoconfirmação.png" id="2_2br0e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6ok8"]
+size = Vector2(302, 72)
+
+[node name="ItemMovendo" type="CharacterBody2D" unique_id=1745045833]
+script = ExtResource("1_5ihth")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=13376634]
+shape = SubResource("RectangleShape2D_u6ok8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=332004575]
+texture = ExtResource("2_2br0e")
+
+[node name="ButtonClick" type="Button" parent="." unique_id=596928313]
+offset_left = -116.999985
+offset_top = -5.0
+offset_right = -108.999985
+offset_bottom = 3.0
+scale = Vector2(8, 8)
+pivot_offset = Vector2(4, 4)
+flat = true
