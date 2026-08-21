@@ -2,7 +2,7 @@ class_name DVDMundo
 extends Node2D
 
 signal completo
-signal anuncio
+signal anuncio ## TODO: Nao esta sendo utilizado
 
 @export var qtde_item_movendo := 4
 
@@ -30,7 +30,7 @@ func _ready() -> void:
 func clicado(item : DVDItemMovendo) -> void:
 	lista_itens.erase(item)
 	item.queue_free()
-	#
+	# se nao tiver mais nenhum item, entao completou o mini game
 	if lista_itens.is_empty():
 		completo.emit()
 		return

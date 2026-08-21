@@ -13,25 +13,28 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_g26if")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=228637494]
+[node name="ColorRectBackGround" type="ColorRect" parent="." unique_id=228637494]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.20198786, 0.2511889, 0.2982312, 1)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1749013081]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1091591559]
 disable_3d = true
 transparent_bg = true
 handle_input_locally = false
+physics_object_picking = true
 size = Vector2i(1920, 1080)
 size_2d_override = Vector2i(1920, 1080)
 size_2d_override_stretch = true

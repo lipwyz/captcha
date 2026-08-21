@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6ok8"]
 size = Vector2(302, 72)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smq05"]
+size = Vector2(55, 55)
+
 [node name="ItemMovendo" type="CharacterBody2D" unique_id=1745045833]
 script = ExtResource("1_5ihth")
 
@@ -15,11 +18,15 @@ shape = SubResource("RectangleShape2D_u6ok8")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=332004575]
 texture = ExtResource("2_2br0e")
 
-[node name="ButtonClick" type="Button" parent="." unique_id=596928313]
-offset_left = -116.999985
-offset_top = -5.0
-offset_right = -108.999985
-offset_bottom = 3.0
-scale = Vector2(8, 8)
-pivot_offset = Vector2(4, 4)
-flat = true
+[node name="Area2DClick" type="Area2D" parent="." unique_id=1225027873]
+position = Vector2(-112, 0)
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+priority = 2
+
+[node name="CollisionShape2DClick" type="CollisionShape2D" parent="Area2DClick" unique_id=1760406556]
+shape = SubResource("RectangleShape2D_smq05")
+debug_color = Color(1.3235956e-06, 0.6501292, 0.12642536, 0.41960785)
+
+[connection signal="input_event" from="Area2DClick" to="." method="_on_area_2d_click_input_event"]
