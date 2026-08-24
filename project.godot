@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="Captcha"
+config/tags=PackedStringArray("gamelab")
 run/main_scene="uid://cbrpvi6rnvw0i"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
 [autoload]
