@@ -36,7 +36,7 @@ folder_colors={
 "res://_Debug/": "gray",
 "res://scene/": "orange",
 "res://scene/AreaTrabalho/": "blue",
-"res://scene/MainMenu/": "red",
+"res://scene/Main/": "red",
 "res://scene/MiniGames/": "purple",
 "res://scene/Navegador/": "green",
 "res://themes/": "yellow"
