@@ -7,6 +7,7 @@
 size = Vector2(302, 72)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smq05"]
+resource_local_to_scene = true
 size = Vector2(55, 55)
 
 [node name="ItemMovendo" type="CharacterBody2D" unique_id=1745045833]

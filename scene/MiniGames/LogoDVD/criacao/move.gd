@@ -15,7 +15,7 @@ signal clicado
 @export var velocidade_exponencial: float = 1.10
 
 ## Multiplicador para aumentar o tamanho do hitbox ao aumentar a velocidade
-@export var aumentar_hitbox_mult = 1.3
+@export var aumentar_hitbox_mult = 1.5
 
 @export_group("Funny")
 ## [b]Durante o funny[/b] quantidade de vezes a mais que aumenta a velocidade
