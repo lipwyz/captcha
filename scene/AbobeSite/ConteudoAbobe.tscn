@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bdk6kmg8y2xl6"]
 
-[ext_resource type="Script" uid="uid://cms6gm44yy7sw" path="res://scene/Abobe/conteudo_abobe.gd" id="1_gwkil"]
+[ext_resource type="Script" uid="uid://cms6gm44yy7sw" path="res://scene/AbobeSite/conteudo_abobe.gd" id="1_gwkil"]
 
 [node name="ConteudoAbobe" type="Control" unique_id=118735360]
 layout_mode = 3
