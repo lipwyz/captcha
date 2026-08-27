@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cmjkjtl57hod5"]
+
+[ext_resource type="Texture2D" uid="uid://0yxoj8bitua" path="res://Assets/Backgorund/Windows-XP-Bliss-Wallpaper-4K-scaled.jpg" id="1_c4cuc"]
+[ext_resource type="Texture2D" uid="uid://doqri5dvr4452" path="res://Assets/WinXp/Frame/UI Theme.png" id="2_bd4vi"]
+[ext_resource type="Script" uid="uid://c17f1e3gmpglp" path="res://Scripts/popup_controler.gd" id="2_hemqk"]
+[ext_resource type="Texture2D" uid="uid://vnyqv83xfpyp" path="res://Assets/RetroWindowsGUI/Windows_Example_Popup.png" id="2_olxwx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qcbku"]
+texture = ExtResource("2_bd4vi")
+region_rect = Rect2(497, 70, 98, 31)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lq2d0"]
+texture = ExtResource("2_bd4vi")
+region_rect = Rect2(497, 37, 97, 31)
+
+[node name="Game  Interface" type="Control" unique_id=772791988]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1599389046]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_c4cuc")
+expand_mode = 2
+
+[node name="PopupControler" type="Control" parent="." unique_id=1894064436]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_hemqk")
+
+[node name="StartMenu" type="MarginContainer" parent="PopupControler" unique_id=1231953661]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -308.0
+offset_right = 601.0
+offset_bottom = 464.0
+grow_vertical = 2
+
+[node name="Texture" type="NinePatchRect" parent="PopupControler/StartMenu" unique_id=86967035]
+layout_mode = 2
+texture = ExtResource("2_olxwx")
+region_rect = Rect2(404, 585, 33, 34)
+
+[node name="TaskBar" type="MarginContainer" parent="PopupControler" unique_id=1481727316]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -90.0
+offset_right = 961.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Texture" type="NinePatchRect" parent="PopupControler/TaskBar" unique_id=439659869]
+layout_mode = 2
+texture = ExtResource("2_bd4vi")
+region_rect = Rect2(376, 519, 48, 28)
+
+[node name="Home" type="Button" parent="PopupControler/TaskBar/Texture" unique_id=965205538]
+layout_mode = 0
+offset_right = 240.75
+offset_bottom = 90.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_qcbku")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lq2d0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qcbku")
+
+[connection signal="pressed" from="PopupControler/TaskBar/Texture/Home" to="PopupControler" method="_on_home_pressed"]
