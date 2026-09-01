@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://roejgry65bjv"]
 
-[ext_resource type="Theme" uid="uid://cj0agp435nvsu" path="res://Themes/new_theme.tres" id="1_i7xe7"]
+[ext_resource type="Theme" uid="uid://cj0agp435nvsu" path="res://themes/new_theme.tres" id="1_i7xe7"]
 [ext_resource type="Script" uid="uid://cnbh364hlf6ow" path="res://scene/Navegador/Scripts/navegador_controles.gd" id="1_ouk7q"]
-[ext_resource type="Texture2D" uid="uid://dttw0dj2ycnm1" path="res://Assets/Sprites/Navegador/sinal2.png" id="3_i7xe7"]
+[ext_resource type="Texture2D" uid="uid://cxpjwphjggw48" path="res://Assets/sprites/Navegador/SetaEverde.png" id="3_ns4ii"]
+[ext_resource type="Texture2D" uid="uid://cyfdwoh3yf1ki" path="res://Assets/sprites/Navegador/SetaDverde2.png" id="4_ouk7q"]
+[ext_resource type="Texture2D" uid="uid://yiu6mcmxakxq" path="res://Assets/sprites/Navegador/Sinal-verde.png" id="5_mf5jd"]
+[ext_resource type="Texture2D" uid="uid://bl4re1put6nsx" path="res://Assets/sprites/Navegador/Sinal[]verde.png" id="6_8q6ef"]
+[ext_resource type="Texture2D" uid="uid://c5wgtbk7dr5b3" path="res://Assets/sprites/Navegador/SinalXverde2.png" id="7_cgj0l"]
 
 [node name="NavegadorControles" type="Panel" unique_id=1818094128 node_paths=PackedStringArray("label_url", "h_box_abas", "h_box_setas")]
 custom_minimum_size = Vector2(0, 100)
@@ -33,7 +37,9 @@ scale = Vector2(1, 0.99310535)
 [node name="MarginAbasBar" type="MarginContainer" parent="VBox" unique_id=1920836775]
 layout_mode = 2
 theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 0
 
 [node name="HBox" type="HBoxContainer" parent="VBox/MarginAbasBar" unique_id=105023278]
 layout_mode = 2
@@ -52,7 +58,8 @@ layout_mode = 2
 
 [node name="ButtonSetaEsq" type="Button" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=154491246]
 layout_mode = 2
-icon = ExtResource("3_i7xe7")
+icon = ExtResource("3_ns4ii")
+flat = true
 
 [node name="Separador2" type="Control" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=1791061419]
 custom_minimum_size = Vector2(5, 0)
@@ -61,7 +68,8 @@ layout_mode = 2
 [node name="ButtonSetaDir" type="Button" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=341463226]
 layout_mode = 2
 theme = ExtResource("1_i7xe7")
-icon = ExtResource("3_i7xe7")
+icon = ExtResource("4_ouk7q")
+flat = true
 
 [node name="HotBar" type="Control" parent="VBox" unique_id=274340694]
 layout_mode = 2
@@ -70,17 +78,17 @@ layout_mode = 2
 custom_minimum_size = Vector2(700, 0)
 layout_mode = 0
 offset_left = 11.0
-offset_top = 4.0
-offset_right = 711.0
-offset_bottom = 29.0
+offset_top = 8.0
+offset_right = 1921.0
+offset_bottom = 53.0
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme = ExtResource("1_i7xe7")
 
 [node name="Margin" type="MarginContainer" parent="VBox/HotBar/PanelAddress" unique_id=795615203]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 5
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
 
 [node name="LabelUrl" type="Label" parent="VBox/HotBar/PanelAddress/Margin" unique_id=35708277]
 layout_mode = 2
@@ -108,18 +116,21 @@ mouse_filter = 2
 
 [node name="ButtonMinimizar" type="Button" parent="PosControles/Controles" unique_id=231685938]
 layout_mode = 2
-icon = ExtResource("3_i7xe7")
+icon = ExtResource("5_mf5jd")
+flat = true
 
 [node name="ButtonMaximizar" type="Button" parent="PosControles/Controles" unique_id=1264854560]
 layout_mode = 2
-icon = ExtResource("3_i7xe7")
+icon = ExtResource("6_8q6ef")
+flat = true
 
 [node name="ButtonFechar" type="Button" parent="PosControles/Controles" unique_id=1879285661]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_color = Color(1, 0.57254905, 0.50980395, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.9137255, 0, 0, 1)
-icon = ExtResource("3_i7xe7")
+icon = ExtResource("7_cgj0l")
+flat = true
 
 [connection signal="pressed" from="VBox/MarginAbasBar/HBox/HBoxSetas/ButtonSetaEsq" to="." method="_clipar_move_esquerda"]
 [connection signal="pressed" from="VBox/MarginAbasBar/HBox/HBoxSetas/ButtonSetaDir" to="." method="_clipar_move_direita"]

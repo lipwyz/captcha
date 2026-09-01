@@ -49,7 +49,7 @@ sprite_imagem = NodePath("Sprite2D/Sprite2D")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1425726770]
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=1518678525]
-position = Vector2(136, 544)
+position = Vector2(135, 543)
 scale = Vector2(1, 1.0061729)
 texture = ExtResource("2_sa7vh")
 hframes = 3

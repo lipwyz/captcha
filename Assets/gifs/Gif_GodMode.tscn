@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bthx3u3fq3xif"]
 
-[ext_resource type="Texture2D" uid="uid://bfr46e6wli8d8" path="res://Assets/Sprites/sheets/godmode-Sheet.png" id="1_weu1a"]
+[ext_resource type="Texture2D" uid="uid://bfr46e6wli8d8" path="res://Assets/sprites/sheets/godmode-Sheet.png" id="1_weu1a"]
 [ext_resource type="Script" uid="uid://ba64veiiu4e71" path="res://scene/Anuncios/imagem_anuncio.gd" id="1_xf86w"]
 
 [sub_resource type="Animation" id="Animation_8scrq"]
@@ -45,6 +45,11 @@ _data = {
 [node name="GifGodMode" type="Node2D" unique_id=2028079400 node_paths=PackedStringArray("sprite_imagem")]
 script = ExtResource("1_xf86w")
 sprite_imagem = NodePath("Sprite2D/Sprite2D")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=256249093]
+offset_right = 801.0
+offset_bottom = 322.0
+color = Color(0.21950102, 0.21950102, 0.21950102, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=632998095]
 

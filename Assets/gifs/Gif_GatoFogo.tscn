@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://7lscoemnuqxv"]
 
 [ext_resource type="Script" uid="uid://ba64veiiu4e71" path="res://scene/Anuncios/imagem_anuncio.gd" id="1_1q1hf"]
-[ext_resource type="Texture2D" uid="uid://doyv3me7nhoef" path="res://Assets/Sprites/sheets/gatofogo_Sheet.png" id="2_2jm5q"]
+[ext_resource type="Texture2D" uid="uid://doyv3me7nhoef" path="res://Assets/sprites/sheets/gatofogo_Sheet.png" id="2_2jm5q"]
 
 [sub_resource type="Animation" id="Animation_2jm5q"]
 resource_name = "GifGatoFogo"
@@ -49,7 +49,7 @@ sprite_imagem = NodePath("Sprite2D/Sprite2D")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1425726770]
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=1518678525]
-position = Vector2(240, 152)
+position = Vector2(240, 150)
 texture = ExtResource("2_2jm5q")
 hframes = 5
 vframes = 5
