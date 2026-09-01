@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dp28ip4s4xggd"]
+
+[ext_resource type="Script" uid="uid://dvsgiilvktsnd" path="res://scene/Anuncios/anuncio_pop_up.gd" id="1_c0o18"]
+[ext_resource type="Texture2D" uid="uid://u71qsmuvvrwo" path="res://Assets/sprites/Navegador/anunciosverde 1.png" id="2_jb6fh"]
+[ext_resource type="Texture2D" uid="uid://d3yfn1gda0sek" path="res://Assets/sprites/Navegador/anunciosverdeheader.png" id="3_jb6fh"]
+[ext_resource type="Texture2D" uid="uid://c5wgtbk7dr5b3" path="res://Assets/sprites/Navegador/SinalXverde2.png" id="4_jb6fh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uw25j"]
+texture = ExtResource("3_jb6fh")
+region_rect = Rect2(0, 0, 1000, 63)
+
+[node name="AnuncioPopUp" type="Window" unique_id=1063998431 node_paths=PackedStringArray("botao_fechar", "local_imagem", "panel_container")]
+disable_3d = true
+gui_embed_subwindows = true
+oversampling_override = 1.0
+title = "Ad"
+size = Vector2i(1000, 1000)
+exclusive = true
+unresizable = true
+borderless = true
+always_on_top = true
+popup_wm_hint = true
+minimize_disabled = true
+maximize_disabled = true
+min_size = Vector2i(10, 10)
+script = ExtResource("1_c0o18")
+botao_fechar = NodePath("Header/PanelContainer/MarginContainer/ButtonX")
+local_imagem = NodePath("LocalImagem")
+panel_container = NodePath("Header/PanelContainer")
+
+[node name="ColorRect" type="TextureRect" parent="." unique_id=2020188374]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_jb6fh")
+expand_mode = 3
+
+[node name="LocalImagem" type="Control" parent="." unique_id=1303815417]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 70.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Header" type="Control" parent="." unique_id=1194486195]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Header" unique_id=1171333501]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 72.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_uw25j")
+
+[node name="MarginContainer" type="MarginContainer" parent="Header/PanelContainer" unique_id=1843195374]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 7
+
+[node name="ButtonX" type="Button" parent="Header/PanelContainer/MarginContainer" unique_id=1378207414]
+z_index = 10
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+icon = ExtResource("4_jb6fh")
+flat = true

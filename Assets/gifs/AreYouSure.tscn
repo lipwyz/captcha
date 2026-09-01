@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://fd7flgfbe8g4"]
+
+[ext_resource type="Texture2D" uid="uid://4xj3niamqyaj" path="res://Assets/sprites/sheets/Confirmacaov2-Sheet.png" id="1_quaho"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp0un"]
+atlas = ExtResource("1_quaho")
+region = Rect2(0, 0, 304, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydynt"]
+atlas = ExtResource("1_quaho")
+region = Rect2(304, 0, 304, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dyio"]
+atlas = ExtResource("1_quaho")
+region = Rect2(608, 0, 304, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojsd5"]
+atlas = ExtResource("1_quaho")
+region = Rect2(912, 0, 304, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl2wb"]
+atlas = ExtResource("1_quaho")
+region = Rect2(0, 78, 304, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6eiub"]
+atlas = ExtResource("1_quaho")
+region = Rect2(304, 78, 304, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy0ks"]
+atlas = ExtResource("1_quaho")
+region = Rect2(608, 78, 304, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7mje"]
+atlas = ExtResource("1_quaho")
+region = Rect2(912, 78, 304, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11e7j"]
+atlas = ExtResource("1_quaho")
+region = Rect2(0, 156, 304, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf2yd"]
+atlas = ExtResource("1_quaho")
+region = Rect2(304, 156, 304, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6mbj"]
+atlas = ExtResource("1_quaho")
+region = Rect2(608, 156, 304, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gybls"]
+atlas = ExtResource("1_quaho")
+region = Rect2(912, 156, 304, 78)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4jacx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pp0un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydynt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dyio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojsd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl2wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6eiub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy0ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7mje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11e7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf2yd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6mbj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gybls")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AreYouSure" type="Node2D" unique_id=924679204]
+
+[node name="Confirmacaov2Sheet" type="AnimatedSprite2D" parent="." unique_id=1107818004]
+position = Vector2(152, 39)
+sprite_frames = SubResource("SpriteFrames_4jacx")
+frame_progress = 0.46281725
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Confirmacaov2Sheet" unique_id=506097738]
