@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3yfn1gda0sek"
-path="res://.godot/imported/anunciosverdeheader.png-78da1fde3e2a094a1cd619f80d9ff76f.ctex"
+path="res://.godot/imported/anunciosverdeheader.png-a597640deae1975b70b669f6dfa8bf49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Navegador/anunciosverdeheader.png"
-dest_files=["res://.godot/imported/anunciosverdeheader.png-78da1fde3e2a094a1cd619f80d9ff76f.ctex"]
+source_file="res://Assets/anunciosverdeheader.png"
+dest_files=["res://.godot/imported/anunciosverdeheader.png-a597640deae1975b70b669f6dfa8bf49.ctex"]
 
 [params]
 
