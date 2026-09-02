@@ -19,7 +19,7 @@ shadow_color = Color(1, 1, 1, 1)
 shadow_offset = Vector2(0, 2.3)
 
 [node name="Aba" type="PanelContainer" unique_id=462069909]
-custom_minimum_size = Vector2(120, 32)
+custom_minimum_size = Vector2(150, 32)
 clip_contents = true
 theme = SubResource("Theme_4qwa5")
 theme_type_variation = &"abas"

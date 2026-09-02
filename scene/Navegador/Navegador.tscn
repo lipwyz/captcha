@@ -2,12 +2,11 @@
 
 [ext_resource type="Script" uid="uid://c7n3mushquyi5" path="res://scene/Navegador/Scripts/navegador.gd" id="1_1uexu"]
 [ext_resource type="PackedScene" uid="uid://roejgry65bjv" path="res://scene/Navegador/navegador_controles.tscn" id="2_1uexu"]
-[ext_resource type="Texture2D" uid="uid://cjkjgch72d6pu" path="res://Assets/sprites/Navegador/Navegador versao verde.png" id="2_8corq"]
+[ext_resource type="Texture2D" uid="uid://bfslysfpmvybf" path="res://Assets/sprites/Navegador/Navegador versao verde4.png" id="2_qffjp"]
 [ext_resource type="PackedScene" uid="uid://bfqh3fojnue4h" path="res://scene/Navegador/navegador_conteudo.tscn" id="3_e3m55"]
-[ext_resource type="FontFile" uid="uid://cu54dr01tswen" path="res://Assets/fontes/aseprite.ttf" id="4_qffjp"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qffjp"]
-texture = ExtResource("2_8corq")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ptms"]
+texture = ExtResource("2_qffjp")
 
 [node name="Navegador" type="Control" unique_id=1862273277]
 custom_minimum_size = Vector2(1200, 200)
@@ -26,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_qffjp")
+theme_override_styles/panel = SubResource("StyleBoxTexture_1ptms")
 
 [node name="VSplit" type="VSplitContainer" parent="Panel" unique_id=2135664842]
 layout_mode = 1
@@ -41,6 +40,7 @@ split_offset = 102
 
 [node name="NavegadorControles" parent="Panel/VSplit" unique_id=1883575481 instance=ExtResource("2_1uexu")]
 layout_mode = 2
+max_abas_mostradas = 7
 
 [node name="VBox" parent="Panel/VSplit/NavegadorControles" index="0" unique_id=981328887]
 offset_bottom = -46.0
@@ -49,10 +49,6 @@ offset_bottom = -46.0
 layout_mode = 1
 anchors_preset = -1
 offset_right = 1910.0
-
-[node name="LabelUrl" parent="Panel/VSplit/NavegadorControles/VBox/HotBar/PanelAddress/Margin" parent_id_path=PackedInt32Array(1883575481, 795615203) index="0" unique_id=35708277]
-theme_override_fonts/font = ExtResource("4_qffjp")
-theme_override_font_sizes/font_size = 19
 
 [node name="NavegadorConteudo" parent="Panel/VSplit" unique_id=811463956 node_paths=PackedStringArray("conteudos_abas_minimizadas") instance=ExtResource("3_e3m55")]
 layout_mode = 2

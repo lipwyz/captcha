@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u71qsmuvvrwo"
-path="res://.godot/imported/anunciosverde 1.png-0dd3af4f3a108e51ae1db8167bf39b08.ctex"
+uid="uid://d3yfn1gda0sek"
+path="res://.godot/imported/anunciosverdeheader.png-78da1fde3e2a094a1cd619f80d9ff76f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/anunciosverde 1.png"
-dest_files=["res://.godot/imported/anunciosverde 1.png-0dd3af4f3a108e51ae1db8167bf39b08.ctex"]
+source_file="res://Assets/sprites/Navegador/anunciosverdeheader.png"
+dest_files=["res://.godot/imported/anunciosverdeheader.png-78da1fde3e2a094a1cd619f80d9ff76f.ctex"]
 
 [params]
 

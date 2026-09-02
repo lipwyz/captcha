@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3yfn1gda0sek"
-path="res://.godot/imported/anunciosverdeheader.png-a597640deae1975b70b669f6dfa8bf49.ctex"
+uid="uid://deenwgsd2vdre"
+path="res://.godot/imported/Navegador versao verde3.png-cd7157ac880a3b24af4ba04f0954d34a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/anunciosverdeheader.png"
-dest_files=["res://.godot/imported/anunciosverdeheader.png-a597640deae1975b70b669f6dfa8bf49.ctex"]
+source_file="res://Assets/sprites/Navegador/Navegador versao verde3.png"
+dest_files=["res://.godot/imported/Navegador versao verde3.png-cd7157ac880a3b24af4ba04f0954d34a.ctex"]
 
 [params]
 
