@@ -27,7 +27,6 @@ color = Color(0.20198786, 0.2511889, 0.2982312, 1)
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-mouse_filter = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1091591559]
@@ -41,3 +40,5 @@ size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="MundoDVD" parent="SubViewportContainer/SubViewport" unique_id=1165485145 instance=ExtResource("2_g26if")]
+
+[connection signal="gui_input" from="SubViewportContainer" to="." method="_on_sub_viewport_container_gui_input"]
