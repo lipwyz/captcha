@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvacqks71oeys"
-path="res://.godot/imported/captcha.png-cff7fac87e2da1c7bcfea5807cce5eb1.ctex"
+path="res://.godot/imported/captcha.png-528afea9061c01ad367d64fa263de2b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Backgorund/captcha.png"
-dest_files=["res://.godot/imported/captcha.png-cff7fac87e2da1c7bcfea5807cce5eb1.ctex"]
+source_file="res://Assests/Background/captcha.png"
+dest_files=["res://.godot/imported/captcha.png-528afea9061c01ad367d64fa263de2b1.ctex"]
 
 [params]
 

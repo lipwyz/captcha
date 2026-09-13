@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0yxoj8bitua"
-path="res://.godot/imported/Windows-XP-Bliss-Wallpaper-4K-scaled.jpg-13bc5eeec4d1e6655b717f29c6ce0f09.ctex"
+uid="uid://dnskrxxvmc45v"
+path="res://.godot/imported/final.png-9aeab12b12494db003b88f0e8fe3d652.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/Background/Windows-XP-Bliss-Wallpaper-4K-scaled.jpg"
-dest_files=["res://.godot/imported/Windows-XP-Bliss-Wallpaper-4K-scaled.jpg-13bc5eeec4d1e6655b717f29c6ce0f09.ctex"]
+source_file="res://Assests/Background/final.png"
+dest_files=["res://.godot/imported/final.png-9aeab12b12494db003b88f0e8fe3d652.ctex"]
 
 [params]
 
