@@ -11,10 +11,7 @@ func _ready() -> void:
 # Quando o menu está visível, ele é ocultado;
 # caso contrário, ele é exibido.
 func toggle_visibility(object):
-	if object.visible:
-		object.visible = false
-	else:
-		object.visible = true
+	object.visible = not object.visible
 
 func _on_home_pressed() -> void:
 	toggle_visibility(start_menu)
