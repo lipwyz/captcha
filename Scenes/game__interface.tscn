@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://ba0g0ouba467x" path="res://Assests/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_Frame01a.png" id="4_vekql"]
 [ext_resource type="Texture2D" uid="uid://bfmnayssgjw2v" path="res://Assests/Icons_Essential/v1.2/Icons/SpeakerOn.png" id="7_vekql"]
 [ext_resource type="Texture2D" uid="uid://ba7vw1plvh3fp" path="res://Assests/Icons_Essential/v1.2/Icons/SpeakerMute.png" id="8_ba6fk"]
-[ext_resource type="Texture2D" uid="uid://chejqkl8if5w3" path="res://Assests/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_IconPlay01a.png" id="8_uidy0"]
 [ext_resource type="Texture2D" uid="uid://cpfvfwmpwbwva" path="res://Assests/Icons_Essential/v1.2/Icons/Sun.png" id="10_npdt4"]
 [ext_resource type="Texture2D" uid="uid://c7fsp2lp4ugst" path="res://Assests/Icons_Essential/v1.2/Icons/Lightbulb.png" id="11_5x2d3"]
 [ext_resource type="Texture2D" uid="uid://d1asgfged50xf" path="res://Assests/Icons_Essential/v1.2/Icons/Monitor.png" id="12_5x2d3"]
@@ -25,7 +24,7 @@ texture = ExtResource("3_jp6wb")
 expand_margin_top = 10.0
 expand_margin_bottom = 25.0
 region_rect = Rect2(448, 43, 32, 10)
-modulate_color = Color(0.5674396, 0.66708004, 0.8679301, 1)
+modulate_color = Color(0.5686275, 0.6666667, 0.8666667, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ke11"]
 texture = ExtResource("3_jp6wb")
@@ -34,15 +33,6 @@ expand_margin_top = 20.0
 expand_margin_right = 30.0
 expand_margin_bottom = 35.0
 region_rect = Rect2(232, 232, 16, 16)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uidy0"]
-bg_color = Color(0.9887057, 0.00038215815, 0.9003968, 1)
-corner_radius_top_left = 35
-corner_radius_top_right = 23
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-expand_margin_top = 7.0
-expand_margin_bottom = 7.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rn0nb"]
 texture = ExtResource("3_jp6wb")
@@ -111,8 +101,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -130.0
-offset_top = -140.10754
+offset_left = -116.0
+offset_top = -125.95697
 offset_right = -27.0
 offset_bottom = -36.0
 grow_horizontal = 0
@@ -121,29 +111,36 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_s5ilq")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_npdt4")
 theme_override_styles/hover = SubResource("StyleBoxTexture_npdt4")
 
-[node name="Sound&Bright" type="VBoxContainer" parent="PopupControler/StartMenu/OptionsControler" unique_id=676391094]
+[node name="Configs" type="VBoxContainer" parent="PopupControler/StartMenu/OptionsControler" unique_id=676391094]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 115
 
-[node name="Separator" type="Control" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright" unique_id=1271915181]
+[node name="Separator" type="Control" parent="PopupControler/StartMenu/OptionsControler/Configs" unique_id=1271915181]
+custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
-[node name="Sound" type="HBoxContainer" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright" unique_id=1223978154]
+[node name="Sound" type="HBoxContainer" parent="PopupControler/StartMenu/OptionsControler/Configs" unique_id=1223978154]
 layout_mode = 2
 theme_override_constants/separation = 60
 
-[node name="Separator" type="Control" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Sound" unique_id=57941932]
+[node name="Separator" type="Control" parent="PopupControler/StartMenu/OptionsControler/Configs/Sound" unique_id=57941932]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
-[node name="SoundOnTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Sound" unique_id=1870010547]
+[node name="SoundOnTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/Configs/Sound" unique_id=1870010547]
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_scale = Vector2(5.5, 5.5)
 texture = ExtResource("7_vekql")
 
-[node name="HScrollBar" type="HScrollBar" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Sound" unique_id=362674655]
+[node name="SoundSlider" type="HSlider" parent="PopupControler/StartMenu/OptionsControler/Configs/Sound" unique_id=768069114]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+value = 50.0
+
+[node name="HScrollBar" type="HScrollBar" parent="PopupControler/StartMenu/OptionsControler/Configs/Sound" unique_id=1029654681]
+visible = false
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_styles/scroll = SubResource("StyleBoxTexture_uidy0")
@@ -152,38 +149,33 @@ theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_6ke11")
 theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_6ke11")
 value = 50.0
 
-[node name="SoundSlider" type="HSlider" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Sound" unique_id=1291541420]
-visible = false
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-theme_override_icons/grabber = ExtResource("8_uidy0")
-theme_override_icons/grabber_highlight = ExtResource("8_uidy0")
-theme_override_icons/grabber_disabled = ExtResource("8_uidy0")
-theme_override_styles/slider = SubResource("StyleBoxFlat_uidy0")
-value = 50.0
-scrollable = false
-
-[node name="SoundMuteTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Sound" unique_id=294332906]
+[node name="SoundMuteTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/Configs/Sound" unique_id=294332906]
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_scale = Vector2(5.5, 5.5)
 texture = ExtResource("8_ba6fk")
 
-[node name="Bright" type="HBoxContainer" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright" unique_id=1821090856]
+[node name="Bright" type="HBoxContainer" parent="PopupControler/StartMenu/OptionsControler/Configs" unique_id=1821090856]
 layout_mode = 2
 theme_override_constants/separation = 60
 
-[node name="Separator" type="Control" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Bright" unique_id=1168313539]
+[node name="Separator" type="Control" parent="PopupControler/StartMenu/OptionsControler/Configs/Bright" unique_id=1168313539]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
-[node name="BrightOnTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Bright" unique_id=403148287]
+[node name="BrightOnTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/Configs/Bright" unique_id=403148287]
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_scale = Vector2(5.5, 5.5)
 texture = ExtResource("10_npdt4")
 
-[node name="HScrollBar" type="HScrollBar" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Bright" unique_id=289220453]
+[node name="BrightSlider" type="HSlider" parent="PopupControler/StartMenu/OptionsControler/Configs/Bright" unique_id=1925708319]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+value = 50.0
+
+[node name="HScrollBar" type="HScrollBar" parent="PopupControler/StartMenu/OptionsControler/Configs/Bright" unique_id=614440129]
+visible = false
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_styles/scroll = SubResource("StyleBoxTexture_uidy0")
@@ -192,39 +184,25 @@ theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_6ke11")
 theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_6ke11")
 value = 50.0
 
-[node name="BrightSlider" type="HSlider" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Bright" unique_id=473443674]
-visible = false
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-theme_override_icons/grabber = ExtResource("8_uidy0")
-theme_override_icons/grabber_highlight = ExtResource("8_uidy0")
-theme_override_icons/grabber_disabled = ExtResource("8_uidy0")
-theme_override_styles/slider = SubResource("StyleBoxFlat_uidy0")
-value = 50.0
-scrollable = false
-
-[node name="BrightOffTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Bright" unique_id=1964472167]
+[node name="BrightOffTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/Configs/Bright" unique_id=1964472167]
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_scale = Vector2(5.5, 5.5)
 texture = ExtResource("11_5x2d3")
 
-[node name="Resolution" type="HBoxContainer" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright" unique_id=1913176868]
+[node name="Resolution" type="HBoxContainer" parent="PopupControler/StartMenu/OptionsControler/Configs" unique_id=1913176868]
 layout_mode = 2
 theme_override_constants/separation = 60
 
-[node name="Separator" type="Control" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Resolution" unique_id=1461037926]
+[node name="Separator" type="Control" parent="PopupControler/StartMenu/OptionsControler/Configs/Resolution" unique_id=1461037926]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
-[node name="ResolutionTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Resolution" unique_id=708515529]
+[node name="ResolutionTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/Configs/Resolution" unique_id=708515529]
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_scale = Vector2(5.5, 5.5)
 texture = ExtResource("12_5x2d3")
-
-[node name="OptionButton" type="OptionButton" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Resolution" unique_id=257279568]
-layout_mode = 2
 
 [node name="TaskBar" type="Control" parent="PopupControler" unique_id=106432036]
 layout_mode = 1
@@ -241,10 +219,10 @@ grow_vertical = 0
 
 [node name="Texture" type="NinePatchRect" parent="PopupControler/TaskBar" unique_id=439659869]
 layout_mode = 0
-offset_right = 1921.0
+offset_right = 1974.0
 offset_bottom = 67.0
 texture = ExtResource("3_jp6wb")
-region_rect = Rect2(481, 42, 30, 12)
+region_rect = Rect2(481, 42, 31, 12)
 
 [node name="Home" type="Button" parent="PopupControler/TaskBar" unique_id=1115555135]
 layout_mode = 0
