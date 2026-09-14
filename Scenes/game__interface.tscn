@@ -11,13 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://chejqkl8if5w3" path="res://Assests/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_IconPlay01a.png" id="8_uidy0"]
 [ext_resource type="Texture2D" uid="uid://cpfvfwmpwbwva" path="res://Assests/Icons_Essential/v1.2/Icons/Sun.png" id="10_npdt4"]
 [ext_resource type="Texture2D" uid="uid://c7fsp2lp4ugst" path="res://Assests/Icons_Essential/v1.2/Icons/Lightbulb.png" id="11_5x2d3"]
+[ext_resource type="Texture2D" uid="uid://d1asgfged50xf" path="res://Assests/Icons_Essential/v1.2/Icons/Monitor.png" id="12_5x2d3"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nvg7y"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s5ilq"]
 texture = ExtResource("3_hemqk")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_26dyl"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_npdt4"]
 texture = ExtResource("3_hemqk")
-modulate_color = Color(0.80049086, 0.80049074, 0.80049074, 1)
+modulate_color = Color(0.81325716, 0.8132579, 0.81325734, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uidy0"]
 texture = ExtResource("3_jp6wb")
@@ -103,27 +104,26 @@ theme_override_constants/margin_bottom = 25
 layout_mode = 2
 texture = ExtResource("4_vekql")
 
-[node name="Quit" type="Button" parent="PopupControler/StartMenu/OptionsControler/OptionsColor" unique_id=1471843377]
+[node name="Quit" type="Button" parent="PopupControler/StartMenu/OptionsControler/OptionsColor" unique_id=922509482]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -107.0
-offset_top = -115.0
-offset_right = -25.0
-offset_bottom = -33.0
+offset_left = -130.0
+offset_top = -140.10754
+offset_right = -27.0
+offset_bottom = -36.0
 grow_horizontal = 0
 grow_vertical = 0
-offset_transform_enabled = true
-theme_override_styles/normal = SubResource("StyleBoxTexture_nvg7y")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_26dyl")
-theme_override_styles/hover = SubResource("StyleBoxTexture_26dyl")
-action_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_s5ilq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_npdt4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_npdt4")
 
 [node name="Sound&Bright" type="VBoxContainer" parent="PopupControler/StartMenu/OptionsControler" unique_id=676391094]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 100
 
 [node name="Separator" type="Control" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright" unique_id=1271915181]
@@ -192,7 +192,7 @@ theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_6ke11")
 theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_6ke11")
 value = 50.0
 
-[node name="SoundSlider" type="HSlider" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Bright" unique_id=473443674]
+[node name="BrightSlider" type="HSlider" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Bright" unique_id=473443674]
 visible = false
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
@@ -208,6 +208,23 @@ layout_mode = 2
 offset_transform_enabled = true
 offset_transform_scale = Vector2(5.5, 5.5)
 texture = ExtResource("11_5x2d3")
+
+[node name="Resolution" type="HBoxContainer" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright" unique_id=1913176868]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Separator" type="Control" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Resolution" unique_id=1461037926]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="ResolutionTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Resolution" unique_id=708515529]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(5.5, 5.5)
+texture = ExtResource("12_5x2d3")
+
+[node name="OptionButton" type="OptionButton" parent="PopupControler/StartMenu/OptionsControler/Sound&Bright/Resolution" unique_id=257279568]
+layout_mode = 2
 
 [node name="TaskBar" type="Control" parent="PopupControler" unique_id=106432036]
 layout_mode = 1
