@@ -15,10 +15,11 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s5ilq"]
 texture = ExtResource("5_5x2d3")
+modulate_color = Color(1.437, 1.437, 1.437, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_npdt4"]
 texture = ExtResource("5_5x2d3")
-modulate_color = Color(0.81325716, 0.8132579, 0.81325734, 1)
+modulate_color = Color(1.1707904, 1.1707904, 1.1707904, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uidy0"]
 texture = ExtResource("3_jp6wb")
