@@ -13,9 +13,6 @@ extends Node
 @export var gerenciador_cut_scene_inicial: GerenciadorCutSceneInicial
 @export var gerenciador_anuncios: GerenciadorAnuncios
 
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_cancel"):
-		GerenciadorGlobal.chamar_menu_inicial()
 
 func _ready() -> void:
 	GerenciadorGlobal.gerenciador_jogo = self
