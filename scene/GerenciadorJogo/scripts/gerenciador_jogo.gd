@@ -71,6 +71,7 @@ func _gerenciadores_conectar_sinais() -> void:
 
 func _proximo_mini_game() -> void:
 	gerenciador_mini_games.comecar_mini_game(navegador)
+	gerenciador_pontuacao.marcar_ganhou_mini_game()
 
 func _perder_mini_game() -> void:
 	navegador.fechar_todas_abas_exceto_padrao()
@@ -80,6 +81,7 @@ func _perder_mini_game() -> void:
 
 func _spawnar_anuncio() -> void:
 	gerenciador_anuncios.spawnar_anuncio()
+	gerenciador_pontuacao.marcar_spawnou_anuncio()
 
 # -----------------------------------------------------------------------------
 # Area Trabalho
