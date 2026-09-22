@@ -59,7 +59,7 @@ func _get_mini_game(dificuldade: ListaMiniGamesRes.Dificuldade) -> MiniGameRes:
 
 ## Pega um mini game da lista, cria e adiciona como nova aba do navegador
 ## e conecta os sinais do mini game
-func iniciar_mini_games(navegador: Navegador) -> void:
+func comecar_mini_game(navegador: Navegador) -> void:
 	var minigame_res : MiniGameRes = _get_mini_game(ListaMiniGamesRes.Dificuldade.FACIL)
 	var conteudo_aba : ConteudoAba = minigame_res.navegador_add_mini_game(navegador)
 	# conecta os sinais

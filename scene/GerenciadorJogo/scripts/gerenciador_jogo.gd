@@ -58,13 +58,15 @@ func _gerenciadores_conectar_sinais() -> void:
 # Mini Games
 # -----------------------------------------------------------------------------
 
-func iniciar_mini_games() -> void:
-	gerenciador_mini_games.iniciar_mini_games(navegador)
+## Chamado quando for para iniciar o jogo,
+## mostrando o primeiro mini game, dando sequencia aos multiplos mini games
+func iniciar_o_jogo() -> void:
+	gerenciador_mini_games.comecar_mini_game(navegador)
 	# inicia a contagem da pontuacao
 	gerenciador_pontuacao.iniciar_contagem()
 
 func proximo_mini_game() -> void:
-	iniciar_mini_games()
+	gerenciador_mini_games.comecar_mini_game(navegador)
 
 func perder_mini_game() -> void:
 	navegador.fechar_todas_abas_exceto_padrao()
