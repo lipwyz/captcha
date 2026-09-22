@@ -12,6 +12,7 @@ extends Node
 @export var gerenciador_mini_games: GerenciadorMiniGames
 @export var gerenciador_cut_scene_inicial: GerenciadorCutSceneInicial
 @export var gerenciador_anuncios: GerenciadorAnuncios
+@export var gerenciador_pontuacao: GerenciadorPontuacao
 
 
 func _ready() -> void:
@@ -59,6 +60,8 @@ func _gerenciadores_conectar_sinais() -> void:
 
 func iniciar_mini_games() -> void:
 	gerenciador_mini_games.iniciar_mini_games(navegador)
+	# inicia a contagem da pontuacao
+	gerenciador_pontuacao.iniciar_contagem()
 
 func proximo_mini_game() -> void:
 	iniciar_mini_games()
