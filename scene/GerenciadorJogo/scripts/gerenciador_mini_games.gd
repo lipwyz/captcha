@@ -23,9 +23,14 @@ var listas_por_dificuldade : Dictionary[ListaMiniGamesRes.Dificuldade, Array] = 
 ## que o jogador nao precisa mais interagir com eles [/i]
 var mini_games_nao_completados : Array[ConteudoAba]
 
+var mini_games_completados_qtde : int = 0
 
 func _ready() -> void:
 	_reset_mini_games(ListaMiniGamesRes.Dificuldade.FACIL)
+	zerar_valores()
+
+func zerar_valores() -> void:
+	mini_games_completados_qtde = 0
 
 # -----------------------------------------------------------------------------
 # Lista de Mini games
@@ -81,6 +86,9 @@ func _ganhou_minigame(minigame: ConteudoAba) -> void:
 	if minigame in mini_games_nao_completados:
 		# retira da lista e emite o sinal
 		mini_games_nao_completados.erase(minigame)
+		# adiciona 1 em completados
+		mini_games_completados_qtde += 1
+		# emite o sinal que completou
 		ganhou_minigame.emit()
 
 func _perdeu_minigame(minigame: ConteudoAba) -> void:

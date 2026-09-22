@@ -14,6 +14,14 @@ extends Node
 @export var gerenciador_anuncios: GerenciadorAnuncios
 @export var gerenciador_pontuacao: GerenciadorPontuacao
 
+@export_group("Valores")
+## Quantidade de mini games completos necessaria para terminar a Run
+@export var qtde_mini_games_completos_terminar : int = 10
+
+## Jogo esta acontecendo atualmente?
+## True em 'iniciar_o_jogo'
+## False em '_terminar_o_jogo'
+var esta_acontecendo_jogo : bool = false
 
 func _ready() -> void:
 	GerenciadorGlobal.gerenciador_jogo = self
@@ -53,9 +61,26 @@ func criar_aba_inicial() -> void:
 ## Chamado quando for para iniciar o jogo,
 ## mostrando o primeiro mini game, dando sequencia aos multiplos mini games
 func iniciar_o_jogo() -> void:
+	esta_acontecendo_jogo = true
+	# comeca o primeiro mini game
+	gerenciador_mini_games.zerar_valores()
 	gerenciador_mini_games.comecar_mini_game(navegador)
 	# inicia a contagem da pontuacao
 	gerenciador_pontuacao.iniciar_contagem()
+
+func _terminar_o_jogo() -> void:
+	# se nao tiver mais acontecendo, nao tem o que terminar, pare
+	if not esta_acontecendo_jogo: return
+	
+	# marca que o jogo terminou
+	esta_acontecendo_jogo = false
+	# para de contar os pontos
+	gerenciador_pontuacao.parar_contagem()
+	# TODO: tela de fim de jogo
+	print("tempo_total_segundos: ", gerenciador_pontuacao.tempo_total_segundos)
+	print("mini_games_ganhos: ",    gerenciador_pontuacao.mini_games_ganhos)
+	print("anuncios_spawnados: ",   gerenciador_pontuacao.anuncios_spawnados)
+
 
 # -----------------------------------------------------------------------------
 # Gerenciadores
@@ -70,7 +95,13 @@ func _gerenciadores_conectar_sinais() -> void:
 # -----------------------------------------------------------------------------
 
 func _proximo_mini_game() -> void:
+	# se completou a quantidade necessaria para terminar o jogo, termine e pare
+	if gerenciador_mini_games.mini_games_completados_qtde >= qtde_mini_games_completos_terminar:
+		_terminar_o_jogo()
+		return
+	# se tiver mais mini games, crie outro mini game
 	gerenciador_mini_games.comecar_mini_game(navegador)
+	# marca na pontuacao
 	gerenciador_pontuacao.marcar_ganhou_mini_game()
 
 func _perder_mini_game() -> void:
