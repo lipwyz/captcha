@@ -1,6 +1,8 @@
 class_name GerenciadorPontuacao
 extends Node
 
+@export var cor_fim := Color.GREEN_YELLOW
+
 @onready var label_tempo: Label = $%LabelTempo
 
 var tempo_total_segundos : float = 0.0
@@ -24,6 +26,11 @@ func iniciar_contagem() -> void:
 	mini_games_ganhos = 0
 	anuncios_spawnados = 0
 
+## Para a contagem dessa run, pausando os valores
+func parar_contagem() -> void:
+	# contagem de tempo
+	set_process(false)
+	label_tempo.modulate = cor_fim
 
 # Marcadores
 # -----------------------------------------------------------------------------

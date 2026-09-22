@@ -19,6 +19,7 @@ gerenciador_mini_games = NodePath("GerenciadorMiniGames")
 gerenciador_cut_scene_inicial = NodePath("GerenciadorCutSceneInicial")
 gerenciador_anuncios = NodePath("GerenciadorAnuncios")
 gerenciador_pontuacao = NodePath("GerenciadorPontuacao")
+qtde_mini_games_completos_terminar = 5
 
 [node name="GerenciadorMiniGames" type="Node" parent="." unique_id=1644025296]
 script = ExtResource("2_im48h")
