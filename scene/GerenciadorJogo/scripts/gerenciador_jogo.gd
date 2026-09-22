@@ -45,17 +45,9 @@ func criar_aba_inicial() -> void:
 	## coloca essa aba como a padrao
 	navegador.aba_padrao = aba_abode
 
-# -----------------------------------------------------------------------------
-# Gerenciadores
-# -----------------------------------------------------------------------------
-
-func _gerenciadores_conectar_sinais() -> void:
-	gerenciador_mini_games.pedir_anuncio.connect(gerenciador_anuncios.spawnar_anuncio)
-	gerenciador_mini_games.ganhou_minigame.connect(proximo_mini_game)
-	gerenciador_mini_games.perdeu_minigame.connect(perder_mini_game)
 
 # -----------------------------------------------------------------------------
-# Mini Games
+# Jogo - Sequencia de mini games
 # -----------------------------------------------------------------------------
 
 ## Chamado quando for para iniciar o jogo,
@@ -65,11 +57,29 @@ func iniciar_o_jogo() -> void:
 	# inicia a contagem da pontuacao
 	gerenciador_pontuacao.iniciar_contagem()
 
-func proximo_mini_game() -> void:
+# -----------------------------------------------------------------------------
+# Gerenciadores
+# -----------------------------------------------------------------------------
+
+func _gerenciadores_conectar_sinais() -> void:
+	gerenciador_mini_games.ganhou_minigame.connect(_proximo_mini_game)
+	gerenciador_mini_games.perdeu_minigame.connect(_perder_mini_game)
+	gerenciador_mini_games.pedir_anuncio.connect(_spawnar_anuncio)
+
+# Mini Games
+# -----------------------------------------------------------------------------
+
+func _proximo_mini_game() -> void:
 	gerenciador_mini_games.comecar_mini_game(navegador)
 
-func perder_mini_game() -> void:
+func _perder_mini_game() -> void:
 	navegador.fechar_todas_abas_exceto_padrao()
+
+# Anuncios
+# -----------------------------------------------------------------------------
+
+func _spawnar_anuncio() -> void:
+	gerenciador_anuncios.spawnar_anuncio()
 
 # -----------------------------------------------------------------------------
 # Area Trabalho
