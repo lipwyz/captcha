@@ -14,7 +14,7 @@ func _on_button_credits_pressed() -> void:
 	_deletar_isso()
 
 func _on_button_exit_pressed() -> void:
-	get_tree().quit()
+	GerenciadorGlobal.chamar_fechar_jogo()
 
 # TODO: deletar
 func _deletar_isso() -> void:

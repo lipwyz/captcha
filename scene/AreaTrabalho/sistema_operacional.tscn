@@ -1,0 +1,356 @@
+[gd_scene format=3 uid="uid://cmjkjtl57hod5"]
+
+[ext_resource type="Texture2D" uid="uid://6bpw5mg7445b" path="res://Assets/sprites/Area de Trabalho/wallpaper final.png" id="1_abxv0"]
+[ext_resource type="Script" uid="uid://c17f1e3gmpglp" path="res://scene/AreaTrabalho/popup_controler.gd" id="2_dwtea"]
+[ext_resource type="Texture2D" uid="uid://8cexv7crttk4" path="res://Assets/area_trabalho/Complete_UI_Essential_Pack_Free/Spritesheet_UI_Flat.png" id="3_2c0mf"]
+[ext_resource type="Texture2D" uid="uid://ba0g0ouba467x" path="res://Assets/area_trabalho/Complete_UI_Essential_Pack_Free/UI_Flat_Frame01a.png" id="4_iswkc"]
+[ext_resource type="Texture2D" uid="uid://cutw1y4dpyx2x" path="res://Assets/area_trabalho/UI_MENU/Shutdown.webp" id="5_6n25r"]
+[ext_resource type="Texture2D" uid="uid://cy6xwsoki71xs" path="res://Assets/area_trabalho/UI_MENU/SoundOn.webp" id="6_35k3i"]
+[ext_resource type="Texture2D" uid="uid://dxge0uqkexklw" path="res://Assets/area_trabalho/UI_MENU/SoundOff.webp" id="7_n746j"]
+[ext_resource type="Texture2D" uid="uid://cueqvkcne5shf" path="res://Assets/area_trabalho/UI_MENU/MusicOn.webp" id="8_31o4x"]
+[ext_resource type="Texture2D" uid="uid://dv0q0inu581ql" path="res://Assets/area_trabalho/UI_MENU/MusicOff.webp" id="9_m3tf5"]
+[ext_resource type="Texture2D" uid="uid://do4w2q6jyv5l6" path="res://Assets/area_trabalho/UI_MENU/BrightOn.webp" id="10_mt2k0"]
+[ext_resource type="Texture2D" uid="uid://cxy31ocajq5lu" path="res://Assets/area_trabalho/UI_MENU/BrightOff.webp" id="11_vaaep"]
+[ext_resource type="FontFile" uid="uid://dv8rssbfo4k7y" path="res://Assets/fonts/webfontkit-BoldPixels/BoldPixels.otf" id="12_580o2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s5ilq"]
+texture = ExtResource("5_6n25r")
+modulate_color = Color(1.437, 1.437, 1.437, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_npdt4"]
+texture = ExtResource("5_6n25r")
+modulate_color = Color(1.1707904, 1.1707904, 1.1707904, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uidy0"]
+texture = ExtResource("3_2c0mf")
+expand_margin_top = 10.0
+expand_margin_bottom = 25.0
+region_rect = Rect2(448, 43, 32, 10)
+modulate_color = Color(0.5686275, 0.6666667, 0.8666667, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ke11"]
+texture = ExtResource("3_2c0mf")
+expand_margin_left = 30.0
+expand_margin_top = 20.0
+expand_margin_right = 30.0
+expand_margin_bottom = 35.0
+region_rect = Rect2(232, 232, 16, 16)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4bpa"]
+bg_color = Color(0.5294118, 0.5764706, 0.6392157, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcbku"]
+bg_color = Color(0.5294118, 0.5764706, 0.6392157, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lq2d0"]
+bg_color = Color(0.5294118, 0.5764706, 0.6392157, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rn0nb"]
+texture = ExtResource("3_2c0mf")
+region_rect = Rect2(224, 33, 97, 62)
+modulate_color = Color(0.30980393, 0.8392157, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8cnwq"]
+texture = ExtResource("3_2c0mf")
+region_rect = Rect2(224, 33, 97, 62)
+modulate_color = Color(0.2826591, 0.7726796, 0, 1)
+
+[node name="SistemaOperacional" type="Control" unique_id=772791988]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1599389046]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_abxv0")
+expand_mode = 2
+
+[node name="PopupControler" type="Control" parent="." unique_id=1894064436]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_dwtea")
+
+[node name="StartMenu" type="MarginContainer" parent="PopupControler" unique_id=794531328]
+layout_mode = 0
+offset_top = 304.0
+offset_right = 629.0
+offset_bottom = 1013.0
+
+[node name="BlueTexture" type="NinePatchRect" parent="PopupControler/StartMenu" unique_id=1074005476]
+layout_mode = 2
+texture = ExtResource("3_2c0mf")
+region_rect = Rect2(129, 34, 94, 60)
+
+[node name="OptionsControler" type="MarginContainer" parent="PopupControler/StartMenu" unique_id=1758735122]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="OptionsColor" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler" unique_id=1700935824]
+layout_mode = 2
+texture = ExtResource("4_iswkc")
+
+[node name="Quit" type="Button" parent="PopupControler/StartMenu/OptionsControler/OptionsColor" unique_id=922509482]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -135.0
+offset_top = -140.0
+offset_right = -26.0
+offset_bottom = -29.827942
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_s5ilq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_npdt4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_npdt4")
+
+[node name="Configs" type="VBoxContainer" parent="PopupControler/StartMenu/OptionsControler/OptionsColor" unique_id=676391094]
+layout_mode = 0
+offset_right = 630.0
+offset_bottom = 606.0
+mouse_filter = 2
+theme_override_constants/separation = 115
+
+[node name="Separator" type="Control" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs" unique_id=1271915181]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="Sound" type="HBoxContainer" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs" unique_id=1223978154]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Separator" type="Control" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs/Sound" unique_id=57941932]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="SoundOnTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs/Sound" unique_id=1870010547]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(3, 3)
+texture = ExtResource("6_35k3i")
+
+[node name="SoundSlider" type="HSlider" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs/Sound" unique_id=768069114]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+value = 50.0
+
+[node name="HScrollBar" type="HScrollBar" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs/Sound" unique_id=1029654681]
+visible = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_styles/scroll = SubResource("StyleBoxTexture_uidy0")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_6ke11")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_6ke11")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_6ke11")
+value = 50.0
+
+[node name="SoundMuteTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs/Sound" unique_id=294332906]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(3, 3)
+texture = ExtResource("7_n746j")
+
+[node name="Music" type="HBoxContainer" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs" unique_id=1913176868]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Separator" type="Control" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs/Music" unique_id=1461037926]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="MusicOnTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs/Music" unique_id=708515529]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(3, 3)
+texture = ExtResource("8_31o4x")
+
+[node name="SoundSlider" type="HSlider" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs/Music" unique_id=1285275581]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+value = 50.0
+
+[node name="HScrollBar" type="HScrollBar" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs/Music" unique_id=2058971883]
+visible = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_styles/scroll = SubResource("StyleBoxTexture_uidy0")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_6ke11")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_6ke11")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_6ke11")
+value = 50.0
+
+[node name="MusicOffTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs/Music" unique_id=2105419587]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(3, 3)
+texture = ExtResource("9_m3tf5")
+
+[node name="Bright" type="HBoxContainer" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs" unique_id=1821090856]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Separator" type="Control" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs/Bright" unique_id=1168313539]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="BrightOnTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs/Bright" unique_id=403148287]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(3, 3)
+texture = ExtResource("10_mt2k0")
+
+[node name="BrightSlider" type="HSlider" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs/Bright" unique_id=1925708319]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+value = 50.0
+
+[node name="HScrollBar" type="HScrollBar" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs/Bright" unique_id=614440129]
+visible = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_styles/scroll = SubResource("StyleBoxTexture_uidy0")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_6ke11")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_6ke11")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_6ke11")
+value = 50.0
+
+[node name="BrightOffTexture" type="TextureRect" parent="PopupControler/StartMenu/OptionsControler/OptionsColor/Configs/Bright" unique_id=1964472167]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(4, 4)
+texture = ExtResource("11_vaaep")
+
+[node name="QuitMenu" type="MarginContainer" parent="PopupControler" unique_id=1911409515]
+layout_mode = 0
+offset_left = 574.0
+offset_top = 593.0
+offset_right = 962.0
+offset_bottom = 927.0
+
+[node name="QuitControler" type="MarginContainer" parent="PopupControler/QuitMenu" unique_id=1643748591]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="QuitColor" type="TextureRect" parent="PopupControler/QuitMenu/QuitControler" unique_id=914794865]
+layout_mode = 2
+texture = ExtResource("4_iswkc")
+
+[node name="QuitOptions" type="CenterContainer" parent="PopupControler/QuitMenu/QuitControler" unique_id=339674222]
+layout_mode = 2
+
+[node name="QuitOptions" type="VBoxContainer" parent="PopupControler/QuitMenu/QuitControler/QuitOptions" unique_id=1397974076]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="MainMenu" type="Button" parent="PopupControler/QuitMenu/QuitControler/QuitOptions/QuitOptions" unique_id=1403328656]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_580o2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_a4bpa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qcbku")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lq2d0")
+text = "Quit to Main 
+Menu"
+
+[node name="Desktop" type="Button" parent="PopupControler/QuitMenu/QuitControler/QuitOptions/QuitOptions" unique_id=1973255626]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_580o2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_a4bpa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qcbku")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lq2d0")
+text = "Quit to Desktop"
+
+[node name="TaskBar" type="Control" parent="PopupControler" unique_id=106432036]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -67.0
+offset_right = 961.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Texture" type="NinePatchRect" parent="PopupControler/TaskBar" unique_id=439659869]
+layout_mode = 0
+offset_right = 1974.0
+offset_bottom = 67.0
+texture = ExtResource("3_2c0mf")
+region_rect = Rect2(481, 42, 31, 12)
+
+[node name="Home" type="Button" parent="PopupControler/TaskBar" unique_id=1115555135]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 225.0
+offset_bottom = 62.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_rn0nb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8cnwq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8cnwq")
+
+[connection signal="pressed" from="PopupControler/StartMenu/OptionsControler/OptionsColor/Quit" to="PopupControler" method="_on_quit_pressed"]
+[connection signal="pressed" from="PopupControler/QuitMenu/QuitControler/QuitOptions/QuitOptions/MainMenu" to="PopupControler" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PopupControler/QuitMenu/QuitControler/QuitOptions/QuitOptions/Desktop" to="PopupControler" method="_on_desktop_pressed"]
+[connection signal="mouse_entered" from="PopupControler/TaskBar/Home" to="PopupControler" method="_on_home_mouse_entered"]
+[connection signal="pressed" from="PopupControler/TaskBar/Home" to="PopupControler" method="_on_home_pressed"]
