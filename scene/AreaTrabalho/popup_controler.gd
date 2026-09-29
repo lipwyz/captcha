@@ -29,8 +29,8 @@ func _on_quit_pressed() -> void:
 
 # Função chamada quando o botão "Desktop" for pressionado.
 func _on_desktop_pressed() -> void:
-	get_tree().quit()
+	GerenciadorGlobal.chamar_fechar_jogo()
 
 # Função chamada quando o botão "Main Menu" for pressionado.
 func _on_main_menu_pressed() -> void:
-	pass # Replace with function body.
+	GerenciadorGlobal.chamar_menu_inicial()
