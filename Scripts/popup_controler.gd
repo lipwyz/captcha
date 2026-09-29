@@ -5,10 +5,8 @@ extends Control
 
 
 func _ready() -> void:
-	if start_menu.visible and quit_menu.visible:
-		toggle_visibility(start_menu)
-		toggle_visibility(quit_menu)
-
+	if start_menu.visible: start_menu.hide()
+	if quit_menu.visible: quit_menu.hide()
 
 # Alterna a visibilidade do popup menu.
 # Quando o menu está visível, ele é ocultado;
