@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddpoxfidbsyws"
-path="res://.godot/imported/fundo2.png-2fb81ffbb2ab65adbd474c339e8223de.ctex"
+uid="uid://deenwgsd2vdre"
+path="res://.godot/imported/Navegador versao verde3.png-cd7157ac880a3b24af4ba04f0954d34a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Area de Trabalho/fundo2.png"
-dest_files=["res://.godot/imported/fundo2.png-2fb81ffbb2ab65adbd474c339e8223de.ctex"]
+source_file="res://Assets/sprites/Navegador/Navegador versao verde3.png"
+dest_files=["res://.godot/imported/Navegador versao verde3.png-cd7157ac880a3b24af4ba04f0954d34a.ctex"]
 
 [params]
 

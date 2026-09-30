@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cs57c0ei2xtiq"]
 
-[ext_resource type="Texture2D" uid="uid://cb00rsdqxc2qf" path="res://Assets/Sprites/sheets/gif.gato.png" id="1_elafl"]
+[ext_resource type="Texture2D" uid="uid://cb00rsdqxc2qf" path="res://Assets/sprites/sheets/gif.gato.png" id="1_elafl"]
 [ext_resource type="Script" uid="uid://ba64veiiu4e71" path="res://scene/Anuncios/imagem_anuncio.gd" id="1_sijle"]
 
 [sub_resource type="Animation" id="Animation_uwq7i"]

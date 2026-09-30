@@ -50,7 +50,7 @@ sprite_imagem = NodePath("Gif/Sprite2D")
 [node name="Gif" type="Sprite2D" parent="." unique_id=677030562]
 
 [node name="Sprite2D" type="Sprite2D" parent="Gif" unique_id=82832910]
-position = Vector2(240, 104)
+position = Vector2(240, 100)
 texture = ExtResource("2_4njlv")
 hframes = 5
 vframes = 5

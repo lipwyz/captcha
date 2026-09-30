@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://durm5cdlr5h28"
-path="res://.godot/imported/pixel_font.ttf-25cdbfe69c627032e934ad86b3415b8e.fontdata"
+uid="uid://cu54dr01tswen"
+path="res://.godot/imported/aseprite.ttf-b442f262db41b47f16931dfe6ba83828.fontdata"
 
 [deps]
 
-source_file="res://Assets/fonts/pixel_font.ttf"
-dest_files=["res://.godot/imported/pixel_font.ttf-25cdbfe69c627032e934ad86b3415b8e.fontdata"]
+source_file="res://Assets/fonts/aseprite.ttf"
+dest_files=["res://.godot/imported/aseprite.ttf-b442f262db41b47f16931dfe6ba83828.fontdata"]
 
 [params]
 

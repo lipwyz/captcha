@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://roejgry65bjv"]
 
-[ext_resource type="Theme" uid="uid://cj0agp435nvsu" path="res://Themes/new_theme.tres" id="1_i7xe7"]
+[ext_resource type="Theme" uid="uid://cj0agp435nvsu" path="res://themes/new_theme.tres" id="1_i7xe7"]
 [ext_resource type="Script" uid="uid://cnbh364hlf6ow" path="res://scene/Navegador/Scripts/navegador_controles.gd" id="1_ouk7q"]
-[ext_resource type="Texture2D" uid="uid://dttw0dj2ycnm1" path="res://Assets/Sprites/Navegador/sinal2.png" id="3_i7xe7"]
+[ext_resource type="Texture2D" uid="uid://cggv0anwcknyt" path="res://Assets/sprites/Navegador/SetaEverde2.png" id="3_mf5jd"]
+[ext_resource type="Texture2D" uid="uid://cdfdj6s3th44h" path="res://Assets/sprites/Navegador/SetaDverde3.png" id="4_8q6ef"]
+[ext_resource type="FontFile" uid="uid://cu54dr01tswen" path="res://Assets/fonts/aseprite.ttf" id="5_8q6ef"]
+[ext_resource type="Texture2D" uid="uid://5ody4jnnkwts" path="res://Assets/sprites/Navegador/Sinal-verde2.png" id="5_mf5jd"]
+[ext_resource type="Texture2D" uid="uid://dqa1ul08jx7i6" path="res://Assets/sprites/Navegador/Sinal[]verde2.png" id="6_8q6ef"]
+[ext_resource type="Texture2D" uid="uid://d10ntqeaiu1t2" path="res://Assets/sprites/Navegador/SinalXverde3png.png" id="7_cgj0l"]
 
 [node name="NavegadorControles" type="Panel" unique_id=1818094128 node_paths=PackedStringArray("label_url", "h_box_abas", "h_box_setas")]
 custom_minimum_size = Vector2(0, 100)
@@ -26,14 +31,17 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1, 0.99310535)
 
 [node name="MarginAbasBar" type="MarginContainer" parent="VBox" unique_id=1920836775]
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_right = 25
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 1
 
 [node name="HBox" type="HBoxContainer" parent="VBox/MarginAbasBar" unique_id=105023278]
 layout_mode = 2
@@ -52,7 +60,8 @@ layout_mode = 2
 
 [node name="ButtonSetaEsq" type="Button" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=154491246]
 layout_mode = 2
-icon = ExtResource("3_i7xe7")
+icon = ExtResource("3_mf5jd")
+flat = true
 
 [node name="Separador2" type="Control" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=1791061419]
 custom_minimum_size = Vector2(5, 0)
@@ -61,31 +70,38 @@ layout_mode = 2
 [node name="ButtonSetaDir" type="Button" parent="VBox/MarginAbasBar/HBox/HBoxSetas" unique_id=341463226]
 layout_mode = 2
 theme = ExtResource("1_i7xe7")
-icon = ExtResource("3_i7xe7")
+icon = ExtResource("4_8q6ef")
+flat = true
 
-[node name="HotBar" type="Control" parent="VBox" unique_id=274340694]
+[node name="HotBar" type="MarginContainer" parent="VBox" unique_id=2097859299]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
 
 [node name="PanelAddress" type="PanelContainer" parent="VBox/HotBar" unique_id=634013428]
-custom_minimum_size = Vector2(700, 0)
-layout_mode = 0
-offset_left = 11.0
-offset_top = 4.0
-offset_right = 711.0
-offset_bottom = 29.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
+custom_minimum_size = Vector2(700, 45)
+layout_mode = 2
+size_flags_vertical = 0
 theme = ExtResource("1_i7xe7")
 
 [node name="Margin" type="MarginContainer" parent="VBox/HotBar/PanelAddress" unique_id=795615203]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 5
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
 
 [node name="LabelUrl" type="Label" parent="VBox/HotBar/PanelAddress/Margin" unique_id=35708277]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("1_i7xe7")
+theme_override_fonts/font = ExtResource("5_8q6ef")
+theme_override_font_sizes/font_size = 19
 text = "https://Abode.com/inscricao/cancelar/com-certeza-vai-dar-bom.com "
+
+[node name="Control" type="Control" parent="VBox/HotBar" unique_id=470232435]
+layout_mode = 2
 
 [node name="PosControles" type="Control" parent="." unique_id=1169384076]
 layout_mode = 1
@@ -99,8 +115,9 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -35.0
-offset_bottom = 23.0
+offset_left = -110.0
+offset_top = 3.0
+offset_bottom = 53.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 localize_numeral_system = false
@@ -108,18 +125,45 @@ mouse_filter = 2
 
 [node name="ButtonMinimizar" type="Button" parent="PosControles/Controles" unique_id=231685938]
 layout_mode = 2
-icon = ExtResource("3_i7xe7")
+icon = ExtResource("5_mf5jd")
+flat = true
 
 [node name="ButtonMaximizar" type="Button" parent="PosControles/Controles" unique_id=1264854560]
 layout_mode = 2
-icon = ExtResource("3_i7xe7")
+icon = ExtResource("6_8q6ef")
+flat = true
 
 [node name="ButtonFechar" type="Button" parent="PosControles/Controles" unique_id=1879285661]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_color = Color(1, 0.57254905, 0.50980395, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0.9137255, 0, 0, 1)
-icon = ExtResource("3_i7xe7")
+icon = ExtResource("7_cgj0l")
+flat = true
+
+[node name="PanelAddress2" type="PanelContainer" parent="." unique_id=2077296202]
+visible = false
+custom_minimum_size = Vector2(700, 45)
+layout_mode = 0
+offset_left = 11.0
+offset_top = 70.510475
+offset_right = 1921.0
+offset_bottom = 115.510475
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("1_i7xe7")
+
+[node name="Margin" type="MarginContainer" parent="PanelAddress2" unique_id=244036381]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
+
+[node name="LabelUrl" type="Label" parent="PanelAddress2/Margin" unique_id=954033469]
+layout_mode = 2
+theme = ExtResource("1_i7xe7")
+theme_override_fonts/font = ExtResource("5_8q6ef")
+theme_override_font_sizes/font_size = 19
+text = "https://Abode.com/inscricao/cancelar/com-certeza-vai-dar-bom.com "
 
 [connection signal="pressed" from="VBox/MarginAbasBar/HBox/HBoxSetas/ButtonSetaEsq" to="." method="_clipar_move_esquerda"]
 [connection signal="pressed" from="VBox/MarginAbasBar/HBox/HBoxSetas/ButtonSetaDir" to="." method="_clipar_move_direita"]
