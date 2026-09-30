@@ -15,32 +15,24 @@ area_trabalho = NodePath("../AreaTrabalho")
 
 [node name="Navegador" parent="." unique_id=1862273277 instance=ExtResource("3_uappg")]
 texture_filter = 1
-offset_left = 186.0
-offset_top = 47.0
-offset_right = -137.0
-offset_bottom = -50.0
+offset_left = 178.0
+offset_top = 16.0
+offset_right = -145.0
+offset_bottom = -81.0
 
-[node name="Panel" parent="Navegador" index="0" unique_id=1862289145]
-offset_right = 3.0
-offset_bottom = 17.0
-
-[node name="PanelAddress" parent="Navegador/Panel/VSplit/NavegadorControles/VBox/HotBar" parent_id_path=PackedInt32Array(1862273277, 1883575481, 274340694) index="0" unique_id=634013428]
-offset_top = 4.9791718
-offset_right = 1590.0
-offset_bottom = 49.97917
-
-[node name="Controles" parent="Navegador/Panel/VSplit/NavegadorControles/PosControles" parent_id_path=PackedInt32Array(1862273277, 1883575481, 1169384076) index="0" unique_id=825964034]
-offset_left = -115.0
-offset_right = -5.0
-offset_bottom = 50.0
-
-[node name="ImagemTamRef" parent="Navegador/Panel/VSplit/NavegadorConteudo/Margin/PanelConteudo" parent_id_path=PackedInt32Array(1862273277, 811463956, 1499278014) index="0" unique_id=1342923152 instance=ExtResource("4_4dg7q")]
+[node name="ImagemTamRef" parent="Navegador" unique_id=1342923152 instance=ExtResource("4_4dg7q")]
 visible = false
-layout_mode = 2
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 10.0
+offset_top = 124.0
+offset_right = 10.0
+offset_bottom = 124.0
+grow_horizontal = 1
+grow_vertical = 1
 size_flags_horizontal = 4
 size_flags_vertical = 1
 
 [editable path="GerenciadorJogo"]
-[editable path="Navegador"]
-[editable path="Navegador/Panel/VSplit/NavegadorControles"]
-[editable path="Navegador/Panel/VSplit/NavegadorConteudo"]
