@@ -29,5 +29,3 @@ priority = 2
 [node name="CollisionShape2DClick" type="CollisionShape2D" parent="Area2DClick" unique_id=1760406556]
 shape = SubResource("RectangleShape2D_smq05")
 debug_color = Color(1.3235956e-06, 0.6501292, 0.12642536, 0.41960785)
-
-[connection signal="input_event" from="Area2DClick" to="." method="_on_area_2d_click_input_event"]

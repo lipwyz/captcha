@@ -24,17 +24,9 @@ centered = false
 
 [node name="ButtonExplorer" type="Button" parent="." unique_id=1757206728]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -959.0
-offset_top = -357.0
-offset_right = -919.0
-offset_bottom = -317.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = 191.0
+offset_right = 40.0
+offset_bottom = 231.0
 scale = Vector2(3, 3)
 icon = ExtResource("3_r8b2h")
 flat = true

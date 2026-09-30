@@ -118,24 +118,24 @@ func _botao_clicado() -> void:
 func _aumentar_hitbox_click() -> void:
 	collision_shape_2d_click.shape.size *= aumentar_hitbox_mult
 
-## Verifica se o clique foi dentro do botao de fechar item
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("click_action"):
-		# pega as posicoes do mouse e da caixa (botao de fechar item)
-		var mouse_position = get_global_mouse_position()
+## Retorna true se o clique foi dentro do botao de fechar item
+## mouse position recebe get_global_mouse_position()
+func clicou_dentro(mouse_position: Vector2) -> bool:
 		var button_position = area_2d_click.global_position
 		# area que o clique tem que ter para ser considerado dentro
 		var dist 	 : Vector2 = mouse_position - button_position
 		var box_size : Vector2 = collision_shape_2d_click.shape.size
 		# se o clique foi dentro da caixa
 		if abs(dist.x) < box_size.x and abs(dist.y) < box_size.y:
-			_botao_clicado()
+			return true
+		# se nao
+		return false
 
-## !! NAO ESTA SENDO UTILIZADO MAIS !!
-## Detecao de clique na area do botao
-func _on_area_2d_click_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	# se o evento for do tipo click do mouse
-	if event is InputEventMouseButton:
-		# se o click foi de apertar o botao do mouse (em vez de soltar)
-		if event.is_pressed():
-			_botao_clicado()
+### !! NAO ESTA SENDO UTILIZADO MAIS !!
+### Detecao de clique na area do botao
+#func _on_area_2d_click_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	## se o evento for do tipo click do mouse
+	#if event is InputEventMouseButton:
+		## se o click foi de apertar o botao do mouse (em vez de soltar)
+		#if event.is_pressed():
+			#_botao_clicado()
