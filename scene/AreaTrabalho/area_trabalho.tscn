@@ -1,13 +1,8 @@
 [gd_scene format=3 uid="uid://bt12d62er2cam"]
 
 [ext_resource type="Script" uid="uid://un0udj0xabx6" path="res://scene/AreaTrabalho/area_trabalho.gd" id="1_1v7s4"]
-[ext_resource type="Texture2D" uid="uid://ddpoxfidbsyws" path="res://Assets/areaTrabalho/planoFundo/fundo2.png" id="2_1v7s4"]
-[ext_resource type="Texture2D" uid="uid://6bpw5mg7445b" path="res://Assets/areaTrabalho/planoFundo/wallpaper final.png" id="2_r8b2h"]
+[ext_resource type="PackedScene" uid="uid://cmjkjtl57hod5" path="res://scene/AreaTrabalho/sistema_operacional.tscn" id="3_1v7s4"]
 [ext_resource type="Texture2D" uid="uid://b3ykr5n2injsx" path="res://Assets/areaTrabalho/navegador.png" id="3_r8b2h"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_acnbx"]
-texture = ExtResource("2_1v7s4")
-region_rect = Rect2(0, 1011, 1920, 69)
 
 [node name="AreaTrabalho" type="Control" unique_id=24769322]
 layout_mode = 3
@@ -18,9 +13,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1v7s4")
 
-[node name="SpriteBackground" type="Sprite2D" parent="." unique_id=1797327825]
-texture = ExtResource("2_r8b2h")
-centered = false
+[node name="SistemaOperacional" parent="." unique_id=772791988 instance=ExtResource("3_1v7s4")]
+layout_mode = 1
 
 [node name="ButtonExplorer" type="Button" parent="." unique_id=1757206728]
 layout_mode = 1
@@ -30,12 +24,5 @@ offset_bottom = 231.0
 scale = Vector2(3, 3)
 icon = ExtResource("3_r8b2h")
 flat = true
-
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=374424226]
-layout_mode = 0
-offset_top = 1024.0
-offset_right = 1920.0
-offset_bottom = 1080.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_acnbx")
 
 [connection signal="pressed" from="ButtonExplorer" to="." method="_on_button_explorer_pressed"]
