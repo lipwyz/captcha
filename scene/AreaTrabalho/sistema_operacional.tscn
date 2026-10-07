@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cmjkjtl57hod5"]
 
-[ext_resource type="Texture2D" uid="uid://6bpw5mg7445b" path="res://Assets/sprites/Area de Trabalho/wallpaper final.png" id="1_abxv0"]
 [ext_resource type="Script" uid="uid://c17f1e3gmpglp" path="res://scene/AreaTrabalho/popup_controler.gd" id="2_dwtea"]
 [ext_resource type="Texture2D" uid="uid://8cexv7crttk4" path="res://Assets/area_trabalho/Complete_UI_Essential_Pack_Free/Spritesheet_UI_Flat.png" id="3_2c0mf"]
 [ext_resource type="Texture2D" uid="uid://ba0g0ouba467x" path="res://Assets/area_trabalho/Complete_UI_Essential_Pack_Free/UI_Flat_Frame01a.png" id="4_iswkc"]
@@ -101,16 +100,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Background" type="TextureRect" parent="." unique_id=1599389046]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_abxv0")
-expand_mode = 2
 
 [node name="PopupControler" type="Control" parent="." unique_id=1894064436]
 layout_mode = 1

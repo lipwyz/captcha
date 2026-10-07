@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bt12d62er2cam"]
 
 [ext_resource type="Script" uid="uid://un0udj0xabx6" path="res://scene/AreaTrabalho/area_trabalho.gd" id="1_1v7s4"]
-[ext_resource type="PackedScene" uid="uid://cmjkjtl57hod5" path="res://scene/AreaTrabalho/sistema_operacional.tscn" id="3_1v7s4"]
+[ext_resource type="Texture2D" uid="uid://6bpw5mg7445b" path="res://Assets/areaTrabalho/planoFundo/wallpaper final.png" id="2_r8b2h"]
 [ext_resource type="Texture2D" uid="uid://b3ykr5n2injsx" path="res://Assets/areaTrabalho/navegador.png" id="3_r8b2h"]
 
 [node name="AreaTrabalho" type="Control" unique_id=24769322]
@@ -13,8 +13,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1v7s4")
 
-[node name="SistemaOperacional" parent="." unique_id=772791988 instance=ExtResource("3_1v7s4")]
+[node name="Background" type="TextureRect" parent="." unique_id=85434424]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_r8b2h")
+expand_mode = 2
 
 [node name="ButtonExplorer" type="Button" parent="." unique_id=1757206728]
 layout_mode = 1

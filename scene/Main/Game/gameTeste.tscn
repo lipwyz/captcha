@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cryhhrnjf4r5c" path="res://scene/GerenciadorJogo/GerenciadorJogo.tscn" id="2_uhqut"]
 [ext_resource type="PackedScene" uid="uid://cxdrd8o2eceyg" path="res://scene/Navegador/Navegador.tscn" id="3_uappg"]
 [ext_resource type="PackedScene" uid="uid://sv6hm87ln5ip" path="res://_Debug/Testes/imagem_tam_ref.tscn" id="4_4dg7q"]
+[ext_resource type="PackedScene" uid="uid://cmjkjtl57hod5" path="res://scene/AreaTrabalho/sistema_operacional.tscn" id="5_q8837"]
 
 [node name="GameTeste" type="Node" unique_id=778971112]
 
@@ -14,6 +15,7 @@ area_trabalho = NodePath("../AreaTrabalho")
 [node name="AreaTrabalho" parent="." unique_id=24769322 instance=ExtResource("2_4dg7q")]
 
 [node name="Navegador" parent="." unique_id=1862273277 instance=ExtResource("3_uappg")]
+visible = false
 texture_filter = 1
 offset_left = 178.0
 offset_top = 16.0
@@ -21,7 +23,6 @@ offset_right = -145.0
 offset_bottom = -81.0
 
 [node name="ImagemTamRef" parent="Navegador" unique_id=1342923152 instance=ExtResource("4_4dg7q")]
-visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
@@ -35,4 +36,7 @@ grow_vertical = 1
 size_flags_horizontal = 4
 size_flags_vertical = 1
 
+[node name="SistemaOperacional" parent="." unique_id=772791988 instance=ExtResource("5_q8837")]
+
 [editable path="GerenciadorJogo"]
+[editable path="AreaTrabalho"]
