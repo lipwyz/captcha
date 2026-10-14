@@ -83,38 +83,25 @@ expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rn0nb"]
-texture = ExtResource("3_2c0mf")
-region_rect = Rect2(224, 33, 97, 62)
-modulate_color = Color(0.30980393, 0.8392157, 0, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8cnwq"]
-texture = ExtResource("3_2c0mf")
-region_rect = Rect2(224, 33, 97, 62)
-modulate_color = Color(0.2826591, 0.7726796, 0, 1)
-
 [node name="SistemaOperacional" type="Control" unique_id=772791988]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="PopupControler" type="Control" parent="." unique_id=1894064436]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -88.0
+offset_right = -1280.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_dwtea")
 
 [node name="StartMenu" type="MarginContainer" parent="PopupControler" unique_id=794531328]
 layout_mode = 0
-offset_top = 304.0
+offset_top = 392.0
 offset_right = 629.0
-offset_bottom = 1013.0
+offset_bottom = 1101.0
 
 [node name="BlueTexture" type="NinePatchRect" parent="PopupControler/StartMenu" unique_id=1074005476]
 layout_mode = 2
@@ -267,10 +254,10 @@ texture = ExtResource("11_vaaep")
 
 [node name="QuitMenu" type="MarginContainer" parent="PopupControler" unique_id=1911409515]
 layout_mode = 0
-offset_left = 574.0
-offset_top = 593.0
-offset_right = 962.0
-offset_bottom = 927.0
+offset_left = 576.0
+offset_top = 744.0
+offset_right = 964.0
+offset_bottom = 1078.0
 
 [node name="QuitControler" type="MarginContainer" parent="PopupControler/QuitMenu" unique_id=1643748591]
 layout_mode = 2
@@ -309,37 +296,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qcbku")
 theme_override_styles/hover = SubResource("StyleBoxFlat_lq2d0")
 text = "Quit to Desktop"
 
-[node name="TaskBar" type="Control" parent="PopupControler" unique_id=106432036]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -960.0
-offset_top = -67.0
-offset_right = 961.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Texture" type="NinePatchRect" parent="PopupControler/TaskBar" unique_id=439659869]
-layout_mode = 0
-offset_right = 1974.0
-offset_bottom = 67.0
-texture = ExtResource("3_2c0mf")
-region_rect = Rect2(481, 42, 31, 12)
-
-[node name="Home" type="Button" parent="PopupControler/TaskBar" unique_id=1115555135]
-layout_mode = 0
-offset_top = 5.0
-offset_right = 225.0
-offset_bottom = 62.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_rn0nb")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_8cnwq")
-theme_override_styles/hover = SubResource("StyleBoxTexture_8cnwq")
-
 [connection signal="pressed" from="PopupControler/StartMenu/OptionsControler/OptionsColor/Quit" to="PopupControler" method="_on_quit_pressed"]
 [connection signal="pressed" from="PopupControler/QuitMenu/QuitControler/QuitOptions/QuitOptions/MainMenu" to="PopupControler" method="_on_main_menu_pressed"]
 [connection signal="pressed" from="PopupControler/QuitMenu/QuitControler/QuitOptions/QuitOptions/Desktop" to="PopupControler" method="_on_desktop_pressed"]
-[connection signal="mouse_entered" from="PopupControler/TaskBar/Home" to="PopupControler" method="_on_home_mouse_entered"]
-[connection signal="pressed" from="PopupControler/TaskBar/Home" to="PopupControler" method="_on_home_pressed"]

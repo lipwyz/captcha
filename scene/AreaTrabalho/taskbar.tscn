@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dpqirvw55kig4"]
+
+[ext_resource type="Texture2D" uid="uid://8cexv7crttk4" path="res://Assets/area_trabalho/Complete_UI_Essential_Pack_Free/Spritesheet_UI_Flat.png" id="1_fxcyd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f1c74"]
+texture = ExtResource("1_fxcyd")
+region_rect = Rect2(224, 33, 97, 62)
+modulate_color = Color(0.30980393, 0.8392157, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_flnla"]
+texture = ExtResource("1_fxcyd")
+region_rect = Rect2(224, 33, 97, 62)
+modulate_color = Color(0.2826591, 0.7726796, 0, 1)
+
+[node name="Control" type="Control" unique_id=202714182]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TaskBar" type="Control" parent="." unique_id=82811787]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -67.0
+offset_right = 961.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Texture" type="NinePatchRect" parent="TaskBar" unique_id=204918069]
+layout_mode = 0
+offset_right = 1974.0
+offset_bottom = 67.0
+texture = ExtResource("1_fxcyd")
+region_rect = Rect2(481, 42, 31, 12)
+
+[node name="Home" type="Button" parent="TaskBar" unique_id=1668513554]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 225.0
+offset_bottom = 62.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_f1c74")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_flnla")
+theme_override_styles/hover = SubResource("StyleBoxTexture_flnla")
