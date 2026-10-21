@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bwk2s0vp06pp8"]
 
 [ext_resource type="Script" uid="uid://bidhxpw4kprep" path="res://scene/MiniGames/SelectQuadrados/criacao/gerenciador_imagem_clicavel.gd" id="2_7wts2"]
-[ext_resource type="Texture2D" uid="uid://gw723ucgpkp1" path="res://Assets/sprites/pngs/confirmacaoquadradosv3.png" id="2_h5hnt"]
+[ext_resource type="Texture2D" uid="uid://cfwk5ifiryyot" path="res://Assets/sprites/pngs/paredeyesno2-export.png" id="2_h5hnt"]
 
 [node name="GerenciadorImagemClicavel" type="Node2D" unique_id=1502582107 node_paths=PackedStringArray("sprite_imagem", "pai_linhas", "referencia_line_2d", "referencia_polygon_2d")]
 script = ExtResource("2_7wts2")
@@ -23,6 +23,7 @@ visible = false
 z_index = 10
 color = Color(1, 1, 1, 0.61960787)
 polygon = PackedVector2Array(100, 400, 100, 600, 300, 600, 300, 400)
+uv = PackedVector2Array(100, 400, 100, 600, 300, 600, 300, 400)
 
 [node name="ReferenciaLine2D" type="Line2D" parent="LinhasRef" unique_id=496994214]
 z_index = 20

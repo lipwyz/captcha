@@ -72,5 +72,6 @@ gerenciador_quadTree = NodePath("../../../../../GerenciadorQuadTree")
 
 [node name="SpriteImagem" parent="Verificador/VBox/PivotMundo/Mundo/GerenciadorImagemClicavel" index="0" unique_id=1847807575]
 self_modulate = Color(0.7, 0.7, 0.7, 1)
+scale = Vector2(0.9994791, 0.85648155)
 
 [editable path="Verificador/VBox/PivotMundo/Mundo/GerenciadorImagemClicavel"]
