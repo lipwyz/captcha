@@ -8,24 +8,16 @@ var gerenciador_jogo : GerenciadorJogo :
 		gerenciador_jogo = _gerenciador_jogo
 		_ready_gerenciador()
 
+var salvador_pontuacao := SalvadorPontuacao.new()
+
+# Iniciar e Sair do Jogo
+# -----------------------------------------------------------------------------
+
 # Ao apertar volta para o MainMenu ao apertar ESC
 # TODO: obs: realiza o 'change scene' mesmo se ja estiver no mainMenu
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("uid://cbrpvi6rnvw0i")
-
-## Chamado automaticamento quando o gerenciador_jogo eh ajustado
-## [br] Conecta o sinal de todos_anuncios_fechados do gerenciador anuncios
-## para emitir todos_anuncios_fechados
-func _ready_gerenciador() -> void:
-	gerenciador_jogo.gerenciador_anuncios.todos_anuncios_fechados.connect(
-		func(): todos_anuncios_fechados.emit()
-	)
-
-
-func pedir_criar_aba(mini_game_res: MiniGameRes, fechavel: bool = false) -> void:
-	var conteudo_aba : ConteudoAba
-	conteudo_aba = mini_game_res.navegador_add_mini_game_editado(navegador, fechavel)
 
 ## Deve ser chamado quando for para comecar o jogo
 ## criando o primeiro mini game, e assim dando inicio a partida de multiplos mini games
@@ -37,3 +29,28 @@ func chamar_menu_inicial() -> void:
 
 func chamar_fechar_jogo() -> void:
 	get_tree().quit()
+
+# Salvar pontuacao
+# -----------------------------------------------------------------------------
+
+func salvar_score(nome_jogador: String) -> void:
+	salvador_pontuacao.add_score(
+			gerenciador_jogo.gerenciador_pontuacao.get_tempo_milis(),
+			nome_jogador
+	)
+
+
+# Gerenciar
+# -----------------------------------------------------------------------------
+
+## Chamado automaticamento quando o gerenciador_jogo eh ajustado
+## [br] Conecta o sinal de todos_anuncios_fechados do gerenciador anuncios
+## para emitir todos_anuncios_fechados
+func _ready_gerenciador() -> void:
+	gerenciador_jogo.gerenciador_anuncios.todos_anuncios_fechados.connect(
+		func(): todos_anuncios_fechados.emit()
+	)
+
+func pedir_criar_aba(mini_game_res: MiniGameRes, fechavel: bool = false) -> void:
+	var conteudo_aba : ConteudoAba
+	conteudo_aba = mini_game_res.navegador_add_mini_game_editado(navegador, fechavel)

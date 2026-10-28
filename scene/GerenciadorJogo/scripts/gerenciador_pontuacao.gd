@@ -47,11 +47,15 @@ func marcar_spawnou_anuncio() -> void:
 # Tempo 
 # -----------------------------------------------------------------------------
 
+## Retorna o numero inteiro de milisegundos 
+func get_tempo_milis() -> int:
+	return floori(tempo_total_segundos * 100)
+
 ## Retorna String com formato do texto MM:SS:mm -> 00:00:00 ate 99:59:99
 func get_str_tempo() -> String:
 	# pega os segundos totais como int
 	var tempo_seg : int = floori(tempo_total_segundos)
-	# pega os mili segundos
+	# pega os mili segundos como int
 	var milis : int = floori((tempo_total_segundos - tempo_seg) * 100)
 	
 	# calcula os minutos

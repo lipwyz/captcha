@@ -33,6 +33,7 @@ window/stretch/mode="viewport"
 
 folder_colors={
 "res://Assets/": "red",
+"res://ScriptsGlobais/": "blue",
 "res://Shaders/": "pink",
 "res://_Debug/": "gray",
 "res://scene/": "orange",
