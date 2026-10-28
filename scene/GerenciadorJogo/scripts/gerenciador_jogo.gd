@@ -1,8 +1,9 @@
 class_name GerenciadorJogo
 extends Node
 
-@export_group("Abobe")
+@export_group("Sites")
 @export var site_abobe_resource: MiniGameRes
+@export var site_pontuacao_resource: MiniGameRes
 
 @export_group("Nodos")
 @export var navegador: Navegador
@@ -68,6 +69,9 @@ func iniciar_o_jogo() -> void:
 	# inicia a contagem da pontuacao
 	gerenciador_pontuacao.iniciar_contagem()
 
+# Fim Jogo
+# -----------------------------------------------------------------------------
+
 func _terminar_o_jogo() -> void:
 	# se nao tiver mais acontecendo, nao tem o que terminar, pare
 	if not esta_acontecendo_jogo: return
@@ -76,11 +80,17 @@ func _terminar_o_jogo() -> void:
 	esta_acontecendo_jogo = false
 	# para de contar os pontos
 	gerenciador_pontuacao.parar_contagem()
-	# TODO: tela de fim de jogo
+	# tela de fim de jogo
+	_criar_aba_pontuacao()
+
+func _criar_aba_pontuacao() -> void:
+	var aba_pontuacao := site_pontuacao_resource.criar_aba()
+	navegador.add_aba(aba_pontuacao, site_pontuacao_resource.conteudo)
+	navegador.mudar_aba(aba_pontuacao)
+	
 	print("tempo_total_segundos: ", gerenciador_pontuacao.tempo_total_segundos)
 	print("mini_games_ganhos: ",    gerenciador_pontuacao.mini_games_ganhos)
 	print("anuncios_spawnados: ",   gerenciador_pontuacao.anuncios_spawnados)
-
 
 # -----------------------------------------------------------------------------
 # Gerenciadores
