@@ -88,6 +88,10 @@ func _criar_aba_pontuacao() -> void:
 	navegador.add_aba(aba_pontuacao, site_pontuacao_resource.conteudo)
 	navegador.mudar_aba(aba_pontuacao)
 	
+	var pontuacao_conteudo: ConteudoPontuacao = navegador.get_conteudo_aba(aba_pontuacao)
+	pontuacao_conteudo.set_tempo(gerenciador_pontuacao.get_str_tempo())
+	pontuacao_conteudo.set_minigames(gerenciador_pontuacao.mini_games_ganhos)
+	pontuacao_conteudo.set_ads(gerenciador_pontuacao.anuncios_spawnados)
 	print("tempo_total_segundos: ", gerenciador_pontuacao.tempo_total_segundos)
 	print("mini_games_ganhos: ",    gerenciador_pontuacao.mini_games_ganhos)
 	print("anuncios_spawnados: ",   gerenciador_pontuacao.anuncios_spawnados)
@@ -105,14 +109,16 @@ func _gerenciadores_conectar_sinais() -> void:
 # -----------------------------------------------------------------------------
 
 func _proximo_mini_game() -> void:
+	# marca na pontuacao
+	gerenciador_pontuacao.marcar_ganhou_mini_game()
+	
 	# se completou a quantidade necessaria para terminar o jogo, termine e pare
 	if gerenciador_mini_games.mini_games_completados_qtde >= qtde_mini_games_completos_terminar:
 		_terminar_o_jogo()
 		return
-	# se tiver mais mini games, crie outro mini game
+	# se tiver mais mini games
+	# crie outro mini game
 	gerenciador_mini_games.comecar_mini_game(navegador)
-	# marca na pontuacao
-	gerenciador_pontuacao.marcar_ganhou_mini_game()
 
 func _perder_mini_game() -> void:
 	navegador.fechar_todas_abas_exceto_padrao()
