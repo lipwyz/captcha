@@ -10,6 +10,10 @@ var gerenciador_jogo : GerenciadorJogo :
 
 var salvador_pontuacao := SalvadorPontuacao.new()
 
+
+func _ready() -> void:
+	salvador_pontuacao.load_scores()
+
 # Iniciar e Sair do Jogo
 # -----------------------------------------------------------------------------
 
@@ -23,6 +27,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 ## criando o primeiro mini game, e assim dando inicio a partida de multiplos mini games
 func pedir_iniciar_o_jogo() -> void:
 	gerenciador_jogo.iniciar_o_jogo()
+	salvador_pontuacao.reset_novo_jogo()
 
 func chamar_menu_inicial() -> void:
 	get_tree().change_scene_to_file("uid://cbrpvi6rnvw0i")
@@ -33,12 +38,15 @@ func chamar_fechar_jogo() -> void:
 # Salvar pontuacao
 # -----------------------------------------------------------------------------
 
-func salvar_score(nome_jogador: String) -> void:
+func salvar_score(nome_jogador: String) -> int:
 	salvador_pontuacao.add_score(
 			gerenciador_jogo.gerenciador_pontuacao.get_tempo_milis(),
 			nome_jogador
 	)
+	return gerenciador_jogo.gerenciador_pontuacao.get_tempo_milis()
 
+func pegar_scores() -> Dictionary[String, Array]:
+	return salvador_pontuacao.get_scores()
 
 # Gerenciar
 # -----------------------------------------------------------------------------
