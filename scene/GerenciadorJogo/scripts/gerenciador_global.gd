@@ -31,3 +31,9 @@ func pedir_criar_aba(mini_game_res: MiniGameRes, fechavel: bool = false) -> void
 ## criando o primeiro mini game, e assim dando inicio a partida de multiplos mini games
 func pedir_iniciar_o_jogo() -> void:
 	gerenciador_jogo.iniciar_o_jogo()
+
+func chamar_menu_inicial() -> void:
+	get_tree().change_scene_to_file("uid://cbrpvi6rnvw0i")
+
+func chamar_fechar_jogo() -> void:
+	get_tree().quit()
