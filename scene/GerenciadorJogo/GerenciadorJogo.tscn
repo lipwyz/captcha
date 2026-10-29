@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bp0j4nl28yf4r" path="res://scene/GerenciadorJogo/scripts/gerenciador_jogo.gd" id="1_0ycjh"]
 [ext_resource type="Resource" uid="uid://d0yeacqprodn3" path="res://scene/Sites/Abobe/siteAbobe.tres" id="2_8h8tx"]
 [ext_resource type="Script" uid="uid://bxi1hf0sdhgjx" path="res://scene/GerenciadorJogo/scripts/gerenciador_mini_games.gd" id="2_im48h"]
+[ext_resource type="Resource" uid="uid://bigcxjsn5nxlv" path="res://scene/Sites/Pontuacao/sitePontuacao.tres" id="3_ob5bs"]
 [ext_resource type="Script" uid="uid://dv17hq7yts0f5" path="res://scene/GerenciadorJogo/scripts/gerenciador_cut_scene_inicial.gd" id="3_y0wat"]
 [ext_resource type="Resource" uid="uid://cjwmi1d4ulsch" path="res://scene/GerenciadorJogo/lista_mini_games_res.tres" id="4_uumkp"]
 [ext_resource type="Script" uid="uid://xyqicgojedu8" path="res://scene/GerenciadorJogo/scripts/gerenciador_anuncios.gd" id="5_5j3yu"]
@@ -15,6 +16,7 @@
 [node name="GerenciadorJogo" type="Node" unique_id=1924470162 node_paths=PackedStringArray("gerenciador_mini_games", "gerenciador_cut_scene_inicial", "gerenciador_anuncios", "gerenciador_pontuacao")]
 script = ExtResource("1_0ycjh")
 site_abobe_resource = ExtResource("2_8h8tx")
+site_pontuacao_resource = ExtResource("3_ob5bs")
 gerenciador_mini_games = NodePath("GerenciadorMiniGames")
 gerenciador_cut_scene_inicial = NodePath("GerenciadorCutSceneInicial")
 gerenciador_anuncios = NodePath("GerenciadorAnuncios")
