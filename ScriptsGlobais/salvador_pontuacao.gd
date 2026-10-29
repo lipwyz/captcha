@@ -7,10 +7,6 @@ var jogo_foi_salvo := false
 
 var high_scores : Dictionary[String, Array] = {}
 
-func _ler() -> void:
-	for nome : String in high_scores.keys():
-		print(nome, " : ", high_scores[nome])
-
 func reset_novo_jogo() -> void:
 	jogo_foi_salvo = false
 
@@ -45,9 +41,6 @@ func load_scores() -> void:
 	
 	# fecha o arquivo
 	scores_file.close()
-	
-	print("load")
-	_ler()
 
 # Salvar os pontos
 # -----------------------------------------------------------------------------
@@ -58,7 +51,15 @@ func add_score(tempo_milis: int, nome_jogador: String) -> void:
 	# marca que o jogo foi salvo
 	jogo_foi_salvo = true
 	
-	# salva o jogo
+	# se ja tiver o nome do jogador
+	if high_scores.has(nome_jogador):
+		# verifica se eh melhor que o anterior,
+		# so mantem o melhor score
+		var tempo_antigo : int = high_scores[nome_jogador][0]
+		# se o tempo for maior, nao salve
+		if tempo_milis > tempo_antigo: 
+			return
+	# salva o high score
 	high_scores[nome_jogador] = [tempo_milis, -1, -1]
 	_salvar()
 
@@ -77,6 +78,3 @@ func _salvar():
 		scores_file.store_csv_line([nome] + high_scores[nome])
 
 	scores_file.close()
-	
-	print("store")
-	_ler()
