@@ -20,6 +20,7 @@ func _ready() -> void:
 
 func _load_scores() -> void:
 	item_list_scores.clear()
+	scores_tempo_nome.clear()
 	# pega os scores
 	var scores_dados := GerenciadorGlobal.pegar_scores()
 	# pega somente o nome e tempo nos scores
@@ -37,6 +38,7 @@ func _load_scores() -> void:
 		item_list_scores.add_item(_get_texto_item(nome, tempo_milis, posicao))
 		posicao += 1
 
+## Percorre a lista de scores e exibe diferencia o item com nome_jogador
 func buscar_jogador(nome_jogador : String = "") -> void:
 	for idx : int in range(scores_tempo_nome.size()):
 		var item = scores_tempo_nome[idx]
@@ -61,7 +63,10 @@ func _on_line_edit_nome_score_text_changed(new_text: String) -> void:
 
 func _on_button_add_score_pressed() -> void:
 	var nome_jogador : String = line_edit_nome_score.text
-	GerenciadorGlobal.salvar_score(nome_jogador)
-	
-	_load_scores()
+	# pede para salvar o score
+	var atualizado := GerenciadorGlobal.salvar_score(nome_jogador)
+	if atualizado:
+		# se foi atualizado, mostre a atualizacao
+		_load_scores()
+	# busca o nome do jogador passado
 	buscar_jogador(nome_jogador)

@@ -38,8 +38,10 @@ func chamar_fechar_jogo() -> void:
 # Salvar pontuacao
 # -----------------------------------------------------------------------------
 
-func salvar_score(nome_jogador: String) -> void:
-	salvador_pontuacao.add_score(
+## Retorna true se houve atualizacao, e o novo score do jogador foi salvo [br]
+## False se nao houve atualizacao, e o score antigo prevaleceu
+func salvar_score(nome_jogador: String) -> bool:
+	return salvador_pontuacao.add_score(
 			gerenciador_jogo.gerenciador_pontuacao.get_tempo_milis(),
 			nome_jogador
 	)

@@ -51,9 +51,12 @@ func load_scores() -> void:
 # Salvar os pontos
 # -----------------------------------------------------------------------------
 
-func add_score(tempo_milis: int, nome_jogador: String) -> void:
+## Adiciona no highscore o tempo em ms, para nome jogador [br]
+## Retorna True se foi adicionado (melhorou o high score ou nao tinha) [br]
+## False se nao houve atualizacao, ou seja nao foi adicionado o novo tempo
+func add_score(tempo_milis: int, nome_jogador: String) -> bool:
 	# se o jogo ja foi salvo, pare
-	if jogo_foi_salvo: return
+	if jogo_foi_salvo: return false
 	# marca que o jogo foi salvo
 	jogo_foi_salvo = true
 	
@@ -64,10 +67,11 @@ func add_score(tempo_milis: int, nome_jogador: String) -> void:
 		var tempo_antigo : int = high_scores[nome_jogador][0]
 		# se o tempo for maior, nao salve
 		if tempo_milis > tempo_antigo: 
-			return
+			return false
 	# salva o high score
 	high_scores[nome_jogador] = [tempo_milis, -1, -1]
 	_salvar()
+	return true
 
 ## Salva no disco
 func _salvar():
