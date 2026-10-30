@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MiniGameRes" format=3 uid="uid://bigcxjsn5nxlv"]
+
+[ext_resource type="PackedScene" uid="uid://dgj1iaqn0srr3" path="res://scene/Sites/Pontuacao/ConteudoPontuacao.tscn" id="1_4acsk"]
+[ext_resource type="Script" uid="uid://cp2dri3177uqs" path="res://scene/MiniGames/MiniGameRes.gd" id="2_p6ytq"]
+
+[resource]
+script = ExtResource("2_p6ytq")
+aba_titulo = "Score"
+aba_url = "https://Abobe/score.com"
+conteudo = ExtResource("1_4acsk")

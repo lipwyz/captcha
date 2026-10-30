@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dka1omdqylv6o"]
 
+[ext_resource type="Resource" uid="uid://bigcxjsn5nxlv" path="res://scene/Sites/Pontuacao/sitePontuacao.tres" id="2_1qekx"]
 [ext_resource type="PackedScene" uid="uid://bt12d62er2cam" path="res://scene/AreaTrabalho/area_trabalho.tscn" id="2_4dg7q"]
 [ext_resource type="PackedScene" uid="uid://cryhhrnjf4r5c" path="res://scene/GerenciadorJogo/GerenciadorJogo.tscn" id="2_uhqut"]
 [ext_resource type="PackedScene" uid="uid://cxdrd8o2eceyg" path="res://scene/Navegador/Navegador.tscn" id="3_uappg"]
@@ -100,6 +101,7 @@ expand_margin_bottom = 10.0
 [node name="GameTeste" type="Node" unique_id=778971112]
 
 [node name="GerenciadorJogo" parent="." unique_id=1924470162 node_paths=PackedStringArray("navegador", "area_trabalho") instance=ExtResource("2_uhqut")]
+site_pontuacao_resource = ExtResource("2_1qekx")
 navegador = NodePath("../Navegador")
 area_trabalho = NodePath("../AreaTrabalho")
 

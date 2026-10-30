@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://1wvkn18j5jwq" path="res://scene/Main/MenuInicial/main_menu.gd" id="1_80kpj"]
 [ext_resource type="PackedScene" uid="uid://dka1omdqylv6o" path="res://scene/Main/Game/gameTeste.tscn" id="2_avap0"]
+[ext_resource type="PackedScene" uid="uid://b2rp4djrgs8lm" path="res://scene/Menus/MenuScores.tscn" id="3_avap0"]
 [ext_resource type="Texture2D" uid="uid://dknbixh4ifhf2" path="res://Assets/menu principal/Start menu 4.png" id="3_ycq4k"]
 [ext_resource type="Theme" uid="uid://dfj6m712di4lp" path="res://themes/MP_start.tres" id="4_odgwd"]
 [ext_resource type="Theme" uid="uid://cpf56t0m1pfr2" path="res://themes/MP_opcoes.tres" id="5_haeq7"]
@@ -20,6 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_80kpj")
 cena_jogo = ExtResource("2_avap0")
+cena_score = ExtResource("3_avap0")
 
 [node name="Panel2" type="Panel" parent="." unique_id=1883160987]
 layout_mode = 0
