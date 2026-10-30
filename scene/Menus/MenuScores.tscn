@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b2rp4djrgs8lm"]
+
+[ext_resource type="PackedScene" uid="uid://gcw5vn6adohd" path="res://scene/Sites/Pontuacao/score_board.tscn" id="1_i30pf"]
+[ext_resource type="Script" uid="uid://ban8n8i3b60bm" path="res://scene/Menus/menu_score_board.gd" id="2_hix63"]
+
+[node name="MenuScores" type="Control" unique_id=543557044]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1872341863]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.32377496, 0.45, 0.30149996, 1)
+
+[node name="ScoreBoard" parent="." unique_id=1490194553 instance=ExtResource("1_i30pf")]
+layout_mode = 1
+offset_left = 454.0
+offset_right = -454.0
+script = ExtResource("2_hix63")
+
+[node name="Label" parent="ScoreBoard" index="0" unique_id=1703309668]
+visible = false
+
+[node name="ButtonTryAgain" parent="ScoreBoard" index="1" unique_id=197956429]
+text = "Voltar"
+
+[node name="ButtonAddScore" parent="ScoreBoard/MarginScores/VBox/HBox" parent_id_path=PackedInt32Array(1490194553, 886219242) index="1" unique_id=414346015]
+text = "Buscar Nome"
+
+[node name="ButtonPasta" type="Button" parent="." unique_id=1654030026]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -99.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Abrir Pasta Saves"
+
+[connection signal="pressed" from="ButtonPasta" to="ScoreBoard" method="_on_button_pasta_pressed"]
+
+[editable path="ScoreBoard"]

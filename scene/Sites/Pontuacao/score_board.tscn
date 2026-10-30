@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://gcw5vn6adohd"]
+
+[ext_resource type="Script" uid="uid://xdn50vk1lst" path="res://scene/Sites/Pontuacao/score_board.gd" id="1_6ypfe"]
+
+[node name="ScoreBoard" type="Control" unique_id=1490194553]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_6ypfe")
+
+[node name="Label" type="Label" parent="." unique_id=1703309668]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -318.0
+offset_top = -167.0
+offset_right = 318.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Tente pegar uma posição melhor"
+
+[node name="ButtonTryAgain" type="Button" parent="." unique_id=197956429]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -231.0
+offset_top = -98.0
+offset_right = 231.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Try Again"
+
+[node name="MarginScores" type="MarginContainer" parent="." unique_id=667464839]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="VBox" type="VBoxContainer" parent="MarginScores" unique_id=910373316]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ItemListScores" type="ItemList" parent="MarginScores/VBox" unique_id=1487505099]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 45
+item_count = 1
+item_0/text = "0:10:15 - Kojiio"
+item_0/selectable = false
+
+[node name="HBox" type="HBoxContainer" parent="MarginScores/VBox" unique_id=886219242]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="LineEditNomeScore" type="LineEdit" parent="MarginScores/VBox/HBox" unique_id=745576891]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+
+[node name="ButtonAddScore" type="Button" parent="MarginScores/VBox/HBox" unique_id=414346015]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Add Score"
+
+[connection signal="pressed" from="ButtonTryAgain" to="." method="_on_button_try_again_pressed"]
+[connection signal="text_changed" from="MarginScores/VBox/HBox/LineEditNomeScore" to="." method="_on_line_edit_nome_score_text_changed"]
+[connection signal="pressed" from="MarginScores/VBox/HBox/ButtonAddScore" to="." method="_on_button_add_score_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dgj1iaqn0srr3"]
 
 [ext_resource type="Script" uid="uid://b5kvxsr2j08p1" path="res://scene/Sites/Pontuacao/conteudo_pontuacao.gd" id="1_glmyd"]
-[ext_resource type="Script" uid="uid://xdn50vk1lst" path="res://scene/Sites/Pontuacao/score_board.gd" id="2_68lfo"]
+[ext_resource type="PackedScene" uid="uid://gcw5vn6adohd" path="res://scene/Sites/Pontuacao/score_board.tscn" id="2_68lfo"]
 
 [node name="ConteudoPontuacao" type="Control" unique_id=118735360]
 layout_mode = 3
@@ -155,85 +155,5 @@ theme_override_font_sizes/font_size = 45
 text = "999"
 horizontal_alignment = 1
 
-[node name="ScoreBoard" type="Control" parent="HBoxContainer" unique_id=841206623]
+[node name="ScoreBoard" parent="HBoxContainer" unique_id=1490194553 instance=ExtResource("2_68lfo")]
 layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("2_68lfo")
-
-[node name="Label" type="Label" parent="HBoxContainer/ScoreBoard" unique_id=983768340]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -318.0
-offset_top = -167.0
-offset_right = 318.0
-offset_bottom = -112.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 40
-text = "Tente pegar uma posição melhor"
-
-[node name="ButtonTryAgain" type="Button" parent="HBoxContainer/ScoreBoard" unique_id=30910224]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -231.0
-offset_top = -98.0
-offset_right = 231.0
-offset_bottom = -21.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 50
-text = "Try Again"
-
-[node name="MarginScores" type="MarginContainer" parent="HBoxContainer/ScoreBoard" unique_id=291355895]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -200.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-
-[node name="VBox" type="VBoxContainer" parent="HBoxContainer/ScoreBoard/MarginScores" unique_id=541403024]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="ItemListScores" type="ItemList" parent="HBoxContainer/ScoreBoard/MarginScores/VBox" unique_id=1422327083]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 45
-item_count = 1
-item_0/text = "0:10:15 - Kojiio"
-item_0/selectable = false
-
-[node name="HBox" type="HBoxContainer" parent="HBoxContainer/ScoreBoard/MarginScores/VBox" unique_id=1262658939]
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-theme_override_constants/separation = 30
-
-[node name="LineEditNomeScore" type="LineEdit" parent="HBoxContainer/ScoreBoard/MarginScores/VBox/HBox" unique_id=361136286]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 25
-
-[node name="ButtonAddScore" type="Button" parent="HBoxContainer/ScoreBoard/MarginScores/VBox/HBox" unique_id=3007850]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Add Score"
-
-[connection signal="pressed" from="HBoxContainer/ScoreBoard/ButtonTryAgain" to="HBoxContainer/ScoreBoard" method="_on_button_try_again_pressed"]
-[connection signal="text_changed" from="HBoxContainer/ScoreBoard/MarginScores/VBox/HBox/LineEditNomeScore" to="HBoxContainer/ScoreBoard" method="_on_line_edit_nome_score_text_changed"]
-[connection signal="pressed" from="HBoxContainer/ScoreBoard/MarginScores/VBox/HBox/ButtonAddScore" to="HBoxContainer/ScoreBoard" method="_on_button_add_score_pressed"]

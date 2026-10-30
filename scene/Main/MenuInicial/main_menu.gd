@@ -2,13 +2,14 @@ class_name MainMenu
 extends Control
 
 @export var cena_jogo: PackedScene
+@export var cena_score: PackedScene
 @onready var label_nao_implementado: Label = $LabelNaoImplementado
 
 func _on_button_start_pressed() -> void:
 	get_tree().change_scene_to_packed(cena_jogo)
 
 func _on_button_options_pressed() -> void:
-	_deletar_isso()
+	get_tree().change_scene_to_packed(cena_score)
 
 func _on_button_credits_pressed() -> void:
 	_deletar_isso()

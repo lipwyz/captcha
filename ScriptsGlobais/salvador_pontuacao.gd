@@ -2,11 +2,17 @@ class_name SalvadorPontuacao
 extends RefCounted
 
 const score_file_path := "user://scores.csv"
+const score_file_header := ["name", "millis", "minigames_completed(nao implementado)","ads_viewd(nao implementado)"]
 
+## High score [nome de jogador] -> lista de valores [tempo_ms, minigames, ads]
+var high_scores : Dictionary[String, Array] = {}
+## True se a ultima partida ja teve os dados salvos, nao salvar entao [br]
+## False se ainda pode tentar salvar os dados, pode salvar[br]
+## Serve para prevenir o jogador pedir para salvar multiplas vezes na mesma partida
 var jogo_foi_salvo := false
 
-var high_scores : Dictionary[String, Array] = {}
-
+## Reseta o jogo_foi_salvo, para indicar que pode salvar a partida atual [br]
+## Deve ser chamado ao iniciar uma nova partida
 func reset_novo_jogo() -> void:
 	jogo_foi_salvo = false
 
@@ -72,7 +78,7 @@ func _salvar():
 		return
 	
 	# Header
-	scores_file.store_csv_line(["name", "millis", "minigames_completed","ads_viewd"])
+	scores_file.store_csv_line(score_file_header)
 	
 	for nome : String in high_scores.keys():
 		scores_file.store_csv_line([nome] + high_scores[nome])

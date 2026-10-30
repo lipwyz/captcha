@@ -39,6 +39,7 @@ folder_colors={
 "res://scene/": "orange",
 "res://scene/AreaTrabalho/": "blue",
 "res://scene/Main/": "red",
+"res://scene/Menus/": "pink",
 "res://scene/MiniGames/": "purple",
 "res://scene/Navegador/": "green",
 "res://themes/": "yellow"

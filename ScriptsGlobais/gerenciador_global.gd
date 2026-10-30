@@ -38,12 +38,11 @@ func chamar_fechar_jogo() -> void:
 # Salvar pontuacao
 # -----------------------------------------------------------------------------
 
-func salvar_score(nome_jogador: String) -> int:
+func salvar_score(nome_jogador: String) -> void:
 	salvador_pontuacao.add_score(
 			gerenciador_jogo.gerenciador_pontuacao.get_tempo_milis(),
 			nome_jogador
 	)
-	return gerenciador_jogo.gerenciador_pontuacao.get_tempo_milis()
 
 func pegar_scores() -> Dictionary[String, Array]:
 	return salvador_pontuacao.get_scores()
