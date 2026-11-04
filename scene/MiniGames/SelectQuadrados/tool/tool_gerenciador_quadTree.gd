@@ -44,9 +44,12 @@ func get_max_selecoes_nao_corretas() -> int:
 # Janela Editar QuadTree
 func _tool_janela():
 	if not Engine.is_editor_hint(): return
+	if not Engine.has_singleton("EditorInterface"): return
+
+	var editor_interface = Engine.get_singleton("EditorInterface")
 	
 	var window := Window.new()
-	EditorInterface.popup_dialog_centered(window, size_janela_edicao)
+	editor_interface.popup_dialog_centered(window, size_janela_edicao)
 	window.close_requested.connect(func(): window.queue_free() )
 	
 	var janela : ToolWindowGerenciadorQuadTree = _tool_gui.instantiate()
