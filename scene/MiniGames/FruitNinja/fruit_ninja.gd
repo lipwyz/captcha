@@ -5,3 +5,4 @@ extends ConteudoAba
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	main.terminou_partida.connect(minigame_ganhar)
+	main.explodiu_bomba.connect(minigame_errar)

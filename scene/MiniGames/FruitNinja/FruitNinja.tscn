@@ -28,4 +28,7 @@ render_target_update_mode = 4
 
 [node name="FruitNinja" parent="SubViewportContainer/SubViewport" unique_id=66606082 instance=ExtResource("2_0q20d")]
 
+[node name="Spawners" parent="SubViewportContainer/SubViewport/FruitNinja/Main" parent_id_path=PackedInt32Array(66606082, 726246071) index="2" unique_id=2027693614 node_paths=PackedStringArray("main")]
+main = NodePath("..")
+
 [editable path="SubViewportContainer/SubViewport/FruitNinja"]

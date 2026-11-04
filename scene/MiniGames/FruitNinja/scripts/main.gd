@@ -2,8 +2,11 @@ class_name FruitNinjaMain
 extends Node2D
 
 signal terminou_partida
+signal explodiu_bomba # chamado no spawners qnd o sinal da bomba explode
 
 @onready var mouse_trail_line: Line2D = $Line2D
+@onready var timer_game_length: Timer = $TimerGameLength
+@onready var spawners: Node2D = $Spawners
 
 var max_trail_points = 5
 var point_distance_threshhold = 2.0
@@ -21,6 +24,8 @@ func _ready():
 	$LabelTime.text = "Time: 20"
 
 func _process(delta):
+	if timer_game_length.is_stopped(): return
+	
 	var mouse_velocity = Input.get_last_mouse_velocity()
 	var mouse_speed = mouse_velocity.length()
 	
@@ -87,6 +92,7 @@ func _on_play_pressed() -> void:
 func _on_timer_game_length_timeout() -> void:
 	#get_tree().reload_current_scene()
 	terminou_partida.emit()
+	spawners.queue_free()
 
 func _on_audio_cooldown_timeout() -> void:
 	can_play_slash_sound = true

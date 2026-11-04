@@ -1,10 +1,13 @@
 extends Node2D
 
+@export var main: FruitNinjaMain
+
 var Obeject1 = preload("uid://cbpaq6lajx5p7")
 var Obeject2 = preload("uid://bvp2s8560xoto")
 var Obeject3 = preload("uid://vspu3i54gvf7")
 var Obeject4 = preload("uid://j6ejlbd2q2xx")
-var FuckingBomb = preload("uid://b1cuc330ayttm")
+const FUCKING_BOMB = preload("uid://bimri2t07esgr")
+
 
 func _on_timer_timeout() -> void:
 	if $"..".game_is_on == false:
@@ -14,7 +17,9 @@ func _on_timer_timeout() -> void:
 	var object_instance
 	
 	if bomb_chance <= 2:
-		object_instance = FuckingBomb.instantiate()
+		var bomba := FUCKING_BOMB.instantiate() as FruitNinjaBomb
+		bomba.explodiu.connect(func(): main.explodiu_bomba.emit() )
+		object_instance = bomba
 	else:
 		var object = randi_range(1,4)
 		if object == 1:
