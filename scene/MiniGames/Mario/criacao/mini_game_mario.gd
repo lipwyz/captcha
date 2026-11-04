@@ -5,7 +5,8 @@ extends ConteudoAba
 func _ready() -> void:
 	# conecta os sinais de "fim de jogo"
 	mundo.ganhou.connect(minigame_ganhar)
-	mundo.acabou_vidas.connect(minigame_perder)
+	mundo.acabou_vidas.connect(_mostrar_ad)
+	mundo.acabou_vidas.connect(respawn_ad)
 	mundo.morreu.connect(respawn_ad)
 	mundo.mostrar_anuncio.connect(_mostrar_ad)
 

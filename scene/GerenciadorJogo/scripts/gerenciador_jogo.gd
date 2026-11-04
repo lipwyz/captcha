@@ -121,7 +121,10 @@ func _proximo_mini_game() -> void:
 	gerenciador_mini_games.comecar_mini_game(navegador)
 
 func _perder_mini_game() -> void:
-	navegador.fechar_todas_abas_exceto_padrao()
+	# TODO: ISSO NAO EH PRA SER USADO, PENSAR NO Q FAZER
+	pass
+	#navegador.fechar_todas_abas_exceto_padrao()
+	
 
 # Anuncios
 # -----------------------------------------------------------------------------
