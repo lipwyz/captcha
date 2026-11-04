@@ -1,4 +1,7 @@
+class_name FruitNinjaMain
 extends Node2D
+
+signal terminou_partida
 
 @onready var mouse_trail_line: Line2D = $Line2D
 
@@ -82,7 +85,8 @@ func _on_play_pressed() -> void:
 	$TimerGameLength.start()
 
 func _on_timer_game_length_timeout() -> void:
-	get_tree().reload_current_scene()
+	#get_tree().reload_current_scene()
+	terminou_partida.emit()
 
 func _on_audio_cooldown_timeout() -> void:
 	can_play_slash_sound = true
