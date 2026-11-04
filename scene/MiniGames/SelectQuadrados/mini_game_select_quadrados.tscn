@@ -66,12 +66,13 @@ correct image"
 layout_mode = 2
 
 [node name="Mundo" type="Node2D" parent="Verificador/VBox/PivotMundo" unique_id=120381652]
+position = Vector2(0, -61)
 
 [node name="GerenciadorImagemClicavel" parent="Verificador/VBox/PivotMundo/Mundo" unique_id=1502582107 node_paths=PackedStringArray("gerenciador_quadTree") instance=ExtResource("5_v4f0m")]
 gerenciador_quadTree = NodePath("../../../../../GerenciadorQuadTree")
 
 [node name="SpriteImagem" parent="Verificador/VBox/PivotMundo/Mundo/GerenciadorImagemClicavel" index="0" unique_id=1847807575]
 self_modulate = Color(0.7, 0.7, 0.7, 1)
-scale = Vector2(0.9994791, 0.85648155)
+scale = Vector2(0.825, 0.71)
 
 [editable path="Verificador/VBox/PivotMundo/Mundo/GerenciadorImagemClicavel"]
