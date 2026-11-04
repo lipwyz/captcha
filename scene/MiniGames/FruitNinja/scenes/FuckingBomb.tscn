@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bimri2t07esgr"]
 
-[ext_resource type="Script" uid="uid://du4sdgfa8c7ci" path="res://scripts/fucking_bomb.gd" id="1_jp7k7"]
-[ext_resource type="Texture2D" uid="uid://gdr25310ka16" path="res://assets/pp-5-l-cobre-red.png" id="2_jp7k7"]
+[ext_resource type="Script" uid="uid://du4sdgfa8c7ci" path="res://scene/MiniGames/FruitNinja/scripts/fucking_bomb.gd" id="1_jp7k7"]
+[ext_resource type="Texture2D" uid="uid://gdr25310ka16" path="res://Assets/Mini Games/Fruit Ninja/pp-5-l-cobre-red.png" id="2_jp7k7"]
 
 [sub_resource type="Animation" id="Animation_oku0v"]
 loop_mode = 1

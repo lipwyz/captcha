@@ -1,4 +1,7 @@
+class_name FruitNinjaBomb
 extends CharacterBody2D
+
+signal explodiu
 
 var direction_hit: String
 var gravity = 300.0
@@ -21,6 +24,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		bomb_timer.start()
 		$"../AnimationPlayer".play("lose")
 		$"..".score -= 5
+		explodiu.emit()
 
 func _on_bomb_timer_timeout() -> void:
 	Engine.time_scale = 1.0

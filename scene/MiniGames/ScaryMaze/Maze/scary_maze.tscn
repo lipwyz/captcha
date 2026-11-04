@@ -46,6 +46,12 @@ sources/1 = SubResource("TileSetAtlasSource_rr2p5")
 [sub_resource type="CircleShape2D" id="CircleShape2D_smq05"]
 radius = 66.189125
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jthiq"]
+radius = 116.03
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y5sar"]
+radius = 79.78
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smq05"]
 size = Vector2(34, 33)
 
@@ -71,11 +77,64 @@ debug_color = Color(0.8324689, 0.0013846254, 0.9411816, 0.41960785)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -46.0
-offset_top = -137.0
-offset_right = 46.0
-offset_bottom = -88.0
+offset_left = -57.0
+offset_top = -49.0
+offset_right = 58.0
+offset_bottom = 10.0
 grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.72, 0.33600003, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 20
+text = "Mouse here
+to Start"
+horizontal_alignment = 1
+
+[node name="Area2DCheckPoint" type="Area2D" parent="." unique_id=1873744602]
+position = Vector2(1674, 678)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DCheckPoint" unique_id=656961037]
+position = Vector2(-26, 24)
+shape = SubResource("CircleShape2D_jthiq")
+debug_color = Color(7.70092e-07, 0.59232354, 0.7400632, 0.41960785)
+
+[node name="LabelCheckPointStart" type="Label" parent="Area2DCheckPoint" unique_id=80142366]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_top = -34.0
+offset_right = 40.0
+offset_bottom = 25.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.72, 0.33600003, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 20
+text = "Mouse here
+to Start"
+horizontal_alignment = 1
+
+[node name="Area2DCheckPoint2" type="Area2D" parent="." unique_id=93882182]
+position = Vector2(1258, 534)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DCheckPoint2" unique_id=886763395]
+position = Vector2(-382, 87)
+shape = SubResource("CircleShape2D_y5sar")
+debug_color = Color(7.70092e-07, 0.59232354, 0.7400632, 0.41960785)
+
+[node name="LabelCheckPoint2Start" type="Label" parent="Area2DCheckPoint2" unique_id=230029066]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -423.0
+offset_top = 46.0
+offset_right = -308.0
+offset_bottom = 105.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.72, 0.33600003, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 20
 text = "Mouse here
 to Start"
 horizontal_alignment = 1

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MiniGameRes" format=3 uid="uid://b2wsi87e63hol"]
+
+[ext_resource type="PackedScene" uid="uid://wujw6mi7dc3l" path="res://scene/MiniGames/FruitNinja/FruitNinja.tscn" id="1_ytg6l"]
+[ext_resource type="Script" uid="uid://cp2dri3177uqs" path="res://scene/MiniGames/MiniGameRes.gd" id="2_hywkf"]
+
+[resource]
+script = ExtResource("2_hywkf")
+aba_titulo = "Frutas Ninjas"
+aba_url = "https://how-to-eat-healty.com"
+conteudo = ExtResource("1_ytg6l")

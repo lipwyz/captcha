@@ -238,5 +238,5 @@ texture = ExtResource("4_kj8ul")
 [connection signal="timeout" from="Main/Slash/Sounds/AudioCooldown" to="Main" method="_on_audio_cooldown_timeout"]
 [connection signal="timeout" from="Main/Spawners/Timer" to="Main/Spawners" method="_on_timer_timeout"]
 [connection signal="timeout" from="Main/TimerGameLength" to="Main" method="_on_timer_game_length_timeout"]
-[connection signal="pressed" from="Play" to="Main" method="_on_play_pressed"]
 [connection signal="pressed" from="Play" to="Main" method="_on_button_pressed"]
+[connection signal="pressed" from="Play" to="Main" method="_on_play_pressed"]
